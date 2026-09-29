@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!--
+=====================================================================
+  MiseLink 公式サイト（リニューアル版）
+  ---------------------------------------------------------------------
+  構成：
+    index.html            … このファイル（CSS・JSを内包）
+    images/tsukishiro.webp… 月白の写真
+    images/mugi.webp      … mugiの写真
+    samples/tsukishiro/   … 月白の完成サンプル
+    samples/kotonoha/     … ことの葉の完成サンプル
+    samples/mugi/         … mugiの完成サンプル
+    ※サンプル3件の写真も images/ の画像を共有しています
+
+  「★編集」… 文章・料金・連絡先を変更する箇所
+  「★公開前」… 公開前に必ず確認・設定する箇所
+=====================================================================
+-->
+<title>MiseLink｜飲食店・地域店舗に特化したWebサイト制作</title>
+<meta name="description" content="MiseLinkは、飲食店や地域店舗に特化したWeb制作サービスです。スマートフォン対応、Googleマップ連携、SEO初期設定、独自ドメイン公開まで分かりやすくサポートします。">
+<meta name="theme-color" content="#F7F5F0">
+
+<!-- ★公開前：公開URLが決まったら、コメントを外して実際の絶対URLに変更してください -->
+<!-- <link rel="canonical" href="[CANONICAL_URL]"> -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="MiseLink">
+<meta property="og:title" content="MiseLink｜街の名店と、お客様をつなぐ。">
+<meta property="og:description" content="飲食店・地域店舗に特化したWeb制作。スマートフォン対応からGoogleマップ連携、独自ドメイン公開までサポートします。">
+<!-- <meta property="og:url" content="[CANONICAL_URL]"> -->
+<!-- ★公開前：1200×630のOGP画像を用意し、コメントを外してください（例：https://…/images/ogp.jpg） -->
+<!-- <meta property="og:image" content="[OG_IMAGE_URL]"> -->
+<meta name="twitter:card" content="summary">
+<!-- OGP画像を設定したら twitter:card を summary_large_image に変更し、下も有効化 -->
+<!-- <meta name="twitter:image" content="[OG_IMAGE_URL]"> -->
+
+<!-- favicon：独自ファイルを用意したら href を差し替えてください -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%23315A4D'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='serif' font-size='34' fill='%23F7F5F0'%3E%E5%BA%97%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/tsukishiro.webp">
+
+<!-- ★編集：構造化データ（確定している情報のみ記載） -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"MiseLink","alternateName":"ミセリンク","description":"飲食店・地域店舗に特化したWeb制作サービス","email":"miselinks@gmail.com","telephone":"070-4680-5993","areaServed":"東京都","serviceType":"Webサイト制作"}
+</script>
+
+<!-- JSが使える環境でのみアニメーション用の初期状態にする（JS無効時は全て表示） -->
+<script>document.documentElement.classList.add('js');</script>
+
+<style>
+/* =====================================================================
+   0. デザイントークン（色・書体・余白はここで変更）
+===================================================================== */
+:root{
+  --paper:#F7F5F0;
+  --paper-2:#EFEBE2;
+  --white:#FFFFFF;
+  --ink:#171A17;
+  --ink-2:#4A524C;
+  --ink-3:#6E746F;
+  --green:#315A4D;
+  --forest:#22403A;
+  --pale:#DDE7E1;
+  --gold:#B3915F;
+  --gold-ink:#86693D;   /* 明るい背景上の小さな金色文字（コントラスト確保用） */
+  --gold-lite:#D2B98B;  /* 暗い背景上の金色文字 */
+  --line:#D9D5CC;
+  --line-dark:rgba(255,255,255,.16);
+
+  --serif:"Noto Serif JP","Noto Serif CJK JP","Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;
+  --sans:"Noto Sans JP","Noto Sans CJK JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  --latin:"Cormorant Garamond","Times New Roman",serif;
+
+  --wrap:1200px;
+  --gut:clamp(20px,5vw,56px);
+  --header:76px;
+  --sec:clamp(96px,12vw,168px);
+
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+}
+
+/* =====================================================================
+   1. ベース
+===================================================================== */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--header) + 12px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.95;letter-spacing:.03em;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body.is-locked{position:fixed;left:0;right:0;overflow:hidden}
+h1,h2,h3,h4,p,ul,ol,dl,dd,figure,fieldset{margin:0;padding:0}
+ul,ol{list-style:none}
+fieldset{border:0;min-width:0}
+img{display:block;max-width:100%;height:auto}
+svg{display:block}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer;padding:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+::selection{background:var(--pale);color:var(--ink)}
+.sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.skip{position:fixed;left:12px;top:-80px;z-index:200;background:var(--white);padding:10px 18px;border:1px solid var(--line)}
+.skip:focus{top:12px}
+.wrap{width:100%;max-width:calc(var(--wrap) + var(--gut)*2);margin:0 auto;padding:0 var(--gut)}
+.nowrap{white-space:nowrap}
+
+/* 見出し */
+.h2{font-family:var(--serif);font-weight:500;font-size:clamp(28px,3.5vw,46px);line-height:1.55;letter-spacing:.05em;text-wrap:balance}
+.lead{color:var(--ink-2);max-width:34em;margin-top:28px;line-height:2.05}
+
+/* セクションラベル（PCでは左端に縦書き） */
+.sec{padding:var(--sec) 0;position:relative}
+.sec__grid{display:grid;grid-template-columns:72px minmax(0,1fr);gap:0 clamp(24px,4vw,56px)}
+.sec__label{white-space:nowrap;writing-mode:vertical-rl;font-family:var(--serif);font-size:14px;letter-spacing:.42em;color:var(--gold-ink);display:flex;align-items:center;gap:18px;position:sticky;top:calc(var(--header) + 40px);align-self:start;height:max-content}
+.sec__label::after{content:"";width:1px;height:56px;background:var(--gold)}
+.sec__head{margin-bottom:clamp(48px,6vw,88px)}
+
+
+/* =====================================================================
+   2. ボタン
+===================================================================== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:56px;padding:0 30px;border:1px solid var(--green);border-radius:2px;font:500 15px/1.3 var(--sans);letter-spacing:.08em;white-space:nowrap;transition:background-color .3s ease,color .3s ease,border-color .3s ease}
+.btn .ico{width:18px;height:18px;flex:none}
+.btn--solid{background:var(--green);color:var(--white)}
+.btn--solid:hover{background:var(--forest);border-color:var(--forest)}
+.btn--line{background:transparent;color:var(--green)}
+.btn--line:hover{background:var(--pale)}
+.btn--paper{background:var(--paper);color:var(--green);border-color:var(--paper)}
+.btn--paper:hover{background:var(--white);border-color:var(--white)}
+.btn--ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,.5)}
+.btn--ghost:hover{border-color:var(--white)}
+.btn--block{width:100%}
+.btn--sm{min-height:44px;padding:0 20px;font-size:14px}
+
+/* テキストリンク */
+.tlink{display:inline-flex;align-items:center;gap:8px;color:var(--green);font-weight:500;border-bottom:1px solid currentColor;padding-bottom:2px;transition:opacity .3s ease}
+.tlink:hover{opacity:.65}
+.tlink svg{width:14px;height:14px}
+
+/* =====================================================================
+   3. ヘッダー
+===================================================================== */
+.header{position:fixed;top:0;left:0;right:0;z-index:60;height:var(--header);transition:background-color .45s var(--ease),border-color .45s var(--ease),transform .5s var(--ease-out);border-bottom:1px solid transparent}
+.header.is-solid{background:rgba(247,245,240,.86);-webkit-backdrop-filter:saturate(1.3) blur(14px);backdrop-filter:saturate(1.3) blur(14px);border-bottom-color:var(--line)}
+.header__in{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+
+.logo{display:inline-flex;align-items:baseline;gap:1px;font-family:var(--latin);font-size:31px;font-weight:500;line-height:1;letter-spacing:-.005em;color:var(--green)}
+.logo i{font-style:italic;color:var(--ink)}
+.logo__mark{width:9px;height:9px;margin-left:5px;border:1px solid var(--gold);transform:rotate(45deg) translateY(-2px);align-self:center}
+
+.nav{display:flex;align-items:center;gap:clamp(18px,2.2vw,34px)}
+.nav__list{display:flex;gap:clamp(16px,2vw,30px)}
+.nav__list a{position:relative;display:inline-flex;align-items:center;min-height:44px;font-size:13.5px;letter-spacing:.08em;color:var(--ink)}
+.nav__list a::after{content:"";position:absolute;left:0;right:0;bottom:9px;height:1px;background:var(--green);opacity:0;transition:opacity .3s ease}
+.nav__list a:hover::after,.nav__list a[aria-current]::after{opacity:1}
+.nav__list a[aria-current]{color:var(--green)}
+
+.burger{display:none;position:relative;z-index:80;width:48px;height:48px;margin-right:-10px;align-items:center;justify-content:center}
+.burger span{position:absolute;width:24px;height:1px;background:var(--ink);transition:transform .5s var(--ease-out),opacity .3s}
+.burger span:nth-child(1){transform:translateY(-4px)}
+.burger span:nth-child(2){transform:translateY(4px)}
+.burger[aria-expanded="true"] span:nth-child(1){transform:rotate(30deg)}
+.burger[aria-expanded="true"] span:nth-child(2){transform:rotate(-30deg)}
+
+/* モバイルメニュー */
+.menu{position:fixed;inset:0;z-index:70;background:var(--paper);display:flex;flex-direction:column;padding:calc(var(--header) + 16px) var(--gut) calc(28px + env(safe-area-inset-bottom));overflow-y:auto;visibility:hidden;opacity:0;transition:opacity .25s ease,visibility 0s .25s}
+.menu.is-open{visibility:visible;opacity:1;transition:opacity .25s ease}
+.menu__list{border-top:1px solid var(--line)}
+.menu__list li{border-bottom:1px solid var(--line);overflow:hidden}
+.menu__list a{display:flex;justify-content:space-between;align-items:center;padding:17px 2px;font-family:var(--serif);font-size:20px;letter-spacing:.08em}
+.menu__list svg{width:16px;height:16px;color:var(--gold-ink)}
+.menu__foot{margin-top:auto;padding-top:32px;display:grid;gap:14px}
+.menu__foot p{font-size:13px;color:var(--ink-2);line-height:1.8}
+
+/* =====================================================================
+   4. ファーストビュー（暖簾の演出）
+===================================================================== */
+.hero{position:relative;background:var(--white);padding:calc(var(--header) + clamp(40px,6vw,88px)) 0 clamp(64px,8vw,112px);overflow:hidden}
+.hero__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.hero__en{display:flex;align-items:center;gap:14px;margin-bottom:30px;font-family:var(--latin);font-style:italic;font-size:clamp(17px,1.45vw,20px);letter-spacing:.05em;color:var(--gold-ink)}
+.hero__en::before{content:"";width:40px;height:1px;background:var(--gold)}
+.hero__title{font-family:var(--serif);font-weight:500;font-size:clamp(34px,4.4vw,60px);line-height:1.45;letter-spacing:.06em}
+.hero__lead{margin-top:30px;max-width:30em;color:var(--ink-2);font-size:clamp(15px,1.1vw,16.5px);line-height:2.1}
+.hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+.hero__meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;margin-top:34px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-2)}
+.hero__meta b{font-family:var(--latin);font-weight:500;font-size:30px;color:var(--green);letter-spacing:0;font-variant-numeric:lining-nums tabular-nums;line-height:1}
+.hero__meta b small{font-family:var(--sans);font-size:13px;margin-left:4px;color:var(--ink-2)}
+.hero__meta .dot{width:3px;height:3px;border-radius:50%;background:var(--gold);align-self:center}
+/* 読み込み時の唯一の演出：ファーストビューが静かに現れる（透明度のみ） */
+.js .hero [data-hero]{opacity:0;transition:opacity 1.4s ease;transition-delay:var(--d,0s)}
+.is-loaded .hero [data-hero]{opacity:1}
+
+/* ステージ：暖簾の奥に店舗サイトが見える */
+.stage-wrap{justify-self:end;width:100%;max-width:640px}
+.stage{position:relative;width:100%;aspect-ratio:1/.9}
+.stage__floor{position:absolute;inset:14% 0 5% 9%;background:var(--paper)}
+.stage__rod{position:absolute;z-index:6;top:0;left:3%;right:-1%;height:7px;border-radius:4px;background:linear-gradient(#5b4633,#3a2c20);box-shadow:0 2px 3px rgba(23,26,23,.18)}
+.stage__rod::before,.stage__rod::after{content:"";position:absolute;top:-2px;width:11px;height:11px;border-radius:50%;background:#2f241a}
+.stage__rod::before{left:-4px}.stage__rod::after{right:-4px}
+
+.noren{position:absolute;z-index:5;top:4px;left:6%;right:2%;bottom:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.6%;pointer-events:none}
+.noren__p{align-self:start;height:31%;transform-origin:50% 0;background-color:var(--green);background-image:linear-gradient(rgba(0,0,0,.16),rgba(0,0,0,.16)),repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 4px);background-size:100% 12px,100% 100%;background-repeat:no-repeat,repeat;box-shadow:inset 0 -5px 0 rgba(0,0,0,.1),0 10px 18px -12px rgba(23,26,23,.35)}
+.noren__mon{position:absolute;z-index:6;left:50%;top:15.5%;width:clamp(52px,6vw,72px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:var(--paper);color:var(--green);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:clamp(24px,2.7vw,33px);line-height:1;box-shadow:0 0 0 3px var(--green),0 0 0 4px rgba(247,245,240,.5)}
+.noren__word{white-space:nowrap;position:absolute;z-index:6;top:4.5%;writing-mode:vertical-rl;font-family:var(--serif);font-size:clamp(10px,.95vw,12.5px);letter-spacing:.4em;color:rgba(247,245,240,.82)}
+.noren__word--l{left:calc(6% + 13.5%)}
+.noren__word--r{right:calc(2% + 13.5%)}
+
+/* 店舗サイトのモックアップ（ブラウザ） */
+.mb{position:relative;background:var(--white);border:1px solid #D2D4CC;border-radius:6px;overflow:hidden;box-shadow:0 40px 70px -40px rgba(23,40,32,.45),0 2px 6px rgba(23,26,23,.04)}
+.mb__bar{height:28px;display:flex;align-items:center;gap:6px;padding:0 12px;background:#F4F3EF;border-bottom:1px solid #E4E2DB}
+.mb__bar i{width:7px;height:7px;border-radius:50%;background:#D3D0C8}
+.mb__bar span{margin:0 auto;font:500 10px/1 var(--latin);letter-spacing:.14em;color:#6f7570}
+.mb__view{position:relative;aspect-ratio:16/10;overflow:hidden;background:#1B211D}
+.stage .mb{position:absolute;z-index:2;left:0;top:19%;width:83%}
+
+.ts-hero{position:absolute;inset:0}
+.ts-hero img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.ts-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,22,19,.82),rgba(18,22,19,.35) 45%,transparent 75%)}
+.ts-hero__copy{position:absolute;z-index:1;left:7%;top:50%;transform:translateY(-50%);color:#F4EFE4;display:flex;flex-direction:column;gap:8px}
+.ts-hero__copy small{font:500 clamp(7px,.7vw,9px)/1 var(--latin);letter-spacing:.3em;color:#D0B98A}
+.ts-hero__copy b{font:400 clamp(26px,3.3vw,44px)/1.2 var(--serif);letter-spacing:.24em}
+.ts-hero__copy span{font:400 clamp(9px,.9vw,12px)/1.6 var(--serif);letter-spacing:.14em}
+
+/* スマートフォンのモックアップ */
+.mp{position:absolute;z-index:3;right:0;bottom:4%;width:28%;background:#1E2A24;border-radius:24px;padding:6px;box-shadow:0 30px 50px -24px rgba(23,40,32,.55)}
+.mp__screen{position:relative;border-radius:19px;overflow:hidden;background:#F8F5EE;aspect-ratio:9/18.5;display:flex;flex-direction:column}
+.mp__top{display:flex;justify-content:space-between;align-items:center;padding:14% 9% 5%}
+.mp__top b{font:500 clamp(11px,1.3vw,16px)/1 var(--serif);letter-spacing:.2em}
+.mp__top i{width:14px;height:5px;border-block:1px solid #536152}
+.mp__img{position:relative;height:40%;overflow:hidden}
+.mp__img img{width:100%;height:100%;object-fit:cover;object-position:62% 50%;filter:brightness(.85)}
+.mp__vert{position:absolute;right:8%;top:8%;writing-mode:vertical-rl;font:400 clamp(8px,.95vw,11px)/1.9 var(--serif);letter-spacing:.2em;color:#FFF8EA;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.mp__body{padding:8% 9%;display:flex;flex-direction:column;gap:6px;flex:1}
+.mp__body p{font:500 clamp(7px,.75vw,9.5px)/1.7 var(--serif);color:#27392E}
+.mp__row{display:flex;justify-content:space-between;padding:5px 0;border-top:1px solid #DDD6C8;font-size:clamp(6px,.6vw,8px);color:#536152;line-height:1.4}
+.mp__btn{margin-top:auto;background:#304C3D;color:#fff;text-align:center;font-size:clamp(6px,.62vw,8px);letter-spacing:.12em;padding:7px 0;border-radius:2px;line-height:1.4}
+
+.stage__cap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 20px;margin-top:22px;padding-left:9%;font-size:12.5px;color:var(--ink-2)}
+
+/* ヒーロー下：3つの質問から探す */
+.guide{background:var(--paper);border-bottom:1px solid var(--line)}
+.guide__list{display:grid;grid-template-columns:repeat(3,1fr)}
+.guide__list a{position:relative;display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 16px;padding:30px clamp(16px,2.5vw,36px);border-left:1px solid var(--line)}
+.guide__list li:first-child a{border-left:0;padding-left:0}
+.guide__q{grid-column:1;font-size:12.5px;color:var(--ink-3);letter-spacing:.08em}
+.guide__a{grid-column:1;font-family:var(--serif);font-size:17px;letter-spacing:.06em;color:var(--ink)}
+.guide__arw{grid-column:2;grid-row:1/3;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--green);transition:border-color .3s ease}
+.guide__arw svg{width:14px;height:14px}
+.guide__list a:hover .guide__arw{border-color:var(--green)}
+
+/* =====================================================================
+   5. お店の課題（悩み → できること）
+===================================================================== */
+.issues{border-top:1px solid var(--ink)}
+.issues__head{display:grid;grid-template-columns:48px minmax(0,1fr) 72px minmax(0,1fr);gap:0 20px;padding:14px 0;border-bottom:1px solid var(--line);font-size:12.5px;letter-spacing:.14em;color:var(--ink-3)}
+.issues__head span:nth-child(1){grid-column:2}
+.issues__head span:nth-child(2){grid-column:4;color:var(--green)}
+.issue{position:relative;display:grid;grid-template-columns:48px minmax(0,1fr) 72px minmax(0,1fr);gap:0 20px;align-items:center;padding:28px 0;border-bottom:1px solid var(--line)}
+.issue__n{font-family:var(--latin);font-size:22px;color:var(--gold-ink);font-variant-numeric:lining-nums}
+.issue__q{font-family:var(--serif);font-size:clamp(16.5px,1.35vw,19px);letter-spacing:.05em;line-height:1.7}
+.issue__line{height:1px;background:var(--gold);transform-origin:0 50%;position:relative}
+.issue__line::after{content:"";position:absolute;right:-1px;top:-3px;width:7px;height:7px;border-top:1px solid var(--gold);border-right:1px solid var(--gold);transform:rotate(45deg)}
+.issue__a{font-size:15px;color:var(--ink-2);line-height:1.9}
+
+/* =====================================================================
+   6. MiseLinkについて ＋ 大切にすること（深い緑）
+===================================================================== */
+.about{background:var(--forest);color:var(--white)}
+.about .sec__label{color:var(--gold-lite)}
+.about .sec__label::after{background:var(--gold-lite)}
+.about .lead,.about__body p{color:rgba(255,255,255,.78)}
+.about__top{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(40px,6vw,96px);align-items:end}
+.about__body p+p{margin-top:22px}
+.about__body .base{margin-top:30px;padding-top:24px;border-top:1px solid var(--line-dark);font-size:14px;display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.88)}
+.about__body .base svg{width:16px;height:16px;color:var(--gold-lite);flex:none}
+
+.lockup{display:flex;align-items:flex-end;gap:clamp(16px,2.4vw,32px);margin-top:56px;font-family:var(--latin);line-height:.9}
+.lockup__w{display:flex;flex-direction:column;gap:14px}
+.lockup__w b{font-weight:400;font-size:clamp(56px,8vw,112px);letter-spacing:-.02em}
+.lockup__w:last-child b{font-style:italic;color:var(--gold-lite)}
+.lockup__w span{font-family:var(--serif);font-size:13px;letter-spacing:.4em;color:rgba(255,255,255,.7);line-height:1}
+.lockup__plus{font-size:clamp(28px,3vw,40px);color:rgba(255,255,255,.4);padding-bottom:clamp(30px,3.6vw,52px);font-weight:300}
+
+.values{margin-top:clamp(80px,10vw,136px);padding-top:clamp(48px,6vw,72px);border-top:1px solid var(--line-dark)}
+.values__title{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.4vw,30px);letter-spacing:.06em;line-height:1.6}
+.values__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(24px,3vw,44px);margin-top:48px}
+.value{padding-top:28px;border-top:1px solid var(--line-dark);position:relative}
+.value svg{width:44px;height:44px;color:var(--gold-lite);margin-bottom:26px}
+.value h3{font-family:var(--serif);font-weight:500;font-size:19px;letter-spacing:.06em;line-height:1.6;margin-bottom:12px}
+.value p{font-size:14.5px;color:rgba(255,255,255,.74);line-height:1.95}
+
+/* =====================================================================
+   7. サービス
+===================================================================== */
+.services{background:var(--white)}
+.svc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--ink)}
+.svc__g{padding:32px clamp(18px,2vw,30px) 36px;border-right:1px solid var(--line)}
+.svc__g:first-child{padding-left:0}
+.svc__g:last-child{border-right:0;padding-right:0}
+.svc__k{font-family:var(--serif);font-size:22px;letter-spacing:.14em;color:var(--green)}
+.svc__d{font-size:13px;color:var(--ink-3);margin:6px 0 24px;line-height:1.8}
+.svc__g li{display:grid;grid-template-columns:20px 1fr;gap:12px;padding:15px 0;border-top:1px solid var(--line)}
+.svc__g li svg{width:20px;height:20px;color:var(--green);margin-top:3px}
+.svc__g h3{font-size:15px;font-weight:500;line-height:1.7;letter-spacing:.04em}
+.svc__g li p{font-size:12.5px;color:var(--ink-2);line-height:1.8;margin-top:3px}
+.svc-note{margin-top:32px;font-size:13px;color:var(--ink-2)}
+
+/* =====================================================================
+   8. 制作サンプル（タブ切り替え）
+===================================================================== */
+.works__top{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+.works__top .lead{margin-top:20px}
+.tabs{display:flex;gap:6px;padding:5px;border:1px solid var(--line);border-radius:3px;background:var(--white)}
+.tabs[hidden]{display:none}
+.tab{display:flex;flex-direction:column;align-items:flex-start;min-width:148px;padding:10px 18px;border-radius:2px;text-align:left;transition:background-color .25s ease,color .25s ease}
+.tab b{font-family:var(--serif);font-weight:500;font-size:16px;letter-spacing:.1em;line-height:1.5}
+.tab small{font-size:11.5px;color:var(--ink-3);letter-spacing:.06em;line-height:1.5;transition:color .45s}
+.tab[aria-selected="true"]{background:var(--green);color:var(--white)}
+.tab[aria-selected="true"] small{color:rgba(255,255,255,.75)}
+.tab:not([aria-selected="true"]):hover{background:var(--paper)}
+
+.works__panels{margin-top:clamp(40px,5vw,64px)}
+.work{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(32px,5vw,80px);align-items:center}
+html:not(.js) .work+.work,.works__panels:not(.is-tabbed) .work+.work{margin-top:96px;padding-top:96px;border-top:1px solid var(--line)}
+.work[hidden]{display:none}
+.work.is-entering{animation:fadeIn .4s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+.work__visual{position:relative;padding:clamp(28px,4vw,56px) clamp(24px,4vw,56px) clamp(44px,5vw,72px);background:var(--paper-2)}
+.work__visual .mb{max-width:680px;margin:0 auto}
+.work__visual .mb__view{aspect-ratio:16/11;background:var(--white)}
+.work__visual .mp{width:22%;right:4%;bottom:5%}
+.work__hint{position:absolute;left:clamp(24px,4vw,56px);bottom:14px;font-size:11.5px;color:var(--ink-3);letter-spacing:.06em;display:flex;align-items:center;gap:8px}
+.work__hint svg{width:13px;height:13px}
+@media (hover:none){.work__hint{display:none}}
+
+/* ページのスクロールプレビュー（ホバーで下までスクロール） */
+.pv{position:absolute;left:0;right:0;top:0;transition:transform 6s cubic-bezier(.45,0,.35,1)}
+.work__visual:hover .pv,.work__visual:focus-within .pv{transform:translateY(calc(var(--shift,0px) * -1))}
+
+/* 月白のプレビュー */
+.pv--ts{background:#F8F5EE;color:#26382C}
+.pv--ts .ts-hero{position:relative;aspect-ratio:16/11}
+.pv-nav{position:absolute;z-index:2;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:center;padding:3.5% 6%;color:#F4EFE4;font-size:clamp(7px,.7vw,9px);letter-spacing:.14em}
+.pv-nav b{font:500 clamp(12px,1.3vw,17px)/1 var(--serif);letter-spacing:.24em}
+.pv-sec{padding:8% 7%}
+.pv-sec h4{font:500 clamp(12px,1.25vw,16px)/1.4 var(--serif);letter-spacing:.2em;display:flex;align-items:center;gap:12px;margin-bottom:5%}
+.pv-sec h4::after{content:"";flex:1;height:1px;background:currentColor;opacity:.25}
+.pv-menu{display:grid;grid-template-columns:1fr 1fr;gap:0 8%}
+.pv-menu div{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:3.2% 0;border-bottom:1px dotted rgba(38,56,44,.35);font:400 clamp(8px,.85vw,11px)/1.5 var(--serif)}
+.pv-menu span:last-child{font-family:var(--latin);font-size:1.15em;font-variant-numeric:lining-nums}
+.pv-info{display:grid;grid-template-columns:auto 1fr;gap:0 18px;font-size:clamp(7.5px,.8vw,10px);line-height:1.6}
+.pv-info dt,.pv-info dd{padding:3% 0;border-bottom:1px solid rgba(38,56,44,.15)}
+.pv-info dt{color:#7a6446;letter-spacing:.14em}
+.pv-map{margin-top:5%;height:clamp(40px,5vw,70px);background:repeating-linear-gradient(35deg,#E7E1D4 0 1px,transparent 1px 12px),repeating-linear-gradient(-55deg,#E7E1D4 0 1px,transparent 1px 16px),#EFEAE0;position:relative}
+.pv-map::after{content:"";position:absolute;left:52%;top:30%;width:10px;height:10px;border-radius:50% 50% 50% 0;background:#8A4737;transform:rotate(-45deg)}
+.pv-btn{display:inline-block;margin-top:5%;padding:2.2% 5%;background:#304C3D;color:#fff;font-size:clamp(7px,.72vw,9px);letter-spacing:.16em}
+
+/* mugiのプレビュー */
+.pv--mg{background:#FFF9ED;color:#254FA3}
+.mg-top{padding:6% 7% 0;display:flex;justify-content:space-between;align-items:center;font-size:clamp(7px,.7vw,9px);letter-spacing:.1em;font-weight:500}
+.mg-top b{font:700 clamp(18px,2.2vw,30px)/1 Georgia,serif;letter-spacing:-.04em}
+.mg-hero{padding:5% 7% 0}
+.mg-hero p{font:700 clamp(14px,1.8vw,24px)/1.4 var(--sans);letter-spacing:.02em;margin-bottom:5%}
+.mg-hero img{width:100%;aspect-ratio:1.7;object-fit:cover;border-radius:999px 999px 0 0}
+.mg-sec{padding:7%}
+.mg-sec h4{font:700 clamp(11px,1.15vw,15px)/1.4 var(--sans);letter-spacing:.08em;margin-bottom:4%;display:flex;gap:10px;align-items:center}
+.mg-sec h4 span{font:italic 400 1em/1 Georgia,serif;opacity:.7}
+.mg-times{display:grid;grid-template-columns:repeat(3,1fr);gap:4%}
+.mg-times div{border:1px solid rgba(37,79,163,.3);border-radius:10px;padding:8% 6%;text-align:center;font-size:clamp(7px,.75vw,10px);line-height:1.5}
+.mg-times b{display:block;font:700 clamp(12px,1.3vw,17px)/1.3 Georgia,serif}
+.mg-list div{display:flex;justify-content:space-between;padding:2.6% 0;border-bottom:1px solid rgba(37,79,163,.18);font-size:clamp(8px,.85vw,11px)}
+
+.work__info .work__cat{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.12em;color:var(--gold-ink)}
+.work__info .work__cat::before{content:"";width:24px;height:1px;background:var(--gold)}
+.work__info h3{font-family:var(--serif);font-weight:500;font-size:clamp(24px,2.4vw,32px);letter-spacing:.08em;line-height:1.5;margin:14px 0 18px}
+.work__info>p{font-size:15px;color:var(--ink-2);line-height:2}
+.work__dl{margin-top:28px;border-top:1px solid var(--line)}
+.work__dl div{display:grid;grid-template-columns:72px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13.5px;line-height:1.8}
+.work__dl dt{color:var(--ink-3);letter-spacing:.12em}
+.work__info .btn{margin-top:32px}
+.work__note{margin-top:18px;font-size:12px;line-height:1.85;color:var(--ink-3)}
+
+/* ことの葉のプレビュー */
+.pv--kn{background:#F6F2EB;color:#2C2A26;font-family:"Zen Kaku Gothic New",var(--sans)}
+.kn-top{display:flex;justify-content:space-between;align-items:center;padding:3.6% 6%;font-size:clamp(6.5px,.66vw,8.5px);letter-spacing:.1em;color:#5B574F}
+.kn-top b{display:flex;align-items:center;gap:6px;font:600 clamp(11px,1.2vw,15px)/1 "Shippori Mincho",var(--serif);letter-spacing:.16em;color:#2C2A26}
+.kn-top b i{width:.7em;height:.95em;background:#7F8E6F;border-radius:50% 50% 50% 50%/60% 60% 40% 40%}
+.kn-top u{text-decoration:none;background:#9C5446;color:#fff;padding:3px 9px;border-radius:999px}
+.kn-hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4%;padding:2% 6% 4%}
+.kn-hero__t{display:flex;gap:10%;align-items:flex-start}
+.kn-hero__t h5{margin:0;writing-mode:vertical-rl;font:500 clamp(13px,1.55vw,21px)/1.75 "Shippori Mincho",var(--serif);letter-spacing:.2em;white-space:nowrap}
+.kn-hero__t p{font-size:clamp(6.5px,.65vw,8.5px);line-height:1.9;color:#5B574F;margin-top:6%}
+.kn-hero__t span{display:inline-block;margin-top:10%;padding:4px 8px;border:1px solid #E0D8CB;border-radius:8px;background:#FBF9F5;font-size:clamp(6px,.6vw,8px);color:#2C2A26;white-space:nowrap}
+.kn-hero__t span::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:#7F8E6F;margin-right:5px;vertical-align:middle}
+.kn-art{position:relative}
+.kn-art::before{content:"";position:absolute;left:8%;right:8%;top:10%;aspect-ratio:1;border-radius:50%;background:#E4E8DC}
+.kn-art svg{position:relative;width:100%;height:auto}
+.kn-sec{padding:5% 6% 6%;background:#FBF9F5}
+.kn-sec h6{margin:0 0 3%;font:500 clamp(10px,1.1vw,14px)/1.5 "Shippori Mincho",var(--serif);letter-spacing:.1em}
+.kn-chips{display:flex;gap:5px;margin-bottom:4%;flex-wrap:wrap}
+.kn-chips span{font-size:clamp(5.5px,.58vw,7.5px);padding:2px 8px;border:1px solid #E0D8CB;border-radius:999px;background:#FBF9F5;line-height:1.7}
+.kn-chips span:first-child{background:#2C2A26;color:#fff;border-color:#2C2A26}
+.kn-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:4%}
+.kn-card i{display:flex;justify-content:center;align-items:flex-end;background:#EFE8DD;border-radius:8px;aspect-ratio:1/1.05;padding:8% 12% 0}
+.kn-card i svg{height:100%;width:auto}
+.kn-card b{display:block;margin-top:6%;font:600 clamp(6.5px,.68vw,9px)/1.5 "Shippori Mincho",var(--serif)}
+.kn-card small{display:block;font:500 clamp(8px,.85vw,11px)/1.3 "EB Garamond",var(--latin)}
+.kn-season{display:flex;align-items:center;gap:5%;margin:0 6% 7%;padding:4% 5%;border-radius:10px;background:#F1DED6;font-size:clamp(6px,.62vw,8px);color:#5B574F}
+.kn-season b{font:600 clamp(10px,1.05vw,14px)/1.3 "Shippori Mincho",var(--serif);color:#2C2A26;letter-spacing:.1em}
+.kn-season em{font:italic 500 clamp(8px,.8vw,11px)/1 "EB Garamond",var(--latin);color:#7F4236}
+.mp--kn .mp__screen{background:#F6F2EB;color:#2C2A26}
+.mp--kn .kn-phart{height:44%;display:flex;justify-content:center;align-items:flex-end;background:#EFE8DD;padding:6% 18% 0}
+.mp--kn .kn-phart svg{height:100%;width:auto}
+.mp--kn .mp__btn{background:#9C5446;border-radius:999px}
+
+/* モニター募集 */
+[data-monitor-block][hidden]{display:none!important}
+.monitor{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(28px,4vw,64px);align-items:start;margin-bottom:24px;padding:clamp(28px,4vw,52px);background:var(--paper);border:1px solid var(--gold)}
+.monitor__tag{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.14em;color:var(--gold-ink)}
+.monitor__tag::before{content:"";width:24px;height:1px;background:var(--gold)}
+.monitor h3{font-family:var(--serif);font-weight:500;font-size:clamp(21px,2.2vw,27px);letter-spacing:.06em;line-height:1.6;margin-top:12px}
+.monitor__price{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-top:18px;color:var(--green)}
+.monitor__price b{font-family:var(--latin);font-weight:500;font-size:clamp(48px,5vw,64px);line-height:1;letter-spacing:-.01em;font-variant-numeric:lining-nums tabular-nums}
+.monitor__price span{font-size:14px;color:var(--ink-2)}
+.monitor__slots{margin-top:8px;font-size:13px;color:var(--ink-2)}
+.monitor__text{margin-top:18px;font-size:14.5px;color:var(--ink-2);line-height:1.95}
+.monitor .btn{margin-top:26px}
+.monitor__cond h4{font-size:14px;font-weight:500;letter-spacing:.08em;margin:0 0 8px}
+.monitor__cond li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:14px 0;border-top:1px solid var(--line);font-size:14.5px;line-height:1.8}
+.monitor__cond li:last-child{border-bottom:1px solid var(--line)}
+.monitor__cond li>span{font-family:var(--latin);font-size:18px;line-height:1.5;color:var(--gold-ink);font-variant-numeric:lining-nums}
+.monitor__cond small{display:block;font-size:12.5px;color:var(--ink-3);line-height:1.8;margin-top:2px}
+.monitor__note{margin-top:16px;font-size:12.5px;color:var(--ink-3);line-height:1.9}
+.hero__monitor{margin-top:14px;font-size:13.5px}
+.f .consent.consent--tight{margin:0}
+.consent small{display:block;font-size:12px;color:var(--ink-3);line-height:1.7;margin-top:2px}
+
+/* =====================================================================
+   9. 料金 ＋ シミュレーター
+===================================================================== */
+.pricing__intro{display:flex;gap:20px;align-items:flex-start;margin-top:-40px;margin-bottom:56px;padding:22px 26px;background:var(--paper);border-left:2px solid var(--green);max-width:760px}
+.pricing__intro b{display:block;font-weight:500;font-size:15.5px;margin-bottom:4px}
+.pricing__intro p{font-size:14px;color:var(--ink-2);line-height:1.9}
+.plans{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:24px;align-items:stretch}
+.plan{position:relative;display:flex;flex-direction:column;padding:clamp(32px,4vw,52px);background:var(--paper);border:1px solid var(--line)}
+.plan--main{border-color:var(--green);box-shadow:0 40px 70px -50px rgba(49,90,77,.55)}
+.plan--main::before{content:"";position:absolute;left:-1px;right:-1px;top:-1px;height:4px;background:var(--green)}
+.plan__badge{position:absolute;top:22px;right:24px;font-size:11.5px;letter-spacing:.14em;color:var(--green);border:1px solid var(--green);padding:3px 12px;line-height:1.6}
+.plan__en{font-family:var(--latin);font-style:italic;font-size:19px;letter-spacing:.06em;color:var(--gold-ink)}
+.plan h3{font-family:var(--serif);font-weight:500;font-size:23px;letter-spacing:.08em;margin-top:6px}
+.plan__for{font-size:13.5px;color:var(--ink-2);margin-top:6px}
+.plan__price{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px;margin:28px 0 4px;color:var(--green)}
+.plan__price b{font-family:var(--latin);font-weight:500;font-size:clamp(48px,5vw,64px);line-height:1;letter-spacing:-.01em;font-variant-numeric:lining-nums tabular-nums}
+.plan__price span{font-size:14px;color:var(--ink-2)}
+.plan__cap{font-size:12.5px;color:var(--ink-3);padding-bottom:26px;border-bottom:1px solid var(--line);margin-bottom:20px}
+.plan ul{margin-bottom:32px}
+.plan li{display:flex;gap:12px;align-items:flex-start;padding:7px 0;font-size:15px;line-height:1.8}
+.plan li svg{width:15px;height:15px;color:var(--green);margin-top:7px;flex:none}
+.plan .btn{margin-top:auto}
+
+/* シミュレーター */
+.sim{margin-top:24px;background:var(--paper);border:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr)}
+.sim__main{padding:clamp(28px,3.5vw,48px)}
+.sim__main h3{font-family:var(--serif);font-weight:500;font-size:21px;letter-spacing:.08em}
+.sim__main>p{font-size:13.5px;color:var(--ink-2);margin-top:6px}
+.sim__rows{margin-top:28px;border-top:1px solid var(--line)}
+.sim__row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.sim__row b{display:block;font-weight:500;font-size:15px}
+.sim__row small{display:block;font-size:12.5px;color:var(--ink-3);line-height:1.7}
+.sim__fixed{font-family:var(--latin);font-size:20px;color:var(--ink-2);font-variant-numeric:lining-nums}
+.stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:2px}
+.stepper button{width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:var(--green);transition:background .3s}
+.stepper{background:var(--white)}
+.stepper button:hover:not(:disabled){background:var(--pale)}
+.stepper button:disabled{color:#C3C6C0;cursor:not-allowed}
+.stepper button svg{width:14px;height:14px}
+.stepper output{min-width:40px;text-align:center;font-family:var(--latin);font-size:22px;font-variant-numeric:lining-nums tabular-nums;line-height:1}
+.switch{position:relative;display:inline-flex;align-items:center;cursor:pointer}
+.switch input{position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer}
+.switch span{width:52px;height:30px;border-radius:15px;background:#D6D3CB;position:relative;transition:background .35s var(--ease)}
+.switch span::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:var(--white);box-shadow:0 1px 3px rgba(0,0,0,.2);transition:transform .45s var(--ease-out)}
+.switch input:checked+span{background:var(--green)}
+.switch input:checked+span::after{transform:translateX(22px)}
+.switch input:focus-visible+span{outline:2px solid var(--gold);outline-offset:3px}
+
+.sim__out{background:var(--green);color:var(--white);padding:clamp(28px,3.5vw,48px);display:flex;flex-direction:column}
+.sim__out>p{font-size:13px;letter-spacing:.1em;color:rgba(255,255,255,.75)}
+.sim__total{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin:10px 0 4px}
+.sim__total b{font-family:var(--latin);font-weight:500;font-size:clamp(44px,4.4vw,58px);line-height:1;font-variant-numeric:lining-nums tabular-nums}
+.sim__total span{font-size:13px;color:rgba(255,255,255,.8)}
+.sim__monthly{margin-top:16px;padding-top:16px;border-top:1px solid var(--line-dark);font-size:14px;display:flex;justify-content:space-between;gap:12px}
+.sim__monthly b{font-family:var(--latin);font-size:22px;font-weight:500;font-variant-numeric:lining-nums}
+.sim__out .btn{margin-top:28px}
+.sim__note{margin-top:16px;font-size:11.5px;line-height:1.8;color:rgba(255,255,255,.7)}
+
+/* 公開後の都度修正（開閉） */
+.rev{margin-top:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rev summary{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:64px;padding:12px 0;cursor:pointer;list-style:none;font-weight:500;font-size:15px}
+.rev summary::-webkit-details-marker{display:none}
+.rev summary small{display:block;font-weight:400;font-size:12.5px;color:var(--ink-3)}
+.rev__list{padding-bottom:22px}
+.rev__list li{display:grid;grid-template-columns:minmax(160px,.8fr) minmax(0,1.4fr) auto;gap:20px;align-items:center;padding:14px 0;border-top:1px solid var(--line);font-size:14px}
+.rev__list span{font-size:12.5px;color:var(--ink-3)}
+.rev__list strong{font-family:var(--latin);font-size:19px;font-weight:500;color:var(--green);white-space:nowrap;font-variant-numeric:lining-nums}
+.rev__list strong small{font-family:var(--sans);font-size:12px;color:var(--ink-2);margin-left:2px}
+.price-note{margin-top:28px;font-size:13px;color:var(--ink-2);line-height:1.95;max-width:56em}
+
+/* 開閉アイコン（FAQ・料金共通） */
+.pm{position:relative;width:32px;height:32px;flex:none;border:1px solid var(--line);border-radius:50%;transition:border-color .3s ease}
+.pm::before,.pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1px;background:var(--green);transform:translate(-50%,-50%)}
+.pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:opacity .3s ease}
+details[open]>summary .pm{border-color:var(--green)}
+details[open]>summary .pm::after{opacity:0}
+
+/* =====================================================================
+   10. 制作の流れ（スクロールで線が伸びる）
+===================================================================== */
+.process{background:var(--paper)}
+.flow{position:relative}
+.flow__list{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:16px}
+.flow__track{position:absolute;top:26px;left:calc(100% / 14);right:calc(100% / 14);height:1px;background:var(--line)}
+.step{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center}
+.step__n{position:relative;z-index:1;width:53px;height:53px;border-radius:50%;background:var(--paper);border:1px solid var(--green);display:flex;align-items:center;justify-content:center;font-family:var(--latin);font-size:22px;color:var(--green);font-variant-numeric:lining-nums}
+.step h3{margin-top:22px;font-family:var(--serif);font-weight:500;font-size:15px;letter-spacing:.05em;line-height:1.6}
+.step p{margin-top:8px;font-size:12.5px;color:var(--ink-2);line-height:1.8}
+.prep{margin-top:clamp(56px,6vw,80px);display:grid;grid-template-columns:auto 1fr;gap:20px 28px;align-items:start;padding:28px 32px;background:var(--white);border-left:2px solid var(--gold)}
+.prep svg{width:34px;height:34px;color:var(--gold-ink)}
+.prep h3{font-family:var(--serif);font-weight:500;font-size:17px;letter-spacing:.05em}
+.prep p{font-size:14px;color:var(--ink-2);margin-top:6px;line-height:1.95}
+
+/* =====================================================================
+   11. よくある質問
+===================================================================== */
+.faq__grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(40px,6vw,96px);align-items:start}
+.faq__side{position:sticky;top:calc(var(--header) + 48px)}
+.faq__side .lead{font-size:14.5px}
+.faq__side .tlink{margin-top:24px}
+.faq{border-top:1px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:12px;min-height:76px;padding:18px 0;cursor:pointer;list-style:none;font-family:var(--serif);font-size:clamp(16px,1.3vw,18px);letter-spacing:.04em;line-height:1.7;transition:color .35s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--green)}
+.faq__q{font-family:var(--latin);font-size:24px;color:var(--gold-ink);line-height:1}
+.faq__a{overflow:hidden}
+.faq__a p{padding:0 48px 28px 46px;color:var(--ink-2);font-size:15px;line-height:2.05}
+
+/* =====================================================================
+   12. お問い合わせ
+===================================================================== */
+.contact{background:var(--green);color:var(--white);padding:var(--sec) 0 calc(var(--sec) * .8)}
+.contact .sec__label{color:var(--gold-lite)}
+.contact .sec__label::after{background:var(--gold-lite)}
+.contact__grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(40px,6vw,88px);align-items:start}
+.contact .h2{font-size:clamp(26px,3vw,40px)}
+.contact__lead{margin-top:26px;color:rgba(255,255,255,.8);max-width:28em}
+.contact__ways{margin-top:40px;border-top:1px solid var(--line-dark)}
+.contact__ways li{border-bottom:1px solid var(--line-dark)}
+.contact__ways a{display:grid;grid-template-columns:22px 1fr auto;gap:14px;align-items:center;padding:18px 0;transition:opacity .3s ease}
+.contact__ways a:hover{opacity:.75}
+.contact__ways svg{width:20px;height:20px;color:var(--gold-lite)}
+.contact__ways small{display:block;font-size:11.5px;letter-spacing:.12em;color:rgba(255,255,255,.65);line-height:1.5}
+.contact__ways span{font-size:15px;letter-spacing:.04em;line-height:1.5}
+.contact__ways .arw{width:14px;height:14px;color:rgba(255,255,255,.6)}
+
+.form-card{background:var(--white);color:var(--ink);padding:clamp(28px,4vw,52px);position:relative}
+.form-card__head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.form-card__head b{font-family:var(--serif);font-weight:500;font-size:19px;letter-spacing:.08em}
+.form-card__head span{font-size:12px;color:var(--ink-3)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px 18px}
+.f{min-width:0}
+.f--full{grid-column:1/-1}
+.f label,.f legend{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;margin-bottom:9px;letter-spacing:.04em}
+.req{font-size:10.5px;font-weight:500;padding:1px 7px;background:var(--green);color:var(--white);border-radius:2px;letter-spacing:.08em;line-height:1.7}
+.opt{font-size:11px;font-weight:400;color:var(--ink-3)}
+.f input[type=text],.f input[type=email],.f input[type=tel],.f textarea{width:100%;min-height:52px;padding:12px 14px;border:1px solid var(--line);border-radius:2px;background:var(--paper);font-size:16px;line-height:1.6;-webkit-appearance:none;appearance:none;transition:border-color .3s,background .3s,box-shadow .3s}
+.f textarea{min-height:160px;resize:vertical}
+.f input::placeholder,.f textarea::placeholder{color:#8A908B;font-size:14px}
+.f input:focus,.f textarea:focus{outline:none;border-color:var(--green);background:var(--white);box-shadow:0 0 0 3px rgba(49,90,77,.14)}
+.f [aria-invalid="true"]{border-color:#A9302A;background:#FFF8F6}
+.f__err{display:none;margin-top:6px;font-size:12.5px;color:#A9302A}
+.f.has-err .f__err{display:block}
+.f__help{margin-top:6px;font-size:12px;color:var(--ink-3);line-height:1.7}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.f .chip{position:relative;display:block;margin:0}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chip span{display:flex;align-items:center;gap:10px;min-height:52px;padding:10px 14px;border:1px solid var(--line);border-radius:2px;background:var(--paper);font-size:14px;line-height:1.5;cursor:pointer;transition:border-color .3s,background .3s,color .3s}
+.chip span::before{content:"";width:16px;height:16px;flex:none;border-radius:50%;border:1px solid #A9ADA7;background:var(--white);transition:border .3s,box-shadow .3s}
+.chip input:checked+span{border-color:var(--green);background:var(--pale);color:var(--forest)}
+.chip input:checked+span::before{border:5px solid var(--green)}
+.chip input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+.f.has-err .chip span{border-color:#E0B4AE}
+.f .consent{display:flex;gap:12px;align-items:flex-start;margin:26px 0 22px;font-size:14px;font-weight:400;line-height:1.8;cursor:pointer}
+.consent input{width:20px;height:20px;margin-top:3px;flex:none;accent-color:var(--green)}
+.consent a{color:var(--green);text-decoration:underline;text-underline-offset:3px}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.status{margin-top:14px;font-size:13.5px;line-height:1.8;min-height:1.8em}
+.status.is-err{color:#A9302A}
+.form-card .btn[disabled]{opacity:.6;cursor:progress}
+
+.done{text-align:center;padding:32px 8px}
+.done[hidden]{display:none}
+.done svg{width:64px;height:64px;margin:0 auto 20px;color:var(--green)}
+.done{animation:fadeIn .5s ease}
+.done h3{font-family:var(--serif);font-weight:500;font-size:22px;letter-spacing:.06em}
+.done p{margin-top:12px;font-size:14.5px;color:var(--ink-2)}
+
+.privacy{margin-top:40px;border-top:1px solid var(--line-dark)}
+.privacy summary{display:flex;justify-content:space-between;align-items:center;min-height:56px;cursor:pointer;list-style:none;font-size:14px}
+.privacy summary::-webkit-details-marker{display:none}
+.privacy .pm{border-color:rgba(255,255,255,.35)}
+.privacy .pm::before,.privacy .pm::after{background:var(--white)}
+.privacy[open]>summary .pm{border-color:var(--white)}
+.privacy p{font-size:13px;color:rgba(255,255,255,.8);line-height:1.95;margin-bottom:14px}
+
+/* =====================================================================
+   13. フッター
+===================================================================== */
+.footer{background:var(--paper);padding:clamp(64px,8vw,104px) 0 calc(32px + env(safe-area-inset-bottom))}
+.footer__top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:start}
+.footer .logo{font-size:40px}
+.footer__tag{margin-top:16px;font-family:var(--serif);font-size:15px;letter-spacing:.1em}
+.footer__nav{display:grid;grid-template-columns:repeat(2,auto);gap:4px 56px}
+.footer__nav a{display:inline-flex;min-height:40px;align-items:center;font-size:14px;color:var(--ink-2);transition:color .3s}
+.footer__nav a:hover{color:var(--green)}
+.footer__bottom{margin-top:clamp(48px,6vw,80px);padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--ink-3)}
+.footer__bottom small{font-family:var(--latin);font-size:14px;letter-spacing:.06em;color:var(--ink-2)}
+
+/* スマホ下部の固定CTA */
+.dock{display:none}
+html:not(.js) .burger{display:none!important}
+
+/* =====================================================================
+   14. レスポンシブ
+===================================================================== */
+@media (max-width:1180px){
+  .nav__list a{font-size:12.5px}
+  .values__grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:48px}
+  .svc{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .svc__g:nth-child(2){border-right:0;padding-right:0}
+  .svc__g:nth-child(3){padding-left:0}
+  .svc__g:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:1023px){
+  .sec__grid{grid-template-columns:minmax(0,1fr)}
+  .sec__label{writing-mode:horizontal-tb;position:static;flex-direction:row;margin-bottom:28px;letter-spacing:.3em;font-size:13px}
+  .sec__label::after{width:40px;height:1px;order:-1}
+  #works .sec__label{display:none}
+  .flow__list{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:44px}
+  .flow__track{display:none}
+  .work{grid-template-columns:minmax(0,1fr)}
+  .faq__grid{grid-template-columns:minmax(0,1fr)}
+  .faq__side{position:static}
+  .contact__grid{grid-template-columns:minmax(0,1fr)}
+  .sim{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:920px){
+  .nav__list,.nav>.btn{display:none}
+  .burger{display:flex}
+  .hero__grid{grid-template-columns:minmax(0,1fr)}
+  .stage-wrap{justify-self:center;max-width:560px;margin-top:8px}
+  .about__top{grid-template-columns:minmax(0,1fr);align-items:start}
+  .plans{grid-template-columns:minmax(0,1fr)}
+  .monitor{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px){
+  :root{--header:64px}
+  body{font-size:15.5px;line-height:1.9}
+  .logo{font-size:27px}
+  .hero{padding-top:calc(var(--header) + 32px);padding-bottom:56px}
+  .hero__title{font-size:clamp(30px,8.6vw,40px)}
+  .hero__en{margin-bottom:22px;font-size:16px}
+  .hero__lead{margin-top:22px;font-size:15px}
+  .hero__actions{flex-direction:column;margin-top:30px}
+  .hero__actions .btn{width:100%}
+  .hero__meta{margin-top:26px;gap:4px 14px}
+  .stage{aspect-ratio:1/.98}
+  .stage .mb{top:21%;width:86%}
+  .mp{width:31%;border-radius:18px;padding:4px}
+  .mp__screen{border-radius:15px}
+  .stage__cap{padding-left:0;margin-top:16px;font-size:12px}
+  .guide__list{grid-template-columns:minmax(0,1fr)}
+  .guide__list a,.guide__list li:first-child a{border-left:0;border-top:1px solid var(--line);padding:20px 0}
+  .guide__list li:first-child a{border-top:0}
+  .issues__head{display:none}
+  .issue{grid-template-columns:34px minmax(0,1fr);gap:8px 12px;padding:22px 0;align-items:start}
+  .issue__n{font-size:19px;line-height:1.5}
+  .issue__line{display:none}
+  .issue__a{grid-column:2;font-size:14px;padding:12px 14px;background:var(--white);border-left:2px solid var(--gold);line-height:1.8}
+  .lockup{margin-top:40px}
+  .lockup__w span{font-size:11px;letter-spacing:.3em}
+  .values__grid{grid-template-columns:minmax(0,1fr);gap:0}
+  .value{display:grid;grid-template-columns:44px 1fr;gap:0 18px;padding:26px 0}
+  .value svg{width:36px;height:36px;margin:0;grid-row:1/3}
+  .svc{grid-template-columns:minmax(0,1fr)}
+  .svc__g,.svc__g:first-child,.svc__g:nth-child(3){padding:28px 0;border-right:0}
+  .svc__g+.svc__g{border-top:1px solid var(--line)}
+  .works__top{display:block}
+  .tabs{margin-top:28px;width:100%}
+  .tab{flex:1;min-width:0;padding:9px 10px}
+  .tab b{font-size:14.5px}
+  .tab small{font-size:10.5px}
+  .work__visual{padding:24px 16px 28px;margin:0 calc(var(--gut) * -1)}
+  .work__visual .mp{width:27%;right:3%}
+  .pricing__intro{margin-top:-24px;padding:18px 18px}
+  .plan__badge{position:static;align-self:flex-start;margin-bottom:16px}
+  .monitor .btn{width:100%}
+  .sim__row{grid-template-columns:minmax(0,1fr);gap:12px}
+  .sim__row>:last-child{justify-self:start}
+  .rev__list li{grid-template-columns:minmax(0,1fr) auto;gap:2px 16px}
+  .rev__list span{grid-column:1;grid-row:2}
+  .rev__list strong{grid-row:1/3;grid-column:2}
+  /* 縦タイムライン */
+  .flow__list{grid-template-columns:minmax(0,1fr);row-gap:0}
+  .flow__track{display:block;top:26px;bottom:26px;left:26px;right:auto;width:1px;height:auto}
+  .step{display:grid;grid-template-columns:53px 1fr;gap:2px 20px;text-align:left;align-items:center;padding:10px 0}
+  .step__n{grid-row:1/3}
+  .step h3{margin-top:0}
+  .step p{margin-top:0;grid-column:2}
+  .prep{grid-template-columns:minmax(0,1fr);padding:22px 20px}
+  .faq summary{grid-template-columns:26px 1fr auto;font-size:15.5px;min-height:68px}
+  .faq__q{font-size:20px}
+  .faq__a p{padding:0 4px 24px 38px;font-size:14.5px}
+  .fgrid{grid-template-columns:minmax(0,1fr)}
+  .chips{grid-template-columns:minmax(0,1fr)}
+  .form-card{margin:0 calc(var(--gut) * -1);padding:28px var(--gut)}
+  .footer__top{grid-template-columns:minmax(0,1fr)}
+  .footer{padding-bottom:calc(104px + env(safe-area-inset-bottom))}
+  .dock{display:grid;grid-template-columns:56px 1fr;gap:8px;position:fixed;z-index:55;left:0;right:0;bottom:0;padding:10px var(--gut) calc(10px + env(safe-area-inset-bottom));background:rgba(247,245,240,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--line);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility 0s .3s}
+  .dock.is-shown{opacity:1;visibility:visible;transition:opacity .3s ease}
+  .dock .btn{min-height:52px}
+  .dock__tel{display:flex;align-items:center;justify-content:center;border:1px solid var(--green);border-radius:2px;color:var(--green)}
+  .dock__tel svg{width:20px;height:20px}
+}
+
+/* 動きを減らす設定 */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  .js .hero [data-hero]{opacity:1}
+  .work__visual:hover .pv,.work__visual:focus-within .pv{transform:none}
+}
+@media print{.header,.dock,.menu{display:none}.js .hero [data-hero]{opacity:1}}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+
+<!-- =====================================================================
+     ヘッダー
+===================================================================== -->
+<header class="header" id="header">
+  <div class="wrap header__in">
+    <a class="logo" href="#top" aria-label="MiseLink トップへ">Mise<i>Link</i><span class="logo__mark" aria-hidden="true"></span></a>
+    <nav class="nav" aria-label="メインナビゲーション">
+      <ul class="nav__list">
+        <li><a href="#about">MiseLinkについて</a></li>
+        <li><a href="#services">サービス</a></li>
+        <li><a href="#works">制作事例</a></li>
+        <li><a href="#pricing">料金</a></li>
+        <li><a href="#process">制作の流れ</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+      </ul>
+      <a class="btn btn--solid btn--sm" href="#contact">無料相談</a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="メニューを開く"><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<!-- モバイルメニュー -->
+<div class="menu" id="menu" aria-hidden="true">
+  <nav aria-label="モバイルナビゲーション">
+    <ul class="menu__list">
+      <li><a href="#about">MiseLinkについて<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+      <li><a href="#services">サービス<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+      <li><a href="#works">制作事例<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+      <li><a href="#pricing">料金<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+      <li><a href="#process">制作の流れ<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+      <li><a href="#faq">よくある質問<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+    </ul>
+  </nav>
+  <div class="menu__foot">
+    <a class="btn btn--solid btn--block" href="#contact">無料で相談する</a>
+    <a class="btn btn--line btn--block" href="tel:07046805993">電話で相談する　070-4680-5993</a>
+    <p>まだ依頼内容が決まっていなくても大丈夫です。</p>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- =====================================================================
+     1. ファーストビュー
+===================================================================== -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="wrap hero__grid">
+    <div data-hero style="--d:.1s">
+      <p class="hero__en">Web design for local business</p>
+      <!-- ★編集：メインコピー -->
+      <h1 class="hero__title" id="hero-title">街の名店と、<br>お客様をつなぐ。</h1>
+      <p class="hero__lead">GoogleマップやSNSで見つけた店の魅力を、信頼につながる公式サイトへ。MiseLinkは、飲食店・地域店舗に特化したWeb制作サービスです。</p>
+      <div class="hero__actions">
+        <a class="btn btn--solid" href="#contact">無料で相談する<svg class="ico ico--r" viewBox="0 0 18 18" fill="none" stroke="currentColor" aria-hidden="true"><path d="M2 9h13M11 5l4 4-4 4"/></svg></a>
+        <a class="btn btn--line" href="#works">制作事例を見る</a>
+      </div>
+      <!-- ★編集：ファーストビューの料金 -->
+      <p class="hero__meta">
+        <span>制作</span><b>59,800<small>円〜（税込）</small></b>
+        <span>買い切り対応</span><span class="dot" aria-hidden="true"></span><span>月額保守は任意</span>
+      </p>
+      <!-- ★編集：モニター募集の案内（募集終了時はJSの MONITOR.open を false に） -->
+      <p class="hero__monitor" data-monitor-block><a class="tlink" href="#monitor">モニター募集中｜先着3店舗は 29,800円（税込）</a></p>
+    </div>
+
+    <div class="stage-wrap" data-hero style="--d:.45s">
+      <!-- 暖簾の奥に店舗サイトが見えるビジュアル（装飾のため読み上げ対象外） -->
+      <div class="stage" id="stage" aria-hidden="true">
+        <div class="stage__floor"></div>
+        <div class="mb">
+          <div class="mb__bar"><i></i><i></i><i></i><span>TSUKISHIRO — SAMPLE</span></div>
+          <div class="mb__view">
+            <div class="ts-hero">
+              <img src="images/tsukishiro.webp" alt="" width="1536" height="1024" fetchpriority="high">
+              <div class="ts-hero__copy"><small>SOBA &amp; SUMIBI</small><b>月白</b><span>香りを挽き、季節を焼く。</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mp">
+          <div class="mp__screen">
+            <div class="mp__top"><b>月白</b><i></i></div>
+            <div class="mp__img"><img src="images/tsukishiro.webp" alt="" width="1536" height="1024"><span class="mp__vert">香りを挽き、<br>季節を焼く。</span></div>
+            <div class="mp__body">
+              <p>静かな夜を、神楽坂で。</p>
+              <div class="mp__row"><span>お品書き</span><span>›</span></div>
+              <div class="mp__row"><span>店舗案内</span><span>›</span></div>
+              <div class="mp__btn">ご予約</div>
+            </div>
+          </div>
+        </div>
+        <div class="noren">
+          <span class="noren__p"></span>
+          <span class="noren__p"></span>
+          <span class="noren__p"></span>
+        </div>
+        <span class="noren__word noren__word--l">街の名店</span>
+        <span class="noren__mon">店</span>
+        <span class="noren__word noren__word--r">お客様</span>
+        <div class="stage__rod"></div>
+      </div>
+      <p class="stage__cap">
+        <span>月白｜架空店舗のサンプルサイト</span>
+        <!-- samples/tsukishiro/ にある完成サンプルへのリンク -->
+        <a class="tlink" href="samples/tsukishiro/index.html" target="_blank" rel="noopener">完成サイトを見る<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg><span class="sr-only">（新しいタブで開きます）</span></a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 知りたいことから探す -->
+<nav class="guide" aria-label="知りたいことから探す">
+  <ul class="wrap guide__list">
+    <li><a href="#works"><span class="guide__q">どんなサイトが作れる？</span><span class="guide__a">制作事例を見る</span><span class="guide__arw" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M7 2v10M3 8l4 4 4-4"/></svg></span></a></li>
+    <li><a href="#pricing"><span class="guide__q">どれくらいかかる？</span><span class="guide__a">料金を試算する</span><span class="guide__arw" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M7 2v10M3 8l4 4 4-4"/></svg></span></a></li>
+    <li><a href="#process"><span class="guide__q">何から始めればいい？</span><span class="guide__a">制作の流れを見る</span><span class="guide__arw" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M7 2v10M3 8l4 4 4-4"/></svg></span></a></li>
+  </ul>
+</nav>
+
+<!-- =====================================================================
+     2. お店の課題
+===================================================================== -->
+<section class="sec" id="issues" aria-labelledby="issues-title">
+  <div class="wrap sec__grid">
+    <p class="sec__label">お店の課題</p>
+    <div>
+      <div class="sec__head">
+        <h2 class="h2" id="issues-title">お店の魅力、<br>Googleマップだけに<br>なっていませんか？</h2>
+        <p class="lead">高い評価や多くの口コミがあっても、公式サイトがなければ、メニューや店舗の雰囲気、正確な営業時間を十分に伝えられないことがあります。</p>
+      </div>
+      <!-- ★編集：お悩みと、MiseLinkでできること -->
+      <div class="issues">
+        <p class="issues__head" aria-hidden="true"><span>よくあるお悩み</span><span>MiseLinkでできること</span></p>
+        <ol>
+          <li class="issue"><span class="issue__n" aria-hidden="true">01</span><p class="issue__q">口コミは多いのに公式サイトがない</p><span class="issue__line" aria-hidden="true"></span><p class="issue__a"><span class="sr-only">MiseLinkでできること：</span>口コミの評価を裏づける、お店自身の情報源をつくります。</p></li>
+          <li class="issue"><span class="issue__n" aria-hidden="true">02</span><p class="issue__q">食べログやSNSに情報が分散している</p><span class="issue__line" aria-hidden="true"></span><p class="issue__a"><span class="sr-only">MiseLinkでできること：</span>メニュー・営業時間・アクセスを、ひとつの場所にまとめます。</p></li>
+          <li class="issue"><span class="issue__n" aria-hidden="true">03</span><p class="issue__q">メニューや価格を正確に伝えられない</p><span class="issue__line" aria-hidden="true"></span><p class="issue__a"><span class="sr-only">MiseLinkでできること：</span>お店で確定した内容を、写真とともに見やすく掲載します。</p></li>
+          <li class="issue"><span class="issue__n" aria-hidden="true">04</span><p class="issue__q">古いサイトがスマートフォンで見にくい</p><span class="issue__line" aria-hidden="true"></span><p class="issue__a"><span class="sr-only">MiseLinkでできること：</span>スマートフォンでの見やすさから設計し直します。</p></li>
+          <li class="issue"><span class="issue__n" aria-hidden="true">05</span><p class="issue__q">外国人旅行者に情報が伝わりにくい</p><span class="issue__line" aria-hidden="true"></span><p class="issue__a"><span class="sr-only">MiseLinkでできること：</span>英語・多言語ページへの拡張にも対応します。</p></li>
+          <li class="issue"><span class="issue__n" aria-hidden="true">06</span><p class="issue__q">Web制作会社への依頼方法が分からない</p><span class="issue__line" aria-hidden="true"></span><p class="issue__a"><span class="sr-only">MiseLinkでできること：</span>準備するものから、専門用語を使わず順番にご案内します。</p></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     3. MiseLinkについて ＋ 大切にすること
+===================================================================== -->
+<section class="sec about" id="about" aria-labelledby="about-title">
+  <div class="wrap sec__grid">
+    <p class="sec__label">MiseLinkについて</p>
+    <div>
+      <div class="about__top">
+        <div>
+          <h2 class="h2" id="about-title">いい店が、<br>きちんと見つかる街へ。</h2>
+          <div class="lockup" aria-hidden="true">
+            <div class="lockup__w"><b>Mise</b><span>お店</span></div>
+            <span class="lockup__plus">+</span>
+            <div class="lockup__w"><b>Link</b><span>つなぐ</span></div>
+          </div>
+        </div>
+        <!-- ★編集：紹介文（実在しない会社規模・顧客数・受賞歴は記載しないこと） -->
+        <div class="about__body">
+          <p>地域には、長く愛されているにもかかわらず、その魅力がインターネット上では十分に伝わっていない店が数多くあります。</p>
+          <p>MiseLinkは、店舗の個性や積み重ねてきた歴史を大切にしながら、初めて訪れるお客様にも分かりやすく伝わるWebサイトを制作します。</p>
+          <p>店舗とお客様の新しい出会いを、デザインとテクノロジーで支援します。</p>
+          <p class="base"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M8 15s-5-4.6-5-8.5a5 5 0 0 1 10 0C13 10.4 8 15 8 15z"/><circle cx="8" cy="6.5" r="1.8"/></svg>東京を拠点に、地域店舗のデジタル発信を支援しています。</p>
+        </div>
+      </div>
+
+      <div class="values">
+        <h3 class="values__title">店舗に必要な情報を、<br>見やすく、美しく。</h3>
+        <div class="values__grid">
+          <article class="value">
+            <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path pathLength="1" d="M6 10h32v26H6z"/><path pathLength="1" d="M6 17h32M13 24h10M13 29h16"/><circle pathLength="1" cx="31" cy="26.5" r="3.5"/></svg>
+            <h3>店舗ごとのデザイン</h3>
+            <p>テンプレートを当てはめるだけではなく、店の雰囲気、料理、歴史、客層に合わせて設計します。</p>
+          </article>
+          <article class="value">
+            <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path pathLength="1" d="M14 5h16a2 2 0 0 1 2 2v30a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path pathLength="1" d="M19 9h6M20 34h4M16 16h12M16 21h8"/></svg>
+            <h3>スマートフォンを最優先</h3>
+            <p>GoogleマップやSNSから訪れたお客様が、メニュー、営業時間、アクセスをすぐに確認できる構成にします。</p>
+          </article>
+          <article class="value">
+            <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle pathLength="1" cx="22" cy="22" r="15"/><path pathLength="1" d="M7 22h30M22 7c-5 4-5 26 0 30M22 7c5 4 5 26 0 30"/></svg>
+            <h3>公開までまとめて対応</h3>
+            <p>Web制作だけでなく、ドメイン接続、Googleマップへのサイト登録、SEOの初期設定まで支援します。</p>
+          </article>
+          <article class="value">
+            <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path pathLength="1" d="M4 22s7-11 18-11 18 11 18 11-7 11-18 11S4 22 4 22z"/><circle pathLength="1" cx="22" cy="22" r="5"/></svg>
+            <h3>完成イメージを分かりやすく</h3>
+            <p>専門用語ではなく、実際のデザインを見ながら、店舗に合ったサイトをご提案します。</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     4. サービス
+===================================================================== -->
+<section class="sec services" id="services" aria-labelledby="services-title">
+  <div class="wrap sec__grid">
+    <p class="sec__label">サービス</p>
+    <div>
+      <div class="sec__head">
+        <h2 class="h2" id="services-title">Webに詳しくなくても、<br>公開までお任せください。</h2>
+        <p class="lead">つくる、公開する、見つけてもらう、育てる。必要なことを一つずつ、まとめてお引き受けします。</p>
+      </div>
+      <!-- ★編集：サービス内容（対応範囲・追加費用は見積もり時に確定） -->
+      <div class="svc">
+        <div class="svc__g">
+          <p class="svc__k">つくる</p><p class="svc__d">お店らしさを、かたちに。</p>
+          <ul>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2.5 3.5h15v13h-15zM2.5 7.5h15M7.5 7.5v9"/></svg><div><h3>店舗Webサイト制作</h3><p>雰囲気や客層に合わせた、公式サイトの設計。</p></div></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="5" y="1.5" width="10" height="17" rx="1.5"/><path d="M8.5 15.5h3"/></svg><div><h3>スマートフォン対応</h3><p>小さな画面でも読みやすく、押しやすく。</p></div></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M4 2.5h12v15H4zM7 6.5h6M7 10h6M7 13.5h4"/></svg><div><h3>メニュー・店舗情報ページ</h3><p>価格・営業時間・アクセスを探しやすく整理。</p></div></li>
+          </ul>
+        </div>
+        <div class="svc__g">
+          <p class="svc__k">公開する</p><p class="svc__d">お店専用の場所を、ネット上に。</p>
+          <ul>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><ellipse cx="10" cy="10" rx="3.2" ry="7.5"/><path d="M2.5 10h15"/></svg><div><h3>独自ドメイン接続</h3><p>お店専用のURLで公開できるよう接続。</p></div></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M16 8c0 4.5-6 10-6 10S4 12.5 4 8a6 6 0 0 1 12 0z"/><circle cx="10" cy="8" r="2"/></svg><div><h3>Googleマップ連携</h3><p>地図の掲載と、ビジネスプロフィールへのURL登録を支援。</p></div></li>
+          </ul>
+        </div>
+        <div class="svc__g">
+          <p class="svc__k">見つけてもらう</p><p class="svc__d">検索から、お店にたどり着けるように。</p>
+          <ul>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.5 12.5l5 5"/></svg><div><h3>SEO初期設定</h3><p>検索エンジンに内容を伝えるタイトルや説明文の設定。</p></div></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2.5 3.5h15v13h-15zM2.5 7.5h15M5.5 13.5l3-3 2.5 2 3.5-3.5"/></svg><div><h3>Google Search Console設定</h3><p>Google検索での表示状況を確認するための設定。</p></div></li>
+          </ul>
+        </div>
+        <div class="svc__g">
+          <p class="svc__k">育てる</p><p class="svc__d">公開したあとも、正しい情報を。</p>
+          <ul>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M16.5 8A7 7 0 1 0 17 12M17 3v5h-5"/></svg><div><h3>公開後の更新・保守</h3><p>営業時間や価格の変更など。都度見積もり・月額保守に対応。</p></div></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2.5 4.5h9M7 2.5v2M4 4.5c0 4 3 7 6.5 8.5M10.5 4.5c0 4-3 7-8 9.5M11.5 18l3.5-9 3.5 9M12.8 15h4.4"/></svg><div><h3>英語・多言語ページへの拡張</h3><p>海外のお客様にも情報を伝えるページを追加。</p></div></li>
+          </ul>
+        </div>
+      </div>
+      <p class="svc-note">※対応範囲・追加費用はご相談内容に応じてお見積もりします。検索順位や来店数を保証するものではありません。</p>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     5. 制作事例（架空店舗のサンプル）
+     正式な受託実績が増えたら、この中に article.work を追加してください。
+===================================================================== -->
+<section class="sec" id="works" aria-labelledby="works-title">
+  <div class="wrap sec__grid">
+    <p class="sec__label">制作事例</p>
+    <div>
+      <div class="works__top">
+        <div>
+          <p class="hero__en" style="margin-bottom:18px">Selected work</p>
+          <h2 class="h2" id="works-title">店舗の空気まで<br>伝わるWebサイトを。</h2>
+          <p class="lead">業態や客層に合わせて、見た目だけでなく、メニューやアクセスの見つけやすさまで設計します。</p>
+        </div>
+        <div class="tabs" id="workTabs" hidden>
+          <button class="tab" type="button" id="tab-ts" aria-controls="work-ts"><b>月白</b><small>蕎麦・和食</small></button>
+          <button class="tab" type="button" id="tab-kn" aria-controls="work-kn"><b>ことの葉</b><small>花屋</small></button>
+          <button class="tab" type="button" id="tab-mg" aria-controls="work-mg"><b>mugi</b><small>ベーカリー</small></button>
+        </div>
+      </div>
+
+      <div class="works__panels" id="workPanels">
+        <!-- 事例1：月白 -->
+        <article class="work" id="work-ts" aria-labelledby="work-ts-title">
+          <div class="work__visual">
+            <div class="mb" aria-hidden="true">
+              <div class="mb__bar"><i></i><i></i><i></i><span>TSUKISHIRO — CONCEPT WEBSITE</span></div>
+              <div class="mb__view">
+                <div class="pv pv--ts">
+                  <div class="ts-hero">
+                    <div class="pv-nav"><b>月白</b><span>月白について　お品書き　夜のおまかせ　店舗案内　ご予約</span></div>
+                    <img src="images/tsukishiro.webp" alt="" width="1536" height="1024" loading="lazy">
+                    <div class="ts-hero__copy"><small>SOBA &amp; SUMIBI</small><b>月白</b><span>香りを挽き、季節を焼く。</span></div>
+                  </div>
+                  <div class="pv-sec">
+                    <h4>お品書き</h4>
+                    <div class="pv-menu">
+                      <div><span>せいろ</span><span>1,100</span></div>
+                      <div><span>鴨せいろ</span><span>1,760</span></div>
+                      <div><span>すだち蕎麦</span><span>1,480</span></div>
+                      <div><span>胡桃だれ蕎麦</span><span>1,430</span></div>
+                      <div><span>鴨ロース炭火焼き</span><span>1,980</span></div>
+                      <div><span>だし巻き玉子</span><span>850</span></div>
+                    </div>
+                  </div>
+                  <div class="pv-sec" style="padding-top:0">
+                    <h4>店舗案内</h4>
+                    <dl class="pv-info"><dt>営業時間</dt><dd>昼 11:30–14:30 / 夜 17:30–22:00</dd><dt>定休日</dt><dd>水曜日</dd><dt>席数</dt><dd>カウンター8席・テーブル12席</dd></dl>
+                    <div class="pv-map"></div>
+                    <span class="pv-btn">席を予約する</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mp" aria-hidden="true">
+              <div class="mp__screen">
+                <div class="mp__top"><b>月白</b><i></i></div>
+                <div class="mp__img"><img src="images/tsukishiro.webp" alt="" width="1536" height="1024" loading="lazy"><span class="mp__vert">香りを挽き、<br>季節を焼く。</span></div>
+                <div class="mp__body"><p>静かな夜を、神楽坂で。</p><div class="mp__row"><span>せいろ</span><span>1,100</span></div><div class="mp__row"><span>鴨せいろ</span><span>1,760</span></div><div class="mp__btn">ご予約</div></div>
+              </div>
+            </div>
+            <p class="work__hint" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M7 2v10M3 8l4 4 4-4"/></svg>カーソルを合わせると、ページの下まで見られます</p>
+          </div>
+          <div class="work__info">
+            <p class="work__cat">架空店舗のコンセプトサイト</p>
+            <h3 id="work-ts-title">蕎麦と炭火 月白</h3>
+            <p>手打ち蕎麦と炭火料理を扱う架空の和食店。料理写真を中心に、店のこだわり、お品書き、コース、店舗情報、予約までを一つのサイトにまとめました。</p>
+            <dl class="work__dl">
+              <div><dt>業種</dt><dd>飲食店・蕎麦／和食</dd></div>
+              <div><dt>設計</dt><dd>店舗紹介 / メニュー / コース / 予約</dd></div>
+              <div><dt>対応</dt><dd>PC / タブレット / スマートフォン</dd></div>
+            </dl>
+            <!-- samples/tsukishiro/ にある完成サンプルへのリンク -->
+            <a class="btn btn--solid" href="samples/tsukishiro/index.html" target="_blank" rel="noopener">完成サイトを見る<svg class="ico ico--ext" viewBox="0 0 18 18" fill="none" stroke="currentColor" aria-hidden="true"><path d="M5 13l8-8M6 5h7v7"/></svg><span class="sr-only">（新しいタブで開きます）</span></a>
+            <!-- ★編集：写真がAI生成の場合は、mugiと同様に注記を追加してください -->
+            <p class="work__note">※MiseLinkが制作した架空店舗のコンセプトサイトです。実在する店舗・所在地ではありません。メニュー・価格・営業時間はデザイン用の設定です。</p>
+          </div>
+        </article>
+
+        <!-- 事例2：ことの葉 -->
+        <article class="work" id="work-kn" aria-labelledby="work-kn-title">
+          <div class="work__visual">
+            <div class="mb" aria-hidden="true">
+              <div class="mb__bar"><i></i><i></i><i></i><span>KOTONOHA — CONCEPT WEBSITE</span></div>
+              <div class="mb__view">
+                <div class="pv pv--kn">
+                  <div class="kn-top"><b><i></i>ことの葉</b><span>花を選ぶ　季節の花　店舗情報　<u>取り置き予約</u></span></div>
+                  <div class="kn-hero">
+                    <div class="kn-hero__t"><h5>花に、<br>ことばを添えて。</h5><div><p>下北沢の小さな花屋です。ご予算に合わせて、季節の花で一束をお作りします。</p><span>営業中｜本日 20:00まで</span></div></div>
+                    <div class="kn-art"><svg viewBox="0 0 520 640" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M258.6 600Q222 393.2 112.2 312.7" fill="none" stroke="#556349" stroke-width="2.2"/><path d="M256.3 600Q215.7 384.5 94 278.1" fill="none" stroke="#556349" stroke-width="2.2"/><path d="M261.7 600Q235.4 381.6 156.5 266.6" fill="none" stroke="#556349" stroke-width="2.2"/><path d="M259.1 600Q228 370 135 220" fill="none" stroke="#556349" stroke-width="2.2"/><path d="M256 600Q235.6 346.5 174.3 126.1" fill="none" stroke="#556349" stroke-width="2.2"/><path d="M265.9 600Q243.3 333.1 175.5 72.3" fill="none" stroke="#556349" stroke-width="2.2"/><path d="M264 600Q249.7 335.5 206.8 82.2" fill="none" stroke="#556349" stroke-width="2.2"/><path d="M254.9 600Q258.3 357.8 268.6 171.4" fill="none" stroke="#556349" stroke-width="2.2"/><path d="M261.5 600Q271.2 353.2 300.3 152.6" fill="none" stroke="#556349" stroke-width="2.2"/><path d="M260.5 600Q286.6 361.7 364.7 186.9" fill="none" stroke="#556349" stroke-width="2.2"/><path d="M267.5 600Q305.2 351.4 418.4 145.7" fill="none" stroke="#556349" stroke-width="2.2"/><path d="M264.6 600Q297.1 373.8 394.4 235.3" fill="none" stroke="#556349" stroke-width="2.2"/><path d="M255.8 600Q286.3 386.1 377.8 284.5" fill="none" stroke="#556349" stroke-width="2.2"/><path d="M269.6 600Q314.4 381 448.8 264" fill="none" stroke="#556349" stroke-width="2.2"/><path d="M0 0C18.1 -23.3 10.8 -62.2 0 -77.7C-10.8 -62.2 -18.1 -23.3 0 0Z" fill="#76866A" transform="translate(206.1 404.8) rotate(-76.4)"/><path d="M0 0C22.5 -21.5 13.5 -57.4 0 -71.7C-13.5 -57.4 -22.5 -21.5 0 0Z" fill="#556349" transform="translate(230.3 391.4) rotate(-40.3)"/><path d="M0 0C20.2 -21.7 12.1 -57.9 0 -72.4C-12.1 -57.9 -20.2 -21.7 0 0Z" fill="#556349" transform="translate(217.6 365) rotate(-31.2)"/><path d="M0 0C21.9 -17 13.1 -45.5 0 -56.8C-13.1 -45.5 -21.9 -17 0 0Z" fill="#A7B394" transform="translate(224 354.7) rotate(-27.8)"/><path d="M0 0C21.7 -20 13 -53.3 0 -66.6C-13 -53.3 -21.7 -20 0 0Z" fill="#556349" transform="translate(248.2 365.7) rotate(-28.3)"/><path d="M0 0C18.5 -20.9 11.1 -55.8 0 -69.8C-11.1 -55.8 -18.5 -20.9 0 0Z" fill="#A7B394" transform="translate(250.2 346.6) rotate(-15.1)"/><path d="M0 0C17.6 -24.3 10.5 -64.9 0 -81.1C-10.5 -64.9 -17.6 -24.3 0 0Z" fill="#A7B394" transform="translate(262.2 358.2) rotate(0.8)"/><path d="M0 0C20.9 -20.4 12.5 -54.3 0 -67.9C-12.5 -54.3 -20.9 -20.4 0 0Z" fill="#556349" transform="translate(271.2 374.1) rotate(21.7)"/><path d="M0 0C17.6 -18.6 10.5 -49.5 0 -61.9C-10.5 -49.5 -17.6 -18.6 0 0Z" fill="#A7B394" transform="translate(290.6 369.6) rotate(24.3)"/><path d="M0 0C18.8 -21.8 11.3 -58.1 0 -72.7C-11.3 -58.1 -18.8 -21.8 0 0Z" fill="#556349" transform="translate(298 368.8) rotate(25.4)"/><path d="M0 0C17.9 -19.4 10.7 -51.6 0 -64.6C-10.7 -51.6 -17.9 -19.4 0 0Z" fill="#A7B394" transform="translate(314.9 380.5) rotate(68.6)"/><path d="M0 0C23.1 -20.6 13.9 -55 0 -68.7C-13.9 -55 -23.1 -20.6 0 0Z" fill="#A7B394" transform="translate(327.9 395.5) rotate(86)"/><g transform="translate(260 420) rotate(-38)"><path d="M0 0V-209.9" stroke="#556349" stroke-width="1"/><circle cx="-4.5" cy="-8.9" r="4.6" fill="#A7B394"/><circle cx="4.5" cy="-17.9" r="4.6" fill="#A7B394"/><circle cx="-4.5" cy="-26.8" r="4.2" fill="#A7B394"/><circle cx="4.5" cy="-35.7" r="5" fill="#A7B394"/><circle cx="-4.5" cy="-44.7" r="4.1" fill="#A7B394"/><circle cx="4.5" cy="-53.6" r="4.1" fill="#A7B394"/><circle cx="-4.5" cy="-62.5" r="4.3" fill="#A7B394"/><circle cx="4.5" cy="-71.5" r="4.2" fill="#A7B394"/><circle cx="-4.5" cy="-80.4" r="4.5" fill="#A7B394"/><circle cx="4.5" cy="-89.3" r="4.1" fill="#A7B394"/><circle cx="-4.5" cy="-98.2" r="4" fill="#A7B394"/><circle cx="4.5" cy="-107.2" r="4.2" fill="#A7B394"/><circle cx="-4.5" cy="-116.1" r="4.2" fill="#A7B394"/><circle cx="4.5" cy="-125" r="4.5" fill="#A7B394"/><circle cx="-4.5" cy="-134" r="4" fill="#A7B394"/><circle cx="4.5" cy="-142.9" r="5.3" fill="#A7B394"/><circle cx="-4.5" cy="-151.8" r="4.9" fill="#A7B394"/><circle cx="4.5" cy="-160.8" r="4.2" fill="#A7B394"/><circle cx="-4.5" cy="-169.7" r="4.4" fill="#A7B394"/><circle cx="4.5" cy="-178.6" r="4.5" fill="#A7B394"/><circle cx="-4.5" cy="-187.6" r="4.5" fill="#A7B394"/><circle cx="4.5" cy="-196.5" r="4.2" fill="#A7B394"/><circle cx="-4.5" cy="-205.4" r="5.3" fill="#A7B394"/></g><g transform="translate(260 420) rotate(32)"><path d="M0 0V-219.7" stroke="#556349" stroke-width="1"/><circle cx="-4.5" cy="-9" r="4.7" fill="#A7B394"/><circle cx="4.5" cy="-17.9" r="4.7" fill="#A7B394"/><circle cx="-4.5" cy="-26.9" r="4.1" fill="#A7B394"/><circle cx="4.5" cy="-35.9" r="4.2" fill="#A7B394"/><circle cx="-4.5" cy="-44.8" r="4.5" fill="#A7B394"/><circle cx="4.5" cy="-53.8" r="4.4" fill="#A7B394"/><circle cx="-4.5" cy="-62.8" r="5.2" fill="#A7B394"/><circle cx="4.5" cy="-71.7" r="4.2" fill="#A7B394"/><circle cx="-4.5" cy="-80.7" r="4" fill="#A7B394"/><circle cx="4.5" cy="-89.7" r="5.4" fill="#A7B394"/><circle cx="-4.5" cy="-98.6" r="4.8" fill="#A7B394"/><circle cx="4.5" cy="-107.6" r="4.2" fill="#A7B394"/><circle cx="-4.5" cy="-116.6" r="4.8" fill="#A7B394"/><circle cx="4.5" cy="-125.5" r="4" fill="#A7B394"/><circle cx="-4.5" cy="-134.5" r="4.8" fill="#A7B394"/><circle cx="4.5" cy="-143.4" r="5.5" fill="#A7B394"/><circle cx="-4.5" cy="-152.4" r="5.3" fill="#A7B394"/><circle cx="4.5" cy="-161.4" r="5" fill="#A7B394"/><circle cx="-4.5" cy="-170.3" r="4.4" fill="#A7B394"/><circle cx="4.5" cy="-179.3" r="4.6" fill="#A7B394"/><circle cx="-4.5" cy="-188.3" r="4.3" fill="#A7B394"/><circle cx="4.5" cy="-197.2" r="5.2" fill="#A7B394"/><circle cx="-4.5" cy="-206.2" r="4.8" fill="#A7B394"/><circle cx="4.5" cy="-215.2" r="5.2" fill="#A7B394"/></g><g transform="translate(260 420) rotate(-10)"><path d="M0 0V-186.5" stroke="#556349" stroke-width="1"/><circle cx="-4.5" cy="-9.1" r="4.3" fill="#A7B394"/><circle cx="4.5" cy="-18.2" r="5.2" fill="#A7B394"/><circle cx="-4.5" cy="-27.3" r="5.5" fill="#A7B394"/><circle cx="4.5" cy="-36.4" r="5.3" fill="#A7B394"/><circle cx="-4.5" cy="-45.5" r="5.2" fill="#A7B394"/><circle cx="4.5" cy="-54.6" r="5.2" fill="#A7B394"/><circle cx="-4.5" cy="-63.7" r="5.1" fill="#A7B394"/><circle cx="4.5" cy="-72.8" r="4.3" fill="#A7B394"/><circle cx="-4.5" cy="-81.9" r="4.8" fill="#A7B394"/><circle cx="4.5" cy="-91" r="4.5" fill="#A7B394"/><circle cx="-4.5" cy="-100.1" r="4" fill="#A7B394"/><circle cx="4.5" cy="-109.2" r="4" fill="#A7B394"/><circle cx="-4.5" cy="-118.3" r="4.4" fill="#A7B394"/><circle cx="4.5" cy="-127.4" r="4.4" fill="#A7B394"/><circle cx="-4.5" cy="-136.5" r="5" fill="#A7B394"/><circle cx="4.5" cy="-145.5" r="5.4" fill="#A7B394"/><circle cx="-4.5" cy="-154.6" r="4.7" fill="#A7B394"/><circle cx="4.5" cy="-163.7" r="5.4" fill="#A7B394"/><circle cx="-4.5" cy="-172.8" r="5.5" fill="#A7B394"/><circle cx="4.5" cy="-181.9" r="5.4" fill="#A7B394"/></g><g transform="translate(175.5 72.3) rotate(131.3)"><circle r="30" fill="#FBF7EF"/><circle r="19.8" fill="#3a2a20" fill-opacity="0.07"/><circle r="11.4" fill="#3a2a20" fill-opacity="0.08"/><path d="M-6 -1.5a6.6 6.6 0 1 1 9 5.4" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="2.1" stroke-linecap="round"/></g><g transform="translate(206.8 82.2) rotate(-8.5)"><path d="M-20.8 -18.2C-23.4 13 -10.4 23.4 0 23.4S23.4 13 20.8 -18.2L10.4 -6.5L0 -23.4L-10.4 -6.5Z" fill="#EDC7BC"/><path d="M0 -23.4L-10.4 -6.5L-20.8 -18.2C-23.4 13 -10.4 23.4 0 23.4Z" fill="#3a2a20" fill-opacity="0.08"/></g><g transform="translate(174.3 126.1) rotate(79.4)"><ellipse cx="0" cy="-14.3" rx="6.2" ry="13.5" fill="#EDC7BC" transform="rotate(0)"/><ellipse cx="0" cy="-14.3" rx="6.2" ry="13.5" fill="#EDC7BC" transform="rotate(36)"/><ellipse cx="0" cy="-14.3" rx="6.2" ry="13.5" fill="#EDC7BC" transform="rotate(72)"/><ellipse cx="0" cy="-14.3" rx="6.2" ry="13.5" fill="#EDC7BC" transform="rotate(108)"/><ellipse cx="0" cy="-14.3" rx="6.2" ry="13.5" fill="#EDC7BC" transform="rotate(144)"/><ellipse cx="0" cy="-14.3" rx="6.2" ry="13.5" fill="#EDC7BC" transform="rotate(180)"/><ellipse cx="0" cy="-14.3" rx="6.2" ry="13.5" fill="#EDC7BC" transform="rotate(216)"/><ellipse cx="0" cy="-14.3" rx="6.2" ry="13.5" fill="#EDC7BC" transform="rotate(252)"/><ellipse cx="0" cy="-14.3" rx="6.2" ry="13.5" fill="#EDC7BC" transform="rotate(288)"/><ellipse cx="0" cy="-14.3" rx="6.2" ry="13.5" fill="#EDC7BC" transform="rotate(324)"/><circle r="7.8" fill="#8A6A3E"/><circle r="7.8" fill="#E6C36A" fill-opacity=".35"/></g><g transform="translate(418.4 145.7) rotate(169.2)"><circle cx="-6.6" cy="10.7" r="5.7" fill="#F2E6CB"/><circle cx="-0" cy="-0" r="5.5" fill="#F2E6CB"/><circle cx="-9.3" cy="13.9" r="5.4" fill="#F2E6CB"/><circle cx="7.4" cy="6.9" r="5.1" fill="#F2E6CB"/><circle cx="7.3" cy="21.9" r="4.5" fill="#F2E6CB"/><circle cx="-1.5" cy="-1.7" r="5.6" fill="#F2E6CB"/><circle cx="-2.1" cy="-11.8" r="5.2" fill="#F2E6CB"/><circle cx="3.6" cy="2.1" r="5.7" fill="#F2E6CB"/><circle cx="15.1" cy="2.6" r="4.6" fill="#F2E6CB"/></g><g transform="translate(300.3 152.6) rotate(236.1)"><circle r="34" fill="#D99A8E"/><circle r="22.4" fill="#3a2a20" fill-opacity="0.07"/><circle r="12.9" fill="#3a2a20" fill-opacity="0.08"/><path d="M-6.8 -1.7a7.5 7.5 0 1 1 10.2 6.1" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="2.4" stroke-linecap="round"/></g><g transform="translate(268.6 171.4) rotate(220.2)"><circle r="24" fill="#8C4A48"/><circle r="15.8" fill="#3a2a20" fill-opacity="0.07"/><circle r="9.1" fill="#3a2a20" fill-opacity="0.08"/><path d="M-4.8 -1.2a5.3 5.3 0 1 1 7.2 4.3" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.7" stroke-linecap="round"/></g><g transform="translate(364.7 186.9) rotate(214.5)"><circle r="40" fill="#EDC7BC"/><circle r="26.4" fill="#3a2a20" fill-opacity="0.07"/><circle r="15.2" fill="#3a2a20" fill-opacity="0.08"/><path d="M-8 -2a8.8 8.8 0 1 1 12 7.2" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="2.8" stroke-linecap="round"/></g><g transform="translate(135 220) rotate(170.8)"><rect x="-4.1" y="-8.9" width="15" height="15" rx="4.1" fill="#BBAACB" transform="rotate(45 3.4 -1.4)"/><rect x="-8" y="-7.6" width="15" height="15" rx="4.1" fill="#BBAACB" transform="rotate(45 -0.5 -0.2)"/><rect x="-2.2" y="-24" width="15" height="15" rx="4.1" fill="#BBAACB" transform="rotate(45 5.2 -16.5)"/><rect x="6.8" y="3.3" width="15" height="15" rx="4.1" fill="#BBAACB" transform="rotate(45 14.2 10.7)"/><rect x="7.6" y="10.5" width="15" height="15" rx="4.1" fill="#BBAACB" transform="rotate(45 15.1 18)"/><rect x="-0.4" y="12.1" width="15" height="15" rx="4.1" fill="#BBAACB" transform="rotate(45 7.1 19.6)"/><rect x="-2.5" y="-6.6" width="15" height="15" rx="4.1" fill="#BBAACB" transform="rotate(45 5 0.9)"/></g><g transform="translate(394.4 235.3) rotate(180.4)"><circle cx="0.8" cy="-9.7" r="5.5" fill="#FBF7EF"/><circle cx="0.9" cy="-1.6" r="6" fill="#FBF7EF"/><circle cx="15.9" cy="-12" r="6.2" fill="#FBF7EF"/><circle cx="-24.7" cy="-2.6" r="6.3" fill="#FBF7EF"/><circle cx="3.1" cy="3.3" r="5.4" fill="#FBF7EF"/><circle cx="16.2" cy="-16.7" r="5.7" fill="#FBF7EF"/><circle cx="0.7" cy="-4.4" r="4.5" fill="#FBF7EF"/><circle cx="-2.7" cy="-2.5" r="4.3" fill="#FBF7EF"/><circle cx="-6.6" cy="-14.5" r="5.4" fill="#FBF7EF"/></g><g transform="translate(448.8 264) rotate(279.5)"><path d="M0 0C11.4 -11.4 7.6 -30.4 0 -38C-7.6 -30.4 -11.4 -11.4 0 0Z" fill="#FBF7EF" transform="rotate(0)"/><path d="M0 0C11.4 -11.4 7.6 -30.4 0 -38C-7.6 -30.4 -11.4 -11.4 0 0Z" fill="#FBF7EF" transform="rotate(60)"/><path d="M0 0C11.4 -11.4 7.6 -30.4 0 -38C-7.6 -30.4 -11.4 -11.4 0 0Z" fill="#FBF7EF" transform="rotate(120)"/><path d="M0 0C11.4 -11.4 7.6 -30.4 0 -38C-7.6 -30.4 -11.4 -11.4 0 0Z" fill="#FBF7EF" transform="rotate(180)"/><path d="M0 0C11.4 -11.4 7.6 -30.4 0 -38C-7.6 -30.4 -11.4 -11.4 0 0Z" fill="#FBF7EF" transform="rotate(240)"/><path d="M0 0C11.4 -11.4 7.6 -30.4 0 -38C-7.6 -30.4 -11.4 -11.4 0 0Z" fill="#FBF7EF" transform="rotate(300)"/><circle r="5.3" fill="#C9A24E"/></g><g transform="translate(156.5 266.6) rotate(318)"><rect x="-2.5" y="-4.5" width="11.4" height="11.4" rx="3.1" fill="#93A6C0" transform="rotate(45 3.3 1.2)"/><rect x="-4" y="-5.3" width="11.4" height="11.4" rx="3.1" fill="#93A6C0" transform="rotate(45 1.7 0.5)"/><rect x="-6.2" y="-5.6" width="11.4" height="11.4" rx="3.1" fill="#93A6C0" transform="rotate(45 -0.5 0.2)"/><rect x="-4.8" y="-6.4" width="11.4" height="11.4" rx="3.1" fill="#93A6C0" transform="rotate(45 0.9 -0.7)"/><rect x="-13.8" y="10" width="11.4" height="11.4" rx="3.1" fill="#93A6C0" transform="rotate(45 -8.1 15.8)"/><rect x="-8.6" y="-8" width="11.4" height="11.4" rx="3.1" fill="#93A6C0" transform="rotate(45 -2.9 -2.2)"/><rect x="-7.3" y="3.4" width="11.4" height="11.4" rx="3.1" fill="#93A6C0" transform="rotate(45 -1.6 9.1)"/></g><g transform="translate(94 278.1) rotate(290.7)"><circle r="28" fill="#E0A07F"/><circle r="18.5" fill="#3a2a20" fill-opacity="0.07"/><circle r="10.6" fill="#3a2a20" fill-opacity="0.08"/><path d="M-5.6 -1.4a6.2 6.2 0 1 1 8.4 5" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="2" stroke-linecap="round"/></g><g transform="translate(377.8 284.5) rotate(182.8)"><ellipse cx="0" cy="-17.6" rx="7.7" ry="16.6" fill="#F2E6CB" transform="rotate(0)"/><ellipse cx="0" cy="-17.6" rx="7.7" ry="16.6" fill="#F2E6CB" transform="rotate(36)"/><ellipse cx="0" cy="-17.6" rx="7.7" ry="16.6" fill="#F2E6CB" transform="rotate(72)"/><ellipse cx="0" cy="-17.6" rx="7.7" ry="16.6" fill="#F2E6CB" transform="rotate(108)"/><ellipse cx="0" cy="-17.6" rx="7.7" ry="16.6" fill="#F2E6CB" transform="rotate(144)"/><ellipse cx="0" cy="-17.6" rx="7.7" ry="16.6" fill="#F2E6CB" transform="rotate(180)"/><ellipse cx="0" cy="-17.6" rx="7.7" ry="16.6" fill="#F2E6CB" transform="rotate(216)"/><ellipse cx="0" cy="-17.6" rx="7.7" ry="16.6" fill="#F2E6CB" transform="rotate(252)"/><ellipse cx="0" cy="-17.6" rx="7.7" ry="16.6" fill="#F2E6CB" transform="rotate(288)"/><ellipse cx="0" cy="-17.6" rx="7.7" ry="16.6" fill="#F2E6CB" transform="rotate(324)"/><circle r="9.6" fill="#8A6A3E"/><circle r="9.6" fill="#E6C36A" fill-opacity=".35"/></g><g transform="translate(112.2 312.7) rotate(-22)"><path d="M-25.6 -22.4C-28.8 16 -12.8 28.8 0 28.8S28.8 16 25.6 -22.4L12.8 -8L0 -28.8L-12.8 -8Z" fill="#E0A07F"/><path d="M0 -28.8L-12.8 -8L-25.6 -22.4C-28.8 16 -12.8 28.8 0 28.8Z" fill="#3a2a20" fill-opacity="0.08"/></g><path d="M196 412h128v16c0 20 12 34 12 70v96q0 18-18 18H202q-18 0-18-18v-96c0-36 12-50 12-70Z" fill="#DCE6E3" fill-opacity=".55"/><path d="M196 412h128" stroke="#9FB2AE" stroke-opacity=".7" stroke-width="2"/><path d="M200 470q-6 30-4 110" stroke="#fff" stroke-opacity=".6" stroke-width="5" stroke-linecap="round" fill="none"/><path d="M186 530h148v64q0 18-18 18H202q-18 0-18-18Z" fill="#B7CBC6" fill-opacity=".35"/></svg></div>
+                  </div>
+                  <div class="kn-sec">
+                    <h6>用途とご予算から選ぶ</h6>
+                    <div class="kn-chips"><span>すべて</span><span>誕生日・お祝い</span><span>記念日</span><span>お供え</span><span>〜5,500円</span></div>
+                    <div class="kn-cards"><div class="kn-card"><i><svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M58 118L100 236L142 118Z" fill="#556349"/><path d="M0 0C9.7 -8.8 5.8 -23.4 0 -29.2C-5.8 -23.4 -9.7 -8.8 0 0Z" fill="#556349" transform="translate(90.2 88.2) rotate(-16.7)"/><path d="M0 0C11.2 -10.7 6.7 -28.5 0 -35.7C-6.7 -28.5 -11.2 -10.7 0 0Z" fill="#556349" transform="translate(106.5 87.7) rotate(10.9)"/><path d="M0 0C9 -11 5.4 -29.3 0 -36.7C-5.4 -29.3 -9 -11 0 0Z" fill="#76866A" transform="translate(125.8 94.5) rotate(49.3)"/><path d="M0 0C10.8 -11.3 6.5 -30.2 0 -37.8C-6.5 -30.2 -10.8 -11.3 0 0Z" fill="#76866A" transform="translate(113.1 88.9) rotate(22.6)"/><path d="M0 0C10.3 -11.9 6.2 -31.8 0 -39.7C-6.2 -31.8 -10.3 -11.9 0 0Z" fill="#556349" transform="translate(131.6 100.3) rotate(68.1)"/><path d="M0 0C9.2 -10.4 5.5 -27.8 0 -34.7C-5.5 -27.8 -9.2 -10.4 0 0Z" fill="#A7B394" transform="translate(112.6 88.8) rotate(21.7)"/><path d="M0 0C12.4 -11.4 7.4 -30.5 0 -38.1C-7.4 -30.5 -12.4 -11.4 0 0Z" fill="#76866A" transform="translate(69 99.4) rotate(-65.4)"/><path d="M0 0C10.9 -9.3 6.5 -24.8 0 -31C-6.5 -24.8 -10.9 -9.3 0 0Z" fill="#A7B394" transform="translate(70.5 97.6) rotate(-59.8)"/><path d="M0 0C12.7 -8.3 7.6 -22.2 0 -27.7C-7.6 -22.2 -12.7 -8.3 0 0Z" fill="#A7B394" transform="translate(113.8 89.1) rotate(23.8)"/><g transform="translate(64.4 83.6) rotate(59.7)"><circle cx="-3.4" cy="-3" r="1.6" fill="#FBF7EF"/><circle cx="-3.6" cy="-2.3" r="1.8" fill="#FBF7EF"/><circle cx="4.1" cy="-5.7" r="2.1" fill="#FBF7EF"/><circle cx="-2.7" cy="-0.4" r="2.2" fill="#FBF7EF"/><circle cx="3.5" cy="1" r="2" fill="#FBF7EF"/><circle cx="0.3" cy="0.7" r="2.1" fill="#FBF7EF"/><circle cx="4" cy="1" r="1.8" fill="#FBF7EF"/><circle cx="6.3" cy="3.9" r="2.4" fill="#FBF7EF"/><circle cx="0.1" cy="-0.1" r="1.9" fill="#FBF7EF"/></g><g transform="translate(159.9 90.2) rotate(109.6)"><circle cx="2.1" cy="-5.8" r="2.4" fill="#FBF7EF"/><circle cx="-2.1" cy="4.5" r="2.2" fill="#FBF7EF"/><circle cx="-2" cy="-0.1" r="1.7" fill="#FBF7EF"/><circle cx="-1.4" cy="1.2" r="2" fill="#FBF7EF"/><circle cx="-0.9" cy="10.3" r="1.6" fill="#FBF7EF"/><circle cx="3.5" cy="0.3" r="2.4" fill="#FBF7EF"/><circle cx="-0.1" cy="0.2" r="1.6" fill="#FBF7EF"/><circle cx="-8.3" cy="4.3" r="2.3" fill="#FBF7EF"/><circle cx="0.1" cy="0.1" r="1.7" fill="#FBF7EF"/></g><g transform="translate(83.6 102.7) rotate(259.2)"><circle cx="-12" cy="-2" r="2.1" fill="#FBF7EF"/><circle cx="9.7" cy="-1.3" r="2.7" fill="#FBF7EF"/><circle cx="1.3" cy="-10" r="2.2" fill="#FBF7EF"/><circle cx="-4.8" cy="-7.3" r="2.5" fill="#FBF7EF"/><circle cx="-2.3" cy="-7.1" r="2" fill="#FBF7EF"/><circle cx="9.7" cy="-4" r="1.9" fill="#FBF7EF"/><circle cx="-0.1" cy="0.7" r="2.7" fill="#FBF7EF"/><circle cx="-1.6" cy="3.3" r="2.8" fill="#FBF7EF"/><circle cx="-1" cy="3.6" r="1.9" fill="#FBF7EF"/></g><g transform="translate(95.2 125.1) rotate(95.2)"><circle cx="-1.7" cy="-0.8" r="2.5" fill="#FBF7EF"/><circle cx="-8.1" cy="-2.5" r="2" fill="#FBF7EF"/><circle cx="4.2" cy="-1.3" r="2.4" fill="#FBF7EF"/><circle cx="-6.4" cy="-4.6" r="2" fill="#FBF7EF"/><circle cx="1.8" cy="9.6" r="1.7" fill="#FBF7EF"/><circle cx="-0.2" cy="-0.2" r="2.1" fill="#FBF7EF"/><circle cx="-2.2" cy="-5.6" r="2.2" fill="#FBF7EF"/><circle cx="-9.3" cy="1.7" r="1.7" fill="#FBF7EF"/><circle cx="0.8" cy="-1.2" r="2" fill="#FBF7EF"/></g><g transform="translate(103.6 143.6) rotate(236.6)"><circle cx="-9.1" cy="-2.9" r="2.7" fill="#FBF7EF"/><circle cx="0.9" cy="-0.8" r="2.6" fill="#FBF7EF"/><circle cx="-3.6" cy="-10.3" r="2.8" fill="#FBF7EF"/><circle cx="7.6" cy="4.6" r="2.1" fill="#FBF7EF"/><circle cx="5" cy="-1" r="2.8" fill="#FBF7EF"/><circle cx="5.9" cy="8.5" r="2.5" fill="#FBF7EF"/><circle cx="9.5" cy="-4.8" r="2.6" fill="#FBF7EF"/><circle cx="4.9" cy="-1.9" r="2.2" fill="#FBF7EF"/><circle cx="3" cy="9.1" r="2.4" fill="#FBF7EF"/></g><g transform="translate(132.5 59.2) rotate(31.3)"><circle r="16.6" fill="#EDC7BC"/><circle r="11" fill="#3a2a20" fill-opacity="0.07"/><circle r="6.3" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.3 -0.8a3.7 3.7 0 1 1 5 3" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.2" stroke-linecap="round"/></g><g transform="translate(90.4 60.7) rotate(303.5)"><circle r="17.3" fill="#EDC7BC"/><circle r="11.4" fill="#3a2a20" fill-opacity="0.07"/><circle r="6.6" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.5 -0.9a3.8 3.8 0 1 1 5.2 3.1" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.2" stroke-linecap="round"/></g><g transform="translate(68 62.6) rotate(250.4)"><circle r="15.6" fill="#D99A8E"/><circle r="10.3" fill="#3a2a20" fill-opacity="0.07"/><circle r="5.9" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.1 -0.8a3.4 3.4 0 1 1 4.7 2.8" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.1" stroke-linecap="round"/></g><g transform="translate(131.4 79.8) rotate(57.2)"><circle r="16.6" fill="#EDC7BC"/><circle r="11" fill="#3a2a20" fill-opacity="0.07"/><circle r="6.3" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.3 -0.8a3.7 3.7 0 1 1 5 3" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.2" stroke-linecap="round"/></g><g transform="translate(42.3 86.5) rotate(249.4)"><ellipse cx="0" cy="-7.9" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(0)"/><ellipse cx="0" cy="-7.9" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(36)"/><ellipse cx="0" cy="-7.9" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(72)"/><ellipse cx="0" cy="-7.9" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(108)"/><ellipse cx="0" cy="-7.9" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(144)"/><ellipse cx="0" cy="-7.9" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(180)"/><ellipse cx="0" cy="-7.9" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(216)"/><ellipse cx="0" cy="-7.9" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(252)"/><ellipse cx="0" cy="-7.9" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(288)"/><ellipse cx="0" cy="-7.9" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(324)"/><circle r="4.3" fill="#8A6A3E"/><circle r="4.3" fill="#E6C36A" fill-opacity=".35"/></g><g transform="translate(104.3 87.4) rotate(66.3)"><circle r="16.3" fill="#D99A8E"/><circle r="10.8" fill="#3a2a20" fill-opacity="0.07"/><circle r="6.2" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.3 -0.8a3.6 3.6 0 1 1 4.9 2.9" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.1" stroke-linecap="round"/></g><g transform="translate(146.5 103.7) rotate(354.6)"><circle r="16.5" fill="#D99A8E"/><circle r="10.9" fill="#3a2a20" fill-opacity="0.07"/><circle r="6.3" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.3 -0.8a3.6 3.6 0 1 1 5 3" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.2" stroke-linecap="round"/></g><g transform="translate(63.1 117.4) rotate(97.1)"><circle r="14.7" fill="#EDC7BC"/><circle r="9.7" fill="#3a2a20" fill-opacity="0.07"/><circle r="5.6" fill="#3a2a20" fill-opacity="0.08"/><path d="M-2.9 -0.7a3.2 3.2 0 1 1 4.4 2.6" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1" stroke-linecap="round"/></g><g transform="translate(114.1 119.3) rotate(97.3)"><circle r="15.6" fill="#D99A8E"/><circle r="10.3" fill="#3a2a20" fill-opacity="0.07"/><circle r="5.9" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.1 -0.8a3.4 3.4 0 1 1 4.7 2.8" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.1" stroke-linecap="round"/></g><g transform="translate(148.9 124.2) rotate(177.2)"><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(0)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(36)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(72)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(108)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(144)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(180)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(216)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(252)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(288)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.4" fill="#EDC7BC" transform="rotate(324)"/><circle r="4.3" fill="#8A6A3E"/><circle r="4.3" fill="#E6C36A" fill-opacity=".35"/></g><path d="M34 112L100 232L126 150Z" fill="#E6D1C8"/><path d="M166 112L100 232L78 146Z" fill="#F1E2DC"/><path d="M100 232L86 178Q100 170 114 178Z" fill="#3a2a20" fill-opacity=".06"/><path d="M92 184q-16-10-18 2q2 10 18 2M108 184q16-10 18 2q-2 10-18 2" fill="none" stroke="#B0605A" stroke-width="3" stroke-linecap="round"/><circle cx="100" cy="185" r="4" fill="#B0605A"/><path d="M98 188l-6 16M102 188l7 15" stroke="#B0605A" stroke-width="2.5" stroke-linecap="round"/></svg></i><b>誕生日のブーケ</b><small>5,500円〜</small></div><div class="kn-card"><i><svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M0 0C9.6 -9.9 5.8 -26.4 0 -33C-5.8 -26.4 -9.6 -9.9 0 0Z" fill="#76866A" transform="translate(76.8 121) rotate(-35.9)"/><path d="M0 0C12.5 -8.9 7.5 -23.7 0 -29.6C-7.5 -23.7 -12.5 -8.9 0 0Z" fill="#A7B394" transform="translate(128.8 123.9) rotate(46.6)"/><path d="M0 0C11.2 -10.9 6.7 -29 0 -36.2C-6.7 -29 -11.2 -10.9 0 0Z" fill="#A7B394" transform="translate(136 130.3) rotate(65.5)"/><path d="M0 0C10.5 -10.6 6.3 -28.2 0 -35.2C-6.3 -28.2 -10.5 -10.6 0 0Z" fill="#556349" transform="translate(85.1 118.3) rotate(-22.1)"/><path d="M0 0C12.4 -11.9 7.4 -31.8 0 -39.8C-7.4 -31.8 -12.4 -11.9 0 0Z" fill="#76866A" transform="translate(90.8 117.2) rotate(-13.5)"/><path d="M0 0C11.7 -7.9 7 -21.2 0 -26.5C-7 -21.2 -11.7 -7.9 0 0Z" fill="#76866A" transform="translate(103.8 116.7) rotate(5.5)"/><path d="M0 0C10.8 -9.1 6.5 -24.2 0 -30.2C-6.5 -24.2 -10.8 -9.1 0 0Z" fill="#A7B394" transform="translate(85.6 118.2) rotate(-21.4)"/><path d="M0 0C10.8 -11 6.5 -29.3 0 -36.6C-6.5 -29.3 -10.8 -11 0 0Z" fill="#76866A" transform="translate(73 122.9) rotate(-42.9)"/><path d="M0 0C12.9 -11.6 7.8 -31 0 -38.7C-7.8 -31 -12.9 -11.6 0 0Z" fill="#A7B394" transform="translate(97.1 116.7) rotate(-4.2)"/><path d="M0 0C9.7 -10.3 5.8 -27.4 0 -34.3C-5.8 -27.4 -9.7 -10.3 0 0Z" fill="#556349" transform="translate(127.8 123.4) rotate(44.7)"/><path d="M0 0C12.7 -10.7 7.6 -28.5 0 -35.6C-7.6 -28.5 -12.7 -10.7 0 0Z" fill="#76866A" transform="translate(134.5 128.5) rotate(60.5)"/><g transform="translate(55.3 91.2) rotate(173.8)"><circle cx="0.4" cy="-0.9" r="2.3" fill="#FBF7EF"/><circle cx="-8.6" cy="4" r="2.5" fill="#FBF7EF"/><circle cx="9" cy="-7.1" r="1.7" fill="#FBF7EF"/><circle cx="-2.9" cy="2.1" r="2.1" fill="#FBF7EF"/><circle cx="-1.8" cy="3.1" r="2.3" fill="#FBF7EF"/><circle cx="-6.8" cy="-3.6" r="1.7" fill="#FBF7EF"/><circle cx="9.2" cy="6.7" r="2.1" fill="#FBF7EF"/><circle cx="5.3" cy="-8" r="2.5" fill="#FBF7EF"/><circle cx="-0.2" cy="-2" r="2.3" fill="#FBF7EF"/></g><g transform="translate(38.1 112.7) rotate(109.2)"><circle cx="-6.8" cy="8.8" r="3" fill="#FBF7EF"/><circle cx="0.3" cy="1.2" r="2.6" fill="#FBF7EF"/><circle cx="1.6" cy="-8.4" r="2.3" fill="#FBF7EF"/><circle cx="-0.1" cy="0.7" r="2.2" fill="#FBF7EF"/><circle cx="-0.7" cy="1.3" r="2.5" fill="#FBF7EF"/><circle cx="-2.9" cy="-2.6" r="2.4" fill="#FBF7EF"/><circle cx="-10.3" cy="-8.5" r="2" fill="#FBF7EF"/><circle cx="0" cy="11.5" r="2.4" fill="#FBF7EF"/><circle cx="6" cy="-7.7" r="2.3" fill="#FBF7EF"/></g><g transform="translate(111.2 140.5) rotate(1.7)"><circle cx="-3.2" cy="-13.6" r="2.9" fill="#FBF7EF"/><circle cx="0.7" cy="0.2" r="2.2" fill="#FBF7EF"/><circle cx="-2.9" cy="-3" r="2.6" fill="#FBF7EF"/><circle cx="3.1" cy="-2.6" r="2.2" fill="#FBF7EF"/><circle cx="2.9" cy="-1.9" r="2.9" fill="#FBF7EF"/><circle cx="-5.3" cy="-7.5" r="2.3" fill="#FBF7EF"/><circle cx="-11.4" cy="1.9" r="2.6" fill="#FBF7EF"/><circle cx="3.5" cy="3.9" r="2.8" fill="#FBF7EF"/><circle cx="10.2" cy="9.3" r="2.9" fill="#FBF7EF"/></g><g transform="translate(94.4 143.9) rotate(46.3)"><circle cx="-8.7" cy="5.6" r="2.3" fill="#FBF7EF"/><circle cx="-0.2" cy="0" r="2.5" fill="#FBF7EF"/><circle cx="-6.9" cy="-6" r="2.3" fill="#FBF7EF"/><circle cx="-2.1" cy="2.7" r="2.3" fill="#FBF7EF"/><circle cx="0.6" cy="0.7" r="2.1" fill="#FBF7EF"/><circle cx="8.7" cy="-1.9" r="2.4" fill="#FBF7EF"/><circle cx="-3.1" cy="9.6" r="2" fill="#FBF7EF"/><circle cx="-0.6" cy="-2.7" r="2.3" fill="#FBF7EF"/><circle cx="2" cy="1.9" r="2.6" fill="#FBF7EF"/></g><g transform="translate(110.4 176.1) rotate(336.2)"><circle cx="1.2" cy="-0.7" r="2.7" fill="#FBF7EF"/><circle cx="-2.1" cy="5.4" r="2.1" fill="#FBF7EF"/><circle cx="1.5" cy="3" r="2.4" fill="#FBF7EF"/><circle cx="-7" cy="-7.4" r="2.6" fill="#FBF7EF"/><circle cx="1.9" cy="-6.4" r="2.5" fill="#FBF7EF"/><circle cx="4" cy="-0" r="2.5" fill="#FBF7EF"/><circle cx="-3.6" cy="2.6" r="2.3" fill="#FBF7EF"/><circle cx="2.5" cy="-5.8" r="2.3" fill="#FBF7EF"/><circle cx="8.4" cy="5.1" r="2" fill="#FBF7EF"/></g><g transform="translate(109.5 90.7) rotate(128.1)"><path d="M0 0C6.4 -6.4 4.2 -17 0 -21.2C-4.2 -17 -6.4 -6.4 0 0Z" fill="#FBF7EF" transform="rotate(0)"/><path d="M0 0C6.4 -6.4 4.2 -17 0 -21.2C-4.2 -17 -6.4 -6.4 0 0Z" fill="#FBF7EF" transform="rotate(60)"/><path d="M0 0C6.4 -6.4 4.2 -17 0 -21.2C-4.2 -17 -6.4 -6.4 0 0Z" fill="#FBF7EF" transform="rotate(120)"/><path d="M0 0C6.4 -6.4 4.2 -17 0 -21.2C-4.2 -17 -6.4 -6.4 0 0Z" fill="#FBF7EF" transform="rotate(180)"/><path d="M0 0C6.4 -6.4 4.2 -17 0 -21.2C-4.2 -17 -6.4 -6.4 0 0Z" fill="#FBF7EF" transform="rotate(240)"/><path d="M0 0C6.4 -6.4 4.2 -17 0 -21.2C-4.2 -17 -6.4 -6.4 0 0Z" fill="#FBF7EF" transform="rotate(300)"/><circle r="3" fill="#C9A24E"/></g><g transform="translate(148.4 96.7) rotate(204)"><circle r="15.3" fill="#F2E6CB"/><circle r="10.1" fill="#3a2a20" fill-opacity="0.07"/><circle r="5.8" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.1 -0.8a3.4 3.4 0 1 1 4.6 2.7" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.1" stroke-linecap="round"/></g><g transform="translate(83.7 102.7) rotate(346.5)"><circle r="15.8" fill="#F2E6CB"/><circle r="10.4" fill="#3a2a20" fill-opacity="0.07"/><circle r="6" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.2 -0.8a3.5 3.5 0 1 1 4.7 2.8" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.1" stroke-linecap="round"/></g><g transform="translate(113.1 116.6) rotate(338.8)"><circle r="17.1" fill="#F2E6CB"/><circle r="11.3" fill="#3a2a20" fill-opacity="0.07"/><circle r="6.5" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.4 -0.9a3.8 3.8 0 1 1 5.1 3.1" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.2" stroke-linecap="round"/></g><g transform="translate(170.7 125.2) rotate(182)"><rect x="4.9" y="-7.3" width="6.9" height="6.9" rx="1.9" fill="#BBAACB" transform="rotate(45 8.4 -3.8)"/><rect x="4.9" y="-8.5" width="6.9" height="6.9" rx="1.9" fill="#BBAACB" transform="rotate(45 8.4 -5.1)"/><rect x="-1.9" y="-9.1" width="6.9" height="6.9" rx="1.9" fill="#BBAACB" transform="rotate(45 1.6 -5.6)"/><rect x="-6.4" y="-4.8" width="6.9" height="6.9" rx="1.9" fill="#BBAACB" transform="rotate(45 -3 -1.3)"/><rect x="-5" y="-2" width="6.9" height="6.9" rx="1.9" fill="#BBAACB" transform="rotate(45 -1.5 1.4)"/><rect x="0.5" y="0.7" width="6.9" height="6.9" rx="1.9" fill="#BBAACB" transform="rotate(45 4 4.1)"/><rect x="1.6" y="-3.3" width="6.9" height="6.9" rx="1.9" fill="#BBAACB" transform="rotate(45 5.1 0.2)"/></g><g transform="translate(48.2 131.2) rotate(97)"><path d="M0 0C5.6 -5.6 3.8 -15 0 -18.8C-3.8 -15 -5.6 -5.6 0 0Z" fill="#FBF7EF" transform="rotate(0)"/><path d="M0 0C5.6 -5.6 3.8 -15 0 -18.8C-3.8 -15 -5.6 -5.6 0 0Z" fill="#FBF7EF" transform="rotate(60)"/><path d="M0 0C5.6 -5.6 3.8 -15 0 -18.8C-3.8 -15 -5.6 -5.6 0 0Z" fill="#FBF7EF" transform="rotate(120)"/><path d="M0 0C5.6 -5.6 3.8 -15 0 -18.8C-3.8 -15 -5.6 -5.6 0 0Z" fill="#FBF7EF" transform="rotate(180)"/><path d="M0 0C5.6 -5.6 3.8 -15 0 -18.8C-3.8 -15 -5.6 -5.6 0 0Z" fill="#FBF7EF" transform="rotate(240)"/><path d="M0 0C5.6 -5.6 3.8 -15 0 -18.8C-3.8 -15 -5.6 -5.6 0 0Z" fill="#FBF7EF" transform="rotate(300)"/><circle r="2.6" fill="#C9A24E"/></g><g transform="translate(147.3 132.2) rotate(124)"><circle r="15.9" fill="#F2E6CB"/><circle r="10.5" fill="#3a2a20" fill-opacity="0.07"/><circle r="6" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.2 -0.8a3.5 3.5 0 1 1 4.8 2.9" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.1" stroke-linecap="round"/></g><g transform="translate(74.8 132.5) rotate(227.2)"><rect x="-5.6" y="-0.9" width="7.8" height="7.8" rx="2.1" fill="#BBAACB" transform="rotate(45 -1.7 3)"/><rect x="2.2" y="-2.5" width="7.8" height="7.8" rx="2.1" fill="#BBAACB" transform="rotate(45 6.1 1.4)"/><rect x="-3.1" y="1.4" width="7.8" height="7.8" rx="2.1" fill="#BBAACB" transform="rotate(45 0.8 5.3)"/><rect x="-11" y="2.8" width="7.8" height="7.8" rx="2.1" fill="#BBAACB" transform="rotate(45 -7.1 6.7)"/><rect x="1.1" y="-2" width="7.8" height="7.8" rx="2.1" fill="#BBAACB" transform="rotate(45 5 1.8)"/><rect x="3.5" y="-2.5" width="7.8" height="7.8" rx="2.1" fill="#BBAACB" transform="rotate(45 7.4 1.4)"/><rect x="-3.3" y="-8.3" width="7.8" height="7.8" rx="2.1" fill="#BBAACB" transform="rotate(45 0.6 -4.4)"/></g><g transform="translate(65.8 156.5) rotate(84.5)"><path d="M0 0C6.3 -6.3 4.2 -16.9 0 -21.1C-4.2 -16.9 -6.3 -6.3 0 0Z" fill="#FBF7EF" transform="rotate(0)"/><path d="M0 0C6.3 -6.3 4.2 -16.9 0 -21.1C-4.2 -16.9 -6.3 -6.3 0 0Z" fill="#FBF7EF" transform="rotate(60)"/><path d="M0 0C6.3 -6.3 4.2 -16.9 0 -21.1C-4.2 -16.9 -6.3 -6.3 0 0Z" fill="#FBF7EF" transform="rotate(120)"/><path d="M0 0C6.3 -6.3 4.2 -16.9 0 -21.1C-4.2 -16.9 -6.3 -6.3 0 0Z" fill="#FBF7EF" transform="rotate(180)"/><path d="M0 0C6.3 -6.3 4.2 -16.9 0 -21.1C-4.2 -16.9 -6.3 -6.3 0 0Z" fill="#FBF7EF" transform="rotate(240)"/><path d="M0 0C6.3 -6.3 4.2 -16.9 0 -21.1C-4.2 -16.9 -6.3 -6.3 0 0Z" fill="#FBF7EF" transform="rotate(300)"/><circle r="3" fill="#C9A24E"/></g><g transform="translate(125.9 158.1) rotate(8.9)"><circle r="13.8" fill="#F2E6CB"/><circle r="9.1" fill="#3a2a20" fill-opacity="0.07"/><circle r="5.2" fill="#3a2a20" fill-opacity="0.08"/><path d="M-2.8 -0.7a3 3 0 1 1 4.1 2.5" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1" stroke-linecap="round"/></g><g transform="translate(97 162.4) rotate(195.4)"><rect x="-11.2" y="4.4" width="7.2" height="7.2" rx="2" fill="#BBAACB" transform="rotate(45 -7.6 8)"/><rect x="-5.2" y="-10.2" width="7.2" height="7.2" rx="2" fill="#BBAACB" transform="rotate(45 -1.6 -6.6)"/><rect x="-2.6" y="2.9" width="7.2" height="7.2" rx="2" fill="#BBAACB" transform="rotate(45 1.1 6.5)"/><rect x="-2.4" y="2.8" width="7.2" height="7.2" rx="2" fill="#BBAACB" transform="rotate(45 1.2 6.5)"/><rect x="-5.2" y="-3.5" width="7.2" height="7.2" rx="2" fill="#BBAACB" transform="rotate(45 -1.6 0.1)"/><rect x="-11" y="1.4" width="7.2" height="7.2" rx="2" fill="#BBAACB" transform="rotate(45 -7.3 5)"/><rect x="-4.1" y="-6.2" width="7.2" height="7.2" rx="2" fill="#BBAACB" transform="rotate(45 -0.4 -2.6)"/></g><path d="M34 160h132l-12 50q-2 8-10 8H56q-8 0-10-8Z" fill="#D9CCB5"/><path d="M38 170H162" stroke="#3a2a20" stroke-opacity=".09" stroke-width="2"/><path d="M38.5 179H161.5" stroke="#3a2a20" stroke-opacity=".09" stroke-width="2"/><path d="M39 188H161" stroke="#3a2a20" stroke-opacity=".09" stroke-width="2"/><path d="M39.5 197H160.5" stroke="#3a2a20" stroke-opacity=".09" stroke-width="2"/><path d="M40 206H160" stroke="#3a2a20" stroke-opacity=".09" stroke-width="2"/><rect x="30" y="156" width="140" height="8" rx="4" fill="#D9CCB5"/><rect x="30" y="156" width="140" height="8" rx="4" fill="#3a2a20" fill-opacity=".08"/></svg></i><b>お供えのアレンジメント</b><small>5,500円〜</small></div><div class="kn-card"><i><svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M58 118L100 236L142 118Z" fill="#556349"/><path d="M0 0C11.2 -9.7 6.7 -25.9 0 -32.3C-6.7 -25.9 -11.2 -9.7 0 0Z" fill="#556349" transform="translate(100.5 87.3) rotate(0.8)"/><path d="M0 0C9.6 -7.9 5.8 -21 0 -26.2C-5.8 -21 -9.6 -7.9 0 0Z" fill="#A7B394" transform="translate(98.2 87.3) rotate(-3)"/><path d="M0 0C12.6 -10.3 7.6 -27.6 0 -34.5C-7.6 -27.6 -12.6 -10.3 0 0Z" fill="#556349" transform="translate(120.4 91.4) rotate(36.8)"/><path d="M0 0C11.7 -8.7 7 -23.3 0 -29.1C-7 -23.3 -11.7 -8.7 0 0Z" fill="#A7B394" transform="translate(117.5 90.2) rotate(30.9)"/><path d="M0 0C10.2 -10 6.1 -26.6 0 -33.2C-6.1 -26.6 -10.2 -10 0 0Z" fill="#A7B394" transform="translate(70.6 97.5) rotate(-59.5)"/><path d="M0 0C12.4 -8.6 7.5 -22.8 0 -28.5C-7.5 -22.8 -12.4 -8.6 0 0Z" fill="#A7B394" transform="translate(104.9 87.5) rotate(8.3)"/><path d="M0 0C12.6 -9.4 7.6 -25.1 0 -31.4C-7.6 -25.1 -12.6 -9.4 0 0Z" fill="#76866A" transform="translate(86.3 89) rotate(-23.7)"/><path d="M0 0C11.8 -9.7 7.1 -25.8 0 -32.3C-7.1 -25.8 -11.8 -9.7 0 0Z" fill="#76866A" transform="translate(112.2 88.7) rotate(21)"/><path d="M0 0C11.9 -11.8 7.2 -31.5 0 -39.4C-7.2 -31.5 -11.9 -11.8 0 0Z" fill="#556349" transform="translate(104.8 87.5) rotate(8)"/><g transform="translate(94.2 113) rotate(-18.1)"><path d="M0 0V-59.8" stroke="#556349" stroke-width="1"/><circle cx="-4.5" cy="-9.2" r="4.9" fill="#A7B394"/><circle cx="4.5" cy="-18.4" r="5.1" fill="#A7B394"/><circle cx="-4.5" cy="-27.6" r="4.1" fill="#A7B394"/><circle cx="4.5" cy="-36.8" r="4.1" fill="#A7B394"/><circle cx="-4.5" cy="-46" r="4.6" fill="#A7B394"/><circle cx="4.5" cy="-55.2" r="4.5" fill="#A7B394"/></g><g transform="translate(91.2 113) rotate(-28.1)"><path d="M0 0V-58.9" stroke="#556349" stroke-width="1"/><circle cx="-4.5" cy="-9.1" r="5.4" fill="#A7B394"/><circle cx="4.5" cy="-18.1" r="4.3" fill="#A7B394"/><circle cx="-4.5" cy="-27.2" r="4.2" fill="#A7B394"/><circle cx="4.5" cy="-36.2" r="4.3" fill="#A7B394"/><circle cx="-4.5" cy="-45.3" r="4.3" fill="#A7B394"/><circle cx="4.5" cy="-54.3" r="5.1" fill="#A7B394"/></g><g transform="translate(95.4 113) rotate(-14.2)"><path d="M0 0V-61.6" stroke="#556349" stroke-width="1"/><circle cx="-4.5" cy="-9.5" r="4" fill="#A7B394"/><circle cx="4.5" cy="-19" r="4.8" fill="#A7B394"/><circle cx="-4.5" cy="-28.4" r="4.2" fill="#A7B394"/><circle cx="4.5" cy="-37.9" r="5.3" fill="#A7B394"/><circle cx="-4.5" cy="-47.4" r="4.6" fill="#A7B394"/><circle cx="4.5" cy="-56.9" r="4.4" fill="#A7B394"/></g><g transform="translate(135.5 72.4) rotate(176.9)"><circle cx="-1.7" cy="2.6" r="2" fill="#FBF7EF"/><circle cx="-0.8" cy="-1" r="1.6" fill="#FBF7EF"/><circle cx="-2.2" cy="-3.2" r="1.6" fill="#FBF7EF"/><circle cx="-0.5" cy="2.9" r="1.7" fill="#FBF7EF"/><circle cx="3.6" cy="0.8" r="2.2" fill="#FBF7EF"/><circle cx="0.3" cy="0" r="1.6" fill="#FBF7EF"/><circle cx="-3.4" cy="-1" r="2.1" fill="#FBF7EF"/><circle cx="-0.8" cy="-6.9" r="1.9" fill="#FBF7EF"/><circle cx="6.7" cy="-8.1" r="1.6" fill="#FBF7EF"/></g><g transform="translate(109.6 115.4) rotate(140.9)"><circle cx="5.1" cy="-5.4" r="2" fill="#FBF7EF"/><circle cx="-0.6" cy="-3.1" r="2.4" fill="#FBF7EF"/><circle cx="1" cy="0.6" r="2.3" fill="#FBF7EF"/><circle cx="-7.9" cy="4" r="2.4" fill="#FBF7EF"/><circle cx="0.1" cy="-7.3" r="1.8" fill="#FBF7EF"/><circle cx="-2.7" cy="-0.1" r="2.3" fill="#FBF7EF"/><circle cx="0.4" cy="-0" r="2.1" fill="#FBF7EF"/><circle cx="5.2" cy="-9.7" r="2" fill="#FBF7EF"/><circle cx="-3.3" cy="1.1" r="1.6" fill="#FBF7EF"/></g><g transform="translate(124.3 121.8) rotate(76.7)"><circle cx="7.8" cy="-1.5" r="2.2" fill="#FBF7EF"/><circle cx="-0.3" cy="-0.2" r="1.8" fill="#FBF7EF"/><circle cx="4.2" cy="-3.7" r="2.1" fill="#FBF7EF"/><circle cx="3.4" cy="0.3" r="1.8" fill="#FBF7EF"/><circle cx="-2.6" cy="0.9" r="2" fill="#FBF7EF"/><circle cx="2" cy="-8.3" r="1.8" fill="#FBF7EF"/><circle cx="4.8" cy="2.9" r="2.1" fill="#FBF7EF"/><circle cx="-0.3" cy="0.6" r="1.7" fill="#FBF7EF"/><circle cx="-0" cy="0" r="2" fill="#FBF7EF"/></g><g transform="translate(97.4 57.6) rotate(7.2)"><circle r="15.9" fill="#B04B42"/><circle r="10.5" fill="#3a2a20" fill-opacity="0.07"/><circle r="6" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.2 -0.8a3.5 3.5 0 1 1 4.8 2.9" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.1" stroke-linecap="round"/></g><g transform="translate(115.1 71) rotate(291.4)"><circle r="14.3" fill="#B04B42"/><circle r="9.4" fill="#3a2a20" fill-opacity="0.07"/><circle r="5.4" fill="#3a2a20" fill-opacity="0.08"/><path d="M-2.9 -0.7a3.1 3.1 0 1 1 4.3 2.6" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1" stroke-linecap="round"/></g><g transform="translate(49.7 76.7) rotate(334.8)"><circle r="13.5" fill="#B04B42"/><circle r="8.9" fill="#3a2a20" fill-opacity="0.07"/><circle r="5.1" fill="#3a2a20" fill-opacity="0.08"/><path d="M-2.7 -0.7a3 3 0 1 1 4 2.4" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="0.9" stroke-linecap="round"/></g><g transform="translate(88.3 83.7) rotate(289.7)"><circle r="16.6" fill="#B04B42"/><circle r="11" fill="#3a2a20" fill-opacity="0.07"/><circle r="6.3" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.3 -0.8a3.7 3.7 0 1 1 5 3" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.2" stroke-linecap="round"/></g><g transform="translate(131.2 91.4) rotate(275.1)"><circle r="16.7" fill="#B04B42"/><circle r="11" fill="#3a2a20" fill-opacity="0.07"/><circle r="6.3" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.3 -0.8a3.7 3.7 0 1 1 5 3" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.2" stroke-linecap="round"/></g><g transform="translate(161.4 96.1) rotate(250.5)"><circle r="15.8" fill="#B04B42"/><circle r="10.4" fill="#3a2a20" fill-opacity="0.07"/><circle r="6" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.2 -0.8a3.5 3.5 0 1 1 4.7 2.8" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.1" stroke-linecap="round"/></g><g transform="translate(75.4 107.1) rotate(291)"><circle r="13.5" fill="#B04B42"/><circle r="8.9" fill="#3a2a20" fill-opacity="0.07"/><circle r="5.1" fill="#3a2a20" fill-opacity="0.08"/><path d="M-2.7 -0.7a3 3 0 1 1 4.1 2.4" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="0.9" stroke-linecap="round"/></g><g transform="translate(90.5 118.1) rotate(198.9)"><circle r="15.7" fill="#B04B42"/><circle r="10.4" fill="#3a2a20" fill-opacity="0.07"/><circle r="6" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.1 -0.8a3.5 3.5 0 1 1 4.7 2.8" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.1" stroke-linecap="round"/></g><g transform="translate(149.2 123.2) rotate(213.3)"><circle r="16.6" fill="#B04B42"/><circle r="11" fill="#3a2a20" fill-opacity="0.07"/><circle r="6.3" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.3 -0.8a3.7 3.7 0 1 1 5 3" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.2" stroke-linecap="round"/></g><g transform="translate(57.7 126.4) rotate(9.3)"><circle r="15.1" fill="#B04B42"/><circle r="10" fill="#3a2a20" fill-opacity="0.07"/><circle r="5.7" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3 -0.8a3.3 3.3 0 1 1 4.5 2.7" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.1" stroke-linecap="round"/></g><g transform="translate(107.3 141.4) rotate(167.5)"><circle r="14.9" fill="#B04B42"/><circle r="9.8" fill="#3a2a20" fill-opacity="0.07"/><circle r="5.6" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3 -0.7a3.3 3.3 0 1 1 4.5 2.7" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1" stroke-linecap="round"/></g><path d="M34 112L100 232L126 150Z" fill="#3E3A36"/><path d="M166 112L100 232L78 146Z" fill="#2F2C29"/><path d="M100 232L86 178Q100 170 114 178Z" fill="#3a2a20" fill-opacity=".06"/><path d="M92 184q-16-10-18 2q2 10 18 2M108 184q16-10 18 2q-2 10-18 2" fill="none" stroke="#C9A24E" stroke-width="3" stroke-linecap="round"/><circle cx="100" cy="185" r="4" fill="#C9A24E"/><path d="M98 188l-6 16M102 188l7 15" stroke="#C9A24E" stroke-width="2.5" stroke-linecap="round"/></svg></i><b>記念日の赤いバラ</b><small>11,000円〜</small></div></div>
+                  </div>
+                  <div class="kn-season" style="margin-top:6%"><em>September</em><b>ダリア</b><span>花言葉：華麗・感謝</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="mp mp--kn" aria-hidden="true">
+              <div class="mp__screen">
+                <div class="mp__top"><b style="font-family:'Shippori Mincho',var(--serif)">ことの葉</b><i></i></div>
+                <div class="kn-phart"><svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M58 118L100 236L142 118Z" fill="#556349"/><path d="M0 0C10.6 -8.3 6.3 -22.1 0 -27.6C-6.3 -22.1 -10.6 -8.3 0 0Z" fill="#A7B394" transform="translate(68.3 100.3) rotate(-68.3)"/><path d="M0 0C11.1 -11.8 6.7 -31.4 0 -39.3C-6.7 -31.4 -11.1 -11.8 0 0Z" fill="#A7B394" transform="translate(69.4 98.9) rotate(-63.9)"/><path d="M0 0C12 -8.4 7.2 -22.5 0 -28.1C-7.2 -22.5 -12 -8.4 0 0Z" fill="#A7B394" transform="translate(120.1 91.3) rotate(36.1)"/><path d="M0 0C11.9 -8.8 7.2 -23.4 0 -29.2C-7.2 -23.4 -11.9 -8.8 0 0Z" fill="#A7B394" transform="translate(70 98.1) rotate(-61.5)"/><path d="M0 0C9.4 -12 5.6 -32 0 -39.9C-5.6 -32 -9.4 -12 0 0Z" fill="#76866A" transform="translate(92.8 87.8) rotate(-12.2)"/><path d="M0 0C10.4 -11.5 6.2 -30.7 0 -38.4C-6.2 -30.7 -10.4 -11.5 0 0Z" fill="#76866A" transform="translate(120.9 91.7) rotate(37.8)"/><path d="M0 0C12.8 -9.3 7.7 -24.9 0 -31.1C-7.7 -24.9 -12.8 -9.3 0 0Z" fill="#76866A" transform="translate(86.3 89.1) rotate(-23.8)"/><path d="M0 0C11.7 -9.5 7 -25.5 0 -31.8C-7 -25.5 -11.7 -9.5 0 0Z" fill="#76866A" transform="translate(117.7 90.3) rotate(31.4)"/><path d="M0 0C10.4 -11.3 6.3 -30.2 0 -37.7C-6.3 -30.2 -10.4 -11.3 0 0Z" fill="#76866A" transform="translate(130.5 98.8) rotate(63.5)"/><g transform="translate(110.8 113) rotate(35.5)"><path d="M0 0V-51.4" stroke="#556349" stroke-width="1"/><circle cx="-4.5" cy="-9.3" r="4.1" fill="#A7B394"/><circle cx="4.5" cy="-18.7" r="4.8" fill="#A7B394"/><circle cx="-4.5" cy="-28" r="4.7" fill="#A7B394"/><circle cx="4.5" cy="-37.4" r="5.2" fill="#A7B394"/><circle cx="-4.5" cy="-46.7" r="4.3" fill="#A7B394"/></g><g transform="translate(97.4 113) rotate(-8.1)"><path d="M0 0V-51.2" stroke="#556349" stroke-width="1"/><circle cx="-4.5" cy="-9.3" r="4.5" fill="#A7B394"/><circle cx="4.5" cy="-18.6" r="5.2" fill="#A7B394"/><circle cx="-4.5" cy="-28" r="4.7" fill="#A7B394"/><circle cx="4.5" cy="-37.3" r="4.4" fill="#A7B394"/><circle cx="-4.5" cy="-46.6" r="4.4" fill="#A7B394"/></g><g transform="translate(102.8 113) rotate(8.6)"><path d="M0 0V-53.2" stroke="#556349" stroke-width="1"/><circle cx="-4.5" cy="-9.7" r="5" fill="#A7B394"/><circle cx="4.5" cy="-19.3" r="4.5" fill="#A7B394"/><circle cx="-4.5" cy="-29" r="4.3" fill="#A7B394"/><circle cx="4.5" cy="-38.7" r="5.1" fill="#A7B394"/><circle cx="-4.5" cy="-48.4" r="4.1" fill="#A7B394"/></g><g transform="translate(139.1 62.9) rotate(234.8)"><circle cx="-2.9" cy="-4.5" r="1.9" fill="#F2E6CB"/><circle cx="5.9" cy="8.5" r="2.7" fill="#F2E6CB"/><circle cx="3.5" cy="-0.4" r="2.1" fill="#F2E6CB"/><circle cx="-2.4" cy="11.2" r="2.1" fill="#F2E6CB"/><circle cx="-4" cy="10.7" r="2.8" fill="#F2E6CB"/><circle cx="0.1" cy="1.8" r="2.4" fill="#F2E6CB"/><circle cx="1.2" cy="-10.8" r="2.5" fill="#F2E6CB"/><circle cx="-0.1" cy="-0.3" r="2.7" fill="#F2E6CB"/><circle cx="-3.9" cy="0.2" r="2.3" fill="#F2E6CB"/></g><g transform="translate(47.9 94.8) rotate(338.3)"><circle cx="-0.6" cy="10.2" r="2.2" fill="#F2E6CB"/><circle cx="2.6" cy="11.1" r="2.6" fill="#F2E6CB"/><circle cx="7" cy="2.2" r="2.8" fill="#F2E6CB"/><circle cx="0.7" cy="10.9" r="2.2" fill="#F2E6CB"/><circle cx="3" cy="-1.8" r="1.9" fill="#F2E6CB"/><circle cx="-4" cy="-1.3" r="2.6" fill="#F2E6CB"/><circle cx="0.3" cy="-5.5" r="2.6" fill="#F2E6CB"/><circle cx="-3.7" cy="9.6" r="2.8" fill="#F2E6CB"/><circle cx="1.7" cy="11" r="2.4" fill="#F2E6CB"/></g><g transform="translate(145.3 110.8) rotate(27.6)"><circle cx="-6.1" cy="0.3" r="2.1" fill="#F2E6CB"/><circle cx="0.4" cy="-8.6" r="1.8" fill="#F2E6CB"/><circle cx="-5.5" cy="-11.4" r="2.5" fill="#F2E6CB"/><circle cx="1.2" cy="12.8" r="2.3" fill="#F2E6CB"/><circle cx="-7.6" cy="9.4" r="2.2" fill="#F2E6CB"/><circle cx="5.4" cy="-5.9" r="2" fill="#F2E6CB"/><circle cx="0.1" cy="0.7" r="2.7" fill="#F2E6CB"/><circle cx="-10.8" cy="3.8" r="2.2" fill="#F2E6CB"/><circle cx="0" cy="-1.8" r="2.8" fill="#F2E6CB"/></g><g transform="translate(79.9 136.9) rotate(283.2)"><circle cx="6.1" cy="-1.8" r="2" fill="#F2E6CB"/><circle cx="0.2" cy="3.2" r="1.8" fill="#F2E6CB"/><circle cx="10.1" cy="3.7" r="2" fill="#F2E6CB"/><circle cx="-0.6" cy="-2.3" r="2.4" fill="#F2E6CB"/><circle cx="-3.3" cy="0.7" r="2.1" fill="#F2E6CB"/><circle cx="8.3" cy="-4.7" r="2.5" fill="#F2E6CB"/><circle cx="-8.3" cy="-5.8" r="2.1" fill="#F2E6CB"/><circle cx="7.3" cy="3.4" r="2.6" fill="#F2E6CB"/><circle cx="4.5" cy="-11" r="1.8" fill="#F2E6CB"/></g><g transform="translate(108.1 54.9) rotate(306.5)"><circle r="17.1" fill="#E0A07F"/><circle r="11.3" fill="#3a2a20" fill-opacity="0.07"/><circle r="6.5" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.4 -0.9a3.8 3.8 0 1 1 5.1 3.1" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.2" stroke-linecap="round"/></g><g transform="translate(79.6 57.4) rotate(255)"><circle r="13.8" fill="#FBF7EF"/><circle r="9.1" fill="#3a2a20" fill-opacity="0.07"/><circle r="5.3" fill="#3a2a20" fill-opacity="0.08"/><path d="M-2.8 -0.7a3 3 0 1 1 4.2 2.5" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1" stroke-linecap="round"/></g><g transform="translate(60.3 63.8) rotate(-5.7)"><path d="M-10.4 -9.1C-11.7 6.5 -5.2 11.7 0 11.7S11.7 6.5 10.4 -9.1L5.2 -3.2L0 -11.7L-5.2 -3.2Z" fill="#EDC7BC"/><path d="M0 -11.7L-5.2 -3.2L-10.4 -9.1C-11.7 6.5 -5.2 11.7 0 11.7Z" fill="#3a2a20" fill-opacity="0.08"/></g><g transform="translate(92.7 74.8) rotate(4.9)"><path d="M-12.2 -10.7C-13.7 7.6 -6.1 13.7 0 13.7S13.7 7.6 12.2 -10.7L6.1 -3.8L0 -13.7L-6.1 -3.8Z" fill="#EDC7BC"/><path d="M0 -13.7L-6.1 -3.8L-12.2 -10.7C-13.7 7.6 -6.1 13.7 0 13.7Z" fill="#3a2a20" fill-opacity="0.08"/></g><g transform="translate(152.2 81.4) rotate(162.2)"><circle r="15.9" fill="#E0A07F"/><circle r="10.5" fill="#3a2a20" fill-opacity="0.07"/><circle r="6" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.2 -0.8a3.5 3.5 0 1 1 4.8 2.9" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.1" stroke-linecap="round"/></g><g transform="translate(115.7 87.7) rotate(70.8)"><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.3" fill="#E6C36A" transform="rotate(0)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.3" fill="#E6C36A" transform="rotate(25.7)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.3" fill="#E6C36A" transform="rotate(51.4)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.3" fill="#E6C36A" transform="rotate(77.1)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.3" fill="#E6C36A" transform="rotate(102.9)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.3" fill="#E6C36A" transform="rotate(128.6)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.3" fill="#E6C36A" transform="rotate(154.3)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.3" fill="#E6C36A" transform="rotate(180)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.3" fill="#E6C36A" transform="rotate(205.7)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.3" fill="#E6C36A" transform="rotate(231.4)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.3" fill="#E6C36A" transform="rotate(257.1)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.3" fill="#E6C36A" transform="rotate(282.9)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.3" fill="#E6C36A" transform="rotate(308.6)"/><ellipse cx="0" cy="-7.8" rx="3.4" ry="7.3" fill="#E6C36A" transform="rotate(334.3)"/><circle r="4.2" fill="#8A6A3E"/><circle r="4.2" fill="#E6C36A" fill-opacity=".35"/></g><g transform="translate(104.9 104.9) rotate(34)"><circle r="18.1" fill="#E0A07F"/><circle r="12" fill="#3a2a20" fill-opacity="0.07"/><circle r="6.9" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.6 -0.9a4 4 0 1 1 5.4 3.3" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.3" stroke-linecap="round"/></g><g transform="translate(92.6 122.8) rotate(288)"><ellipse cx="0" cy="-8.9" rx="3.9" ry="8.5" fill="#E6C36A" transform="rotate(0)"/><ellipse cx="0" cy="-8.9" rx="3.9" ry="8.5" fill="#E6C36A" transform="rotate(25.7)"/><ellipse cx="0" cy="-8.9" rx="3.9" ry="8.5" fill="#E6C36A" transform="rotate(51.4)"/><ellipse cx="0" cy="-8.9" rx="3.9" ry="8.5" fill="#E6C36A" transform="rotate(77.1)"/><ellipse cx="0" cy="-8.9" rx="3.9" ry="8.5" fill="#E6C36A" transform="rotate(102.9)"/><ellipse cx="0" cy="-8.9" rx="3.9" ry="8.5" fill="#E6C36A" transform="rotate(128.6)"/><ellipse cx="0" cy="-8.9" rx="3.9" ry="8.5" fill="#E6C36A" transform="rotate(154.3)"/><ellipse cx="0" cy="-8.9" rx="3.9" ry="8.5" fill="#E6C36A" transform="rotate(180)"/><ellipse cx="0" cy="-8.9" rx="3.9" ry="8.5" fill="#E6C36A" transform="rotate(205.7)"/><ellipse cx="0" cy="-8.9" rx="3.9" ry="8.5" fill="#E6C36A" transform="rotate(231.4)"/><ellipse cx="0" cy="-8.9" rx="3.9" ry="8.5" fill="#E6C36A" transform="rotate(257.1)"/><ellipse cx="0" cy="-8.9" rx="3.9" ry="8.5" fill="#E6C36A" transform="rotate(282.9)"/><ellipse cx="0" cy="-8.9" rx="3.9" ry="8.5" fill="#E6C36A" transform="rotate(308.6)"/><ellipse cx="0" cy="-8.9" rx="3.9" ry="8.5" fill="#E6C36A" transform="rotate(334.3)"/><circle r="4.9" fill="#8A6A3E"/><circle r="4.9" fill="#E6C36A" fill-opacity=".35"/></g><g transform="translate(57.2 129.9) rotate(313.3)"><ellipse cx="0" cy="-8.6" rx="3.8" ry="8.2" fill="#E6C36A" transform="rotate(0)"/><ellipse cx="0" cy="-8.6" rx="3.8" ry="8.2" fill="#E6C36A" transform="rotate(30)"/><ellipse cx="0" cy="-8.6" rx="3.8" ry="8.2" fill="#E6C36A" transform="rotate(60)"/><ellipse cx="0" cy="-8.6" rx="3.8" ry="8.2" fill="#E6C36A" transform="rotate(90)"/><ellipse cx="0" cy="-8.6" rx="3.8" ry="8.2" fill="#E6C36A" transform="rotate(120)"/><ellipse cx="0" cy="-8.6" rx="3.8" ry="8.2" fill="#E6C36A" transform="rotate(150)"/><ellipse cx="0" cy="-8.6" rx="3.8" ry="8.2" fill="#E6C36A" transform="rotate(180)"/><ellipse cx="0" cy="-8.6" rx="3.8" ry="8.2" fill="#E6C36A" transform="rotate(210)"/><ellipse cx="0" cy="-8.6" rx="3.8" ry="8.2" fill="#E6C36A" transform="rotate(240)"/><ellipse cx="0" cy="-8.6" rx="3.8" ry="8.2" fill="#E6C36A" transform="rotate(270)"/><ellipse cx="0" cy="-8.6" rx="3.8" ry="8.2" fill="#E6C36A" transform="rotate(300)"/><ellipse cx="0" cy="-8.6" rx="3.8" ry="8.2" fill="#E6C36A" transform="rotate(330)"/><circle r="4.7" fill="#8A6A3E"/><circle r="4.7" fill="#E6C36A" fill-opacity=".35"/></g><g transform="translate(132.3 137) rotate(-4.4)"><path d="M-10.3 -9C-11.5 6.4 -5.1 11.5 0 11.5S11.5 6.4 10.3 -9L5.1 -3.2L0 -11.5L-5.1 -3.2Z" fill="#EDC7BC"/><path d="M0 -11.5L-5.1 -3.2L-10.3 -9C-11.5 6.4 -5.1 11.5 0 11.5Z" fill="#3a2a20" fill-opacity="0.08"/></g><g transform="translate(113 142.2) rotate(248.9)"><circle r="15.3" fill="#FBF7EF"/><circle r="10.1" fill="#3a2a20" fill-opacity="0.07"/><circle r="5.8" fill="#3a2a20" fill-opacity="0.08"/><path d="M-3.1 -0.8a3.4 3.4 0 1 1 4.6 2.8" fill="none" stroke="#3a2a20" stroke-opacity=".14" stroke-width="1.1" stroke-linecap="round"/></g><path d="M34 112L100 232L126 150Z" fill="#CDB794"/><path d="M166 112L100 232L78 146Z" fill="#DCCBAA"/><path d="M100 232L86 178Q100 170 114 178Z" fill="#3a2a20" fill-opacity=".06"/><path d="M92 184q-16-10-18 2q2 10 18 2M108 184q16-10 18 2q-2 10-18 2" fill="none" stroke="#8C4A48" stroke-width="3" stroke-linecap="round"/><circle cx="100" cy="185" r="4" fill="#8C4A48"/><path d="M98 188l-6 16M102 188l7 15" stroke="#8C4A48" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+                <div class="mp__body"><p style="color:#2C2A26">花に、ことばを添えて。</p><div class="mp__row" style="color:#5B574F;border-color:#E0D8CB"><span>営業中</span><span>20:00まで</span></div><div class="mp__btn">取り置き予約</div></div>
+              </div>
+            </div>
+            <p class="work__hint" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M7 2v10M3 8l4 4 4-4"/></svg>カーソルを合わせると、ページの下まで見られます</p>
+          </div>
+          <div class="work__info">
+            <p class="work__cat">架空店舗のコンセプトサイト</p>
+            <h3 id="work-kn-title">花と緑 ことの葉</h3>
+            <p>下北沢の小さな花屋を想定したサイト。用途とご予算で花を絞り込み、そのまま取り置き予約へ進める導線を設計しました。本日の営業状況や季節の花言葉も、自動で表示されます。</p>
+            <dl class="work__dl">
+              <div><dt>業種</dt><dd>物販・花屋</dd></div>
+              <div><dt>設計</dt><dd>用途・予算の絞り込み / 取り置き予約 / 営業状況の自動表示 / 季節の花</dd></div>
+              <div><dt>対応</dt><dd>PC / タブレット / スマートフォン</dd></div>
+            </dl>
+            <!-- samples/kotonoha/ にある完成サンプルへのリンク -->
+            <a class="btn btn--solid" href="samples/kotonoha/index.html" target="_blank" rel="noopener">完成サイトを見る<svg class="ico ico--ext" viewBox="0 0 18 18" fill="none" stroke="currentColor" aria-hidden="true"><path d="M5 13l8-8M6 5h7v7"/></svg><span class="sr-only">（新しいタブで開きます）</span></a>
+            <p class="work__note">※MiseLinkが制作した架空店舗のコンセプトサイトです。正式な受託実績ではありません。花はイラストで表現しており、商品・価格・営業時間はデザイン用の設定です。</p>
+          </div>
+        </article>
+
+        <!-- 事例3：mugi -->
+        <article class="work" id="work-mg" aria-labelledby="work-mg-title">
+          <div class="work__visual">
+            <div class="mb" aria-hidden="true">
+              <div class="mb__bar"><i></i><i></i><i></i><span>MUGI — CONCEPT WEBSITE</span></div>
+              <div class="mb__view">
+                <div class="pv pv--mg">
+                  <div class="mg-top"><b>mugi.</b><span>Menu　Bake times　About</span></div>
+                  <div class="mg-hero"><p>毎日の朝に、焼きたてを。</p><img src="images/mugi.webp" alt="" width="1536" height="1024" loading="lazy"></div>
+                  <div class="mg-sec">
+                    <h4>焼き上がり時間 <span>Fresh from the oven</span></h4>
+                    <div class="mg-times"><div><b>8:00</b>クロワッサン・塩パン</div><div><b>10:30</b>カンパーニュ</div><div><b>13:00</b>塩パン</div></div>
+                  </div>
+                  <div class="mg-sec" style="padding-top:0">
+                    <h4>いつもの、お気に入り <span>Our favorites</span></h4>
+                    <div class="mg-list"><div><span>発酵バタークロワッサン</span><span>¥320</span></div><div><span>まいにちの塩パン</span><span>¥220</span></div><div><span>あんバターサンド</span><span>¥360</span></div><div><span>mugiブレンド</span><span>¥420</span></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mp" aria-hidden="true">
+              <div class="mp__screen" style="background:#FFF9ED;color:#254FA3">
+                <div class="mp__top"><b style="font-family:Georgia,serif;letter-spacing:-.03em">mugi.</b><i style="border-color:#254FA3"></i></div>
+                <div class="mp__img" style="height:36%"><img src="images/mugi.webp" alt="" width="1536" height="1024" loading="lazy" style="filter:none;border-radius:999px 999px 0 0"></div>
+                <div class="mp__body"><p style="color:#254FA3;font-family:var(--sans);font-weight:700">毎日の朝に、焼きたてを。</p><div class="mp__row" style="color:#254FA3;border-color:#D8DDEA"><span>焼き上がり</span><span>8:00〜</span></div><div class="mp__btn" style="background:#254FA3">店舗情報</div></div>
+              </div>
+            </div>
+            <p class="work__hint" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M7 2v10M3 8l4 4 4-4"/></svg>カーソルを合わせると、ページの下まで見られます</p>
+          </div>
+          <div class="work__info">
+            <p class="work__cat">架空店舗のコンセプトサイト</p>
+            <h3 id="work-mg-title">ベーカリー＆コーヒースタンド mugi</h3>
+            <p>焼きたてのパンとコーヒーを楽しむ架空の地域店。クリーム色とブルーを使った明るいデザインで、商品や価格、焼き上がりの時間、店舗情報を見やすくまとめました。</p>
+            <dl class="work__dl">
+              <div><dt>業種</dt><dd>飲食店・ベーカリー／カフェ</dd></div>
+              <div><dt>設計</dt><dd>商品紹介 / メニュー / 焼き上がり / 店舗情報</dd></div>
+              <div><dt>対応</dt><dd>PC / タブレット / スマートフォン</dd></div>
+            </dl>
+            <!-- samples/mugi/ にある完成サンプルへのリンク -->
+            <a class="btn btn--solid" href="samples/mugi/index.html" target="_blank" rel="noopener">完成サイトを見る<svg class="ico ico--ext" viewBox="0 0 18 18" fill="none" stroke="currentColor" aria-hidden="true"><path d="M5 13l8-8M6 5h7v7"/></svg><span class="sr-only">（新しいタブで開きます）</span></a>
+            <p class="work__note">※MiseLinkが制作した架空店舗のコンセプトサイトです。正式な受託実績ではありません。写真はAI生成、商品・価格・営業時間はデザイン用の設定です。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     6. 料金
+     ★編集：金額を変更するときは、ファーストビュー・料金表・シミュレーター(JSのPRICE)・FAQをあわせて更新
+===================================================================== -->
+<section class="sec" id="pricing" aria-labelledby="pricing-title" style="background:var(--white)">
+  <div class="wrap sec__grid">
+    <p class="sec__label">料金</p>
+    <div>
+      <div class="sec__head">
+        <h2 class="h2" id="pricing-title">店舗の規模と<br>運用方法に合わせて。</h2>
+        <p class="lead">地域店舗に必要な機能へ絞り、制作工程を効率化することで、はじめての公式サイトにも取り入れやすい価格を目指しています。</p>
+      </div>
+      <div class="pricing__intro">
+        <div><b>まずはサイト制作。保守は必要な方だけ。</b><p>どちらの場合も、初回の制作費がかかります。月額サポートは制作費の分割払いではありません。</p></div>
+      </div>
+
+      <!-- =================================================================
+           モニター募集
+           ★編集：価格・枠数を変える場合は、この欄・ファーストビュー・シミュレーター・フォーム・FAQと、
+                  JS の PRICE.monitor をあわせて変更してください。
+           ★編集：募集を終えたら JS の MONITOR.open を false にすると、関連する表示がまとめて消えます。
+      ================================================================== -->
+      <article class="monitor" id="monitor" data-monitor-block aria-labelledby="monitor-title">
+        <div>
+          <p class="monitor__tag">モニター募集｜先着3店舗</p>
+          <h3 id="monitor-title">最初の3店舗さまを、<br>モニター価格で。</h3>
+          <p class="monitor__price"><b>29,800</b><span>円（税込）</span></p>
+          <p class="monitor__slots">対象：買い切り制作の基本内容</p>
+          <p class="monitor__text">MiseLinkは始めたばかりのサービスです。制作事例としてご紹介させていただける店舗さまを募集しています。デザインや対応の内容は、通常の制作と変わりません。</p>
+          <a class="btn btn--solid" href="#contact" data-interest="新しいWebサイトを作りたい" data-monitor="1">モニターに応募する</a>
+        </div>
+        <div class="monitor__cond">
+          <h4>モニターの条件</h4>
+          <ol>
+            <li><span aria-hidden="true">1</span><p>完成したサイトを、MiseLinkの制作事例として掲載させていただくこと<small>店名・サイトの画面・URLを掲載します。</small></p></li>
+            <li><span aria-hidden="true">2</span><p>公開後、かんたんなアンケートにご協力いただくこと<small>ご感想を掲載する場合は、事前に内容をご確認いただきます。</small></p></li>
+            <li><span aria-hidden="true">3</span><p>モニター価格の対象は、買い切り制作の基本内容です<small>追加ページ・写真撮影・月額サポートは通常料金です。</small></p></li>
+          </ol>
+          <p class="monitor__note">※先着3店舗に達した時点で募集を終了し、以降は通常料金（59,800円〜）でのご案内となります。ご応募後に内容を伺い、モニターとしてお受けできるかをご連絡します。</p>
+        </div>
+      </article>
+
+      <div class="plans">
+        <article class="plan plan--main" aria-labelledby="plan1">
+          <span class="plan__badge">おすすめ</span>
+          <p class="plan__en">Web site</p>
+          <h3 id="plan1">買い切り制作</h3>
+          <p class="plan__for">まずは公式サイトを作りたいお店に。</p>
+          <p class="plan__price"><b>59,800</b><span>円〜（税込）</span></p>
+          <p class="plan__cap">初回の制作費用／参考価格</p>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>オリジナルデザイン</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>スマートフォン対応</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>メニュー・店舗情報</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Googleマップ連携</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>SEO初期設定</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>独自ドメイン公開サポート</li>
+          </ul>
+          <a class="btn btn--solid btn--block" href="#contact" data-interest="新しいWebサイトを作りたい">制作について相談する</a>
+        </article>
+        <article class="plan" aria-labelledby="plan2">
+          <p class="plan__en">Care plan</p>
+          <h3 id="plan2">月額サポート</h3>
+          <p class="plan__for">公開後の更新も任せたいお店に。</p>
+          <p class="plan__price"><b>4,980</b><span>円〜／月（税込）</span></p>
+          <p class="plan__cap">制作費とは別途／ご希望の場合のみ</p>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>営業時間・価格の変更</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>文章の軽微な修正</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>写真の差し替え</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>表示状態の確認</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>更新に関する相談</li>
+          </ul>
+          <a class="btn btn--line btn--block" href="#contact" data-interest="更新・保守を相談したい">保守について相談する</a>
+        </article>
+      </div>
+
+      <!-- 料金シミュレーター
+           ★編集：追加ページ・追加セクションの単価は、公開後の修正料金を仮に流用しています。
+                  初回制作時の単価が別に決まっている場合は、下の JS の PRICE を変更してください。 -->
+      <div class="sim" id="estimate">
+        <div class="sim__main">
+          <h3>かんたん料金シミュレーション</h3>
+          <p>ページやサポートの有無を選ぶと、おおよその費用が分かります。</p>
+          <div class="sim__rows">
+            <div class="sim__row"><div><b>買い切り制作（基本）</b><small>オリジナルデザイン・メニュー・店舗情報・公開サポート</small></div><span class="sim__fixed" id="simBase">59,800円〜</span></div>
+            <div class="sim__row" data-monitor-block><div><b>モニター価格を適用</b><small>先着3店舗・条件あり／基本制作が 29,800円に</small></div>
+              <label class="switch"><input type="checkbox" id="simMonitor" aria-label="モニター価格を適用する"><span></span></label>
+            </div>
+            <div class="sim__row"><div><b>追加ページ</b><small>メニュー詳細、採用、英語ページなど／1ページ 22,000円〜</small></div>
+              <div class="stepper" data-key="pages"><button type="button" data-step="-1" aria-label="追加ページを減らす"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M2 7h10"/></svg></button><output aria-live="polite" aria-label="追加ページ数">0</output><button type="button" data-step="1" aria-label="追加ページを増やす"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M2 7h10M7 2v10"/></svg></button></div>
+            </div>
+            <div class="sim__row"><div><b>追加セクション</b><small>お知らせ、こだわり紹介など／1か所 11,000円〜</small></div>
+              <div class="stepper" data-key="sections"><button type="button" data-step="-1" aria-label="追加セクションを減らす"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M2 7h10"/></svg></button><output aria-live="polite" aria-label="追加セクション数">0</output><button type="button" data-step="1" aria-label="追加セクションを増やす"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M2 7h10M7 2v10"/></svg></button></div>
+            </div>
+            <div class="sim__row"><div><b>月額サポート</b><small>公開後の更新をまとめて依頼／4,980円〜／月</small></div>
+              <label class="switch"><input type="checkbox" id="simCare" aria-label="月額サポートを付ける"><span></span></label>
+            </div>
+          </div>
+        </div>
+        <div class="sim__out">
+          <p>初期費用の目安</p>
+          <p class="sim__total"><b id="simTotal">59,800</b><span>円〜（税込）</span></p>
+          <p class="sim__monthly"><span>月額</span><span><b id="simMonthly">0</b> 円〜</span></p>
+          <a class="btn btn--paper btn--block" href="#contact" id="simSend">この内容で相談する</a>
+          <p class="sim__note">表示は目安です。写真撮影・多言語の翻訳・ドメインなど外部サービスの費用は含みません。正式な総額はお見積もりでご案内します。</p>
+        </div>
+      </div>
+
+      <!-- ★編集：公開後の都度修正料金 -->
+      <details class="rev">
+        <summary><span>公開後の都度修正料金<small>月額サポートを付けない場合も、必要なときだけご依頼いただけます。</small></span><span class="pm" aria-hidden="true"></span></summary>
+        <ul class="rev__list">
+          <li><b>文字・店舗情報の修正</b><span>営業時間、住所、短い文章など</span><strong>2,200<small>円〜／回</small></strong></li>
+          <li><b>写真の差し替え</b><span>お送りいただいた写真への変更</span><strong>3,300<small>円〜／回</small></strong></li>
+          <li><b>メニュー・価格の更新</b><span>既存メニューの名称・説明・価格など</span><strong>3,300<small>円〜／回</small></strong></li>
+          <li><b>セクションの追加</b><span>お知らせ、こだわり、採用情報など</span><strong>11,000<small>円〜</small></strong></li>
+          <li><b>新規ページの追加</b><span>メニュー、採用、多言語ページなど</span><strong>22,000<small>円〜</small></strong></li>
+        </ul>
+      </details>
+      <p class="price-note">※表示料金はすべて税込の参考価格です。サイトのページ数、機能、写真撮影、多言語対応などによって異なります。ドメイン・外部サービスの利用料は別途必要になる場合があります。複数箇所の変更やレイアウト変更を伴う場合は、作業前に総額をお見積もりします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     7. 制作の流れ
+===================================================================== -->
+<section class="sec process" id="process" aria-labelledby="process-title">
+  <div class="wrap sec__grid">
+    <p class="sec__label">制作の流れ</p>
+    <div>
+      <div class="sec__head">
+        <h2 class="h2" id="process-title">ご相談から公開まで、<br>分かりやすく。</h2>
+        <p class="lead">店舗写真、メニュー、営業時間などをご用意いただければ、Webに詳しくなくても制作を進められます。</p>
+      </div>
+      <div class="flow" id="flow">
+        <div class="flow__track" aria-hidden="true"></div>
+        <ol class="flow__list">
+        <li class="step"><span class="step__n" aria-hidden="true">1</span><h3>無料相談</h3><p>今のお悩みやご希望を伺います。</p></li>
+        <li class="step"><span class="step__n" aria-hidden="true">2</span><h3>店舗情報の確認</h3><p>写真・メニュー・営業時間を整理。</p></li>
+        <li class="step"><span class="step__n" aria-hidden="true">3</span><h3>デザイン案のご提案</h3><p>画面を見ながら方向性を確認。</p></li>
+        <li class="step"><span class="step__n" aria-hidden="true">4</span><h3>内容・料金の確定</h3><p>制作範囲と総額を確認します。</p></li>
+        <li class="step"><span class="step__n" aria-hidden="true">5</span><h3>サイト制作</h3><p>決まった内容を形にします。</p></li>
+        <li class="step"><span class="step__n" aria-hidden="true">6</span><h3>確認・修正</h3><p>文章・写真・表示を最終確認。</p></li>
+        <li class="step"><span class="step__n" aria-hidden="true">7</span><h3>独自ドメインで公開</h3><p>公開と接続設定をサポート。</p></li>
+        </ol>
+      </div>
+      <div class="prep">
+        <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M9 5h16v24H9z"/><path d="M13 3h8v4h-8zM13 14l2.5 2.5L21 11M13 22h8"/></svg>
+        <div><h3>ご相談時は、すべて揃っていなくても大丈夫です。</h3><p>店名・業種と、今のお悩みをお聞かせください。お持ちの写真やメニューは、確認しながら順番に整理します。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     8. よくある質問（details要素：JS無効でも開閉できます）
+===================================================================== -->
+<section class="sec" id="faq" aria-labelledby="faq-title" style="background:var(--white)">
+  <div class="wrap sec__grid">
+    <p class="sec__label">よくある質問</p>
+    <div class="faq__grid">
+      <div class="faq__side">
+        <h2 class="h2" id="faq-title">気になることを、<br>ひとつずつ。</h2>
+        <p class="lead">ここにないご質問も、お気軽にお問い合わせください。</p>
+        <a class="tlink" href="#contact">質問だけでも相談する<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+      </div>
+      <!-- ★編集：質問と回答 -->
+      <div class="faq" id="faqList">
+        <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>Webに詳しくなくても依頼できますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>はい。専門用語をなるべく使わず、必要な情報や準備するものを順番にご案内します。</p></div></details>
+        <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>写真や文章がなくても大丈夫ですか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>現在お持ちの写真や店舗情報を確認しながら進められます。文章の整理や構成もMiseLinkがサポートします。写真撮影が必要な場合は別途ご相談ください。</p></div></details>
+        <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>ドメインは誰の所有になりますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>原則として、店舗または事業者名義で取得します。買い切り後も店舗側に所有権が残る形を基本とします。</p></div></details>
+        <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>月額料金は必須ですか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>必須ではありません。まずは買い切りでサイトを制作し、公開後の月額サポートは希望する場合のみ追加できます。サポートを付けない場合の修正は、その都度お見積もりします。ドメインなど外部サービスの利用料は別途必要になる場合があります。</p></div></details>
+        <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>制作期間はどれくらいですか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>内容やページ数によって異なりますが、必要な情報が揃ってから公開までの目安をご案内します。具体的な期間はご相談時にお伝えします。</p></div></details>
+        <details data-monitor-block><summary><span class="faq__q" aria-hidden="true">Q</span><span>モニター価格の条件は何ですか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>完成したサイトをMiseLinkの制作事例として掲載させていただくことと、公開後のかんたんなアンケートへのご協力が条件です。対象は買い切り制作の基本内容で、追加ページ・写真撮影・月額サポートは通常料金です。先着3店舗に達した時点で終了します。</p></div></details>
+        <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>公開後に修正できますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>可能です。買い切りの場合は、文字・店舗情報の修正2,200円〜、写真の差し替え3,300円〜、メニュー・価格の更新3,300円〜が目安です（すべて税込）。月額サポートの場合は契約範囲内で対応します。複数箇所やレイアウト変更は、作業前に総額をご案内します。</p></div></details>
+        <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>Googleマップにもサイトを掲載できますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>店舗のGoogleビジネスプロフィールを管理しているアカウントから、完成した公式サイトのURLを登録できます。必要に応じて設定をサポートします。</p></div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     9. お問い合わせ
+===================================================================== -->
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap sec__grid">
+    <p class="sec__label">無料相談</p>
+    <div class="contact__grid">
+      <div>
+        <h2 class="h2" id="contact-title">お店の魅力が伝わる<br>サイトを、一緒に<br>つくりませんか？</h2>
+        <p class="contact__lead">まだ依頼内容が決まっていなくても大丈夫です。現在のお悩みや、作りたいサイトのイメージをお聞かせください。</p>
+        <!-- ★編集：連絡先 -->
+        <ul class="contact__ways">
+          <li><a href="mailto:miselinks@gmail.com"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2.5 4.5h15v11h-15z"/><path d="M2.5 5l7.5 6 7.5-6"/></svg><span><small>メール</small>miselinks@gmail.com</span><svg class="arw" viewBox="0 0 14 14" fill="none" stroke="currentColor" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a></li>
+          <li><a href="tel:07046805993"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 2.5l3 .5 1 4-2 1.5a10 10 0 0 0 4.5 4.5L13 11l4 1 .5 3a2 2 0 0 1-2 2A13.5 13.5 0 0 1 3 4.5a2 2 0 0 1 2-2z"/></svg><span><small>電話</small>070-4680-5993</span><svg class="arw" viewBox="0 0 14 14" fill="none" stroke="currentColor" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a></li>
+          <!-- ★編集：InstagramのURLが決まったら、hidden を外して href を変更 -->
+          <li hidden><a href="[INSTAGRAM_URL]" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="4"/><circle cx="10" cy="10" r="3.2"/></svg><span><small>Instagram</small>作品や制作の様子</span><svg class="arw" viewBox="0 0 14 14" fill="none" stroke="currentColor" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li>
+        </ul>
+
+        <!-- ★公開前：［運営者名］［保存期間］を確定させてください -->
+        <details class="privacy" id="privacy">
+          <summary>プライバシーポリシー<span class="pm" aria-hidden="true"></span></summary>
+          <p>お問い合わせで取得する店舗名、担当者名、メールアドレス、電話番号、店舗の住所、お問い合わせ内容等は、お問い合わせへの回答、制作のご提案および連絡のために利用します。</p>
+          <p>取得した情報は適切に管理し、法令に基づく場合を除き、本人の同意なく第三者へ提供しません。送信サービス等に取扱いを委託する場合は、必要な範囲で行います。</p>
+          <p>運営者：［運営者名］<br>お問い合わせ窓口：miselinks@gmail.com / 070-4680-5993<br>利用する送信サービス：Formspree（入力内容を同サービスへ送信します）<br>保存期間：［保存期間］</p>
+        </details>
+      </div>
+
+      <div class="form-card">
+        <!--
+          ★公開前：フォーム送信先
+          - action に Formspree のエンドポイントを設定しています。受信先メールは Formspree 管理画面で設定。
+          - 送信先を変更する場合は action を差し替えてください。
+          - action が https で始まらない場合は、入力内容からメール作成画面（mailto）を開きます。
+          - JS無効時は通常のフォーム送信（Formspreeの確認画面）になります。
+        -->
+        <form id="contactForm" action="https://formspree.io/f/moevlreg" method="POST" novalidate>
+          <div class="form-card__head"><b>ご相談フォーム</b><span>入力は2〜3分ほどです</span></div>
+          <!-- スパム対策（人には見えない項目。入力されていたら Formspree が破棄します） -->
+          <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_subject" value="【MiseLink】無料相談フォーム">
+          <div class="fgrid">
+            <div class="f"><label for="f-shop">店舗名<span class="req">必須</span></label><input type="text" id="f-shop" name="shop" autocomplete="organization" placeholder="例：喫茶みどり" maxlength="120" required><p class="f__err" id="e-shop">店舗名を入力してください。</p></div>
+            <div class="f"><label for="f-name">担当者名<span class="req">必須</span></label><input type="text" id="f-name" name="name" autocomplete="name" placeholder="例：山田 太郎" maxlength="80" required><p class="f__err" id="e-name">担当者名を入力してください。</p></div>
+            <div class="f"><label for="f-email">メールアドレス<span class="req">必須</span></label><input type="email" id="f-email" name="email" autocomplete="email" inputmode="email" spellcheck="false" placeholder="例：name@example.com" maxlength="254" required><p class="f__err" id="e-email">メールアドレスの形式をご確認ください。</p></div>
+            <div class="f"><label for="f-tel">電話番号<span class="opt">任意</span></label><input type="tel" id="f-tel" name="phone" autocomplete="tel" maxlength="30" placeholder="例：03-1234-5678"></div>
+            <div class="f f--full"><label for="f-site">現在のWebサイトまたはSNS<span class="opt">任意</span></label><input type="text" id="f-site" name="website" inputmode="url" placeholder="URL または @アカウント名" maxlength="500"></div>
+            <div class="f f--full"><label for="f-address">店舗の住所<span class="opt">任意</span></label><input type="text" id="f-address" name="address" autocomplete="off" placeholder="例：東京都〇〇区〇〇 1-2-3" maxlength="200" aria-describedby="h-address"><p class="f__help" id="h-address">市区町村までなど、分かる範囲で大丈夫です。</p></div>
+            <fieldset class="f f--full" id="g-interest">
+              <legend>希望内容<span class="req">必須</span></legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="interest" value="新しいWebサイトを作りたい" required><span>新しいWebサイトを作りたい</span></label>
+                <label class="chip"><input type="radio" name="interest" value="現在のサイトをリニューアルしたい"><span>現在のサイトをリニューアルしたい</span></label>
+                <label class="chip"><input type="radio" name="interest" value="更新・保守を相談したい"><span>更新・保守を相談したい</span></label>
+                <label class="chip"><input type="radio" name="interest" value="まず話を聞きたい"><span>まず話を聞きたい</span></label>
+              </div>
+              <p class="f__err" id="e-interest">希望内容を1つ選んでください。</p>
+            </fieldset>
+            <div class="f f--full" data-monitor-block>
+              <label class="consent consent--tight"><input type="checkbox" id="f-monitor" name="monitor" value="希望する"><span>モニター価格（先着3店舗・29,800円）での制作を希望する<small>条件：制作事例としての掲載と、公開後のアンケートへのご協力</small></span></label>
+            </div>
+            <div class="f f--full"><label for="f-msg">お問い合わせ内容<span class="req">必須</span></label><textarea id="f-msg" name="message" maxlength="5000" placeholder="例：公式サイトがないので、メニューや店の雰囲気が伝わるページを作りたいです。予算や進め方から相談したいです。" aria-describedby="h-msg" required></textarea><p class="f__help" id="h-msg">分かる範囲で大丈夫です。パスワードやカード情報は入力しないでください。</p><p class="f__err" id="e-msg">お問い合わせ内容を入力してください。</p></div>
+          </div>
+          <div class="f" id="g-consent">
+            <label class="consent"><input type="checkbox" id="f-consent" name="privacy" value="同意する" required><span><a href="#privacy">プライバシーポリシー</a>を確認し、同意します。</span></label>
+            <p class="f__err" id="e-consent" style="margin-top:-14px;margin-bottom:14px">プライバシーポリシーへの同意が必要です。</p>
+          </div>
+          <button class="btn btn--solid btn--block" type="submit" id="submitBtn">無料で相談する<svg class="ico ico--r" viewBox="0 0 18 18" fill="none" stroke="currentColor" aria-hidden="true"><path d="M2 9h13M11 5l4 4-4 4"/></svg></button>
+          <p class="status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+        <div class="done" id="formDone" hidden tabindex="-1">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle pathLength="1" cx="32" cy="32" r="29"/><path pathLength="1" d="M20 33l8 8 16-17"/></svg>
+          <h3>ご相談を送信しました</h3>
+          <p>内容を確認のうえ、ご入力いただいたメールアドレスへご連絡します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =====================================================================
+     フッター
+===================================================================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <a class="logo" href="#top" aria-label="MiseLink トップへ">Mise<i>Link</i><span class="logo__mark" aria-hidden="true"></span></a>
+        <p class="footer__tag">街の名店と、お客様をつなぐ。</p>
+      </div>
+      <nav class="footer__nav" aria-label="フッターナビゲーション">
+        <a href="#services">サービス</a>
+        <a href="#works">制作事例</a>
+        <a href="#pricing">料金</a>
+        <a href="#faq">よくある質問</a>
+        <a href="#contact">お問い合わせ</a>
+        <a href="#privacy">プライバシーポリシー</a>
+        <!-- ★編集：InstagramのURLが決まったら hidden を外す -->
+        <a href="[INSTAGRAM_URL]" target="_blank" rel="noopener" hidden>Instagram</a>
+      </nav>
+    </div>
+    <div class="footer__bottom"><small>© 2026 MiseLink</small><span>飲食店・地域店舗に特化したWebサイト制作</span></div>
+  </div>
+</footer>
+
+<!-- スマートフォン下部の固定CTA -->
+<div class="dock" id="dock">
+  <a class="dock__tel" href="tel:07046805993" aria-label="電話で相談する"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 2.5l3 .5 1 4-2 1.5a10 10 0 0 0 4.5 4.5L13 11l4 1 .5 3a2 2 0 0 1-2 2A13.5 13.5 0 0 1 3 4.5a2 2 0 0 1 2-2z"/></svg></a>
+  <a class="btn btn--solid" href="#contact">無料相談</a>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ★編集：シミュレーターの単価（税込） */
+  var PRICE = { base: 59800, monitor: 29800, page: 22000, section: 11000, care: 4980, max: 5 };
+  /* ★編集：モニター募集を終えたら false に（ファーストビュー・料金・シミュレーター・フォーム・FAQの表示が消えます） */
+  var MONITOR = { open: true };
+  var CONTACT_EMAIL = 'miselinks@gmail.com';
+
+  var root = document.documentElement;
+  var body = document.body;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  var yen = function (n) { return n.toLocaleString('ja-JP'); };
+
+  /* モニター募集が終了していれば、関連する表示をまとめて隠す */
+  if (!MONITOR.open) $$('[data-monitor-block]').forEach(function (el) { el.hidden = true; });
+
+  /* ---------------------------------------------------------------
+     1. 読み込み時：ファーストビューを静かにフェード表示（演出はこの1か所のみ）
+  --------------------------------------------------------------- */
+  function start() {
+    requestAnimationFrame(function () { root.classList.add('is-loaded'); });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+
+  /* ---------------------------------------------------------------
+     2. ヘッダーの背景・スマホ固定CTAの表示
+  --------------------------------------------------------------- */
+  var header = $('#header');
+  var dock = $('#dock');
+  var contact = $('#contact');
+  var ticking = false;
+
+  function onScroll() {
+    var y = window.pageYOffset;
+    var vh = window.innerHeight;
+    header.classList.toggle('is-solid', y > 16);
+
+    var cr = contact.getBoundingClientRect();
+    dock.classList.toggle('is-shown', y > vh * 0.6 && cr.top > vh * 0.85);
+
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  /* 現在地をナビに表示 */
+  if ('IntersectionObserver' in window) {
+    var navLinks = $$('.nav__list a');
+    var navIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        navLinks.forEach(function (a) {
+          if (a.getAttribute('href') === '#' + e.target.id) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    $$('main section[id]').forEach(function (s) { navIO.observe(s); });
+  }
+
+  /* ---------------------------------------------------------------
+     5. モバイルメニュー（背景スクロール停止・Escape・フォーカス管理）
+  --------------------------------------------------------------- */
+  var burger = $('#burger');
+  var menu = $('#menu');
+  var savedY = 0;
+  var isOpen = false;
+  var outside = [$('#main'), $('.footer'), dock];
+
+  function setMenu(open, restore) {
+    if (open === isOpen) return;
+    isOpen = open;
+    menu.classList.toggle('is-open', open);
+    menu.setAttribute('aria-hidden', String(!open));
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    outside.forEach(function (el) { if (el) { if (open) el.setAttribute('inert', ''); else el.removeAttribute('inert'); } });
+    if (open) {
+      savedY = window.pageYOffset;
+      body.style.top = -savedY + 'px';
+      body.classList.add('is-locked');
+      header.classList.add('is-solid');
+      setTimeout(function () { var first = $('a', menu); if (first) first.focus(); }, 60);
+    } else {
+      body.classList.remove('is-locked');
+      body.style.top = '';
+      root.style.scrollBehavior = 'auto';
+      window.scrollTo(0, savedY);
+      root.style.scrollBehavior = '';
+      if (restore !== false) burger.focus();
+      onScroll();
+    }
+  }
+  burger.addEventListener('click', function () { setMenu(!isOpen); });
+  document.addEventListener('keydown', function (e) {
+    if (!isOpen) return;
+    if (e.key === 'Escape') { e.preventDefault(); setMenu(false); return; }
+    if (e.key === 'Tab') {
+      var items = [burger].concat($$('a', menu));
+      var first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 920 && isOpen) setMenu(false, false); });
+
+  /* ---------------------------------------------------------------
+     6. ページ内リンク（スムーズスクロール・メニューを閉じる・希望内容の自動選択）
+  --------------------------------------------------------------- */
+  function selectInterest(value) {
+    $$('input[name="interest"]').forEach(function (r) { r.checked = (r.value === value); });
+    clearErr('interest');
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!a) return;
+    var id = a.getAttribute('href').slice(1);
+    if (!id) return;
+    var target = document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+    if (a.dataset.interest) selectInterest(a.dataset.interest);
+    if (a.dataset.monitor && MONITOR.open) { var fm = $('#f-monitor'); if (fm) fm.checked = true; }
+    if (target.tagName === 'DETAILS') target.open = true;
+    var wasOpen = isOpen;
+    if (isOpen) setMenu(false, false);
+    var top = target.getBoundingClientRect().top + window.pageYOffset - header.offsetHeight - 12;
+    if (id === 'top') top = 0;
+    window.scrollTo({ top: top, behavior: (reduce || wasOpen) ? 'auto' : 'smooth' });
+    var focusEl = target.tagName === 'DETAILS' ? $('summary', target) : target;
+    if (focusEl.tagName !== 'SUMMARY' && !focusEl.hasAttribute('tabindex')) focusEl.setAttribute('tabindex', '-1');
+    focusEl.focus({ preventScroll: true });
+    try { history.replaceState(null, '', '#' + id); } catch (_) {}
+  });
+
+  /* ---------------------------------------------------------------
+     7. 制作事例のタブ切り替え（JS無効時は縦に並べて表示）
+  --------------------------------------------------------------- */
+  var tabWrap = $('#workTabs');
+  var panelsWrap = $('#workPanels');
+  var tabs = $$('.tab', tabWrap);
+  var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
+  tabWrap.hidden = false;
+  tabWrap.setAttribute('role', 'tablist');
+  tabWrap.setAttribute('aria-label', '制作事例');
+  panelsWrap.classList.add('is-tabbed');
+  function selectTab(idx, focus) {
+    tabs.forEach(function (t, i) {
+      var on = i === idx;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      panels[i].hidden = !on;
+      if (on) {
+        panels[i].classList.remove('is-entering');
+        void panels[i].offsetWidth;
+        panels[i].classList.add('is-entering');
+        measurePreview(panels[i]);
+      }
+    });
+    if (focus) tabs[idx].focus();
+  }
+  tabs.forEach(function (t, i) {
+    t.setAttribute('role', 'tab');
+    panels[i].setAttribute('role', 'tabpanel');
+    panels[i].setAttribute('aria-labelledby', t.id);
+    panels[i].tabIndex = 0;
+    t.addEventListener('click', function () { selectTab(i); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        selectTab((i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length, true);
+      }
+    });
+  });
+
+  /* ページプレビューのスクロール量を計測 */
+  function measurePreview(scope) {
+    $$('.work__visual', scope).forEach(function (v) {
+      var view = $('.mb__view', v), pv = $('.pv', v);
+      if (view && pv) pv.style.setProperty('--shift', Math.max(0, pv.scrollHeight - view.clientHeight) + 'px');
+    });
+  }
+  window.addEventListener('load', function () { measurePreview(document); });
+  window.addEventListener('resize', function () { measurePreview(document); });
+  selectTab(0);
+
+
+  /* ---------------------------------------------------------------
+     8. 料金シミュレーター
+  --------------------------------------------------------------- */
+  var state = { pages: 0, sections: 0, care: false, monitor: false };
+  var totalEl = $('#simTotal'), monthlyEl = $('#simMonthly'), careEl = $('#simCare'), monitorEl = $('#simMonitor'), baseEl = $('#simBase');
+  function basePrice() { return (state.monitor && MONITOR.open) ? PRICE.monitor : PRICE.base; }
+  function simTotal() { return basePrice() + state.pages * PRICE.page + state.sections * PRICE.section; }
+  function updateSim() {
+    var total = simTotal();
+    baseEl.textContent = yen(basePrice()) + (state.monitor && MONITOR.open ? '円' : '円〜');
+    totalEl.textContent = yen(total);
+    monthlyEl.textContent = state.care ? yen(PRICE.care) : '0';
+    $$('.stepper').forEach(function (s) {
+      var k = s.dataset.key;
+      $('output', s).textContent = state[k];
+      $('[data-step="-1"]', s).disabled = state[k] <= 0;
+      $('[data-step="1"]', s).disabled = state[k] >= PRICE.max;
+    });
+  }
+  $$('.stepper').forEach(function (s) {
+    s.addEventListener('click', function (e) {
+      var b = e.target.closest('button');
+      if (!b || b.disabled) return;
+      var k = s.dataset.key;
+      state[k] = Math.max(0, Math.min(PRICE.max, state[k] + Number(b.dataset.step)));
+      updateSim();
+    });
+  });
+  careEl.addEventListener('change', function () { state.care = careEl.checked; updateSim(); });
+  if (monitorEl) monitorEl.addEventListener('change', function () { state.monitor = monitorEl.checked; updateSim(); });
+  updateSim();
+
+  /* 「この内容で相談する」→ フォームに反映 */
+  $('#simSend').addEventListener('click', function () {
+    var total = simTotal();
+    var mon = state.monitor && MONITOR.open;
+    var line = '【料金シミュレーション】' + (mon ? 'モニター価格／' : '') + '追加ページ' + state.pages + '／追加セクション' + state.sections + '／月額サポート' + (state.care ? 'あり' : 'なし') + '（初期費用の目安 ' + yen(total) + '円〜）';
+    var fm = $('#f-monitor'); if (fm && mon) fm.checked = true;
+    var msg = $('#f-msg');
+    msg.value = line + (msg.value.replace(/^【料金シミュレーション】.*\n?/, '') ? '\n' + msg.value.replace(/^【料金シミュレーション】.*\n?/, '') : '\n');
+    selectInterest('新しいWebサイトを作りたい');
+    clearErr('msg');
+  });
+
+  /* ---------------------------------------------------------------
+     9. 開閉アニメーション（FAQ・料金の詳細・プライバシーポリシー）
+  --------------------------------------------------------------- */
+  $$('details').forEach(function (d) {
+    var summary = $('summary', d);
+    summary.addEventListener('click', function (e) {
+      if (reduce || !d.animate) return;
+      e.preventDefault();
+      if (d.dataset.busy) return;
+      d.dataset.busy = '1';
+      var startH = d.offsetHeight;
+      var opening = !d.open;
+      if (opening) d.open = true;
+      var endH = opening ? d.offsetHeight : summary.offsetHeight;
+      d.style.overflow = 'hidden';
+      var anim = d.animate({ height: [startH + 'px', endH + 'px'] }, { duration: 280, easing: 'ease-out' });
+      anim.onfinish = function () {
+        if (!opening) d.open = false;
+        d.style.overflow = '';
+        delete d.dataset.busy;
+      };
+    });
+  });
+
+  /* ---------------------------------------------------------------
+     10. お問い合わせフォーム
+  --------------------------------------------------------------- */
+  var form = $('#contactForm');
+  var statusEl = $('#formStatus');
+  var submitBtn = $('#submitBtn');
+  var fields = {
+    shop:     { el: $('#f-shop'),  ok: function (el) { return el.value.trim() !== ''; } },
+    name:     { el: $('#f-name'),  ok: function (el) { return el.value.trim() !== ''; } },
+    email:    { el: $('#f-email'), ok: function (el) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()); } },
+    interest: { el: $('#g-interest'), ok: function () { return !!$('input[name="interest"]:checked'); } },
+    msg:      { el: $('#f-msg'),   ok: function (el) { return el.value.trim() !== ''; } },
+    consent:  { el: $('#f-consent'), ok: function (el) { return el.checked; } }
+  };
+  function wrapOf(key) { return key === 'interest' ? $('#g-interest') : key === 'consent' ? $('#g-consent') : fields[key].el.closest('.f'); }
+  function setErr(key, bad) {
+    var w = wrapOf(key), f = fields[key];
+    w.classList.toggle('has-err', bad);
+    var input = key === 'interest' ? $('input[name="interest"]') : f.el;
+    if (bad) { input.setAttribute('aria-invalid', 'true'); input.setAttribute('aria-describedby', ('e-' + key) + (key === 'msg' ? ' h-msg' : '')); }
+    else { input.removeAttribute('aria-invalid'); if (key === 'msg') input.setAttribute('aria-describedby', 'h-msg'); else input.removeAttribute('aria-describedby'); }
+  }
+  function clearErr(key) { setErr(key, false); }
+  Object.keys(fields).forEach(function (key) {
+    var f = fields[key];
+    var ev = (key === 'interest' || key === 'consent') ? 'change' : 'input';
+    f.el.addEventListener(ev, function () { if (wrapOf(key).classList.contains('has-err') && f.ok(f.el)) clearErr(key); });
+  });
+  function setStatus(msg, isErr) { statusEl.textContent = msg; statusEl.classList.toggle('is-err', !!isErr); }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var firstBad = null;
+    Object.keys(fields).forEach(function (key) {
+      var bad = !fields[key].ok(fields[key].el);
+      setErr(key, bad);
+      if (bad && !firstBad) firstBad = key;
+    });
+    if (firstBad) {
+      setStatus('入力内容をご確認ください。赤く表示された項目があります。', true);
+      var focusTarget = firstBad === 'interest' ? $('input[name="interest"]') : fields[firstBad].el;
+      focusTarget.focus();
+      return;
+    }
+
+    var endpoint = form.getAttribute('action') || '';
+    var data = new FormData(form);
+
+    /* 送信先が未設定なら、入力内容でメール作成画面を開く */
+    if (!/^https:\/\//.test(endpoint)) {
+      var bodyText = ['店舗名：' + data.get('shop'), '担当者名：' + data.get('name'), 'メール：' + data.get('email'), '電話：' + (data.get('phone') || ''), 'サイト/SNS：' + (data.get('website') || ''), '店舗の住所：' + (data.get('address') || ''), 'モニター希望：' + (data.get('monitor') ? 'あり' : 'なし'), '希望内容：' + data.get('interest'), '', data.get('message')].join('\n');
+      window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent('【MiseLink】無料相談') + '&body=' + encodeURIComponent(bodyText);
+      setStatus('メールアプリで内容をご確認のうえ、送信してください。');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.firstChild.textContent = '送信しています…';
+    setStatus('');
+    var ctrl = ('AbortController' in window) ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 20000);
+    fetch(endpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' }, signal: ctrl ? ctrl.signal : undefined })
+      .then(function (res) {
+        if (!res.ok) throw new Error('failed');
+        form.hidden = true;
+        var done = $('#formDone');
+        done.hidden = false;
+        done.focus();
+        form.reset();
+      })
+      .catch(function () {
+        setStatus('送信できませんでした。入力内容はそのまま残っています。時間をおいて再度お試しいただくか、' + CONTACT_EMAIL + ' へメールでご連絡ください。', true);
+      })
+      .then(function () {
+        clearTimeout(timer);
+        submitBtn.disabled = false;
+        submitBtn.firstChild.textContent = '無料で相談する';
+      });
+  });
+})();
+</script>
+</body>
+</html>
