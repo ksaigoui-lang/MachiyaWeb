@@ -1,0 +1,6 @@
+# Machiya Web
+# ★公開前：ドメインが違う場合は下のURLを変更してください
+User-agent: *
+Allow: /
+
+Sitemap: https://machiyaweb.com/sitemap.xml

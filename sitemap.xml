@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ★公開前：ドメインが違う場合はURLを変更。ページを追加したら <url> を追記してください -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://machiyaweb.com/</loc>
+    <lastmod>2026-10-09</lastmod>
+  </url>
+</urlset>
