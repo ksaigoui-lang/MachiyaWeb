@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- 配置：samples/nagi/index.html　写真はMachiya Web本体と共通の ../../images/nagi-hero.jpg / nagi-salon.jpg を参照 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ATELIER NAGI｜自由が丘のプライベートヘアサロン＆ヘッドスパ（架空店舗サンプル）</title>
+<meta name="description" content="自由が丘駅徒歩3分、全2席のプライベートヘアサロン ATELIER NAGI。素髪に静かな艶と気品を宿すカット・髪質改善・ヘッドスパ。Machiya Web制作のコンセプトサイトです。">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FDFCFA">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111111'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='32' fill='%23C9A769'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#FDFCFA;
+  --ivory:#F5F0E8;
+  --ivory-2:#EDE5D8;
+  --noir:#111111;
+  --noir-2:#1C1B19;
+  --ink:#191816;
+  --muted:#5E5951;
+  --dim:#8A8378;
+  --gold:#B69154;
+  --gold-hi:#D4B47A;
+  --gold-ink:#8A6B37;
+  --line:rgba(17,17,17,.11);
+  --line-dark:rgba(255,255,255,.14);
+  --serif:"Shippori Mincho","Yu Mincho",serif;
+  --latin:"Playfair Display","Cormorant Garamond",Georgia,serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;
+  --wrap:1160px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.95;letter-spacing:.04em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4,p,ul,ol,dl,dd{margin:0;padding:0}
+ul,ol{list-style:none}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer;padding:0}
+img{display:block;max-width:100%;height:auto}
+.wrap{width:100%;max-width:calc(var(--wrap) + 56px);margin:0 auto;padding:0 28px}
+
+/* Demo Bar */
+.demo-bar{background:var(--noir);color:#E5DFD5;font-size:12px;line-height:1.6;padding:8px 16px;text-align:center;letter-spacing:.06em;border-bottom:1px solid rgba(212,180,122,.22)}
+.demo-bar a{color:var(--gold-hi);text-decoration:underline;text-underline-offset:3px;margin-left:12px;white-space:nowrap;font-weight:500}
+
+/* Header */
+.header{position:sticky;top:0;z-index:60;background:rgba(253,252,250,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.header__in{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;flex-direction:column;gap:2px}
+.brand b{font-family:var(--latin);font-size:22px;font-weight:400;letter-spacing:.26em;color:var(--noir);line-height:1}
+.brand small{font-size:9.5px;letter-spacing:.28em;color:var(--gold-ink);text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:28px}
+.nav__links{display:flex;gap:24px;font-size:12.5px;letter-spacing:.12em;color:var(--ink)}
+.nav__links a{position:relative;padding:6px 0;transition:color .25s}
+.nav__links a:hover{color:var(--gold-ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:0 28px;border-radius:0;font-size:13px;font-weight:500;letter-spacing:.14em;transition:all .28s ease;white-space:nowrap}
+.btn--noir{background:var(--noir);color:var(--white);border:1px solid var(--noir)}
+.btn--noir:hover{background:#2A2622;border-color:var(--gold);color:var(--gold-hi)}
+.btn--gold{background:var(--gold);color:var(--white);border:1px solid var(--gold)}
+.btn--gold:hover{background:#9E7B42;border-color:#9E7B42}
+.btn--line{background:transparent;color:var(--noir);border:1px solid var(--noir)}
+.btn--line:hover{background:var(--ivory)}
+.btn--sm{min-height:40px;padding:0 20px;font-size:12px}
+
+/* Hero (Parisian Couture Split / Full-Bleed Editorial) */
+.hero{position:relative;min-height:min(84vh,720px);display:flex;align-items:center;padding:72px 0 84px;overflow:hidden;border-bottom:1px solid var(--line);background:var(--ivory)}
+.hero__bg{position:absolute;inset:0;z-index:0}
+.hero__bg img{width:100%;height:100%;object-fit:cover;object-position:68% 35%}
+.hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(253,252,250,.96) 0%,rgba(253,252,250,.88) 40%,rgba(253,252,250,.32) 66%,rgba(253,252,250,0) 86%)}
+.hero__content{position:relative;z-index:1;max-width:540px}
+.eyebrow{display:inline-flex;align-items:center;gap:14px;font-family:var(--latin);font-style:italic;font-size:15px;letter-spacing:.14em;color:var(--gold-ink);margin-bottom:20px}
+.eyebrow::before{content:"";width:32px;height:1px;background:var(--gold)}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4.2vw,52px);line-height:1.45;letter-spacing:.08em;color:var(--noir)}
+.hero__sub-en{margin-top:12px;font-family:var(--latin);font-style:italic;font-size:17px;letter-spacing:.12em;color:var(--gold-ink)}
+.hero__lead{margin-top:24px;color:var(--muted);font-size:14.5px;max-width:34em;line-height:2.05}
+.hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero__meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;letter-spacing:.1em;color:var(--muted)}
+.hero__meta span{display:inline-flex;align-items:center;gap:8px}
+.hero__meta span::before{content:"";width:5px;height:5px;border:1px solid var(--gold);transform:rotate(45deg)}
+
+/* Section Shared */
+.sec{padding:104px 0;border-bottom:1px solid var(--line)}
+.sec--ivory{background:var(--ivory)}
+.sec--noir{background:var(--noir);color:var(--white);border-bottom-color:var(--line-dark)}
+.sec__head{max-width:620px;margin-bottom:56px}
+.sec__en{font-family:var(--latin);font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-ink);margin-bottom:12px}
+.sec--noir .sec__en{color:var(--gold-hi)}
+.sec h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.2vw,40px);line-height:1.5;letter-spacing:.08em}
+.sec__lead{margin-top:18px;color:var(--muted);font-size:14.5px;line-height:2}
+.sec--noir .sec__lead{color:rgba(253,252,250,.72)}
+
+/* Concept & Sanctuary */
+.concept{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,6vw,84px);align-items:center}
+.concept__photo{position:relative;border:1px solid var(--line);padding:12px;background:var(--white)}
+.concept__photo img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.concept__cap{position:absolute;right:24px;bottom:-16px;background:var(--noir);color:var(--gold-hi);font-family:var(--latin);font-style:italic;font-size:12.5px;letter-spacing:.16em;padding:6px 16px}
+.pillars{margin-top:36px;border-top:1px solid var(--line)}
+.pillars li{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+.pillars b{font-family:var(--latin);font-size:20px;font-weight:400;color:var(--gold-ink);line-height:1.2}
+.pillars h3{font-family:var(--serif);font-size:16px;font-weight:500;letter-spacing:.06em;margin-bottom:4px}
+.pillars p{font-size:13.5px;color:var(--muted);line-height:1.85}
+
+/* Menu & Pricing */
+.privilege{display:grid;grid-template-columns:1.2fr auto;gap:28px;align-items:center;padding:34px 40px;background:var(--noir);color:var(--white);border:1px solid rgba(212,180,122,.35);margin-bottom:44px}
+.privilege__tag{display:inline-block;font-family:var(--latin);font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-hi);border-bottom:1px solid var(--gold);padding-bottom:4px;margin-bottom:12px}
+.privilege h3{font-family:var(--serif);font-size:clamp(19px,2.2vw,25px);font-weight:400;letter-spacing:.06em;line-height:1.5}
+.privilege p{margin-top:8px;font-size:13.5px;color:rgba(253,252,250,.74)}
+.privilege__price{text-align:right}
+.privilege__price del{display:block;font-family:var(--latin);font-size:15px;color:rgba(253,252,250,.48)}
+.privilege__price strong{display:block;font-family:var(--latin);font-size:40px;font-weight:400;color:var(--gold-hi);line-height:1.1;margin:4px 0 14px}
+.privilege__price strong small{font-family:var(--sans);font-size:12px;color:rgba(253,252,250,.7);margin-left:4px}
+
+.menu-cols{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.mcat{background:var(--white);border:1px solid var(--line);padding:34px 32px}
+.mcat__head{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:14px;border-bottom:1px solid var(--noir);margin-bottom:10px}
+.mcat__head h3{font-family:var(--latin);font-size:21px;font-weight:400;letter-spacing:.14em;text-transform:uppercase}
+.mcat__head span{font-size:12px;color:var(--gold-ink);letter-spacing:.1em}
+.mrow{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid var(--line)}
+.mrow:last-child{border-bottom:0;padding-bottom:0}
+.mrow__name{font-family:var(--serif);font-size:15.5px;font-weight:500;letter-spacing:.05em}
+.mrow__note{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.7}
+.mrow__val{text-align:right;white-space:nowrap}
+.mrow__val b{display:block;font-family:var(--latin);font-size:21px;font-weight:400;color:var(--noir);line-height:1.2}
+.mrow__val small{font-size:11px;color:var(--dim);letter-spacing:.08em}
+.menu-note{margin-top:22px;font-size:12.5px;color:var(--muted)}
+
+/* Stylist & Flow */
+.stylist-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,80px);align-items:start}
+.stylist-card{border:1px solid var(--line);padding:36px 32px;background:var(--ivory)}
+.stylist-card__role{font-family:var(--latin);font-style:italic;font-size:14px;letter-spacing:.16em;color:var(--gold-ink)}
+.stylist-card h3{font-family:var(--serif);font-size:26px;font-weight:400;letter-spacing:.14em;margin-top:6px}
+.stylist-card h3 small{display:block;font-family:var(--latin);font-size:13px;letter-spacing:.2em;color:var(--muted);margin-top:2px}
+.stylist-card p{margin-top:20px;font-size:14px;color:var(--muted);line-height:2}
+.stylist-card__tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.stylist-card__tags span{font-size:11.5px;letter-spacing:.08em;padding:4px 12px;border:1px solid var(--line);background:var(--white);color:var(--ink)}
+
+.flow-list{border-top:1px solid var(--noir)}
+.flow-list li{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.flow-list__n{font-family:var(--latin);font-size:24px;color:var(--gold-ink);line-height:1.1}
+.flow-list h3{font-family:var(--serif);font-size:17px;font-weight:500;letter-spacing:.06em;margin-bottom:6px}
+.flow-list p{font-size:13.5px;color:var(--muted);line-height:1.9}
+
+/* LINE Booking CTA Banner */
+.line-cta{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.line-points{margin-top:24px;display:grid;gap:10px;font-size:14px;color:rgba(253,252,250,.82)}
+.line-points li::before{content:"◆ ";color:var(--gold-hi);font-size:10px;margin-right:6px}
+.line-box{border:1px solid rgba(212,180,122,.35);padding:34px 32px;background:var(--noir-2);text-align:center}
+.line-box p{font-size:13px;color:rgba(253,252,250,.72);margin-bottom:20px;line-height:1.85}
+.line-box .btn{width:100%}
+.line-box small{display:block;margin-top:14px;font-size:11.5px;color:rgba(253,252,250,.5)}
+
+/* Access & Footer */
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.dl div{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:15px 0;border-bottom:1px solid var(--line);font-size:14px}
+.dl dt{font-family:var(--latin);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-ink);padding-top:3px}
+.map-box{background:repeating-linear-gradient(45deg,rgba(182,145,84,.08) 0 1px,transparent 1px 22px),var(--ivory);border:1px solid var(--line);padding:34px 32px;min-height:270px;display:flex;flex-direction:column;justify-content:space-between}
+.map-box h3{font-family:var(--latin);font-size:20px;letter-spacing:.18em;font-weight:400}
+.map-box p{margin-top:10px;font-size:13.5px;color:var(--muted);line-height:1.9}
+
+.footer{background:var(--noir);color:rgba(253,252,250,.65);padding:52px 0 96px;font-size:12.5px}
+.footer__in{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-bottom:24px;border-bottom:1px solid var(--line-dark)}
+.footer .brand b{color:var(--white)}
+.footer .brand small{color:var(--gold-hi)}
+.footer__back{color:var(--gold-hi);border-bottom:1px solid rgba(212,180,122,.45);padding-bottom:2px;letter-spacing:.08em}
+.footer__meta{margin-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11.5px;color:rgba(253,252,250,.48)}
+
+/* Mobile Dock */
+.dock{display:none}
+
+/* Modal */
+.modal{position:fixed;inset:0;z-index:100;background:rgba(17,17,17,.74);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px}
+.modal[hidden]{display:none}
+.modal__card{width:100%;max-width:460px;background:var(--white);color:var(--ink);border:1px solid var(--gold);padding:34px 30px;position:relative;max-height:90vh;overflow-y:auto}
+.modal__close{position:absolute;top:14px;right:16px;width:36px;height:36px;font-size:24px;color:var(--muted)}
+.modal__card h3{font-family:var(--serif);font-size:23px;font-weight:400;letter-spacing:.08em;margin-bottom:6px}
+.modal__note{font-size:12px;color:var(--gold-ink);margin-bottom:20px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f{display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:var(--muted)}
+.f--full{grid-column:1/-1}
+.f input,.f select,.f textarea{background:var(--ivory);border:1px solid var(--line);padding:11px 12px;color:var(--ink);font-size:14px}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--gold);background:var(--white)}
+.modal__status{margin-top:14px;font-size:13px;color:#2E5A44;min-height:1.4em;line-height:1.7}
+
+@media (max-width:960px){
+  .concept,.menu-cols,.stylist-grid,.line-cta,.access-grid{grid-template-columns:1fr}
+  .privilege{grid-template-columns:1fr}
+  .privilege__price{text-align:left}
+  .nav__links{display:none}
+}
+@media (max-width:640px){
+  .wrap{padding:0 20px}
+  .header__in{height:64px}
+  .brand b{font-size:18px;letter-spacing:.2em}
+  .nav .btn--sm{display:none}
+  .hero{min-height:auto;padding:52px 0 60px}
+  .hero__bg::after{background:linear-gradient(180deg,rgba(253,252,250,.72) 0%,rgba(253,252,250,.94) 68%)}
+  .hero__actions .btn{width:100%}
+  .sec{padding:72px 0}
+  .privilege,.mcat,.stylist-card,.line-box,.map-box{padding:26px 20px}
+  .fgrid{grid-template-columns:1fr}
+  .dock{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;z-index:55;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(253,252,250,.95);border-top:1px solid var(--line)}
+  .dock .btn{width:100%;min-height:46px;padding:0 12px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-bar" role="note">
+  Machiya Web 制作のプライベートヘアサロン向けコンセプトサイトです（架空店舗）。
+  <a href="../../index.html#works">Machiya Web へ戻る</a>
+</div>
+
+<header class="header">
+  <div class="wrap header__in">
+    <a class="brand" href="#top"><b>ATELIER NAGI</b><small>Hair &amp; Head Spa · Jiyugaoka</small></a>
+    <nav class="nav" aria-label="メインナビゲーション">
+      <div class="nav__links">
+        <a href="#concept">コンセプト</a>
+        <a href="#menu">メニュー・料金</a>
+        <a href="#stylist">スタイリスト</a>
+        <a href="#flow">施術の流れ</a>
+        <a href="#access">アクセス</a>
+      </div>
+      <button type="button" class="btn btn--noir btn--sm" data-open-modal>LINE予約</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg">
+      <img src="../../images/nagi-hero.jpg" alt="柔らかな光に包まれた艶やかな黒髪と上質なプライベートサロンのイメージ" width="1264" height="848">
+    </div>
+    <div class="wrap">
+      <div class="hero__content">
+        <p class="eyebrow">Private Hair &amp; Head Spa — Jiyugaoka</p>
+        <h1>素髪に、静かな艶と<br>気品を宿す。</h1>
+        <p class="hero__sub-en">Luminous Silk. Quiet Elegance.</p>
+        <p class="hero__lead">自由が丘駅徒歩3分、わずか2席のプライベートヘアサロン。お一人おひとりの骨格と髪質に向き合い、数ヶ月後まで美しく収まるフォルムと、光を含んだ艶髪へ導きます。</p>
+        <div class="hero__actions">
+          <button type="button" class="btn btn--noir" data-open-modal>LINEで予約・相談する</button>
+          <a class="btn btn--line" href="#menu">メニュー・料金を見る</a>
+        </div>
+        <div class="hero__meta">
+          <span>完全予約制・全2席</span>
+          <span>マンツーマン施術</span>
+          <span>自由が丘駅 徒歩3分</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT -->
+  <section class="sec" id="concept">
+    <div class="wrap">
+      <div class="concept">
+        <div class="concept__photo">
+          <img src="../../images/nagi-salon.jpg" alt="トラバーチン大理石と真鍮ミラーが配された静謐なプライベートサロン空間" width="1264" height="848" loading="lazy">
+          <span class="concept__cap">Sanctuary of 2 Seats</span>
+        </div>
+        <div>
+          <p class="sec__en">Concept</p>
+          <h2 style="font-family:var(--serif);font-weight:400;font-size:clamp(25px,3vw,36px);line-height:1.5;letter-spacing:.08em">慌ただしさから離れ、<br>髪本来の美しさを整える場所。</h2>
+          <p style="margin-top:18px;color:var(--muted);font-size:14.5px;line-height:2">大型サロンのような待ち時間や担当者の入れ替わりはありません。カウンセリングから仕上げまで専任スタイリストが一貫して担当し、大人の女性の髪悩みに寄り添います。</p>
+          <ul class="pillars">
+            <li><b>01</b><div><h3>骨格に合わせた再現性の高いカット</h3><p>乾かすだけで自然にまとまる設計。伸びてきてもシルエットが崩れにくい繊細なカット技術。</p></div></li>
+            <li><b>02</b><div><h3>ダメージを抑えた艶カラー＆髪質改善</h3><p>低アルカリ薬剤と濃密シルクケアを組み合わせ、繰り返すほど手触りの良い艶髪へ。</p></div></li>
+            <li><b>03</b><div><h3>心までほぐれる個室ヘッドスパ</h3><p>天然ボタニカルオイルを用いた頭皮ケアで、根元の立ち上がりと深いリラックスを両立。</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU & PRICING -->
+  <section class="sec sec--ivory" id="menu">
+    <div class="wrap">
+      <div class="sec__head">
+        <p class="sec__en">Menu &amp; Pricing</p>
+        <h2>わかりやすく、誠実な料金設計。</h2>
+        <p class="sec__lead">ロング料金や指名料などの分かりにくい追加費用はありません。すべてシャンプー・ブロー込みの税込表記です。</p>
+      </div>
+
+      <div class="privilege">
+        <div>
+          <span class="privilege__tag">First Visit Privilege · LINE予約限定</span>
+          <h3>初回限定：似合わせカット ＋ シルク艶トリートメント</h3>
+          <p>公式LINEからのご予約限定で、初回優待価格にてご案内しています。まずは髪質診断だけでもお気軽にご相談ください（所要 約90分）。</p>
+        </div>
+        <div class="privilege__price">
+          <del>通常 ¥13,200</del>
+          <strong>¥11,000<small>（税込）</small></strong>
+          <button type="button" class="btn btn--gold btn--sm" data-open-modal>LINE予約で申し込む</button>
+        </div>
+      </div>
+
+      <div class="menu-cols">
+        <div class="mcat">
+          <div class="mcat__head"><h3>Cut &amp; Color</h3><span>カット・カラー</span></div>
+          <div class="mrow">
+            <div><p class="mrow__name">似合わせデザインカット</p><p class="mrow__note">骨格診断・炭酸泉シャンプー・ブロー込</p></div>
+            <div class="mrow__val"><b>¥7,700</b><small>60 min</small></div>
+          </div>
+          <div class="mrow">
+            <div><p class="mrow__name">カット ＋ イルミナ／艶ケアカラー</p><p class="mrow__note">透明感と手触りを両立する低ダメージカラー</p></div>
+            <div class="mrow__val"><b>¥16,500</b><small>120 min</small></div>
+          </div>
+          <div class="mrow">
+            <div><p class="mrow__name">リタッチカラー（根元3cm以内）</p><p class="mrow__note">白髪ぼかし・自然なトーン調整にも対応</p></div>
+            <div class="mrow__val"><b>¥8,800</b><small>75 min</small></div>
+          </div>
+        </div>
+
+        <div class="mcat">
+          <div class="mcat__head"><h3>Treatment &amp; Spa</h3><span>髪質改善・ヘッドスパ</span></div>
+          <div class="mrow">
+            <div><p class="mrow__name">シルク髪質改善トリートメント</p><p class="mrow__note">うねり・パサつきを抑え、芯から潤う艶髪へ</p></div>
+            <div class="mrow__val"><b>¥6,600</b><small>45 min</small></div>
+          </div>
+          <div class="mrow">
+            <div><p class="mrow__name">ボタニカル・アロマヘッドスパ（40分）</p><p class="mrow__note">頭皮クレンジング＋首肩ほぐし＋保湿パック</p></div>
+            <div class="mrow__val"><b>¥7,700</b><small>60 min</small></div>
+          </div>
+          <div class="mrow">
+            <div><p class="mrow__name">プレミアム艶髪フルコース</p><p class="mrow__note">カット＋艶カラー＋髪質改善＋スパ（20分）</p></div>
+            <div class="mrow__val"><b>¥24,200</b><small>150 min</small></div>
+          </div>
+        </div>
+      </div>
+      <p class="menu-note">※表示価格はすべて税込です。お支払い：各種クレジットカード / 電子マネー / QR決済 / 現金に対応しております。</p>
+    </div>
+  </section>
+
+  <!-- STYLIST & FLOW -->
+  <section class="sec" id="stylist">
+    <div class="wrap">
+      <div class="stylist-grid">
+        <div>
+          <p class="sec__en">Stylist</p>
+          <h2 style="font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.8vw,34px);line-height:1.5;letter-spacing:.08em;margin-bottom:28px">専任スタイリストが、<br>最後まで責任をもって。</h2>
+          <div class="stylist-card">
+            <span class="stylist-card__role">Owner Stylist / Hair Care Meister</span>
+            <h3>高橋 凪<small>Nagi Takahashi</small></h3>
+            <p>表参道の有名サロンにてトップスタイリストとして10年間勤務。雑誌撮影やヘアケア商品監修を経て、「一人ひとりの髪と静かに向き合える空間をつくりたい」という想いから自由が丘に ATELIER NAGI を開きました。</p>
+            <div class="stylist-card__tags">
+              <span>大人のショート・ボブ</span>
+              <span>髪質改善・艶髪ケア</span>
+              <span>白髪ぼかし</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="flow">
+          <p class="sec__en">Treatment Flow</p>
+          <h2 style="font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.8vw,34px);line-height:1.5;letter-spacing:.08em;margin-bottom:28px">ご予約から施術の流れ</h2>
+          <ol class="flow-list">
+            <li><span class="flow-list__n">01</span><div><h3>公式LINEで簡単予約・事前相談</h3><p>ご希望日時とメニューをトークで送るだけ。「今の髪の悩み」や理想のスタイル写真も事前に共有いただけます。</p></div></li>
+            <li><span class="flow-list__n">02</span><div><h3>丁寧なカウンセリング＆髪質診断</h3><p>ご来店後、骨格・髪質・普段のお手入れ方法を伺いながら、無理のないスタイルと明確なお会計をご案内します。</p></div></li>
+            <li><span class="flow-list__n">03</span><div><h3>マンツーマン施術</h3><p>シャンプーから仕上げまで専任で担当。他のお客様を気にせず、静かな時間をお過ごしいただけます。</p></div></li>
+            <li><span class="flow-list__n">04</span><div><h3>スタイリング＆アフターサポート</h3><p>ご自宅での乾かし方をお伝えします。施術後10日間のお直し保証や、LINEでのケア相談も無料で承ります。</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINE BOOKING -->
+  <section class="sec sec--noir" id="reserve">
+    <div class="wrap">
+      <div class="line-cta">
+        <div>
+          <p class="sec__en">Reservation</p>
+          <h2>ご予約・事前の髪のご相談は、<br>公式LINEがスムーズです。</h2>
+          <p class="sec__lead">ポータルサイトへの会員登録は不要。いつものLINEから24時間いつでも空き状況の確認・ご予約ができます。</p>
+          <ul class="line-points">
+            <li>「どのメニューを選べばいいか分からない」もLINEで事前相談OK</li>
+            <li>なりたいヘアスタイルの写真を送っておけるので当日がスムーズ</li>
+            <li>次回のご予約変更やホームケアのご質問もトークひとつで完結</li>
+          </ul>
+        </div>
+        <div class="line-box">
+          <p>友だち追加のうえ、ご希望の日時・メニューをお送りください。<br>営業時間外も24時間受付・原則当日中にご返信します。</p>
+          <button type="button" class="btn btn--gold" data-open-modal>LINE予約デモを試す</button>
+          <small>※架空店舗サンプルのため、予約デモ画面が開きます</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="sec" id="access">
+    <div class="wrap">
+      <div class="sec__head">
+        <p class="sec__en">Access &amp; Salon Info</p>
+        <h2>店舗のご案内</h2>
+      </div>
+      <div class="access-grid">
+        <dl class="dl">
+          <div><dt>Salon</dt><dd>ATELIER NAGI（アトリエ ナギ）</dd></div>
+          <div><dt>Address</dt><dd>東京都目黒区自由が丘エリア（自由が丘駅 正面口より徒歩3分）<br><small style="color:var(--dim)">※架空店舗サンプルのため番地非掲載</small></dd></div>
+          <div><dt>Hours</dt><dd>10:00 – 20:00（最終受付 カット19:00 / カラー18:00）</dd></div>
+          <div><dt>Closed</dt><dd>毎週火曜日・第1水曜日</dd></div>
+          <div><dt>Seats</dt><dd>セット面 2席・フルフラットシャンプー台 1台</dd></div>
+        </dl>
+        <div class="map-box">
+          <div>
+            <h3>ATELIER NAGI · JIYUGAOKA</h3>
+            <p>自由が丘駅 正面口を出て学園通り方面へ徒歩3分。<br>白い石壁のテラスハウス2階、静かな通りに面したプライベート空間です。</p>
+          </div>
+          <div style="margin-top:24px">
+            <button type="button" class="btn btn--noir btn--sm" data-open-modal>LINEで空き状況を確認する</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__in">
+      <div class="brand"><b>ATELIER NAGI</b><small>Hair &amp; Head Spa · Jiyugaoka</small></div>
+      <a class="footer__back" href="../../index.html#works">Machiya Web の制作事例に戻る ↗</a>
+    </div>
+    <div class="footer__meta">
+      <span>© 2026 ATELIER NAGI — FICTIONAL CONCEPT WEBSITE</span>
+      <span>写真はAI生成・架空店舗のコンセプトサンプルです（制作：Machiya Web）</span>
+    </div>
+  </div>
+</footer>
+
+<div class="dock">
+  <a class="btn btn--line" href="#menu">料金を見る</a>
+  <button type="button" class="btn btn--noir" data-open-modal>LINE予約</button>
+</div>
+
+<!-- DEMO MODAL -->
+<div class="modal" id="resModal" role="dialog" aria-modal="true" aria-labelledby="resTitle" hidden>
+  <div class="modal__card">
+    <button type="button" class="modal__close" id="closeModal" aria-label="閉じる">×</button>
+    <h3 id="resTitle">LINE予約・事前相談（デモ）</h3>
+    <p class="modal__note">※こちらは架空サロンのデモ画面です。実店舗サイトでは公式LINEの友だち追加や予約システムへ直接つながります。</p>
+    <form id="resForm">
+      <div class="fgrid">
+        <label class="f">ご希望日<input type="date" required></label>
+        <label class="f">ご希望時間帯
+          <select required>
+            <option value="">選択してください</option>
+            <option>10:00〜</option><option>12:30〜</option><option>15:00〜</option><option>17:30〜</option>
+          </select>
+        </label>
+        <label class="f f--full">ご希望メニュー
+          <select>
+            <option>【初回限定】似合わせカット＋シルク艶トリートメント（¥11,000）</option>
+            <option>似合わせデザインカット（¥7,700）</option>
+            <option>カット＋艶ケアカラー（¥16,500）</option>
+            <option>プレミアム艶髪フルコース（¥24,200）</option>
+            <option>メニューを相談して決めたい</option>
+          </select>
+        </label>
+        <label class="f f--full">お名前<input type="text" placeholder="例：山田 花子" required></label>
+        <label class="f f--full">髪のお悩み・ご希望（任意）<textarea rows="2" placeholder="例：広がりやすいのでまとまりやすいボブにしたいです"></textarea></label>
+      </div>
+      <button type="submit" class="btn btn--noir" style="width:100%;margin-top:18px">予約イメージを確認（デモ）</button>
+      <p class="modal__status" id="resStatus" role="status"></p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function () {
+  var modal = document.getElementById('resModal');
+  var status = document.getElementById('resStatus');
+  document.querySelectorAll('[data-open-modal]').forEach(function (b) {
+    b.addEventListener('click', function () { modal.hidden = false; status.textContent = ''; });
+  });
+  document.getElementById('closeModal').addEventListener('click', function () { modal.hidden = true; });
+  modal.addEventListener('click', function (e) { if (e.target === modal) modal.hidden = true; });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) modal.hidden = true; });
+  document.getElementById('resForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    status.textContent = 'デモ確認完了：実際のサロンサイトでは、ボタン1つで店舗の公式LINEや予約フォームへそのまま連携できます。';
+  });
+})();
+</script>
+</body>
+</html>

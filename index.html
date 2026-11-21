@@ -11,8 +11,11 @@
     index.html            … このファイル（CSS・JSを内包）
     images/tsukishiro.webp… 月白の写真
     images/kuroha.jpg     … KUROHAの写真
+    images/nagi-hero.jpg  … ATELIER NAGIの写真
+    images/nagi-salon.jpg … ATELIER NAGIの店内写真
     samples/tsukishiro/   … 月白の完成サンプル
     samples/kuroha/       … KUROHA（英語・日英切替）の完成サンプル
+    samples/nagi/         … ATELIER NAGI（プライベート美容室）の完成サンプル
     ※サンプルの写真も images/ の画像を共有しています
 
   「★編集」… 文章・料金・連絡先を変更する箇所
@@ -552,6 +555,29 @@ html:not(.js) .work+.work,.works__panels:not(.is-tabbed) .work+.work{margin-top:
 .kr-list div{display:flex;justify-content:space-between;padding:2.6% 0;border-bottom:1px solid rgba(245,239,230,.1);font-size:clamp(7px,.74vw,9.5px)}
 .kr-list span:last-child{font-family:var(--latin);color:#E4B578}
 
+/* ATELIER NAGI（プライベート美容室）のプレビュー */
+.pv--ng{background:#FDFCFA;color:#191816;font-family:var(--sans)}
+.ng-top{display:flex;justify-content:space-between;align-items:center;padding:3.2% 6%;border-bottom:1px solid rgba(17,17,17,.1);font-size:clamp(6px,.65vw,8px);letter-spacing:.14em;color:#5E5951}
+.ng-top b{font-family:var(--latin);font-weight:500;font-size:clamp(10px,1.15vw,14px);letter-spacing:.22em;color:#111}
+.ng-top u{text-decoration:none;background:#111;color:#FDFCFA;padding:2px 8px;font-size:.9em}
+.ng-hero{position:relative;aspect-ratio:16/9.6;overflow:hidden;background:#F5F0E8}
+.ng-hero img{width:100%;height:100%;object-fit:cover;object-position:68% 35%}
+.ng-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(253,252,250,.96) 0%,rgba(253,252,250,.85) 42%,rgba(253,252,250,0) 76%)}
+.ng-hero__copy{position:absolute;z-index:1;left:6%;top:50%;transform:translateY(-50%);max-width:52%;display:flex;flex-direction:column;gap:5px}
+.ng-hero__copy small{font-family:var(--latin);font-style:italic;font-size:clamp(6.5px,.7vw,9px);letter-spacing:.14em;color:#8A6B37}
+.ng-hero__copy b{font-family:var(--serif);font-weight:500;font-size:clamp(13px,1.75vw,22px);line-height:1.4;color:#111;letter-spacing:.06em}
+.ng-hero__copy span{font-size:clamp(6px,.66vw,8.5px);line-height:1.6;color:#5E5951}
+.ng-sec{padding:6%}
+.ng-sec--iv{background:#F5F0E8}
+.ng-sec .mh{font-family:var(--latin);font-size:clamp(10px,1.05vw,13.5px);letter-spacing:.18em;text-transform:uppercase;color:#8A6B37;margin-bottom:4%;display:flex;align-items:center;gap:10px}
+.ng-sec .mh::after{content:"";flex:1;height:1px;background:rgba(17,17,17,.14)}
+.ng-priv{background:#111;color:#FDFCFA;padding:4.5% 5.5%;display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid rgba(212,180,122,.35);margin-bottom:5%}
+.ng-priv small{display:block;font-family:var(--latin);font-size:clamp(5.5px,.6vw,7.5px);letter-spacing:.16em;color:#D4B47A}
+.ng-priv b{font-family:var(--serif);font-weight:400;font-size:clamp(8px,.88vw,11.5px)}
+.ng-priv strong{font-family:var(--latin);font-size:clamp(12px,1.35vw,18px);font-weight:400;color:#D4B47A;white-space:nowrap}
+.ng-list div{display:flex;justify-content:space-between;padding:2.6% 0;border-bottom:1px solid rgba(17,17,17,.1);font-size:clamp(7px,.74vw,9.5px)}
+.ng-list span:last-child{font-family:var(--latin);color:#111}
+
 .work__info .work__cat{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.12em;color:var(--gold-ink)}
 .work__info .work__cat::before{content:"";width:24px;height:1px;background:var(--gold)}
 .work__info h3{font-family:var(--serif);font-weight:500;font-size:clamp(24px,2.4vw,32px);letter-spacing:.08em;line-height:1.5;margin:14px 0 18px}
@@ -848,6 +874,7 @@ html:not(.js) .burger{display:none!important}
   .works__top{display:block}
   .tabs{margin-top:28px;width:100%;display:grid;grid-template-columns:1fr 1fr}
   .tab{min-width:0;padding:10px 12px}
+  .tab:last-child:nth-child(odd){grid-column:1/-1}
   .tab b{font-size:14.5px}
   .tab small{font-size:10.5px}
   .work__visual{padding:24px 16px 28px;margin:0 calc(var(--gut) * -1)}
@@ -1163,6 +1190,7 @@ html:not(.js) .burger{display:none!important}
         <div class="tabs" id="workTabs" hidden>
           <button class="tab" type="button" id="tab-ts" aria-controls="work-ts"><b>月白</b><small>蕎麦・和食</small></button>
           <button class="tab" type="button" id="tab-kr" aria-controls="work-kr"><b>KUROHA</b><small>英語対応・焼き鳥</small></button>
+          <button class="tab" type="button" id="tab-ng" aria-controls="work-ng"><b>ATELIER NAGI</b><small>美容室・サロン</small></button>
         </div>
       </div>
 
@@ -1275,6 +1303,58 @@ html:not(.js) .burger{display:none!important}
             </dl>
             <!-- samples/kuroha/ にある完成サンプルへのリンク -->
             <a class="btn btn--solid" href="samples/kuroha/index.html" target="_blank" rel="noopener">完成サイトを見る<svg class="ico ico--ext" viewBox="0 0 18 18" fill="none" stroke="currentColor" aria-hidden="true"><path d="M5 13l8-8M6 5h7v7"/></svg><span class="sr-only">（新しいタブで開きます）</span></a>
+            <p class="work__note">※Machiya Webが制作した架空店舗のコンセプトサイトです。正式な受託実績ではありません。写真はAI生成、メニュー・価格・営業時間はデザイン用の設定です。</p>
+          </div>
+        </article>
+
+        <!-- 事例3：ATELIER NAGI（プライベート美容室・サロン） -->
+        <article class="work" id="work-ng" aria-labelledby="work-ng-title">
+          <div class="work__visual">
+            <div class="mb" aria-hidden="true">
+              <div class="mb__bar"><i></i><i></i><i></i><span>ATELIER NAGI — LUXURY SALON SAMPLE</span></div>
+              <div class="mb__view" style="background:#FDFCFA">
+                <div class="pv pv--ng">
+                  <div class="ng-top"><b>ATELIER NAGI</b><span>Concept　Menu　Stylist　<u>LINE予約</u></span></div>
+                  <div class="ng-hero">
+                    <img src="images/nagi-hero.jpg" alt="" width="1264" height="848" loading="lazy">
+                    <div class="ng-hero__copy"><small>Private Hair &amp; Head Spa</small><b>素髪に、静かな艶と<br>気品を宿す。</b><span>自由が丘駅徒歩3分、全2席のプライベートサロン。</span></div>
+                  </div>
+                  <div class="ng-sec ng-sec--iv">
+                    <p class="mh">Menu &amp; Pricing</p>
+                    <div class="ng-priv">
+                      <div><small>FIRST VISIT · LINE予約限定</small><b>初回限定：似合わせカット＋シルク艶トリートメント</b></div>
+                      <strong>¥11,000</strong>
+                    </div>
+                    <div class="ng-list">
+                      <div><span>似合わせデザインカット（60 min）</span><span>¥7,700</span></div>
+                      <div><span>カット＋イルミナ／艶ケアカラー（120 min）</span><span>¥16,500</span></div>
+                      <div><span>ボタニカル・アロマヘッドスパ（40分）</span><span>¥7,700</span></div>
+                      <div><span>プレミアム艶髪フルコース（150 min）</span><span>¥24,200</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mp" aria-hidden="true">
+              <div class="mp__screen" style="background:#FDFCFA;color:#111">
+                <div class="mp__top"><b style="font-family:var(--latin);letter-spacing:.14em;font-size:8px">ATELIER NAGI</b><i style="border-color:#111"></i></div>
+                <div class="mp__img" style="height:38%"><img src="images/nagi-hero.jpg" alt="" width="1264" height="848" loading="lazy" style="filter:none;object-position:75% 30%"></div>
+                <div class="mp__body"><p style="color:#111;font-family:var(--serif)">素髪に、静かな艶と気品を。</p><div class="mp__row" style="color:#5E5951;border-color:rgba(17,17,17,.12)"><span>初回限定</span><span>¥11,000</span></div><div class="mp__btn" style="background:#111;color:#D4B47A">LINE予約</div></div>
+              </div>
+            </div>
+            <p class="work__hint" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M7 2v10M3 8l4 4 4-4"/></svg>カーソルを合わせると、ページの下まで見られます</p>
+          </div>
+          <div class="work__info">
+            <p class="work__cat">プライベート美容室コンセプトサイト</p>
+            <h3 id="work-ng-title">ヘアサロン＆ヘッドスパ ATELIER NAGI</h3>
+            <p>自由が丘の全2席プライベート美容室を想定したエレガントなサイト。ポータルサイトに頼らず自社サイトから公式LINE予約へ自然につなげる導線を設計し、明朗な料金表・スタイリスト紹介・施術の流れを洗練されたトーンでまとめました。</p>
+            <dl class="work__dl">
+              <div><dt>業種</dt><dd>地域店舗・プライベート美容室／ヘッドスパ</dd></div>
+              <div><dt>設計</dt><dd>初回優待プラン / 明朗料金表 / スタイリスト紹介 / 施術の流れ / LINE予約導線</dd></div>
+              <div><dt>対応</dt><dd>PC / タブレット / スマートフォン</dd></div>
+            </dl>
+            <!-- samples/nagi/ にある完成サンプルへのリンク -->
+            <a class="btn btn--solid" href="samples/nagi/index.html" target="_blank" rel="noopener">完成サイトを見る<svg class="ico ico--ext" viewBox="0 0 18 18" fill="none" stroke="currentColor" aria-hidden="true"><path d="M5 13l8-8M6 5h7v7"/></svg><span class="sr-only">（新しいタブで開きます）</span></a>
             <p class="work__note">※Machiya Webが制作した架空店舗のコンセプトサイトです。正式な受託実績ではありません。写真はAI生成、メニュー・価格・営業時間はデザイン用の設定です。</p>
           </div>
         </article>
