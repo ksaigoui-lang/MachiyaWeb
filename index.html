@@ -11,10 +11,12 @@
     index.html            … このファイル（CSS・JSを内包）
     images/tsukishiro.webp… 月白の写真
     images/mugi.webp      … mugiの写真
+    images/kuroha.jpg     … KUROHAの写真
     samples/tsukishiro/   … 月白の完成サンプル
     samples/kotonoha/     … ことの葉の完成サンプル
     samples/mugi/         … mugiの完成サンプル
-    ※サンプル3件の写真も images/ の画像を共有しています
+    samples/kuroha/       … KUROHA（英語・日英切替）の完成サンプル
+    ※サンプルの写真も images/ の画像を共有しています
 
   「★編集」… 文章・料金・連絡先を変更する箇所
   「★公開前」… 公開前に必ず確認・設定する箇所
@@ -205,6 +207,14 @@
      "acceptedAnswer": {
       "@type": "Answer",
       "text": "店舗のGoogleビジネスプロフィールを管理しているアカウントから、完成した公式サイトのURLを登録できます。必要に応じて設定をサポートします。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "英語サイトや、日本語・英語の切り替えページも作れますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "はい、対応しています。英語のみのページ制作から、日本語・英語の切り替え対応、海外のお客様向けのメニュー表記・お通しや注文方法のガイドまで、お店の客層に合わせてご提案します。"
      }
     }
    ]
@@ -478,9 +488,9 @@ button{background:none;border:0;cursor:pointer;padding:0}
 ===================================================================== */
 .works__top{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
 .works__top .lead{margin-top:20px}
-.tabs{display:flex;gap:6px;padding:5px;border:1px solid var(--line);border-radius:3px;background:var(--white)}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;padding:5px;border:1px solid var(--line);border-radius:3px;background:var(--white)}
 .tabs[hidden]{display:none}
-.tab{display:flex;flex-direction:column;align-items:flex-start;min-width:148px;padding:10px 18px;border-radius:2px;text-align:left;transition:background-color .25s ease,color .25s ease}
+.tab{display:flex;flex-direction:column;align-items:flex-start;min-width:132px;padding:10px 16px;border-radius:2px;text-align:left;transition:background-color .25s ease,color .25s ease}
 .tab b{font-family:var(--serif);font-weight:500;font-size:16px;letter-spacing:.1em;line-height:1.5}
 .tab small{font-size:11.5px;color:var(--ink-3);letter-spacing:.06em;line-height:1.5;transition:color .45s}
 .tab[aria-selected="true"]{background:var(--green);color:var(--white)}
@@ -523,6 +533,27 @@ html:not(.js) .work+.work,.works__panels:not(.is-tabbed) .work+.work{margin-top:
 .pv-map{margin-top:5%;height:clamp(40px,5vw,70px);background:repeating-linear-gradient(35deg,#E7E1D4 0 1px,transparent 1px 12px),repeating-linear-gradient(-55deg,#E7E1D4 0 1px,transparent 1px 16px),#EFEAE0;position:relative}
 .pv-map::after{content:"";position:absolute;left:52%;top:30%;width:10px;height:10px;border-radius:50% 50% 50% 0;background:#8A4737;transform:rotate(-45deg)}
 .pv-btn{display:inline-block;margin-top:5%;padding:2.2% 5%;background:#304C3D;color:#fff;font-size:clamp(7px,.72vw,9px);letter-spacing:.16em}
+
+/* KUROHA（英語・日英切替）のプレビュー */
+.pv--kr{background:#12100E;color:#F5EFE6;font-family:var(--sans)}
+.kr-top{display:flex;justify-content:space-between;align-items:center;padding:3.2% 6%;border-bottom:1px solid rgba(245,239,230,.12);font-size:clamp(6.5px,.68vw,8.5px);letter-spacing:.14em;color:#B8AEA2}
+.kr-top b{font-family:var(--latin);font-size:clamp(11px,1.25vw,16px);letter-spacing:.22em;color:#F5EFE6}
+.kr-pill{display:inline-block;padding:1px 6px;border:1px solid rgba(209,154,88,.5);border-radius:999px;color:#E4B578;font-size:.9em}
+.kr-hero{position:relative;aspect-ratio:16/9.6;overflow:hidden}
+.kr-hero img{width:100%;height:100%;object-fit:cover;object-position:65% 50%}
+.kr-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,12,10,.92) 0%,rgba(14,12,10,.65) 48%,rgba(14,12,10,.18) 100%)}
+.kr-hero__copy{position:absolute;z-index:1;left:6%;top:50%;transform:translateY(-50%);max-width:56%;display:flex;flex-direction:column;gap:5px}
+.kr-hero__copy small{font-size:clamp(6px,.62vw,8px);letter-spacing:.2em;color:#E4B578;text-transform:uppercase}
+.kr-hero__copy b{font-family:var(--latin);font-weight:500;font-size:clamp(15px,2.1vw,27px);line-height:1.15;color:#F5EFE6}
+.kr-hero__copy span{font-size:clamp(6.5px,.68vw,8.8px);line-height:1.5;color:#DDD4C8}
+.kr-sec{padding:6% 6%}
+.kr-sec .mh{font-family:var(--latin);font-size:clamp(10px,1.1vw,14px);letter-spacing:.12em;color:#E4B578;margin-bottom:4%;display:flex;align-items:center;gap:10px}
+.kr-sec .mh::after{content:"";flex:1;height:1px;background:rgba(209,154,88,.25)}
+.kr-guides{display:grid;grid-template-columns:repeat(3,1fr);gap:3%}
+.kr-guides div{background:#1F1B18;border:1px solid rgba(245,239,230,.1);padding:5% 6%;font-size:clamp(6.5px,.66vw,8.5px);line-height:1.5;color:#B8AEA2}
+.kr-guides b{display:block;color:#F5EFE6;margin-bottom:2px;font-size:1.05em}
+.kr-list div{display:flex;justify-content:space-between;padding:2.6% 0;border-bottom:1px solid rgba(245,239,230,.1);font-size:clamp(7px,.74vw,9.5px)}
+.kr-list span:last-child{font-family:var(--latin);color:#E4B578}
 
 /* mugiのプレビュー */
 .pv--mg{background:#FFF9ED;color:#254FA3}
@@ -866,8 +897,8 @@ html:not(.js) .burger{display:none!important}
   .svc__g,.svc__g:first-child,.svc__g:nth-child(3){padding:28px 0;border-right:0}
   .svc__g+.svc__g{border-top:1px solid var(--line)}
   .works__top{display:block}
-  .tabs{margin-top:28px;width:100%}
-  .tab{flex:1;min-width:0;padding:9px 10px}
+  .tabs{margin-top:28px;width:100%;display:grid;grid-template-columns:1fr 1fr}
+  .tab{min-width:0;padding:10px 12px}
   .tab b{font-size:14.5px}
   .tab small{font-size:10.5px}
   .work__visual{padding:24px 16px 28px;margin:0 calc(var(--gut) * -1)}
@@ -977,7 +1008,7 @@ html:not(.js) .burger{display:none!important}
       <!-- ★編集：ファーストビューの料金 -->
       <p class="hero__meta">
         <span>制作</span><b>59,800<small>円〜（税込）</small></b>
-        <span>買い切り対応</span><span class="dot" aria-hidden="true"></span><span>月額保守は任意</span>
+        <span>買い切り対応</span><span class="dot" aria-hidden="true"></span><span>月額保守は任意</span><span class="dot" aria-hidden="true"></span><span>英語・インバウンド対応可</span>
       </p>
       <!-- ★編集：モニター募集の案内（募集終了時はJSの MONITOR.open を false に） -->
       <p class="hero__monitor" data-monitor-block><a class="tlink" href="#monitor">モニター募集中｜先着3店舗は 29,800円（税込）</a></p>
@@ -1157,7 +1188,7 @@ html:not(.js) .burger{display:none!important}
           <p class="svc__k">育てる</p><p class="svc__d">公開したあとも、正しい情報を。</p>
           <ul>
             <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M16.5 8A7 7 0 1 0 17 12M17 3v5h-5"/></svg><div><h3>公開後の更新・保守</h3><p>営業時間や価格の変更など。都度見積もり・月額保守に対応。</p></div></li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2.5 4.5h9M7 2.5v2M4 4.5c0 4 3 7 6.5 8.5M10.5 4.5c0 4-3 7-8 9.5M11.5 18l3.5-9 3.5 9M12.8 15h4.4"/></svg><div><h3>英語・多言語ページへの拡張</h3><p>海外のお客様にも情報を伝えるページを追加。</p></div></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2.5 4.5h9M7 2.5v2M4 4.5c0 4 3 7 6.5 8.5M10.5 4.5c0 4-3 7-8 9.5M11.5 18l3.5-9 3.5 9M12.8 15h4.4"/></svg><div><h3>英語サイト・インバウンド対応</h3><p>英語メニュー・注文ガイド・日英切替など、海外のお客様が安心して来店できるページを制作。</p></div></li>
           </ul>
         </div>
       </div>
@@ -1184,6 +1215,7 @@ html:not(.js) .burger{display:none!important}
           <button class="tab" type="button" id="tab-ts" aria-controls="work-ts"><b>月白</b><small>蕎麦・和食</small></button>
           <button class="tab" type="button" id="tab-kn" aria-controls="work-kn"><b>ことの葉</b><small>花屋</small></button>
           <button class="tab" type="button" id="tab-mg" aria-controls="work-mg"><b>mugi</b><small>ベーカリー</small></button>
+          <button class="tab" type="button" id="tab-kr" aria-controls="work-kr"><b>KUROHA</b><small>英語対応・焼き鳥</small></button>
         </div>
       </div>
 
@@ -1331,6 +1363,62 @@ html:not(.js) .burger{display:none!important}
             <!-- samples/mugi/ にある完成サンプルへのリンク -->
             <a class="btn btn--solid" href="samples/mugi/index.html" target="_blank" rel="noopener">完成サイトを見る<svg class="ico ico--ext" viewBox="0 0 18 18" fill="none" stroke="currentColor" aria-hidden="true"><path d="M5 13l8-8M6 5h7v7"/></svg><span class="sr-only">（新しいタブで開きます）</span></a>
             <p class="work__note">※Machiya Webが制作した架空店舗のコンセプトサイトです。正式な受託実績ではありません。写真はAI生成、商品・価格・営業時間はデザイン用の設定です。</p>
+          </div>
+        </article>
+
+        <!-- 事例4：KUROHA（英語・日英切替インバウンド対応） -->
+        <article class="work" id="work-kr" aria-labelledby="work-kr-title">
+          <div class="work__visual">
+            <div class="mb" aria-hidden="true">
+              <div class="mb__bar"><i></i><i></i><i></i><span>KUROHA — ENGLISH / BILINGUAL SAMPLE</span></div>
+              <div class="mb__view" style="background:#12100E">
+                <div class="pv pv--kr">
+                  <div class="kr-top"><b>KUROHA</b><span>Guide　Menu　Access　<span class="kr-pill">EN / 日本語</span></span></div>
+                  <div class="kr-hero">
+                    <img src="images/kuroha.jpg" alt="" width="1264" height="848" loading="lazy">
+                    <div class="kr-hero__copy"><small>Nakameguro · Tokyo</small><b>Fire, Charcoal, and Quiet Craft.</b><span>Binchotan yakitori &amp; craft sake. English menu &amp; cards welcome.</span></div>
+                  </div>
+                  <div class="kr-sec">
+                    <p class="mh">First-Time Visitor Guide</p>
+                    <div class="kr-guides">
+                      <div><b>English Menu</b>Point-and-order guide</div>
+                      <div><b>Otoshi ¥550</b>Table charge explained</div>
+                      <div><b>Cards &amp; [GF]</b>Allergy &amp; dietary tags</div>
+                    </div>
+                  </div>
+                  <div class="kr-sec" style="padding-top:0">
+                    <p class="mh">Signature Skewers &amp; Omakase</p>
+                    <div class="kr-list">
+                      <div><span>Negima — Chicken &amp; Charred Leek [GF]</span><span>¥380</span></div>
+                      <div><span>Tsukune — Minced Chicken &amp; Egg Yolk</span><span>¥440</span></div>
+                      <div><span>Chef's Omakase 7-Skewer Course</span><span>¥4,800</span></div>
+                      <div><span>3-Glass Craft Sake Flight</span><span>¥1,800</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mp" aria-hidden="true">
+              <div class="mp__screen" style="background:#12100E;color:#F5EFE6">
+                <div class="mp__top"><b style="font-family:var(--latin);letter-spacing:.18em;color:#F5EFE6">KUROHA</b><span style="font-size:6px;padding:1px 4px;border:1px solid #D19A58;border-radius:99px;color:#E4B578">EN/JP</span></div>
+                <div class="mp__img" style="height:36%"><img src="images/kuroha.jpg" alt="" width="1264" height="848" loading="lazy"></div>
+                <div class="mp__body"><p style="color:#F5EFE6;font-family:var(--latin)">Fire, Charcoal, and Quiet Craft.</p><div class="mp__row" style="color:#B8AEA2;border-color:rgba(245,239,230,.14)"><span>Menu</span><span>EN / GF</span></div><div class="mp__btn" style="background:#D19A58;color:#12100E;font-weight:700">Reserve</div></div>
+              </div>
+            </div>
+            <p class="work__hint" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M7 2v10M3 8l4 4 4-4"/></svg>カーソルを合わせると、ページの下まで見られます</p>
+          </div>
+          <div class="work__info">
+            <p class="work__cat">英語・日英切替コンセプトサイト</p>
+            <h3 id="work-kr-title">炭火焼き鳥＆日本酒バー KUROHA</h3>
+            <p>海外からのお客様（インバウンド）を意識した英語・日本語切り替え対応のサンプルサイト。お通し（席料）や決済方法、グルテンフリー／ベジタリアン表記、駅からの道案内まで英語で分かりやすく整理し、来店ハードルを下げる設計です。</p>
+            <dl class="work__dl">
+              <div><dt>業種</dt><dd>飲食店・焼き鳥／居酒屋バー（インバウンド対応）</dd></div>
+              <div><dt>設計</dt><dd>EN⇄日本語切替 / 初めての方ガイド / 英語メニュー（GF・V表記） / Web予約デモ</dd></div>
+              <div><dt>対応</dt><dd>PC / タブレット / スマートフォン</dd></div>
+            </dl>
+            <!-- samples/kuroha/ にある完成サンプルへのリンク -->
+            <a class="btn btn--solid" href="samples/kuroha/index.html" target="_blank" rel="noopener">完成サイトを見る<svg class="ico ico--ext" viewBox="0 0 18 18" fill="none" stroke="currentColor" aria-hidden="true"><path d="M5 13l8-8M6 5h7v7"/></svg><span class="sr-only">（新しいタブで開きます）</span></a>
+            <p class="work__note">※Machiya Webが制作した架空店舗のコンセプトサイトです。正式な受託実績ではありません。写真はAI生成、メニュー・価格・営業時間はデザイン用の設定です。</p>
           </div>
         </article>
       </div>
@@ -1516,6 +1604,7 @@ html:not(.js) .burger{display:none!important}
         <details data-monitor-block><summary><span class="faq__q" aria-hidden="true">Q</span><span>モニター価格の条件は何ですか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>完成したサイトをMachiya Webの制作事例として掲載させていただくことと、公開後のかんたんなアンケートへのご協力が条件です。対象は買い切り制作の基本内容で、追加ページ・写真撮影・月額サポートは通常料金です。先着3店舗に達した時点で終了します。</p></div></details>
         <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>公開後に修正できますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>可能です。買い切りの場合は、文字・店舗情報の修正2,200円〜、写真の差し替え3,300円〜、メニュー・価格の更新3,300円〜が目安です（すべて税込）。月額サポートの場合は契約範囲内で対応します。複数箇所やレイアウト変更は、作業前に総額をご案内します。</p></div></details>
         <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>Googleマップにもサイトを掲載できますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>店舗のGoogleビジネスプロフィールを管理しているアカウントから、完成した公式サイトのURLを登録できます。必要に応じて設定をサポートします。</p></div></details>
+        <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>英語サイトや、日本語・英語の切り替えページも作れますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>はい、対応しています。英語のみのページ制作から、日本語・英語の切り替え対応、海外のお客様向けのメニュー表記・お通しや注文方法のガイドまで、お店の客層に合わせてご提案します（制作事例の「KUROHA」もぜひご覧ください）。</p></div></details>
       </div>
     </div>
   </div>

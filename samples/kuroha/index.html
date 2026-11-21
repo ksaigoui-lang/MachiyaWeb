@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<!-- 配置：samples/kuroha/index.html　写真はMachiya Web本体と共通の ../../images/kuroha.jpg を参照 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KUROHA | Binchotan Yakitori &amp; Craft Sake — Nakameguro, Tokyo (Concept Sample)</title>
+<meta name="description" content="Binchotan charcoal-grilled yakitori and small-batch craft sake in Nakameguro, Tokyo. English menu, first-time visitor guide, and online reservations. Fictional concept website by Machiya Web.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#12100E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2312100E'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='serif' font-size='34' fill='%23D19A58'%3E黒%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#12100E;
+  --bg-2:#1A1714;
+  --card:#1F1B18;
+  --ivory:#F5EFE6;
+  --muted:#B8AEA2;
+  --dim:#8C8277;
+  --ember:#D19A58;
+  --ember-hi:#E4B578;
+  --line:rgba(245,239,230,.12);
+  --line-gold:rgba(209,154,88,.32);
+  --serif:"Cormorant Garamond","Shippori Mincho",Georgia,serif;
+  --sans:"Plus Jakarta Sans","Zen Kaku Gothic New",sans-serif;
+  --wrap:1140px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--bg);color:var(--ivory);font-family:var(--sans);font-size:15.5px;line-height:1.8;letter-spacing:.01em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4,p,ul,dl,dd{margin:0;padding:0}
+ul{list-style:none}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer;padding:0}
+img{display:block;max-width:100%;height:auto}
+.wrap{width:100%;max-width:calc(var(--wrap) + 48px);margin:0 auto;padding:0 24px}
+
+/* Language toggle visibility */
+html[data-lang="en"] .t-jp{display:none!important}
+html[data-lang="ja"] .t-en{display:none!important}
+html[data-lang="ja"] body{font-size:15px;letter-spacing:.04em;line-height:1.95}
+html[data-lang="ja"] h1,html[data-lang="ja"] h2,html[data-lang="ja"] h3{font-family:"Shippori Mincho",serif}
+
+/* Sample Notice Bar */
+.demo-bar{background:#1F2B26;color:#E6ECE9;font-size:12px;line-height:1.6;padding:8px 16px;text-align:center;border-bottom:1px solid rgba(255,255,255,.1)}
+.demo-bar a{color:#E4B578;text-decoration:underline;text-underline-offset:3px;margin-left:10px;white-space:nowrap;font-weight:600}
+
+/* Header */
+.header{position:sticky;top:0;z-index:60;background:rgba(18,16,14,.88);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.header__in{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:baseline;gap:10px}
+.brand b{font-family:var(--serif);font-size:25px;font-weight:500;letter-spacing:.22em;color:var(--ivory)}
+.brand small{font-size:11px;letter-spacing:.18em;color:var(--ember);text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:24px}
+.nav__links{display:flex;gap:22px;font-size:13px;letter-spacing:.08em;color:var(--muted)}
+.nav__links a{transition:color .25s}
+.nav__links a:hover{color:var(--ivory)}
+.lang-sw{display:inline-flex;border:1px solid var(--line-gold);border-radius:999px;padding:3px;background:rgba(255,255,255,.03)}
+.lang-sw button{padding:5px 12px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--muted);transition:all .2s}
+.lang-sw button.is-on{background:var(--ember);color:#12100E}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:2px;font-size:13.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;transition:all .25s ease;white-space:nowrap}
+.btn--ember{background:var(--ember);color:#12100E;border:1px solid var(--ember)}
+.btn--ember:hover{background:var(--ember-hi);border-color:var(--ember-hi)}
+.btn--line{background:transparent;color:var(--ivory);border:1px solid rgba(245,239,230,.35)}
+.btn--line:hover{border-color:var(--ember);color:var(--ember-hi)}
+.btn--sm{min-height:38px;padding:0 16px;font-size:12px}
+
+/* Hero */
+.hero{position:relative;min-height:min(82vh,700px);display:flex;align-items:center;padding:72px 0 80px;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero__bg{position:absolute;inset:0;z-index:0}
+.hero__bg img{width:100%;height:100%;object-fit:cover;object-position:66% 50%}
+.hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,12,10,.94) 0%,rgba(14,12,10,.78) 44%,rgba(14,12,10,.26) 78%,rgba(14,12,10,.4) 100%)}
+.hero__content{position:relative;z-index:1;max-width:580px}
+.kicker{display:inline-flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ember-hi);margin-bottom:20px}
+.kicker::before{content:"";width:28px;height:1px;background:var(--ember)}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5.6vw,68px);line-height:1.12;letter-spacing:.02em}
+html[data-lang="ja"] .hero h1{font-size:clamp(32px,4.4vw,52px);line-height:1.4;letter-spacing:.08em}
+.hero__lead{margin-top:22px;color:#DDD4C8;font-size:15.5px;max-width:44ch}
+.hero__pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.hero__pills span{font-size:12px;letter-spacing:.04em;color:#EADFD2;padding:6px 12px;border:1px solid var(--line-gold);background:rgba(18,16,14,.62);border-radius:999px}
+.hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+
+/* Sections */
+.sec{padding:88px 0;border-bottom:1px solid var(--line)}
+.sec--alt{background:var(--bg-2)}
+.sec__head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.sec__eyebrow{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ember);margin-bottom:10px}
+.sec h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.25}
+html[data-lang="ja"] .sec h2{font-size:clamp(25px,3vw,36px);line-height:1.45;letter-spacing:.06em}
+.sec__sub{color:var(--muted);max-width:46ch;font-size:14.5px}
+
+/* Visitor Guide */
+.guide-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.gcard{background:var(--card);border:1px solid var(--line);padding:26px 24px;display:flex;flex-direction:column;gap:10px}
+.gcard__num{font-family:var(--serif);font-size:24px;color:var(--ember);line-height:1}
+.gcard h3{font-size:16px;font-weight:600;color:var(--ivory);line-height:1.45}
+.gcard p{font-size:13.5px;color:var(--muted);line-height:1.75}
+
+/* Menu */
+.diet-legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--muted)}
+.tag{display:inline-flex;align-items:center;padding:2px 7px;border-radius:3px;font-size:10.5px;font-weight:700;letter-spacing:.06em;border:1px solid var(--line-gold);color:var(--ember-hi);vertical-align:middle;margin-left:6px}
+.tag--v{border-color:rgba(136,192,146,.45);color:#A8DCAC}
+.menu-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:start}
+.mblock{background:var(--card);border:1px solid var(--line);padding:32px}
+.mblock h3{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--ember-hi);padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:8px}
+html[data-lang="ja"] .mblock h3{font-size:20px}
+.mitem{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid rgba(245,239,230,.08)}
+.mitem:last-child{border-bottom:0;padding-bottom:0}
+.mitem__name{font-weight:600;font-size:15px;color:var(--ivory)}
+.mitem__desc{font-size:13px;color:var(--muted);margin-top:3px;line-height:1.65}
+.mitem__price{font-family:var(--serif);font-size:20px;color:var(--ember-hi);white-space:nowrap;font-variant-numeric:lining-nums}
+
+.omakase{background:linear-gradient(160deg,#231D17,#181411);border:1px solid var(--line-gold);padding:32px}
+.omakase__badge{display:inline-block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#12100E;background:var(--ember);padding:3px 10px;font-weight:700;margin-bottom:14px}
+.omakase h3{font-family:var(--serif);font-size:28px;font-weight:400;line-height:1.25}
+html[data-lang="ja"] .omakase h3{font-size:22px;line-height:1.5}
+.omakase__price{margin:14px 0 18px;font-family:var(--serif);font-size:38px;color:var(--ember-hi);line-height:1}
+.omakase__price small{font-family:var(--sans);font-size:13px;color:var(--muted);margin-left:6px}
+.omakase ul{border-top:1px solid var(--line);padding-top:16px;display:grid;gap:9px;font-size:13.5px;color:#DDD4C8;margin-bottom:24px}
+.omakase li::before{content:"— ";color:var(--ember)}
+.sake-box{margin-top:20px;background:var(--card);border:1px solid var(--line);padding:26px 28px}
+.sake-box h3{font-family:var(--serif);font-size:22px;color:var(--ember-hi);margin-bottom:10px}
+html[data-lang="ja"] .sake-box h3{font-size:18px}
+
+/* Access */
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:stretch}
+.info-dl div{display:grid;grid-template-columns:130px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.info-dl dt{color:var(--ember);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding-top:2px}
+.info-dl dd{color:#E6DDD2}
+.map-card{background:repeating-linear-gradient(30deg,rgba(209,154,88,.07) 0 1px,transparent 1px 22px),repeating-linear-gradient(-60deg,rgba(245,239,230,.04) 0 1px,transparent 1px 28px),#1B1815;border:1px solid var(--line);padding:32px;display:flex;flex-direction:column;justify-content:space-between;min-height:300px}
+.map-pin{width:40px;height:40px;border-radius:50%;background:rgba(209,154,88,.16);border:1px solid var(--ember);display:flex;align-items:center;justify-content:center;color:var(--ember-hi);font-family:var(--serif);font-size:18px;margin-bottom:16px}
+.map-steps{margin-top:18px;padding-top:18px;border-top:1px solid var(--line);display:grid;gap:8px;font-size:13.5px;color:var(--muted)}
+
+/* Footer */
+.footer{padding:48px 0 96px;background:#0D0B0A;font-size:13px;color:var(--dim)}
+.footer__in{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.footer__back{color:var(--ember-hi);border-bottom:1px solid var(--line-gold);padding-bottom:2px;font-weight:600}
+.footer__meta{margin-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px}
+
+/* Mobile Dock */
+.dock{display:none}
+
+/* Modal */
+.modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.75);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px}
+.modal[hidden]{display:none}
+.modal__card{width:100%;max-width:480px;background:#1A1714;border:1px solid var(--line-gold);padding:30px;position:relative;max-height:90vh;overflow-y:auto}
+.modal__close{position:absolute;top:14px;right:16px;width:36px;height:36px;font-size:24px;color:var(--muted)}
+.modal__card h3{font-family:var(--serif);font-size:28px;font-weight:400;margin-bottom:6px}
+.modal__note{font-size:12.5px;color:var(--ember-hi);margin-bottom:20px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--muted)}
+.f--full{grid-column:1/-1}
+.f input,.f select,.f textarea{background:#12100E;border:1px solid var(--line);padding:11px 12px;color:var(--ivory);border-radius:2px;font-size:14.5px}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--ember)}
+.modal__status{margin-top:14px;font-size:13.5px;color:#A8DCAC;min-height:1.4em}
+
+@media (max-width:960px){
+  .guide-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .menu-grid,.access-grid{grid-template-columns:1fr}
+  .nav__links{display:none}
+}
+@media (max-width:640px){
+  .header__in{height:64px}
+  .brand b{font-size:21px}
+  .brand small{display:none}
+  .nav .btn--sm{display:none}
+  .hero{padding:48px 0 56px;min-height:auto}
+  .hero__bg::after{background:linear-gradient(180deg,rgba(14,12,10,.62) 0%,rgba(14,12,10,.92) 72%)}
+  .hero__actions .btn{width:100%}
+  .sec{padding:64px 0}
+  .guide-grid{grid-template-columns:1fr}
+  .mblock,.omakase,.sake-box{padding:24px 20px}
+  .fgrid{grid-template-columns:1fr}
+  .dock{display:grid;grid-template-columns:auto 1fr;gap:10px;position:fixed;z-index:55;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(18,16,14,.95);border-top:1px solid var(--line)}
+  .dock .btn{width:100%;min-height:46px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-bar" role="note">
+  <span class="t-en">Fictional English / Bilingual restaurant concept by Machiya Web. Details &amp; prices are for demo only.</span>
+  <span class="t-jp">Machiya Web 制作の英語・インバウンド対応サンプルサイトです（架空店舗）。</span>
+  <a href="../../index.html#works"><span class="t-en">Back to Machiya Web</span><span class="t-jp">Machiya Web へ戻る</span></a>
+</div>
+
+<header class="header">
+  <div class="wrap header__in">
+    <a class="brand" href="#top"><b>KUROHA</b><small>Nakameguro · Tokyo</small></a>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav__links">
+        <a href="#guide"><span class="t-en">Visitor Guide</span><span class="t-jp">初めての方へ</span></a>
+        <a href="#menu"><span class="t-en">Menu</span><span class="t-jp">お品書き</span></a>
+        <a href="#sake"><span class="t-en">Sake</span><span class="t-jp">日本酒</span></a>
+        <a href="#access"><span class="t-en">Access</span><span class="t-jp">アクセス</span></a>
+      </div>
+      <div class="lang-sw" role="group" aria-label="Language switch">
+        <button type="button" class="is-on" data-set-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-set-lang="ja" aria-pressed="false">日本語</button>
+      </div>
+      <button type="button" class="btn btn--ember btn--sm" data-open-modal><span class="t-en">Reserve</span><span class="t-jp">ご予約</span></button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg">
+      <img src="../../images/kuroha.jpg" alt="Binchotan charcoal-grilled yakitori skewers and ceramic sake carafe on a dark wooden counter" width="1264" height="848">
+    </div>
+    <div class="wrap">
+      <div class="hero__content">
+        <p class="kicker">Binchotan Yakitori &amp; Craft Sake — Nakameguro</p>
+        <h1>
+          <span class="t-en">Fire, Charcoal,<br>and Quiet Craft.</span>
+          <span class="t-jp">備長炭の香りと、<br>静かな一杯を。</span>
+        </h1>
+        <p class="hero__lead">
+          <span class="t-en">An intimate 14-seat yakitori counter 4 minutes from Nakameguro Station. Free-range chicken grilled over white Kishu binchotan, paired with small-batch junmai sake. International guests warmly welcome.</span>
+          <span class="t-jp">中目黒駅から徒歩4分、全14席の炭火焼き鳥と日本酒のカウンター。紀州備長炭で焼き上げる地鶏と厳選した純米酒を、海外からのお客様にも分かりやすくご案内しています。</span>
+        </p>
+        <div class="hero__pills">
+          <span><span class="t-en">English Menu Available</span><span class="t-jp">英語メニュー完備</span></span>
+          <span><span class="t-en">Cards &amp; Suica OK</span><span class="t-jp">カード・電子マネー可</span></span>
+          <span><span class="t-en">17:30 – 23:30 (Closed Mon)</span><span class="t-jp">17:30〜23:30（月曜定休）</span></span>
+        </div>
+        <div class="hero__actions">
+          <button type="button" class="btn btn--ember" data-open-modal><span class="t-en">Reserve a Table</span><span class="t-jp">席を予約する</span></button>
+          <a class="btn btn--line" href="#menu"><span class="t-en">View English Menu</span><span class="t-jp">お品書きを見る</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIRST-TIME VISITOR GUIDE -->
+  <section class="sec sec--alt" id="guide">
+    <div class="wrap">
+      <div class="sec__head">
+        <div>
+          <p class="sec__eyebrow">First-Time Visitor Guide</p>
+          <h2>
+            <span class="t-en">Dining With Us Is Simple.</span>
+            <span class="t-jp">海外のお客様も、安心してどうぞ。</span>
+          </h2>
+        </div>
+        <p class="sec__sub">
+          <span class="t-en">Everything you need to know before stepping up to our counter — no Japanese required.</span>
+          <span class="t-jp">インバウンドのお客様が迷いやすい「お通し・注文方法・お支払い・アレルギー」を英語で丁寧に案内しています。</span>
+        </p>
+      </div>
+      <div class="guide-grid">
+        <article class="gcard">
+          <span class="gcard__num">01</span>
+          <h3><span class="t-en">Easy English Ordering</span><span class="t-jp">指さしで頼める英語メニュー</span></h3>
+          <p><span class="t-en">Every skewer comes with English descriptions and flavor notes. Simply point to order, or ask our chef for a curated tasting flight.</span><span class="t-jp">すべての串・一品に英語の説明と味わいの目安を記載。指さし注文やおまかせもスムーズです。</span></p>
+        </article>
+        <article class="gcard">
+          <span class="gcard__num">02</span>
+          <h3><span class="t-en">Table Charge (Otoshi) ¥550</span><span class="t-jp">お通し（席料）¥550のご案内</span></h3>
+          <p><span class="t-en">Like most Tokyo izakayas, a ¥550 per-person table charge applies and includes a seasonal welcome dish served upon seating. No tipping needed.</span><span class="t-jp">日本特有の「お通し」文化を事前に英語で明記。季節の小鉢付きであることやチップ不要も案内し、トラブルを防ぎます。</span></p>
+        </article>
+        <article class="gcard">
+          <span class="gcard__num">03</span>
+          <h3><span class="t-en">Cards &amp; Cash Welcome</span><span class="t-jp">カード・キャッシュレス対応</span></h3>
+          <p><span class="t-en">We accept Visa, Mastercard, Amex, Apple Pay, Suica/PASMO, and Japanese Yen cash. All listed prices include 10% tax.</span><span class="t-jp">主要クレジットカード・Apple Pay・Suica/PASMO・現金すべて対応。価格はすべて税込表記です。</span></p>
+        </article>
+        <article class="gcard">
+          <span class="gcard__num">04</span>
+          <h3><span class="t-en">Dietary &amp; Allergy Friendly</span><span class="t-jp">グルテンフリー・野菜串も明記</span></h3>
+          <p><span class="t-en">Skewers seasoned with sea salt (shio) are naturally gluten-free [GF]. Charcoal-grilled seasonal vegetables [V] are also available.</span><span class="t-jp">塩焼きのグルテンフリー表記 [GF] や、炭火焼きの季節野菜 [V] を分かりやすくアイコン表示しています。</span></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="sec" id="menu">
+    <div class="wrap">
+      <div class="sec__head">
+        <div>
+          <p class="sec__eyebrow">Menu &amp; Omakase</p>
+          <h2>
+            <span class="t-en">Binchotan Skewers &amp; Small Plates</span>
+            <span class="t-jp">備長炭の串焼きと、おまかせ</span>
+          </h2>
+        </div>
+        <div class="diet-legend">
+          <span><span class="tag">GF</span> <span class="t-en">Gluten-Free (Sea Salt)</span><span class="t-jp">グルテンフリー（塩）</span></span>
+          <span><span class="tag tag--v">V</span> <span class="t-en">Vegetarian</span><span class="t-jp">ベジタリアン対応</span></span>
+        </div>
+      </div>
+
+      <div class="menu-grid">
+        <div class="mblock">
+          <h3><span class="t-en">Signature Skewers (Per Skewer)</span><span class="t-jp">名物 炭火串焼き（1本）</span></h3>
+          <div class="mitem">
+            <div>
+              <p class="mitem__name"><span class="t-en">Negima — Chicken Thigh &amp; Charred Leek</span><span class="t-jp">ねぎま（大山鶏もも・千住葱）</span><span class="tag">GF</span></p>
+              <p class="mitem__desc"><span class="t-en">Juicy free-range thigh grilled crisp over white charcoal with sweet Tokyo leek. Choice of sea salt or house tare glaze.</span><span class="t-jp">香ばしく焼き上げた地鶏ももと甘みのある千住葱。塩または自家製タレで。</span></p>
+            </div>
+            <span class="mitem__price">¥380</span>
+          </div>
+          <div class="mitem">
+            <div>
+              <p class="mitem__name"><span class="t-en">Tsukune — Hand-Minced Chicken &amp; Rich Egg Yolk</span><span class="t-jp">自家製つくね（濃厚卵黄添え）</span></p>
+              <p class="mitem__desc"><span class="t-en">Fluffy minced chicken with finely diced cartilage for crunch, brushed with aged soy glaze and served with a golden egg yolk dip.</span><span class="t-jp">軟骨の食感を効かせた手ごねつくね。継ぎ足しタレと濃厚卵黄で。</span></p>
+            </div>
+            <span class="mitem__price">¥440</span>
+          </div>
+          <div class="mitem">
+            <div>
+              <p class="mitem__name"><span class="t-en">Sasami Wasabi — Rare-Seared Tenderloin</span><span class="t-jp">ささみ本わさび</span><span class="tag">GF</span></p>
+              <p class="mitem__desc"><span class="t-en">Delicately seared chicken tenderloin topped with freshly grated Izu wasabi and flaky sea salt.</span><span class="t-jp">しっとりとレアに焼き上げたささみに、すりおろした伊豆産本わさびを添えて。</span></p>
+            </div>
+            <span class="mitem__price">¥390</span>
+          </div>
+          <div class="mitem">
+            <div>
+              <p class="mitem__name"><span class="t-en">Tebasaki — Crispy Charcoal Wing</span><span class="t-jp">手羽先 炭火塩焼き</span><span class="tag">GF</span></p>
+              <p class="mitem__desc"><span class="t-en">Golden crackling skin and succulent meat, finished with fresh sudachi citrus.</span><span class="t-jp">皮目をパリッと焼き上げた手羽先。すだちを搾ってさっぱりと。</span></p>
+            </div>
+            <span class="mitem__price">¥420</span>
+          </div>
+          <div class="mitem">
+            <div>
+              <p class="mitem__name"><span class="t-en">Shiitake &amp; Shishito — Seasonal Charcoal Vegetables</span><span class="t-jp">肉厚しいたけ・ししとう炭火焼き</span><span class="tag">GF</span><span class="tag tag--v">V</span></p>
+              <p class="mitem__desc"><span class="t-en">Thick-cap Japanese shiitake mushrooms and sweet green peppers brushed lightly with smoked salt.</span><span class="t-jp">旨味あふれる肉厚しいたけと甘長ししとうを燻製塩で。</span></p>
+            </div>
+            <span class="mitem__price">¥360</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="omakase">
+            <span class="omakase__badge"><span class="t-en">Most Popular</span><span class="t-jp">一番人気</span></span>
+            <h3><span class="t-en">Chef's Omakase 7-Skewer Course</span><span class="t-jp">店主おまかせ 7本コース</span></h3>
+            <p class="omakase__price">¥4,800<small><span class="t-en">per guest (tax incl.)</span><span class="t-jp">お一人様（税込）</span></small></p>
+            <ul>
+              <li><span class="t-en">Seasonal appetizer &amp; chilled pickled vegetables</span><span class="t-jp">季節の先付け・自家製お新香</span></li>
+              <li><span class="t-en">5 signature chicken skewers + 2 seasonal vegetable skewers</span><span class="t-jp">厳選地鶏串 5本＋季節の野菜串 2本</span></li>
+              <li><span class="t-en">Slow-simmered chicken broth soup (Tori-paitan)</span><span class="t-jp">〆の特製 鶏白湯スープ</span></li>
+              <li><span class="t-en">Optional 3-glass Craft Sake Pairing (+¥2,400)</span><span class="t-jp">日本酒3種ペアリング追加可（+¥2,400）</span></li>
+            </ul>
+            <button type="button" class="btn btn--ember" style="width:100%" data-open-modal><span class="t-en">Book Omakase Course</span><span class="t-jp">コースを予約する</span></button>
+          </div>
+
+          <div class="sake-box" id="sake">
+            <h3><span class="t-en">Craft Sake &amp; Japanese Whisky</span><span class="t-jp">厳選日本酒・ジャパニーズウイスキー</span></h3>
+            <div class="mitem">
+              <div>
+                <p class="mitem__name"><span class="t-en">3-Glass Craft Sake Flight (60ml × 3)</span><span class="t-jp">利き酒3種セット（各60ml）</span></p>
+                <p class="mitem__desc"><span class="t-en">Crisp dry, aromatic junmai daiginjo, and rich warm sake — served with English tasting cards.</span><span class="t-jp">辛口・華やか吟醸・燗酒の3種を、英語のテイスティングカード付きで。</span></p>
+              </div>
+              <span class="mitem__price">¥1,800</span>
+            </div>
+            <div class="mitem">
+              <div>
+                <p class="mitem__name"><span class="t-en">Yuzu Highball / Sansho Gin Tonic</span><span class="t-jp">生搾り柚子ハイボール／山椒ジントニック</span></p>
+                <p class="mitem__desc"><span class="t-en">Japanese whisky with fresh Kochi yuzu, or Kyoto craft gin infused with green sansho pepper.</span><span class="t-jp">高知産ゆずや京都クラフトジンを使った香り豊かな一杯。</span></p>
+              </div>
+              <span class="mitem__price">¥880</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="sec sec--alt" id="access">
+    <div class="wrap">
+      <div class="sec__head">
+        <div>
+          <p class="sec__eyebrow">Access &amp; Information</p>
+          <h2><span class="t-en">Find Us in Nakameguro</span><span class="t-jp">店舗案内・アクセス</span></h2>
+        </div>
+        <p class="sec__sub"><span class="t-en">Quietly tucked one street off the Meguro River, 4 minutes on foot from Nakameguro Station.</span><span class="t-jp">目黒川から一本入った静かな路地裏。中目黒駅南改札から徒歩4分です。</span></p>
+      </div>
+
+      <div class="access-grid">
+        <dl class="info-dl">
+          <div><dt>Name</dt><dd>KUROHA — Yakitori &amp; Sake (炭火焼き鳥 黒羽)</dd></div>
+          <div><dt>Address</dt><dd><span class="t-en">Kamimeguro, Meguro-ku, Tokyo (4 min walk from Nakameguro Sta. South Exit)<br><small style="color:var(--dim)">*Fictional demo address</small></span><span class="t-jp">東京都目黒区上目黒エリア（中目黒駅 南改札より徒歩4分）<br><small style="color:var(--dim)">※架空店舗サンプル</small></span></dd></div>
+          <div><dt>Hours</dt><dd><span class="t-en">Tue – Sun: 17:30 – 23:30 (Last order 22:45)<br>Closed: Mondays</span><span class="t-jp">火〜日 17:30〜23:30（L.O. 22:45）／ 月曜定休</span></dd></div>
+          <div><dt>Seats</dt><dd><span class="t-en">14 Counter Seats (Non-smoking)</span><span class="t-jp">カウンター14席（全席禁煙）</span></dd></div>
+          <div><dt>Payment</dt><dd>Visa / Mastercard / Amex / Suica / PASMO / Cash</dd></div>
+        </dl>
+
+        <div class="map-card">
+          <div>
+            <div class="map-pin">黒</div>
+            <h3 style="font-family:var(--serif);font-size:24px;font-weight:500">KUROHA · Nakameguro</h3>
+            <p style="color:var(--muted);font-size:13.5px;margin-top:6px"><span class="t-en">Look for the dark charred-cedar doorway and warm lantern near the Meguro River.</span><span class="t-jp">目黒川沿いから路地へ入った、焼杉の扉と小さな提灯が目印です。</span></p>
+            <div class="map-steps">
+              <span><strong>1.</strong> <span class="t-en">Exit Nakameguro Station via the South Exit (Hibiya / Toyoko Line).</span><span class="t-jp">中目黒駅（日比谷線・東横線）の南改札を出ます。</span></span>
+              <span><strong>2.</strong> <span class="t-en">Walk 2 minutes toward the Meguro River and turn left along the canal.</span><span class="t-jp">目黒川方面へ2分ほど進み、川沿いを左折します。</span></span>
+              <span><strong>3.</strong> <span class="t-en">Turn right at the second stone bridge — KUROHA is 40m ahead on your left.</span><span class="t-jp">2つ目の橋を右折し、40mほど進んだ左手が当店です。</span></span>
+            </div>
+          </div>
+          <div style="margin-top:22px">
+            <button type="button" class="btn btn--ember" data-open-modal><span class="t-en">Reserve a Counter Seat</span><span class="t-jp">カウンター席を予約する</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__in">
+      <div class="brand"><b>KUROHA</b><small>Nakameguro · Tokyo</small></div>
+      <a class="footer__back" href="../../index.html#works"><span class="t-en">Concept &amp; Bilingual Web Design by Machiya Web ↗</span><span class="t-jp">Machiya Web の制作事例に戻る ↗</span></a>
+    </div>
+    <div class="footer__meta">
+      <span>© 2026 KUROHA — FICTIONAL CONCEPT WEBSITE</span>
+      <span><span class="t-en">AI-generated photography · Fictional shop for Machiya Web portfolio</span><span class="t-jp">写真はAI生成・架空店舗のコンセプトサンプルです</span></span>
+    </div>
+  </div>
+</footer>
+
+<div class="dock">
+  <div class="lang-sw" role="group" aria-label="Language switch mobile">
+    <button type="button" class="is-on" data-set-lang="en">EN</button>
+    <button type="button" data-set-lang="ja">日本語</button>
+  </div>
+  <button type="button" class="btn btn--ember" data-open-modal><span class="t-en">Reserve a Seat</span><span class="t-jp">席を予約する</span></button>
+</div>
+
+<!-- DEMO RESERVATION MODAL -->
+<div class="modal" id="resModal" role="dialog" aria-modal="true" aria-labelledby="resTitle" hidden>
+  <div class="modal__card">
+    <button type="button" class="modal__close" id="closeModal" aria-label="Close">×</button>
+    <h3 id="resTitle"><span class="t-en">Table Reservation</span><span class="t-jp">お席のご予約</span></h3>
+    <p class="modal__note"><span class="t-en">Demo reservation form — no data is transmitted or saved.</span><span class="t-jp">※架空店舗のデモ画面です。入力内容は送信・保存されません。</span></p>
+    <form id="resForm">
+      <div class="fgrid">
+        <label class="f"><span class="t-en">Date</span><span class="t-jp">ご来店日</span><input type="date" required></label>
+        <label class="f"><span class="t-en">Time</span><span class="t-jp">お時間</span>
+          <select required>
+            <option value="">—</option>
+            <option>17:30</option><option>18:30</option><option>19:30</option><option>20:30</option><option>21:30</option>
+          </select>
+        </label>
+        <label class="f"><span class="t-en">Guests</span><span class="t-jp">人数</span>
+          <select required>
+            <option value="">—</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+          </select>
+        </label>
+        <label class="f"><span class="t-en">Menu Preference</span><span class="t-jp">ご希望</span>
+          <select>
+            <option>Omakase 7-Skewer Course (¥4,800)</option>
+            <option>À la carte / Order at counter</option>
+            <option>Omakase + Sake Pairing</option>
+          </select>
+        </label>
+        <label class="f f--full"><span class="t-en">Your Name</span><span class="t-jp">お名前</span><input type="text" placeholder="Alex Morgan" required></label>
+        <label class="f f--full"><span class="t-en">Allergies / Notes (Optional)</span><span class="t-jp">アレルギー・ご要望（任意）</span><textarea rows="2" placeholder="Gluten-free preferred, vegetarian guest, etc."></textarea></label>
+      </div>
+      <button type="submit" class="btn btn--ember" style="width:100%;margin-top:18px"><span class="t-en">Confirm Demo Request</span><span class="t-jp">予約内容を確認（デモ）</span></button>
+      <p class="modal__status" id="resStatus" role="status"></p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  function setLang(lang) {
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang);
+    document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+      var on = btn.getAttribute('data-set-lang') === lang;
+      btn.classList.toggle('is-on', on);
+      btn.setAttribute('aria-pressed', String(on));
+    });
+  }
+  document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+    btn.addEventListener('click', function () { setLang(btn.getAttribute('data-set-lang')); });
+  });
+
+  var modal = document.getElementById('resModal');
+  var status = document.getElementById('resStatus');
+  document.querySelectorAll('[data-open-modal]').forEach(function (b) {
+    b.addEventListener('click', function () { modal.hidden = false; status.textContent = ''; });
+  });
+  document.getElementById('closeModal').addEventListener('click', function () { modal.hidden = true; });
+  modal.addEventListener('click', function (e) { if (e.target === modal) modal.hidden = true; });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) modal.hidden = true; });
+  document.getElementById('resForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var isJa = root.getAttribute('data-lang') === 'ja';
+    status.textContent = isJa
+      ? 'デモ確認完了：実際の店舗サイトでは、このまま予約受付メールや予約システムへ連携できます。'
+      : 'Demo confirmed! On a live restaurant site, this connects directly to email, LINE, or your booking system.';
+  });
+})();
+</script>
+</body>
+</html>
