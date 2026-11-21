@@ -90,6 +90,9 @@
    "description": "東京を拠点に、飲食店・地域店舗に特化したホームページ制作を行うサービス",
    "email": "machiyaweb@gmail.com",
    "telephone": "+81-70-4680-5993",
+   "sameAs": [
+    "https://lin.ee/Sm1ctZC"
+   ],
    "address": {
     "@type": "PostalAddress",
     "addressRegion": "東京都",
@@ -892,9 +895,10 @@ html:not(.js) .burger{display:none!important}
   .form-card{margin:0 calc(var(--gut) * -1);padding:28px var(--gut)}
   .footer__top{grid-template-columns:minmax(0,1fr)}
   .footer{padding-bottom:calc(104px + env(safe-area-inset-bottom))}
-  .dock{display:grid;grid-template-columns:56px 1fr;gap:8px;position:fixed;z-index:55;left:0;right:0;bottom:0;padding:10px var(--gut) calc(10px + env(safe-area-inset-bottom));background:rgba(247,245,240,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--line);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility 0s .3s}
+  .dock{display:grid;grid-template-columns:52px 1fr 1fr;gap:8px;position:fixed;z-index:55;left:0;right:0;bottom:0;padding:10px var(--gut) calc(10px + env(safe-area-inset-bottom));background:rgba(247,245,240,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--line);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility 0s .3s}
   .dock.is-shown{opacity:1;visibility:visible;transition:opacity .3s ease}
-  .dock .btn{min-height:52px}
+  .dock .btn{min-height:52px;padding:0 12px;gap:6px;font-size:13.5px}
+  .dock .btn svg{width:16px;height:16px;flex:none}
   .dock__tel{display:flex;align-items:center;justify-content:center;border:1px solid var(--green);border-radius:2px;color:var(--green)}
   .dock__tel svg{width:20px;height:20px}
 }
@@ -947,6 +951,7 @@ html:not(.js) .burger{display:none!important}
   </nav>
   <div class="menu__foot">
     <a class="btn btn--solid btn--block" href="#contact">無料で相談する</a>
+    <a class="btn btn--line btn--block" href="https://lin.ee/Sm1ctZC" target="_blank" rel="noopener">LINEで気軽に相談する</a>
     <a class="btn btn--line btn--block" href="tel:07046805993">電話で相談する　070-4680-5993</a>
     <p>まだ依頼内容が決まっていなくても大丈夫です。</p>
   </div>
@@ -1527,6 +1532,7 @@ html:not(.js) .burger{display:none!important}
         <p class="contact__lead">まだ依頼内容が決まっていなくても大丈夫です。現在のお悩みや、作りたいサイトのイメージをお聞かせください。</p>
         <!-- ★編集：連絡先 -->
         <ul class="contact__ways">
+          <li><a href="https://lin.ee/Sm1ctZC" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M10 3C5.8 3 2.5 5.7 2.5 9c0 2.1 1.4 4 3.6 5.1-.1.8-.5 2-.6 2.3-.1.3.1.4.3.2.2-.1 2.1-1.4 2.9-2 .4.1.9.1 1.3.1 4.2 0 7.5-2.7 7.5-6S14.2 3 10 3z"/></svg><span><small>LINE公式（気軽に相談）</small>友だち追加してトークで相談</span><svg class="arw" viewBox="0 0 14 14" fill="none" stroke="currentColor" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li>
           <li><a href="mailto:machiyaweb@gmail.com"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2.5 4.5h15v11h-15z"/><path d="M2.5 5l7.5 6 7.5-6"/></svg><span><small>メール</small>machiyaweb@gmail.com</span><svg class="arw" viewBox="0 0 14 14" fill="none" stroke="currentColor" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a></li>
           <li><a href="tel:07046805993"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 2.5l3 .5 1 4-2 1.5a10 10 0 0 0 4.5 4.5L13 11l4 1 .5 3a2 2 0 0 1-2 2A13.5 13.5 0 0 1 3 4.5a2 2 0 0 1 2-2z"/></svg><span><small>電話</small>070-4680-5993</span><svg class="arw" viewBox="0 0 14 14" fill="none" stroke="currentColor" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a></li>
           <!-- ★編集：InstagramのURLが決まったら、hidden を外して href を変更 -->
@@ -1614,6 +1620,7 @@ html:not(.js) .burger{display:none!important}
         <a href="#pricing">料金</a>
         <a href="#faq">よくある質問</a>
         <a href="#contact">お問い合わせ</a>
+        <a href="https://lin.ee/Sm1ctZC" target="_blank" rel="noopener">LINE公式</a>
         <a href="#privacy">プライバシーポリシー</a>
         <!-- ★編集：InstagramのURLが決まったら hidden を外す -->
         <a href="[INSTAGRAM_URL]" target="_blank" rel="noopener" hidden>Instagram</a>
@@ -1626,6 +1633,7 @@ html:not(.js) .burger{display:none!important}
 <!-- スマートフォン下部の固定CTA -->
 <div class="dock" id="dock">
   <a class="dock__tel" href="tel:07046805993" aria-label="電話で相談する"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 2.5l3 .5 1 4-2 1.5a10 10 0 0 0 4.5 4.5L13 11l4 1 .5 3a2 2 0 0 1-2 2A13.5 13.5 0 0 1 3 4.5a2 2 0 0 1 2-2z"/></svg></a>
+  <a class="btn btn--line" href="https://lin.ee/Sm1ctZC" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M10 3C5.8 3 2.5 5.7 2.5 9c0 2.1 1.4 4 3.6 5.1-.1.8-.5 2-.6 2.3-.1.3.1.4.3.2.2-.1 2.1-1.4 2.9-2 .4.1.9.1 1.3.1 4.2 0 7.5-2.7 7.5-6S14.2 3 10 3z"/></svg>LINE相談</a>
   <a class="btn btn--solid" href="#contact">無料相談</a>
 </div>
 
