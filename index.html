@@ -391,17 +391,51 @@ button{background:none;border:0;cursor:pointer;padding:0}
 .mb__view{position:relative;aspect-ratio:16/10;overflow:hidden;background:#1B211D}
 .stage .mb{position:absolute;z-index:2;left:0;top:19%;width:83%}
 
-.ts-hero{position:absolute;inset:0}
-.ts-hero img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
-.ts-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,22,19,.82),rgba(18,22,19,.35) 45%,transparent 75%)}
-.ts-hero__copy{position:absolute;z-index:1;left:7%;top:50%;transform:translateY(-50%);color:#F4EFE4;display:flex;flex-direction:column;gap:8px}
-.ts-hero__copy small{font:500 clamp(7px,.7vw,9px)/1 var(--latin);letter-spacing:.3em;color:#D0B98A}
-.ts-hero__copy b{font:400 clamp(26px,3.3vw,44px)/1.2 var(--serif);letter-spacing:.24em}
-.ts-hero__copy span{font:400 clamp(9px,.9vw,12px)/1.6 var(--serif);letter-spacing:.14em}
+.ts-hero{position:absolute;inset:0;background:#121513;color:#F4EFE6;overflow:hidden}
+.ts-hero>img{width:100%;height:100%;object-fit:cover;object-position:66% 52%}
+.ts-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,17,15,.94) 0%,rgba(14,17,15,.76) 42%,rgba(14,17,15,.22) 76%,rgba(14,17,15,.42) 100%)}
+.ts-top{position:absolute;z-index:3;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:center;padding:2.6% 5.5%;background:rgba(18,21,19,.86);border-bottom:1px solid rgba(212,182,128,.22);color:#F4EFE6;font-family:var(--serif);font-size:clamp(6px,.62vw,8px);letter-spacing:.12em}
+.ts-top__brand{display:flex;align-items:center;gap:6px}
+.ts-mon{width:clamp(14px,1.5vw,19px);height:clamp(14px,1.5vw,19px);border-radius:50%;border:1px solid rgba(212,182,128,.55);display:inline-flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:clamp(7px,.75vw,9.5px);color:#D4B680;line-height:1;flex:none}
+.ts-top__brand b{font:500 clamp(9.5px,1.05vw,13px)/1 var(--serif);letter-spacing:.24em;color:#FAF7F1;display:block}
+.ts-top__brand small{font:400 clamp(4.5px,.46vw,6px)/1 var(--latin);letter-spacing:.2em;color:#D4B680;display:block;margin-top:2px}
+.ts-top__nav{display:flex;align-items:center;gap:clamp(6px,.85vw,12px);color:rgba(244,239,230,.82)}
+.ts-top__btn{background:#B5945B;color:#121513;font-weight:600;padding:2px 7px;letter-spacing:.14em}
+.ts-hero__copy{position:absolute;z-index:2;left:6%;top:56%;transform:translateY(-50%);max-width:58%;color:#FAF7F1;display:flex;flex-direction:column;gap:clamp(4px,.6vw,8px)}
+.ts-hero__copy small{display:inline-flex;align-items:center;gap:7px;font:500 clamp(5.5px,.58vw,7.5px)/1 var(--latin);letter-spacing:.24em;color:#D4B680;text-transform:uppercase}
+.ts-hero__copy small::before{content:"";width:16px;height:1px;background:#B5945B}
+.ts-hero__copy b{font:400 clamp(16px,2.1vw,27px)/1.38 var(--serif);letter-spacing:.14em;color:#FAF7F1}
+.ts-hero__copy span{font:400 clamp(6.5px,.68vw,8.8px)/1.85 var(--serif);letter-spacing:.08em;color:rgba(244,239,230,.82)}
+.ts-hero__btns{display:flex;gap:6px;margin-top:3px;font-family:var(--serif);font-size:clamp(5.5px,.58vw,7.5px);letter-spacing:.14em}
+.ts-hero__btns i{font-style:normal;background:#B5945B;color:#121513;font-weight:600;padding:4px 10px}
+.ts-hero__btns u{text-decoration:none;border:1px solid rgba(244,239,230,.42);color:#FAF7F1;padding:4px 10px}
+.ts-hero__meta{display:flex;gap:10px;margin-top:3px;padding-top:5px;border-top:1px solid rgba(244,239,230,.15);font-size:clamp(5px,.52vw,6.8px);letter-spacing:.1em;color:rgba(244,239,230,.68)}
+.ts-hero__vert{position:absolute;z-index:2;right:5%;bottom:9%;writing-mode:vertical-rl;font:400 clamp(5.5px,.58vw,7.5px)/1 var(--serif);letter-spacing:.36em;color:rgba(212,182,128,.78);display:flex;align-items:center;gap:8px}
+.ts-hero__vert::after{content:"";width:1px;height:28px;background:linear-gradient(#B5945B,transparent)}
 
 /* スマートフォンのモックアップ */
-.mp{position:absolute;z-index:3;right:0;bottom:4%;width:28%;background:#1E2A24;border-radius:24px;padding:6px;box-shadow:0 30px 50px -24px rgba(23,40,32,.55)}
+.mp{position:absolute;z-index:3;right:0;bottom:4%;width:28%;background:#151917;border-radius:24px;padding:6px;box-shadow:0 30px 50px -24px rgba(18,21,19,.62)}
 .mp__screen{position:relative;border-radius:19px;overflow:hidden;background:#F8F5EE;aspect-ratio:9/18.5;display:flex;flex-direction:column}
+.mp__screen--ts{background:#F4EFE6;color:#1A1E1B}
+.mp__screen--ts .mp__top{background:#121513;color:#FAF7F1;padding:11% 8% 7%;border-bottom:1px solid rgba(212,182,128,.26)}
+.mp__screen--ts .mp__top__b{display:flex;align-items:center;gap:4px}
+.mp__screen--ts .mp__top__mon{width:13px;height:13px;border-radius:50%;border:1px solid rgba(212,182,128,.6);display:inline-flex;align-items:center;justify-content:center;font:400 7px/1 var(--serif);color:#D4B680}
+.mp__screen--ts .mp__top b{font:500 clamp(8.5px,.95vw,12px)/1 var(--serif);letter-spacing:.22em;color:#FAF7F1}
+.mp__screen--ts .mp__top i{width:14px;height:14px;border:1px solid rgba(212,182,128,.4);position:relative;display:block}
+.mp__screen--ts .mp__top i::before,.mp__screen--ts .mp__top i::after{content:"";position:absolute;left:3px;right:3px;height:1px;background:#FAF7F1}
+.mp__screen--ts .mp__top i::before{top:4px}.mp__screen--ts .mp__top i::after{bottom:4px}
+.mp__screen--ts .mp__img{height:44%;background:#121513}
+.mp__screen--ts .mp__img img{filter:brightness(.76);object-position:66% 50%}
+.mp__screen--ts .mp__img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,17,15,.18) 0%,rgba(14,17,15,.88) 100%)}
+.mp__ts-cap{position:absolute;z-index:1;left:8%;right:8%;bottom:9%;color:#FAF7F1}
+.mp__ts-cap small{display:block;font:400 5px/1 var(--latin);letter-spacing:.2em;color:#D4B680;text-transform:uppercase;margin-bottom:4px}
+.mp__ts-cap b{display:block;font:400 clamp(8px,.92vw,11px)/1.4 var(--serif);letter-spacing:.12em}
+.mp__screen--ts .mp__body{padding:8% 8% 6%;gap:4px;background:#F4EFE6}
+.mp__screen--ts .mp__body p{font:500 clamp(5.5px,.58vw,7.5px)/1.4 var(--latin);letter-spacing:.18em;color:#876B3B;text-transform:uppercase}
+.mp__screen--ts .mp__row{border-top:1px solid rgba(26,30,27,.12);color:#1A1E1B;font-family:var(--serif);padding:4px 0}
+.mp__screen--ts .mp__row span:last-child{font-family:var(--latin);color:#876B3B}
+.mp__screen--ts .mp__bar{margin-top:auto;background:#121513;border-top:1px solid rgba(212,182,128,.35);padding:6px 8%}
+.mp__screen--ts .mp__btn{background:#B5945B;color:#121513;font-family:var(--serif);font-weight:600;border-radius:0;padding:5px 0;letter-spacing:.14em}
 .mp__top{display:flex;justify-content:space-between;align-items:center;padding:14% 9% 5%}
 .mp__top b{font:500 clamp(11px,1.3vw,16px)/1 var(--serif);letter-spacing:.2em}
 .mp__top i{width:14px;height:5px;border-block:1px solid #536152}
@@ -516,23 +550,43 @@ html:not(.js) .work+.work,.works__panels:not(.is-tabbed) .work+.work{margin-top:
 .pv{position:absolute;left:0;right:0;top:0;transition:transform 6s cubic-bezier(.45,0,.35,1)}
 .work__visual:hover .pv,.work__visual:focus-within .pv{transform:translateY(calc(var(--shift,0px) * -1))}
 
-/* 月白のプレビュー */
-.pv--ts{background:#F8F5EE;color:#26382C}
+/* 月白のプレビュー（神楽坂・高級蕎麦懐石） */
+.pv--ts{background:#F4EFE6;color:#1A1E1B;font-family:var(--sans)}
 .pv--ts .ts-hero{position:relative;aspect-ratio:16/11}
-.pv-nav{position:absolute;z-index:2;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:center;padding:3.5% 6%;color:#F4EFE4;font-size:clamp(7px,.7vw,9px);letter-spacing:.14em}
-.pv-nav b{font:500 clamp(12px,1.3vw,17px)/1 var(--serif);letter-spacing:.24em}
-.pv-sec{padding:8% 7%}
-.pv-sec .mh{font:500 clamp(12px,1.25vw,16px)/1.4 var(--serif);letter-spacing:.2em;display:flex;align-items:center;gap:12px;margin-bottom:5%}
-.pv-sec .mh::after{content:"";flex:1;height:1px;background:currentColor;opacity:.25}
-.pv-menu{display:grid;grid-template-columns:1fr 1fr;gap:0 8%}
-.pv-menu div{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:3.2% 0;border-bottom:1px dotted rgba(38,56,44,.35);font:400 clamp(8px,.85vw,11px)/1.5 var(--serif)}
-.pv-menu span:last-child{font-family:var(--latin);font-size:1.15em;font-variant-numeric:lining-nums}
-.pv-info{display:grid;grid-template-columns:auto 1fr;gap:0 18px;font-size:clamp(7.5px,.8vw,10px);line-height:1.6}
-.pv-info dt,.pv-info dd{padding:3% 0;border-bottom:1px solid rgba(38,56,44,.15)}
-.pv-info dt{color:#7a6446;letter-spacing:.14em}
-.pv-map{margin-top:5%;height:clamp(40px,5vw,70px);background:repeating-linear-gradient(35deg,#E7E1D4 0 1px,transparent 1px 12px),repeating-linear-gradient(-55deg,#E7E1D4 0 1px,transparent 1px 16px),#EFEAE0;position:relative}
-.pv-map::after{content:"";position:absolute;left:52%;top:30%;width:10px;height:10px;border-radius:50% 50% 50% 0;background:#8A4737;transform:rotate(-45deg)}
-.pv-btn{display:inline-block;margin-top:5%;padding:2.2% 5%;background:#304C3D;color:#fff;font-size:clamp(7px,.72vw,9px);letter-spacing:.16em}
+.ts-sec{padding:6.5% 6%}
+.ts-sec--sumi{background:#121513;color:#F4EFE6}
+.ts-sec--white{background:#FAF7F1}
+.ts-eyebrow{display:inline-flex;align-items:center;gap:7px;font:400 clamp(5.5px,.58vw,7.5px)/1 var(--latin);letter-spacing:.24em;text-transform:uppercase;color:#876B3B;margin-bottom:5px}
+.ts-eyebrow::before{content:"";width:14px;height:1px;background:#B5945B}
+.ts-sec--sumi .ts-eyebrow{color:#D4B680}
+.ts-h{font:400 clamp(11px,1.25vw,16px)/1.45 var(--serif);letter-spacing:.12em;color:#1A1E1B}
+.ts-sec--sumi .ts-h{color:#FAF7F1}
+.ts-split{display:grid;grid-template-columns:1fr 1.05fr;gap:5%;align-items:center}
+.ts-p{margin-top:6px;font-size:clamp(6px,.62vw,8px);line-height:1.9;color:#59605A}
+.ts-sec--sumi .ts-p{color:rgba(244,239,230,.74)}
+.ts-sign{margin-top:8px;padding-top:6px;border-top:1px solid rgba(26,30,27,.13);display:flex;justify-content:space-between;font-family:var(--serif);font-size:clamp(6px,.6vw,7.5px);color:#59605A}
+.ts-sign b{color:#1A1E1B;font-weight:500}
+.ts-frame{position:relative;padding:5px;background:#FAF7F1;border:1px solid rgba(26,30,27,.14)}
+.ts-frame--dark{background:#191D1A;border-color:rgba(212,182,128,.36)}
+.ts-frame img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+.ts-frame span{position:absolute;right:8px;bottom:-5px;background:#121513;color:#D4B680;font-family:var(--serif);font-size:clamp(5px,.5vw,6.5px);letter-spacing:.18em;padding:2px 6px}
+.ts-courses{display:grid;grid-template-columns:1fr 1fr;gap:3.5%;margin-top:5%}
+.ts-ccard{background:#191D1A;border:1px solid rgba(244,239,230,.14);padding:5.5% 6%}
+.ts-ccard--feat{border-color:rgba(212,182,128,.45);background:linear-gradient(170deg,#1F2320,#151816)}
+.ts-ccard small{display:block;font-family:var(--latin);font-size:clamp(5px,.5vw,6.5px);letter-spacing:.18em;color:#D4B680;text-transform:uppercase}
+.ts-ccard b{display:block;font:400 clamp(8.5px,.9vw,11.5px)/1.35 var(--serif);letter-spacing:.1em;color:#FAF7F1;margin-top:3px}
+.ts-ccard strong{display:block;font:400 clamp(12px,1.4vw,18px)/1.1 var(--latin);color:#D4B680;margin:5px 0 6px}
+.ts-ccard ul{border-top:1px solid rgba(244,239,230,.12)}
+.ts-ccard li{padding:3px 0;border-bottom:1px solid rgba(244,239,230,.07);font:400 clamp(5.5px,.56vw,7.2px)/1.4 var(--serif);color:rgba(244,239,230,.82);display:flex;justify-content:space-between}
+.ts-ccard li span{color:#D4B680;font-family:var(--sans)}
+.ts-tabs{display:flex;gap:12px;border-bottom:1px solid rgba(26,30,27,.13);margin:4% 0 3.5%;font-family:var(--serif);font-size:clamp(6.5px,.66vw,8.5px);letter-spacing:.14em;color:#59605A}
+.ts-tabs i{font-style:normal;color:#1A1E1B;font-weight:600;padding-bottom:4px;border-bottom:1.5px solid #B5945B}
+.pv-menu{display:grid;grid-template-columns:1fr 1fr;gap:0 7%}
+.pv-menu div{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:3% 0;border-bottom:1px solid rgba(26,30,27,.12);font:400 clamp(7px,.75vw,9.5px)/1.5 var(--serif);color:#1A1E1B}
+.pv-menu span:last-child{font-family:var(--latin);font-size:1.18em;color:#876B3B;font-variant-numeric:lining-nums}
+.ts-cta{background:linear-gradient(120deg,#161B18,#101311);border-top:1px solid rgba(212,182,128,.35);padding:5.5% 6%;display:flex;justify-content:space-between;align-items:center;gap:12px;color:#FAF7F1}
+.ts-cta b{font:400 clamp(9.5px,1.05vw,13.5px)/1.45 var(--serif);letter-spacing:.12em}
+.ts-cta span{background:#B5945B;color:#121513;font:600 clamp(6px,.62vw,8px)/1 var(--serif);letter-spacing:.14em;padding:5px 12px;white-space:nowrap}
 
 /* KUROHA（英語・日英切替）のプレビュー */
 .pv--kr{background:#12100E;color:#F5EFE6;font-family:var(--sans)}
@@ -609,6 +663,54 @@ html:not(.js) .work+.work,.works__panels:not(.is-tabbed) .work+.work{margin-top:
 .hero__monitor{margin-top:14px;font-size:13.5px}
 .f .consent.consent--tight{margin:0}
 .consent small{display:block;font-size:12px;color:var(--ink-3);line-height:1.7;margin-top:2px}
+
+/* =====================================================================
+   8.5 他社・ツールとの比較 ＋ 価格の理由
+===================================================================== */
+.compare{background:var(--paper-2)}
+.cmp__hint{display:none;margin-bottom:12px;font-size:12px;color:var(--ink-3);letter-spacing:.06em;align-items:center;gap:6px}
+.cmp__hint svg{width:14px;height:14px;color:var(--gold-ink);flex:none}
+.cmp__scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--white);border:1px solid var(--line);border-top:2px solid var(--ink)}
+.cmp__table{width:100%;min-width:780px;border-collapse:collapse;table-layout:fixed;text-align:left}
+.cmp__table th,.cmp__table td{padding:18px 18px;border-bottom:1px solid var(--line);border-left:1px solid var(--line);vertical-align:top;font-size:13.5px;line-height:1.8}
+.cmp__table tr:last-child th,.cmp__table tr:last-child td{border-bottom:0}
+.cmp__table th:first-child,.cmp__table td:first-child{border-left:0}
+.cmp__table col.col-item{width:19%}
+.cmp__table col.col-mw{width:25%}
+.cmp__table col.col-other{width:18.66%}
+.cmp__table thead th{padding:22px 18px;background:var(--paper);font-family:var(--serif);font-weight:500;font-size:15px;letter-spacing:.06em;color:var(--ink);vertical-align:bottom}
+.cmp__table thead th small{display:block;margin-top:4px;font-family:var(--sans);font-weight:400;font-size:11.5px;letter-spacing:.04em;color:var(--ink-3);line-height:1.5}
+.cmp__table thead th.is-mw{background:var(--green);color:var(--white);border-left-color:var(--green);border-right:1px solid var(--green)}
+.cmp__table thead th.is-mw small{color:rgba(255,255,255,.78)}
+.cmp__badge{display:inline-block;margin-bottom:8px;padding:2px 9px;border:1px solid var(--gold-lite);font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.14em;color:var(--gold-lite);line-height:1.5}
+.cmp__table tbody th{background:var(--white);font-weight:600;font-size:13.5px;color:var(--ink);letter-spacing:.04em}
+.cmp__table tbody td{color:var(--ink-2)}
+.cmp__table tbody td.is-mw{background:#F3F7F5;color:var(--ink);border-left:1px solid rgba(49,90,77,.28);border-right:1px solid rgba(49,90,77,.28)}
+.cmp__val{display:block;font-weight:600;color:var(--ink);line-height:1.6}
+.cmp__table tbody td.is-mw .cmp__val{color:var(--green);font-size:14.5px}
+.cmp__sub{display:block;margin-top:3px;font-size:12px;color:var(--ink-3);line-height:1.7}
+.cmp__table tbody td.is-mw .cmp__sub{color:var(--ink-2)}
+.cmp__mk{display:inline-block;margin-right:4px;font-weight:700}
+.cmp__mk--best{color:var(--green)}
+.cmp__mk--ok{color:var(--ink-2)}
+.cmp__mk--low{color:var(--ink-3)}
+.cmp__note{margin-top:16px;font-size:12.5px;color:var(--ink-3);line-height:1.9}
+
+/* なぜこの価格でできるのか */
+.why{margin-top:clamp(64px,8vw,108px);padding-top:clamp(48px,6vw,76px);border-top:1px solid var(--line)}
+.why__head{margin-bottom:clamp(32px,4vw,52px)}
+.why__title{font-family:var(--serif);font-weight:500;font-size:clamp(24px,2.8vw,36px);line-height:1.55;letter-spacing:.05em;text-wrap:balance}
+.why__head .lead{margin-top:18px;font-size:15px}
+.why__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.why__card{position:relative;background:var(--white);border:1px solid var(--line);padding:clamp(26px,3vw,38px);display:flex;flex-direction:column}
+.why__card::before{content:"";position:absolute;left:-1px;right:-1px;top:-1px;height:3px;background:var(--green)}
+.why__num{font-family:var(--latin);font-size:30px;line-height:1;color:var(--gold-ink);font-variant-numeric:lining-nums;margin-bottom:18px}
+.why__card h4{font-family:var(--serif);font-weight:500;font-size:19px;letter-spacing:.05em;line-height:1.6;margin-bottom:12px;color:var(--ink)}
+.why__card p{font-size:14px;color:var(--ink-2);line-height:1.95}
+.why__summary{margin-top:28px;padding:clamp(24px,3vw,34px) clamp(24px,3.5vw,40px);background:var(--forest);color:var(--white);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 32px;align-items:center}
+.why__summary b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(17px,1.6vw,21px);letter-spacing:.05em;line-height:1.65;color:var(--white)}
+.why__summary p{margin-top:6px;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.9}
+.why__summary__acts{display:flex;flex-wrap:wrap;gap:10px}
 
 /* =====================================================================
    9. 料金 ＋ シミュレーター
@@ -835,6 +937,9 @@ html:not(.js) .burger{display:none!important}
   .hero__grid{grid-template-columns:minmax(0,1fr)}
   .stage-wrap{justify-self:center;max-width:560px;margin-top:8px}
   .about__top{grid-template-columns:minmax(0,1fr);align-items:start}
+  .cmp__hint{display:flex}
+  .why__grid{grid-template-columns:minmax(0,1fr)}
+  .why__summary{grid-template-columns:minmax(0,1fr)}
   .plans{grid-template-columns:minmax(0,1fr)}
   .monitor{grid-template-columns:minmax(0,1fr)}
 }
@@ -879,6 +984,12 @@ html:not(.js) .burger{display:none!important}
   .tab small{font-size:10.5px}
   .work__visual{padding:24px 16px 28px;margin:0 calc(var(--gut) * -1)}
   .work__visual .mp{width:27%;right:3%}
+  .cmp__scroll{margin:0 calc(var(--gut) * -1);border-left:0;border-right:0}
+  .cmp__table{min-width:680px}
+  .cmp__table th,.cmp__table td{padding:14px 13px;font-size:12.5px}
+  .cmp__table thead th{padding:16px 13px;font-size:13.5px}
+  .cmp__table tbody th,.cmp__table thead th:first-child{position:sticky;left:0;z-index:2;box-shadow:2px 0 6px -4px rgba(23,26,23,.18)}
+  .why__summary__acts .btn{width:100%}
   .pricing__intro{margin-top:-24px;padding:18px 18px}
   .plan__badge{position:static;align-self:flex-start;margin-bottom:16px}
   .monitor .btn{width:100%}
@@ -936,7 +1047,7 @@ html:not(.js) .burger{display:none!important}
         <li><a href="#services">サービス</a></li>
         <li><a href="#works">制作事例</a></li>
         <li><a href="#pricing">料金</a></li>
-        <li><a href="#process">制作の流れ</a></li>
+        <li><a href="english/">英語サイト制作</a></li>
         <li><a href="#faq">よくある質問</a></li>
       </ul>
       <a class="btn btn--solid btn--sm" href="#contact">無料相談</a>
@@ -952,8 +1063,10 @@ html:not(.js) .burger{display:none!important}
       <li><a href="#about">Machiya Webについて<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
       <li><a href="#services">サービス<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
       <li><a href="#works">制作事例<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+      <li><a href="#compare">他社との比較<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
       <li><a href="#pricing">料金<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
       <li><a href="#process">制作の流れ<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+      <li><a href="english/">英語サイト制作（インバウンド）<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
       <li><a href="#faq">よくある質問<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
     </ul>
   </nav>
@@ -984,7 +1097,7 @@ html:not(.js) .burger{display:none!important}
       <!-- ★編集：ファーストビューの料金 -->
       <p class="hero__meta">
         <span>制作</span><b>59,800<small>円〜（税込）</small></b>
-        <span>買い切り対応</span><span class="dot" aria-hidden="true"></span><span>月額保守は任意</span><span class="dot" aria-hidden="true"></span><span>英語・インバウンド対応可</span>
+        <span>買い切り対応</span><span class="dot" aria-hidden="true"></span><span>月額保守は任意</span><span class="dot" aria-hidden="true"></span><a class="tlink" href="english/">英語・インバウンド対応専門ページ</a>
       </p>
       <!-- ★編集：モニター募集の案内（募集終了時はJSの MONITOR.open を false に） -->
       <p class="hero__monitor" data-monitor-block><a class="tlink" href="#monitor">モニター募集中｜先着3店舗は 29,800円（税込）</a></p>
@@ -995,24 +1108,37 @@ html:not(.js) .burger{display:none!important}
       <div class="stage" id="stage" aria-hidden="true">
         <div class="stage__floor"></div>
         <div class="mb">
-          <div class="mb__bar"><i></i><i></i><i></i><span>TSUKISHIRO — SAMPLE</span></div>
+          <div class="mb__bar"><i></i><i></i><i></i><span>TSUKISHIRO — KAGURAZAKA KAISEKI</span></div>
           <div class="mb__view">
             <div class="ts-hero">
+              <div class="ts-top">
+                <span class="ts-top__brand"><span class="ts-mon">月</span><span><b>月白</b><small>SOBA &amp; SUMIBI</small></span></span>
+                <span class="ts-top__nav"><span>月白について</span><span>夜のおまかせ</span><span>お品書き</span><span class="ts-top__btn">ご予約</span></span>
+              </div>
               <img src="images/tsukishiro.webp" alt="" width="1536" height="1024" fetchpriority="high">
-              <div class="ts-hero__copy"><small>SOBA &amp; SUMIBI</small><b>月白</b><span>香りを挽き、季節を焼く。</span></div>
+              <div class="ts-hero__copy">
+                <small>Soba &amp; Binchotan Kaiseki</small>
+                <b>香りを挽き、<br>季節を焼く。</b>
+                <span>石臼で静かに挽いた手打ち蕎麦と、紀州備長炭の懐石。</span>
+                <div class="ts-hero__btns"><i>お席のご予約</i><u>夜のおまかせ</u></div>
+              </div>
+              <span class="ts-hero__vert">神楽坂・蕎麦と炭火</span>
             </div>
           </div>
         </div>
         <div class="mp">
-          <div class="mp__screen">
-            <div class="mp__top"><b>月白</b><i></i></div>
-            <div class="mp__img"><img src="images/tsukishiro.webp" alt="" width="1536" height="1024"><span class="mp__vert">香りを挽き、<br>季節を焼く。</span></div>
-            <div class="mp__body">
-              <p>静かな夜を、神楽坂で。</p>
-              <div class="mp__row"><span>お品書き</span><span>›</span></div>
-              <div class="mp__row"><span>店舗案内</span><span>›</span></div>
-              <div class="mp__btn">ご予約</div>
+          <div class="mp__screen mp__screen--ts">
+            <div class="mp__top"><span class="mp__top__b"><span class="mp__top__mon">月</span><b>月白</b></span><i></i></div>
+            <div class="mp__img">
+              <img src="images/tsukishiro.webp" alt="" width="1536" height="1024">
+              <div class="mp__ts-cap"><small>Soba &amp; Kaiseki</small><b>香りを挽き、<br>季節を焼く。</b></div>
             </div>
+            <div class="mp__body">
+              <p>Night Omakase</p>
+              <div class="mp__row"><span>月白のおまかせ</span><span>¥8,800</span></div>
+              <div class="mp__row"><span>石臼挽き せいろ</span><span>¥1,210</span></div>
+            </div>
+            <div class="mp__bar"><div class="mp__btn">お席のご予約</div></div>
           </div>
         </div>
         <div class="noren">
@@ -1199,39 +1325,109 @@ html:not(.js) .burger{display:none!important}
         <article class="work" id="work-ts" aria-labelledby="work-ts-title">
           <div class="work__visual">
             <div class="mb" aria-hidden="true">
-              <div class="mb__bar"><i></i><i></i><i></i><span>TSUKISHIRO — CONCEPT WEBSITE</span></div>
-              <div class="mb__view">
+              <div class="mb__bar"><i></i><i></i><i></i><span>TSUKISHIRO — KAGURAZAKA KAISEKI</span></div>
+              <div class="mb__view" style="background:#121513">
                 <div class="pv pv--ts">
                   <div class="ts-hero">
-                    <div class="pv-nav"><b>月白</b><span>月白について　お品書き　夜のおまかせ　店舗案内　ご予約</span></div>
+                    <div class="ts-top">
+                      <span class="ts-top__brand"><span class="ts-mon">月</span><span><b>月白</b><small>SOBA &amp; SUMIBI · KAGURAZAKA</small></span></span>
+                      <span class="ts-top__nav"><span>月白について</span><span>夜のおまかせ</span><span>お品書き</span><span>店舗案内</span><span class="ts-top__btn">ご予約</span></span>
+                    </div>
                     <img src="images/tsukishiro.webp" alt="" width="1536" height="1024" loading="lazy">
-                    <div class="ts-hero__copy"><small>SOBA &amp; SUMIBI</small><b>月白</b><span>香りを挽き、季節を焼く。</span></div>
+                    <div class="ts-hero__copy">
+                      <small>Soba &amp; Binchotan Kaiseki — Kagurazaka</small>
+                      <b>香りを挽き、<br>季節を焼く。</b>
+                      <span>石臼で静かに挽いた手打ち蕎麦と、紀州備長炭が引き出す旬の旨み。</span>
+                      <div class="ts-hero__btns"><i>お席のご予約</i><u>夜のおまかせを見る</u></div>
+                      <div class="ts-hero__meta"><span>昼 11:30–14:30</span><span>夜 17:30–22:00</span><span>白木カウンター8席・半個室1室</span></div>
+                    </div>
+                    <span class="ts-hero__vert">神楽坂・蕎麦と炭火の懐石</span>
                   </div>
-                  <div class="pv-sec">
-                    <p class="mh">夜のおまかせ・お品書き</p>
-                    <div class="pv-menu">
-                      <div><span>石臼挽き せいろ</span><span>1,210</span></div>
-                      <div><span>炭火 鴨せいろ</span><span>2,200</span></div>
-                      <div><span>合鴨ロース炭火焼き</span><span>2,420</span></div>
-                      <div><span>月白のおまかせ（七品）</span><span>8,800</span></div>
-                      <div><span>季節の炭火懐石（九品）</span><span>12,100</span></div>
-                      <div><span>日本酒ペアリング（五種）</span><span>4,400</span></div>
+
+                  <div class="ts-sec">
+                    <div class="ts-split">
+                      <div>
+                        <p class="ts-eyebrow">Philosophy</p>
+                        <p class="ts-h">蕎麦の香りと、<br>炭火の余韻を静かに。</p>
+                        <p class="ts-p">毎朝石臼で挽く在来種の蕎麦と、紀州備長炭の遠火で仕上げる合鴨や旬魚。神楽坂の路地裏で穏やかな刻を。</p>
+                        <div class="ts-sign"><span>店主・料理長</span><b>橘 誠一</b></div>
+                      </div>
+                      <div class="ts-frame">
+                        <img src="images/tsukishiro-counter.jpg" alt="" width="1264" height="848" loading="lazy">
+                        <span>白木カウンター 八席の静寂</span>
+                      </div>
                     </div>
                   </div>
-                  <div class="pv-sec" style="padding-top:0">
-                    <p class="mh">店舗案内</p>
-                    <dl class="pv-info"><dt>営業時間</dt><dd>昼 11:30–14:30 / 夜 17:30–22:00</dd><dt>定休日</dt><dd>水曜・第2火曜</dd><dt>席数</dt><dd>白木カウンター8席・半個室1室</dd></dl>
-                    <div class="pv-map"></div>
-                    <span class="pv-btn">お席を予約する</span>
+
+                  <div class="ts-sec ts-sec--sumi">
+                    <div class="ts-split">
+                      <div class="ts-frame ts-frame--dark">
+                        <img src="images/tsukishiro-course.jpg" alt="" width="1264" height="848" loading="lazy">
+                        <span>合鴨ロースと千住葱 炭火焼き</span>
+                      </div>
+                      <div>
+                        <p class="ts-eyebrow">Night Omakase</p>
+                        <p class="ts-h">夜のおまかせ懐石</p>
+                        <p class="ts-p">季節の先付から旬魚、紀州備長炭の主菜、〆の手打ち蕎麦へと続くおまかせコース。</p>
+                      </div>
+                    </div>
+                    <div class="ts-courses">
+                      <div class="ts-ccard">
+                        <small>Seasonal Course · 全七品</small>
+                        <b>月白のおまかせ</b>
+                        <strong>¥8,800</strong>
+                        <ul>
+                          <li>季節の先付 二種<span>先付</span></li>
+                          <li>合鴨ロース炭火焼き<span>強肴</span></li>
+                          <li>石臼挽き 手打ち二八せいろ<span>食事</span></li>
+                        </ul>
+                      </div>
+                      <div class="ts-ccard ts-ccard--feat">
+                        <small>Signature Kaiseki · 全九品</small>
+                        <b>季節の炭火懐石</b>
+                        <strong>¥12,100</strong>
+                        <ul>
+                          <li>季節の八寸 五種盛り<span>八寸</span></li>
+                          <li>のどぐろ・旬野菜の備長炭焼き<span>焼物</span></li>
+                          <li>十割・二八蕎麦の食べ比べ<span>食事</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ts-sec ts-sec--white">
+                    <p class="ts-eyebrow">A La Carte Menu</p>
+                    <p class="ts-h">お品書き</p>
+                    <div class="ts-tabs"><i>手打ち蕎麦</i><span>炭火焼き</span><span>蕎麦前・酒肴</span><span>日本酒</span></div>
+                    <div class="pv-menu">
+                      <div><span>石臼挽き せいろ</span><span>¥1,210</span></div>
+                      <div><span>限定 十割せいろ</span><span>¥1,480</span></div>
+                      <div><span>炭火 鴨せいろ</span><span>¥2,200</span></div>
+                      <div><span>国産合鴨ロース 炭火焼き</span><span>¥2,420</span></div>
+                    </div>
+                  </div>
+
+                  <div class="ts-cta">
+                    <b>今宵、神楽坂で蕎麦と炭火を。</b>
+                    <span>お席を予約する</span>
                   </div>
                 </div>
               </div>
             </div>
             <div class="mp" aria-hidden="true">
-              <div class="mp__screen">
-                <div class="mp__top"><b>月白</b><i></i></div>
-                <div class="mp__img"><img src="images/tsukishiro.webp" alt="" width="1536" height="1024" loading="lazy"><span class="mp__vert">香りを挽き、<br>季節を焼く。</span></div>
-                <div class="mp__body"><p>静かな夜を、神楽坂で。</p><div class="mp__row"><span>せいろ</span><span>1,100</span></div><div class="mp__row"><span>鴨せいろ</span><span>1,760</span></div><div class="mp__btn">ご予約</div></div>
+              <div class="mp__screen mp__screen--ts">
+                <div class="mp__top"><span class="mp__top__b"><span class="mp__top__mon">月</span><b>月白</b></span><i></i></div>
+                <div class="mp__img">
+                  <img src="images/tsukishiro.webp" alt="" width="1536" height="1024" loading="lazy">
+                  <div class="mp__ts-cap"><small>Soba &amp; Kaiseki</small><b>香りを挽き、<br>季節を焼く。</b></div>
+                </div>
+                <div class="mp__body">
+                  <p>Night Omakase</p>
+                  <div class="mp__row"><span>月白のおまかせ</span><span>¥8,800</span></div>
+                  <div class="mp__row"><span>石臼挽き せいろ</span><span>¥1,210</span></div>
+                  <div class="mp__row"><span>炭火 鴨せいろ</span><span>¥2,200</span></div>
+                </div>
+                <div class="mp__bar"><div class="mp__btn">お席のご予約</div></div>
               </div>
             </div>
             <p class="work__hint" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M7 2v10M3 8l4 4 4-4"/></svg>カーソルを合わせると、ページの下まで見られます</p>
@@ -1302,7 +1498,10 @@ html:not(.js) .burger{display:none!important}
               <div><dt>対応</dt><dd>PC / タブレット / スマートフォン</dd></div>
             </dl>
             <!-- samples/kuroha/ にある完成サンプルへのリンク -->
-            <a class="btn btn--solid" href="samples/kuroha/index.html" target="_blank" rel="noopener">完成サイトを見る<svg class="ico ico--ext" viewBox="0 0 18 18" fill="none" stroke="currentColor" aria-hidden="true"><path d="M5 13l8-8M6 5h7v7"/></svg><span class="sr-only">（新しいタブで開きます）</span></a>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:32px">
+              <a class="btn btn--solid" href="samples/kuroha/index.html" target="_blank" rel="noopener" style="margin-top:0">完成サイトを見る<svg class="ico ico--ext" viewBox="0 0 18 18" fill="none" stroke="currentColor" aria-hidden="true"><path d="M5 13l8-8M6 5h7v7"/></svg><span class="sr-only">（新しいタブで開きます）</span></a>
+              <a class="tlink" href="english/">英語サイト制作の詳細を見る<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3"/></svg></a>
+            </div>
             <p class="work__note">※Machiya Webが制作した架空店舗のコンセプトサイトです。正式な受託実績ではありません。写真はAI生成、メニュー・価格・営業時間はデザイン用の設定です。</p>
           </div>
         </article>
@@ -1358,6 +1557,141 @@ html:not(.js) .burger{display:none!important}
             <p class="work__note">※Machiya Webが制作した架空店舗のコンセプトサイトです。正式な受託実績ではありません。写真はAI生成、メニュー・価格・営業時間はデザイン用の設定です。</p>
           </div>
         </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     5.5 他社・ツールとの比較 ＋ なぜこの価格でできるのか
+===================================================================== -->
+<section class="sec compare" id="compare" aria-labelledby="compare-title">
+  <div class="wrap sec__grid">
+    <p class="sec__label">比較・価格の理由</p>
+    <div>
+      <div class="sec__head">
+        <h2 class="h2" id="compare-title">他の依頼方法との違いを、<br>分かりやすく比較。</h2>
+        <p class="lead">「制作会社は高すぎる」「月額サブスクは縛りが不安」「無料ツールは作る時間がない」。飲食店・地域店舗のよくある悩みに対して、Machiya Webは買い切りでちょうどいいバランスを目指しています。</p>
+      </div>
+
+      <p class="cmp__hint" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M2 7h10M9 4l3 3-3 3M5 4L2 7l3 3"/></svg>横にスクロールして比較表をご覧いただけます</p>
+      <div class="cmp__scroll" tabindex="0" aria-label="他社・ツールとの比較表">
+        <table class="cmp__table">
+          <caption class="sr-only">Machiya Webと一般的な制作会社・月額サブスク型制作・無料作成ツールとの比較</caption>
+          <colgroup>
+            <col class="col-item">
+            <col class="col-mw">
+            <col class="col-other">
+            <col class="col-other">
+            <col class="col-other">
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">比較項目</th>
+              <th scope="col" class="is-mw"><span class="cmp__badge">店舗特化・買い切り</span><br>Machiya Web<small>地域店舗向けオリジナル制作</small></th>
+              <th scope="col">一般的な制作会社<small>法人・中〜大規模向け</small></th>
+              <th scope="col">月額サブスク型<small>初期0円〜の定額制作</small></th>
+              <th scope="col">無料ツール（自作）<small>Wix・ペライチ等</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">初期費用<br>（制作費）</th>
+              <td class="is-mw"><span class="cmp__val">59,800円〜（税込）</span><span class="cmp__sub" data-monitor-block>モニター価格 29,800円（先着3店舗）</span><span class="cmp__sub">買い切り対応</span></td>
+              <td><span class="cmp__val">20万〜50万円前後</span><span class="cmp__sub">オリジナル設計はさらに高額になりやすい</span></td>
+              <td><span class="cmp__val">0円〜5万円前後</span><span class="cmp__sub">初期は安いが総額は高くなりやすい</span></td>
+              <td><span class="cmp__val">0円〜</span><span class="cmp__sub">制作の手間・時間が店舗負担</span></td>
+            </tr>
+            <tr>
+              <th scope="row">月額費用<br>（固定費）</th>
+              <td class="is-mw"><span class="cmp__val">0円〜（保守は任意）</span><span class="cmp__sub">更新お任せ時は月3,980円〜／都度修正も可</span></td>
+              <td><span class="cmp__val">月5,000〜2万円前後</span><span class="cmp__sub">年間6万〜24万円の保守費が一般的</span></td>
+              <td><span class="cmp__val">月1万〜3万円前後</span><span class="cmp__sub">2〜3年などの契約縛り・解約金に注意</span></td>
+              <td><span class="cmp__val">0円〜月3,000円前後</span><span class="cmp__sub">独自ドメイン・広告非表示は有料プラン</span></td>
+            </tr>
+            <tr>
+              <th scope="row">ドメイン・<br>サイト所有</th>
+              <td class="is-mw"><span class="cmp__val"><span class="cmp__mk cmp__mk--best" aria-hidden="true">◎</span>店舗名義で買い切り</span><span class="cmp__sub">契約縛りなし・公開後もお店の資産に</span></td>
+              <td><span class="cmp__val"><span class="cmp__mk cmp__mk--ok" aria-hidden="true">○</span>会社により異なる</span><span class="cmp__sub">管理移管に手続きや費用がかかる場合も</span></td>
+              <td><span class="cmp__val"><span class="cmp__mk cmp__mk--low" aria-hidden="true">△</span>制作会社管理が多い</span><span class="cmp__sub">解約するとサイトが消える契約に注意</span></td>
+              <td><span class="cmp__val"><span class="cmp__mk cmp__mk--low" aria-hidden="true">△</span>サービス依存</span><span class="cmp__sub">他社へのデータ移行がしにくい</span></td>
+            </tr>
+            <tr>
+              <th scope="row">デザインの<br>独自性</th>
+              <td class="is-mw"><span class="cmp__val"><span class="cmp__mk cmp__mk--best" aria-hidden="true">◎</span>店舗ごとに設計</span><span class="cmp__sub">お店の空気・料理・客層に合わせた専用デザイン</span></td>
+              <td><span class="cmp__val"><span class="cmp__mk cmp__mk--best" aria-hidden="true">◎</span>高い</span><span class="cmp__sub">完全オーダーメイドが可能</span></td>
+              <td><span class="cmp__val"><span class="cmp__mk cmp__mk--low" aria-hidden="true">△</span>テンプレート中心</span><span class="cmp__sub">他店と似た印象になりやすい</span></td>
+              <td><span class="cmp__val"><span class="cmp__mk cmp__mk--low" aria-hidden="true">△</span>テンプレート枠内</span><span class="cmp__sub">見栄えや余白の調整にコツが必要</span></td>
+            </tr>
+            <tr>
+              <th scope="row">スマホ最適化・<br>Googleマップ</th>
+              <td class="is-mw"><span class="cmp__val"><span class="cmp__mk cmp__mk--best" aria-hidden="true">◎</span>標準対応</span><span class="cmp__sub">スマホ最優先設計＋マップ連携・SEO初期設定</span></td>
+              <td><span class="cmp__val"><span class="cmp__mk cmp__mk--ok" aria-hidden="true">○</span>標準〜オプション</span><span class="cmp__sub">MEOやマップ連携は別料金の場合あり</span></td>
+              <td><span class="cmp__val"><span class="cmp__mk cmp__mk--ok" aria-hidden="true">○</span>標準〜簡易対応</span><span class="cmp__sub">細かい導線設計までは含まれないことも</span></td>
+              <td><span class="cmp__val"><span class="cmp__mk cmp__mk--low" aria-hidden="true">△</span>自分で調整が必要</span><span class="cmp__sub">スマホ崩れや検索設定の漏れが起きやすい</span></td>
+            </tr>
+            <tr>
+              <th scope="row">英語・<br>インバウンド</th>
+              <td class="is-mw"><span class="cmp__val"><span class="cmp__mk cmp__mk--best" aria-hidden="true">◎</span>専門対応あり</span><span class="cmp__sub">英語メニュー・注文ガイド・日英切替まで設計</span></td>
+              <td><span class="cmp__val"><span class="cmp__mk cmp__mk--low" aria-hidden="true">△</span>高額になりやすい</span><span class="cmp__sub">多言語化は追加費用が大きくなりがち</span></td>
+              <td><span class="cmp__val"><span class="cmp__mk cmp__mk--low" aria-hidden="true">△</span>非対応〜機械翻訳</span><span class="cmp__sub">自然な英語表現や文化説明まで届きにくい</span></td>
+              <td><span class="cmp__val"><span class="cmp__mk cmp__mk--low" aria-hidden="true">△</span>すべて自力対応</span><span class="cmp__sub">翻訳・ページ切替の設定負担が大きい</span></td>
+            </tr>
+            <tr>
+              <th scope="row">お店の<br>作業負担</th>
+              <td class="is-mw"><span class="cmp__val"><span class="cmp__mk cmp__mk--best" aria-hidden="true">◎</span>最小限でお任せ</span><span class="cmp__sub">写真・メニュー・営業時間の共有から整理を支援</span></td>
+              <td><span class="cmp__val"><span class="cmp__mk cmp__mk--ok" aria-hidden="true">○</span>打ち合わせ多め</span><span class="cmp__sub">複数回の会議・資料確認が必要</span></td>
+              <td><span class="cmp__val"><span class="cmp__mk cmp__mk--ok" aria-hidden="true">○</span>原稿提出中心</span><span class="cmp__sub">決まったフォームへの入力が中心</span></td>
+              <td><span class="cmp__val"><span class="cmp__mk cmp__mk--low" aria-hidden="true">×</span>大きい</span><span class="cmp__sub">操作習得・作成・公開設定まですべて自力</span></td>
+            </tr>
+            <tr>
+              <th scope="row">相談のしやすさ・<br>担当体制</th>
+              <td class="is-mw"><span class="cmp__val"><span class="cmp__mk cmp__mk--best" aria-hidden="true">◎</span>制作者が直接一貫対応</span><span class="cmp__sub">LINE・メール・電話対応／専門用語なしで進行</span></td>
+              <td><span class="cmp__val"><span class="cmp__mk cmp__mk--ok" aria-hidden="true">○</span>分業体制</span><span class="cmp__sub">営業・ディレクター経由で伝達に時間がかかる</span></td>
+              <td><span class="cmp__val"><span class="cmp__mk cmp__mk--low" aria-hidden="true">△</span>窓口が分かれやすい</span><span class="cmp__sub">営業担当と制作・サポート担当が異なることも</span></td>
+              <td><span class="cmp__val"><span class="cmp__mk cmp__mk--low" aria-hidden="true">×</span>相談相手がいない</span><span class="cmp__sub">困ったときはヘルプや検索で自己解決</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="cmp__note">※一般的な制作会社・月額サブスク型・無料ツールの費用や条件は、飲食店・地域店舗向けサイト制作における一般的な相場・傾向の目安です。実際の条件は各社・プランにより異なります。ドメイン取得費等の外部実費は別途必要になる場合があります。</p>
+
+      <!-- なぜこの価格で制作できるのか -->
+      <div class="why" id="why-price">
+        <div class="why__head">
+          <p class="hero__en" style="margin-bottom:14px">Why this price</p>
+          <h3 class="why__title">なぜ、買い切り59,800円〜で<br>制作できるのか。</h3>
+          <p class="lead">一般的な制作会社だと20万〜50万円ほどかかるオリジナルサイトを、地域店舗が導入しやすい価格に抑えられるのには、構造的な理由があります。</p>
+        </div>
+
+        <ol class="why__grid">
+          <li class="why__card">
+            <span class="why__num" aria-hidden="true">01</span>
+            <h4>営業・外注を挟まず、<br>制作者が直接対応</h4>
+            <p>制作会社の費用には、営業人件費・進行管理費・外注への中間マージンが多く含まれます。Machiya Webはご相談から設計・デザイン・公開まで直接一貫して行うため、余計な中間コストがかかりません。</p>
+          </li>
+          <li class="why__card">
+            <span class="why__num" aria-hidden="true">02</span>
+            <h4>地域店舗に必要な<br>構成・機能に特化</h4>
+            <p>大規模サイト向けの複雑なシステムや使わない管理機能を省き、お店の来店に直結する「雰囲気・メニュー・営業時間・アクセス・予約導線」に絞って設計。本当に必要な部分にだけ丁寧な手間をかけます。</p>
+          </li>
+          <li class="why__card">
+            <span class="why__num" aria-hidden="true">03</span>
+            <h4>固定費を抑えた運営と、<br>壊れにくい軽量構成</h4>
+            <p>大規模なオフィスや過剰な広告費を持たず、保守トラブルが起きにくいシンプルな構成で制作します。制作費だけでなく、公開後にお店の毎月の固定費が増えにくい仕組みを実現しています。</p>
+          </li>
+        </ol>
+
+        <div class="why__summary">
+          <div>
+            <b>「安いから妥協する」のではなく、お店に不要なコストだけを省いた適正価格です。</b>
+            <p>制作範囲と総額は、ご契約前に必ずお見積もりで明確にご案内します。無理な営業や後から不透明な追加請求を行うことはありません。</p>
+          </div>
+          <div class="why__summary__acts">
+            <a class="btn btn--paper btn--sm" href="#pricing">料金プランを見る</a>
+            <a class="btn btn--ghost btn--sm" href="#contact">無料で相談する</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1541,7 +1875,7 @@ html:not(.js) .burger{display:none!important}
         <details data-monitor-block><summary><span class="faq__q" aria-hidden="true">Q</span><span>モニター価格の条件は何ですか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>完成したサイトをMachiya Webの制作事例として掲載させていただくことと、公開後のかんたんなアンケートへのご協力が条件です。対象は買い切り制作の基本内容で、追加ページ・写真撮影・月額サポートは通常料金です。先着3店舗に達した時点で終了します。</p></div></details>
         <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>公開後に修正できますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>可能です。買い切りの場合は、文字・店舗情報の修正2,200円〜、写真の差し替え3,300円〜、メニュー・価格の更新3,300円〜が目安です（すべて税込）。月額サポートの場合は契約範囲内で対応します。複数箇所やレイアウト変更は、作業前に総額をご案内します。</p></div></details>
         <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>Googleマップにもサイトを掲載できますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>店舗のGoogleビジネスプロフィールを管理しているアカウントから、完成した公式サイトのURLを登録できます。必要に応じて設定をサポートします。</p></div></details>
-        <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>英語サイトや、日本語・英語の切り替えページも作れますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>はい、対応しています。英語のみのページ制作から、日本語・英語の切り替え対応、海外のお客様向けのメニュー表記・お通しや注文方法のガイドまで、お店の客層に合わせてご提案します（制作事例の「KUROHA」もぜひご覧ください）。</p></div></details>
+        <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>英語サイトや、日本語・英語の切り替えページも作れますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>はい、対応しています。英語のみのページ制作から、日本語・英語の切り替え対応、海外のお客様向けのメニュー表記・お通しや注文方法のガイドまで、お店の客層に合わせてご提案します。詳しくは<a class="tlink" href="english/">英語サイト制作専用ページ</a>をご覧ください。</p></div></details>
       </div>
     </div>
   </div>
@@ -1644,7 +1978,9 @@ html:not(.js) .burger{display:none!important}
       <nav class="footer__nav" aria-label="フッターナビゲーション">
         <a href="#services">サービス</a>
         <a href="#works">制作事例</a>
+        <a href="#compare">他社との比較</a>
         <a href="#pricing">料金</a>
+        <a href="english/">英語サイト制作</a>
         <a href="#faq">よくある質問</a>
         <a href="#contact">お問い合わせ</a>
         <a href="https://lin.ee/Sm1ctZC" target="_blank" rel="noopener">LINE公式</a>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<!-- SUSHI AOKI — Ginza, Tokyo (Bilingual Concept Sample by Machiya Web) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SUSHI AOKI | Ginza, Tokyo</title>
+<meta name="description" content="Eight-seat Edomae omakase sushi in Ginza, Tokyo. Seasonal courses, reservation policies, and access. Fictional concept website by Machiya Web.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230F0F0F'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='serif' font-size='28' fill='%23FFFFFF'%3E鮨%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Zen+Old+Mincho:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF;
+  --ink:#101010;
+  --muted:#636363;
+  --faint:#949494;
+  --rule:#E4E4E4;
+  --black:#0E0E0E;
+  --serif:"Newsreader","Zen Old Mincho",Georgia,serif;
+  --jp:"Zen Old Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --ease:cubic-bezier(.65,0,.35,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:15.5px;font-weight:400;line-height:1.85;letter-spacing:.03em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4,p,ul,ol,dl,dd,figure{margin:0;padding:0;font-weight:400}
+ul,ol{list-style:none}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer;padding:0}
+img{display:block;max-width:100%;height:auto}
+:focus-visible{outline:1px solid var(--ink);outline-offset:4px}
+
+html[data-lang="en"] .t-jp{display:none!important}
+html[data-lang="ja"] .t-en{display:none!important}
+html[data-lang="ja"] body{font-family:var(--jp);font-size:14.5px;letter-spacing:.07em;line-height:2.05}
+
+/* Subtle sample notice */
+.demo-note{font-size:11px;letter-spacing:.08em;color:var(--muted);text-align:center;padding:8px 20px;border-bottom:1px solid var(--rule)}
+.demo-note a{color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:1px;margin-left:12px}
+
+/* Florilege-inspired tall, ultra-sparse solid header */
+.header{position:sticky;top:0;z-index:60;background:#FFFFFF;height:96px;display:flex;align-items:center}
+.header__in{width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(24px,5vw,72px);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.wordmark{font-size:clamp(15px,1.5vw,19px);letter-spacing:.42em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
+.header__actions{display:flex;align-items:center;gap:clamp(18px,3vw,36px)}
+.lang-toggle{font-size:13px;letter-spacing:.1em;color:var(--muted);transition:color .3s}
+.lang-toggle:hover{color:var(--ink)}
+.pill-cta{display:inline-flex;align-items:center;gap:10px;height:40px;padding:0 22px;border-radius:999px;background:var(--black);color:#FFFFFF;font-size:12.5px;letter-spacing:.1em;transition:opacity .3s}
+.pill-cta:hover{opacity:.78}
+.nav-links{display:flex;align-items:center;gap:26px;font-size:13px;letter-spacing:.1em;color:var(--muted)}
+.nav-links a:hover{color:var(--ink)}
+
+/* Framed Full-Bleed Architectural Cover (Florilege-inspired) */
+.hero{padding:0 clamp(16px,4vw,56px) clamp(88px,11vw,148px)}
+.hero__frame{position:relative;max-width:1320px;margin:0 auto;overflow:hidden;background:var(--black)}
+.hero__frame img{width:100%;aspect-ratio:16/9.4;object-fit:cover;object-position:62% 50%}
+.hero__frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.08) 0%,rgba(10,10,10,.05) 55%,rgba(10,10,10,.62) 100%)}
+.hero__caption{position:absolute;z-index:2;left:clamp(24px,4vw,56px);right:clamp(24px,4vw,56px);bottom:clamp(24px,4vw,48px);display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;color:#FFFFFF}
+.hero__caption h1{font-size:clamp(24px,3.2vw,40px);letter-spacing:.14em;line-height:1.3}
+.hero__caption p{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+
+/* Editorial Reading Containers */
+.wrap{width:100%;max-width:960px;margin:0 auto;padding:0 clamp(24px,5vw,48px)}
+.wrap--narrow{max-width:740px}
+
+.sec{padding:clamp(80px,10vw,144px) 0;scroll-margin-top:108px}
+.sec--rule{border-top:1px solid var(--rule)}
+
+/* Quiet Section Header (Spaced Wordmark like Florilege / Reservations) */
+.sec-head{padding-bottom:22px;border-bottom:1px solid var(--rule);margin-bottom:clamp(40px,5vw,64px);display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(20px,2.2vw,28px);letter-spacing:.26em;text-transform:uppercase}
+html[data-lang="ja"] .sec-head h2{letter-spacing:.24em}
+.sec-head span{font-family:var(--jp);font-size:13px;letter-spacing:.3em;color:var(--faint)}
+
+/* Philosophy & Counter */
+.counter-photo{margin-bottom:clamp(44px,6vw,72px)}
+.counter-photo img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.prose{max-width:640px}
+.prose p{color:var(--ink);font-size:15.5px;line-height:2.05}
+.prose p+p{margin-top:22px;color:var(--muted)}
+.chef{margin-top:34px;font-size:13.5px;letter-spacing:.16em;color:var(--muted)}
+
+/* Florilege-style Open Pricing Table (Pure typography on white, zero cards) */
+.menu-table{width:100%;border-collapse:collapse}
+.menu-table tr{border-bottom:1px solid var(--rule)}
+.menu-table th{text-align:left;font-weight:400;padding:24px 24px 24px 0;vertical-align:top}
+.menu-table td{text-align:right;padding:24px 0;vertical-align:top;white-space:nowrap;font-size:18px;font-variant-numeric:lining-nums;letter-spacing:.06em}
+.menu-table strong{display:block;font-weight:400;font-size:18px;letter-spacing:.06em;color:var(--ink)}
+.menu-table small{display:block;font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.8}
+.menu-notes{margin-top:28px;display:grid;gap:8px;font-size:13.5px;color:var(--muted);line-height:1.9}
+.menu-notes li::before{content:"·  ";color:var(--faint)}
+
+/* Open Long-Form Reservation Policy (Un-collapsed, Honest Boundaries like Florilege & Kojyu) */
+.policy-list{display:grid;gap:0}
+.policy-item{display:grid;grid-template-columns:220px minmax(0,1fr);gap:14px 40px;padding:26px 0;border-bottom:1px solid var(--rule);align-items:start}
+.policy-item h3{font-size:14px;letter-spacing:.12em;color:var(--ink);line-height:1.7}
+.policy-item p{font-size:14.5px;color:var(--muted);line-height:1.95}
+.policy-cta{margin-top:52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.policy-cta p{font-size:13.5px;color:var(--muted)}
+
+/* Access & Taxi Card */
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,84px);align-items:start}
+.access-dl div{padding:14px 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:100px 1fr;gap:14px;font-size:14px}
+.access-dl dt{color:var(--faint);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding-top:2px}
+.taxi{border:1px solid var(--ink);padding:28px 30px}
+.taxi small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.taxi b{display:block;font-family:var(--jp);font-size:17px;font-weight:400;letter-spacing:.1em;line-height:1.85;color:var(--ink)}
+.taxi p{margin-top:10px;font-size:12.5px;color:var(--muted);line-height:1.8}
+
+/* Solid Black Architectural Footer (Florilege-inspired) */
+.footer-outer{padding:0 clamp(16px,4vw,56px) clamp(24px,4vw,56px)}
+.footer{max-width:1320px;margin:0 auto;background:var(--black);color:#FFFFFF;padding:clamp(56px,7vw,96px) clamp(28px,6vw,84px)}
+.footer__grid{display:grid;grid-template-columns:1fr 1fr auto;gap:40px 60px;align-items:start;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.16)}
+.footer__col small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:12px}
+.footer__col p{font-size:14px;line-height:1.9;color:rgba(255,255,255,.85)}
+.pill-outline{display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 28px;border-radius:999px;border:1px solid #FFFFFF;color:#FFFFFF;font-size:12.5px;letter-spacing:.12em;transition:background .3s,color .3s}
+.pill-outline:hover{background:#FFFFFF;color:var(--black)}
+.footer__bottom{margin-top:34px;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:16px;font-size:12px;color:rgba(255,255,255,.55)}
+.footer__bottom strong{font-size:15px;font-weight:400;letter-spacing:.36em;color:#FFFFFF}
+.footer__bottom a{color:#FFFFFF;border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:2px}
+
+/* Minimal Reservation Modal */
+.modal{position:fixed;inset:0;z-index:100;background:rgba(14,14,14,.68);display:flex;align-items:center;justify-content:center;padding:24px}
+.modal[hidden]{display:none}
+.modal__card{width:100%;max-width:480px;background:#FFFFFF;padding:42px 38px;position:relative;max-height:90vh;overflow-y:auto}
+.modal__close{position:absolute;top:16px;right:18px;width:36px;height:36px;font-size:22px;color:var(--muted)}
+.modal__card h3{font-size:22px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px}
+.modal__sub{font-size:12.5px;color:var(--muted);margin-bottom:26px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.f{display:flex;flex-direction:column;gap:6px;font-size:12px;letter-spacing:.12em;color:var(--muted)}
+.f--full{grid-column:1/-1}
+.f input,.f select,.f textarea{border:0;border-bottom:1px solid var(--ink);padding:8px 2px;width:100%;min-width:0;background:transparent;font-size:14.5px;color:var(--ink);border-radius:0}
+.f input,.f select{height:38px}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-bottom-color:var(--muted)}
+.agree{display:flex;gap:10px;align-items:flex-start;margin-top:20px;font-size:12.5px;color:var(--muted);line-height:1.7;cursor:pointer}
+.agree input{margin-top:4px;accent-color:var(--black)}
+.modal__status{margin-top:16px;font-size:13px;color:var(--ink);min-height:1.4em}
+
+@media (max-width:900px){
+  .nav-links{display:none}
+  .policy-item,.access-grid,.footer__grid{grid-template-columns:1fr}
+  .policy-item{gap:8px}
+}
+@media (max-width:600px){
+  .header{height:76px}
+  .wordmark{letter-spacing:.26em;font-size:14px}
+  .pill-cta{padding:0 16px;height:36px;font-size:11.5px}
+  .fgrid{grid-template-columns:1fr}
+  .modal__card{padding:32px 24px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-note">
+  <span class="t-en">Concept Sample by Machiya Web — Fictional Ginza Edomae Sushi</span>
+  <span class="t-jp">Machiya Web 制作サンプル（銀座・江戸前鮨／架空店舗）</span>
+  <a href="../../english/index.html"><span class="t-en">Back to English Service</span><span class="t-jp">英語サイト制作へ戻る</span></a>
+</div>
+
+<header class="header">
+  <div class="header__in">
+    <a class="wordmark" href="#top">SUSHI AOKI</a>
+    <div class="header__actions">
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#counter"><span class="t-en">Counter</span><span class="t-jp">鮨</span></a>
+        <a href="#omakase"><span class="t-en">Menu</span><span class="t-jp">おまかせ</span></a>
+        <a href="#policy"><span class="t-en">Policy</span><span class="t-jp">予約規定</span></a>
+        <a href="#access"><span class="t-en">Access</span><span class="t-jp">道案内</span></a>
+      </nav>
+      <button type="button" class="lang-toggle" id="langBtn">日本語</button>
+      <button type="button" class="pill-cta" data-open-modal>
+        <span class="t-en">Reservations →</span>
+        <span class="t-jp">ご予約 →</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Framed Cover (Zero pitch text, zero stats bar, pure photography) -->
+  <section class="hero">
+    <figure class="hero__frame">
+      <img src="../../images/aoki-hero.jpg" alt="Edomae nigiri sushi on dark stoneware atop hinoki counter" width="1264" height="848">
+      <figcaption class="hero__caption">
+        <h1>
+          <span class="t-en">SUSHI AOKI</span>
+          <span class="t-jp">鮨 青木</span>
+        </h1>
+        <p><span class="t-en">Ginza 6-Chome · Tokyo · Eight Counter Seats</span><span class="t-jp">東京・銀座六丁目・白木カウンター八席</span></p>
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- The Counter -->
+  <section class="sec" id="counter">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="t-en">The Counter</span><span class="t-jp">白木カウンター</span></h2>
+        <span>鮨・銀座六丁目</span>
+      </div>
+      <figure class="counter-photo">
+        <img src="../../images/aoki-counter.jpg" alt="Eight-seat solid hinoki cypress sushi counter in Ginza" width="1264" height="848" loading="lazy">
+      </figure>
+      <div class="prose">
+        <p>
+          <span class="t-en">Edomae sushi begins hours before the first guest arrives — selecting the morning catch at Toyosu Market, curing and resting each cut, and seasoning warm shari rice with aged red vinegar.</span>
+          <span class="t-jp">江戸前鮨の仕事は、お客様をお迎えする何時間も前から始まります。毎朝豊洲で見極めた旬魚を締め、熟成させ、赤酢の温かいシャリと一貫ずつ結びます。</span>
+        </p>
+        <p>
+          <span class="t-en">At our eight-seat solid hinoki counter in Ginza 6-Chome, Chef Kenjiro Aoki presents each piece directly to the guest, accompanied by quiet explanations of season and provenance in English or Japanese.</span>
+          <span class="t-jp">銀座六丁目の白木カウンター八席だけの空間で、大将・青木健次郎が一貫ずつ握り、海外からのお客様にも産地と仕事を英語でご案内いたします。</span>
+        </p>
+        <p class="chef"><span class="t-en">Kenjiro Aoki — Head Chef</span><span class="t-jp">店主・青木 健次郎</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu & Pricing (Florilege-style open typographic table) -->
+  <section class="sec sec--rule" id="omakase">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="t-en">Menu</span><span class="t-jp">おまかせ献立</span></h2>
+        <span>おまかせのみ</span>
+      </div>
+
+      <table class="menu-table">
+        <tbody>
+          <tr>
+            <th>
+              <strong><span class="t-en">Lunch Omakase</span><span class="t-jp">昼のおまかせ握り</span></strong>
+              <small><span class="t-en">12:00 seating (approx. 75 min) — Seasonal appetizer, 12 seasonal nigiri, hand roll, red miso clam soup, tamago.</span><span class="t-jp">12:00一斉スタート（約75分）— 先付、旬魚握り12貫、手巻き、赤出汁、玉子焼き。</span></small>
+            </th>
+            <td>¥16,500</td>
+          </tr>
+          <tr>
+            <th>
+              <strong><span class="t-en">Dinner Omakase</span><span class="t-jp">夜のおまかせ</span></strong>
+              <small><span class="t-en">18:00 &amp; 20:30 seatings (approx. 2 hrs) — 6 seasonal otsumami small plates, 13 Edomae nigiri, hand roll, soup, tamago, printed fish card.</span><span class="t-jp">18:00・20:30の二部制（約2時間）— 季節の摘み6品、握り13貫、手巻き、椀、玉子、産地カード付。</span></small>
+            </th>
+            <td>¥28,000</td>
+          </tr>
+          <tr>
+            <th>
+              <strong><span class="t-en">Sake &amp; Champagne Pairing</span><span class="t-jp">日本酒・シャンパーニュ ペアリング</span></strong>
+              <small><span class="t-en">6 curated pours tailored to the evening's catch.</span><span class="t-jp">摘みと握りに合わせた厳選6杯。</span></small>
+            </th>
+            <td>¥9,500</td>
+          </tr>
+          <tr>
+            <th>
+              <strong><span class="t-en">Japanese Tea Pairing (Non-Alcoholic)</span><span class="t-jp">日本茶ペアリング（ノンアルコール）</span></strong>
+              <small><span class="t-en">5 single-origin cold-brew and roasted Japanese teas.</span><span class="t-jp">氷出し玉露や焙じ茶など厳選5杯。</span></small>
+            </th>
+            <td>¥5,500</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ul class="menu-notes">
+        <li><span class="t-en">All prices include 10% consumption tax. A 10% service charge is added at checkout; tipping is not expected in Japan.</span><span class="t-jp">表示価格は消費税10%込みです。別途サービス料10%を頂戴いたします。</span></li>
+        <li><span class="t-en">Seasonal omakase courses only; à la carte ordering is not available.</span><span class="t-jp">季節のおまかせコースのみのご用意となります。</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Reservation Policy (Honest, un-collapsed editorial document) -->
+  <section class="sec sec--rule" id="policy">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="t-en">Reservations &amp; Policy</span><span class="t-jp">ご予約とお願い</span></h2>
+        <span>ご来店前に</span>
+      </div>
+
+      <div class="policy-list">
+        <div class="policy-item">
+          <h3><span class="t-en">Fragrance &amp; Attire</span><span class="t-jp">香りと服装</span></h3>
+          <p><span class="t-en">Please refrain from wearing perfume, cologne, or strongly scented lotions so all guests can appreciate the delicate aroma of hinoki and seasonal fish. Smart casual attire is requested (no beach sandals or sleeveless shirts).</span><span class="t-jp">白木や旬魚の繊細な香りをお楽しみいただくため、香水や香りの強い整髪料はお控えください。服装はスマートカジュアルをお願いしております。</span></p>
+        </div>
+        <div class="policy-item">
+          <h3><span class="t-en">Dietary Restrictions</span><span class="t-jp">アレルギー・食事制限</span></h3>
+          <p><span class="t-en">Specific shellfish or individual fish allergies can be accommodated with at least 48 hours' notice. Because our preparation relies on bonito/kelp dashi and raw seafood, we are unable to accommodate vegan, vegetarian, gluten-free soy, or no-raw-fish diets.</span><span class="t-jp">甲殻類や特定魚介のアレルギーは48時間前までにご相談ください。出汁や生魚を主体とする構成のため、ヴィーガン・生魚全般不可のご要望には対応いたしかねます。</span></p>
+        </div>
+        <div class="policy-item">
+          <h3><span class="t-en">Arrival &amp; Photography</span><span class="t-jp">ご来店時間・撮影</span></h3>
+          <p><span class="t-en">Each seating begins together at 12:00, 18:00, and 20:30 so shari temperature is served at its peak. Kindly arrive 5–10 minutes early; arrivals more than 15 minutes late may result in fewer courses or cancellation. Quiet, flash-free photos of your sushi are welcome.</span><span class="t-jp">最適な温度のシャリをご提供するため一斉スタートとなります。5〜10分前のご来店にご協力ください。お料理の撮影はフラッシュ・シャッター音なしにて可能です。</span></p>
+        </div>
+        <div class="policy-item">
+          <h3><span class="t-en">Cancellation Policy</span><span class="t-jp">キャンセル規定</span></h3>
+          <p><span class="t-en">Free modification up to 72 hours prior to seating. Cancellations within 48 hours incur 50% of the course fee; within 24 hours or no-show incur 100%. We recommend avoiding reservations on the day of an international flight arrival.</span><span class="t-jp">72時間前まで変更無料。48時間以内は50%、24時間以内および無断キャンセルは100%を申し受けます。国際線到着当日のご予約はお控えいただくことをおすすめします。</span></p>
+        </div>
+        <div class="policy-item">
+          <h3><span class="t-en">Children &amp; Group Size</span><span class="t-jp">お子様・人数</span></h3>
+          <p><span class="t-en">Guests aged 12 and older enjoying the full omakase course are welcome. Maximum party size is 4 guests per reservation.</span><span class="t-jp">おまかせコースを召し上がれる12歳以上のお客様より承ります。1組最大4名様までとなります。</span></p>
+        </div>
+      </div>
+
+      <div class="policy-cta">
+        <p><span class="t-en">Reservations open on the 1st of each month at 10:00 JST for the following month.</span><span class="t-jp">毎月1日 10:00より翌月分のご予約を承ります。</span></p>
+        <button type="button" class="pill-cta" data-open-modal><span class="t-en">Request Reservation →</span><span class="t-jp">ご予約リクエスト →</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Access & Driver Card -->
+  <section class="sec sec--rule" id="access">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="t-en">Access</span><span class="t-jp">道案内</span></h2>
+        <span>銀座六丁目</span>
+      </div>
+
+      <div class="access-grid">
+        <dl class="access-dl">
+          <div><dt><span class="t-en">Address</span><span class="t-jp">住所</span></dt><dd><span class="t-en">Ginza Rokuchome Bldg. B1F, 6-9-12 Ginza, Chuo-ku, Tokyo<br><span style="color:var(--muted);font-size:12.5px">東京都中央区銀座6-9-12 銀座六丁目ビル B1F</span></span><span class="t-jp">東京都中央区銀座6-9-12 銀座六丁目ビル B1F</span></dd></div>
+          <div><dt><span class="t-en">Station</span><span class="t-jp">最寄駅</span></dt><dd><span class="t-en">5 min walk from Ginza Station (Exit A3)</span><span class="t-jp">東京メトロ銀座駅 A3出口より徒歩5分</span></dd></div>
+          <div><dt><span class="t-en">Hours</span><span class="t-jp">営業時間</span></dt><dd><span class="t-en">Lunch 12:00 / Dinner 18:00 &amp; 20:30<br><span style="color:var(--muted);font-size:12.5px">Closed Mondays · Reservations only</span></span><span class="t-jp">昼 12:00 ／ 夜 18:00・20:30<br><span style="color:var(--muted);font-size:12.5px">月曜定休・完全予約制</span></span></dd></div>
+          <div><dt><span class="t-en">Payment</span><span class="t-jp">お支払い</span></dt><dd>Visa / Mastercard / Amex / JCB / Diners / Cash</dd></div>
+        </dl>
+
+        <div class="taxi">
+          <small>Show to Taxi Driver · タクシー運転手様へ</small>
+          <b>東京都中央区銀座 6-9-12<br>銀座六丁目ビル前までお願いします。</b>
+          <p>みゆき通りと交詢社通りの間、GINZA SIX 裏手付近です（鮨 青木 B1F・白木行灯が目印）。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="footer-outer">
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <small><span class="t-en">Location</span><span class="t-jp">所在地</span></small>
+        <p><span class="t-en">Ginza Rokuchome Bldg. B1F<br>6-9-12 Ginza, Chuo-ku, Tokyo</span><span class="t-jp">東京都中央区銀座6-9-12<br>銀座六丁目ビル B1F</span></p>
+      </div>
+      <div class="footer__col">
+        <small><span class="t-en">Hours</span><span class="t-jp">営業時間</span></small>
+        <p><span class="t-en">Lunch 12:00 / Dinner 18:00 · 20:30<br>Closed Mondays (Reservations required)</span><span class="t-jp">昼 12:00 ／ 夜 18:00・20:30<br>月曜定休（完全予約制）</span></p>
+      </div>
+      <div>
+        <button type="button" class="pill-outline" data-open-modal><span class="t-en">Reservations →</span><span class="t-jp">ご予約 →</span></button>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <strong>SUSHI AOKI</strong>
+      <a href="../../english/index.html"><span class="t-en">← Machiya Web English Website Design</span><span class="t-jp">← Machiya Web 英語サイト制作へ戻る</span></a>
+    </div>
+  </footer>
+</div>
+
+<div class="modal" id="resModal" hidden role="dialog" aria-modal="true" aria-labelledby="resTitle">
+  <div class="modal__card">
+    <button type="button" class="modal__close" data-close-modal aria-label="Close">&times;</button>
+    <h3 id="resTitle"><span class="t-en">Reservation Request</span><span class="t-jp">ご予約リクエスト</span></h3>
+    <p class="modal__sub"><span class="t-en">Sample demonstration form — no actual booking or payment occurs.</span><span class="t-jp">※制作サンプルのデモ画面です（実際の予約・課金は行われません）。</span></p>
+    <form id="resForm">
+      <div class="fgrid">
+        <label class="f"><span class="t-en">Date</span><span class="t-jp">ご希望日</span><input type="date" required></label>
+        <label class="f"><span class="t-en">Seating</span><span class="t-jp">お時間</span>
+          <select><option>12:00 Lunch</option><option selected>18:00 Dinner</option><option>20:30 Dinner</option></select>
+        </label>
+        <label class="f"><span class="t-en">Guests (1–4)</span><span class="t-jp">人数（1〜4名）</span>
+          <select><option>1</option><option selected>2</option><option>3</option><option>4</option></select>
+        </label>
+        <label class="f"><span class="t-en">Pairing</span><span class="t-jp">ペアリング</span>
+          <select><option>Decide at counter</option><option>Sake &amp; Champagne</option><option>Japanese Tea</option></select>
+        </label>
+        <label class="f f--full"><span class="t-en">Full Name</span><span class="t-jp">お名前</span><input type="text" placeholder="Daniel Mercer" required></label>
+        <label class="f f--full"><span class="t-en">Allergies / Notes</span><span class="t-jp">アレルギー・ご要望</span><textarea rows="2" placeholder="Optional"></textarea></label>
+      </div>
+      <label class="agree"><input type="checkbox" required><span><span class="t-en">I have read and agree to the fragrance, dietary, and cancellation policies.</span><span class="t-jp">香り・アレルギー対応範囲・キャンセル規定を確認しました。</span></span></label>
+      <button type="submit" class="pill-cta" style="width:100%;justify-content:center;margin-top:22px"><span class="t-en">Submit Request (Demo)</span><span class="t-jp">リクエスト送信（デモ）</span></button>
+      <p class="modal__status" id="resStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var langBtn = document.getElementById('langBtn');
+  langBtn.addEventListener('click', function(){
+    var next = root.getAttribute('data-lang') === 'en' ? 'ja' : 'en';
+    root.setAttribute('data-lang', next);
+    root.setAttribute('lang', next);
+    langBtn.textContent = next === 'en' ? '日本語' : 'English';
+  });
+
+  var modal = document.getElementById('resModal');
+  var status = document.getElementById('resStatus');
+  document.querySelectorAll('[data-open-modal]').forEach(function(b){ b.addEventListener('click', function(){ modal.hidden = false; status.textContent = ''; }); });
+  document.querySelectorAll('[data-close-modal]').forEach(function(b){ b.addEventListener('click', function(){ modal.hidden = true; }); });
+  modal.addEventListener('click', function(e){ if(e.target === modal) modal.hidden = true; });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') modal.hidden = true; });
+  document.getElementById('resForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    status.textContent = root.getAttribute('data-lang') === 'ja'
+      ? 'ご予約リクエストを確認しました（デモ表示です）。'
+      : 'Your demo omakase reservation request has been recorded.';
+  });
+})();
+</script>
+</body>
+</html>

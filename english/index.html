@@ -1,0 +1,2135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!--
+=====================================================================
+  Machiya Web｜英語・日英バイリンガルサイト制作 専用ページ
+  ---------------------------------------------------------------------
+  配置：
+    english/index.html          … このファイル（CSS・JSを内包）
+    ../images/kuroha.jpg        … KUROHAの写真
+    ../images/sora-hero.jpg     … SORA TEA HOUSEの写真
+    ../images/sora-cafe.jpg     … SORA TEA HOUSEの店内写真
+    ../images/aoki-hero.jpg     … SUSHI AOKIの写真
+    ../images/aoki-counter.jpg  … SUSHI AOKIのカウンター写真
+    ../samples/kuroha/          … KUROHA（焼き鳥＆日本酒バー）完成サンプル
+    ../samples/sora/            … SORA TEA HOUSE（日本茶＆抹茶カフェ）完成サンプル
+    ../samples/aoki/            … SUSHI AOKI（江戸前おまかせ寿司）完成サンプル
+
+  「★編集」… 文章・料金・連絡先を変更する箇所
+  「★公開前」… 公開前に必ず確認・設定する箇所
+=====================================================================
+-->
+<title>飲食店・カフェ・バーの英語サイト制作｜Machiya Web（東京・インバウンド対応）</title>
+<meta name="description" content="インバウンド需要のある日本の飲食店・和食店・カフェ・バーに特化した英語サイト・日英バイリンガルサイト制作。翻訳ツール任せではない自然な英語ライティング、お通し・注文マナーガイド、アレルゲン表記、Googleマップ連携まで69,800円〜（税込）の買い切りで対応。英語が話せなくても日本語だけで完結します。">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://machiyaweb.com/english/">
+<meta name="theme-color" content="#F7F5F0">
+
+<!-- OGP -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="Machiya Web">
+<meta property="og:url" content="https://machiyaweb.com/english/">
+<meta property="og:title" content="飲食店・カフェ・バーの英語サイト制作｜Machiya Web">
+<meta property="og:description" content="日本の名店の魅力を、伝わる英語で世界へ。英語専用69,800円〜・日英バイリンガル89,800円〜（税込）。お通し・マナーガイド・アレルゲン表記まで日本語だけでお任せ。">
+<meta property="og:image" content="https://machiyaweb.com/images/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Machiya Web｜飲食店・カフェ・バーの英語サイト制作">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="飲食店・カフェ・バーの英語サイト制作｜Machiya Web">
+<meta name="twitter:description" content="日本の名店の魅力を、伝わる英語で世界へ。英語専用69,800円〜・日英バイリンガル89,800円〜（税込）。">
+<meta name="twitter:image" content="https://machiyaweb.com/images/ogp.png">
+
+<!-- アイコン -->
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Klee+One:wght@400;600&family=Zen+Old+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="../images/sora-hero.jpg">
+
+<!-- ★編集：構造化データ（料金・連絡先・FAQを変更したらここも更新） -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://machiyaweb.com/#website",
+   "url": "https://machiyaweb.com/",
+   "name": "Machiya Web",
+   "inLanguage": "ja"
+  },
+  {
+   "@type": "ProfessionalService",
+   "@id": "https://machiyaweb.com/#business",
+   "name": "Machiya Web",
+   "alternateName": "マチヤウェブ",
+   "url": "https://machiyaweb.com/",
+   "logo": "https://machiyaweb.com/web-app-manifest-512x512.png",
+   "image": "https://machiyaweb.com/images/ogp.png",
+   "email": "machiyaweb@gmail.com",
+   "telephone": "+81-70-4680-5993",
+   "sameAs": [
+    "https://lin.ee/Sm1ctZC"
+   ],
+   "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "東京都",
+    "addressCountry": "JP"
+   },
+   "areaServed": {
+    "@type": "Country",
+    "name": "日本"
+   },
+   "priceRange": "¥69,800〜",
+   "makesOffer": [
+    {
+     "@type": "Offer",
+     "name": "英語専用ページ制作",
+     "description": "飲食店・カフェ・バー向け英語LP制作、自然な英語ライティング構成、First-Time Visitor Guide、英語メニュー表記、Googleマップ連携、公開サポート",
+     "price": "69800",
+     "priceCurrency": "JPY",
+     "itemOffered": {
+      "@type": "Service",
+      "name": "飲食店向け英語ホームページ制作"
+     }
+    },
+    {
+     "@type": "Offer",
+     "name": "日英バイリンガル公式サイト制作",
+     "description": "ワンタップ日英切替オリジナルデザイン、日本語・英語両対応メニューと来店ガイド、SEO初期設定、独自ドメイン公開サポート",
+     "price": "89800",
+     "priceCurrency": "JPY",
+     "itemOffered": {
+      "@type": "Service",
+      "name": "日英バイリンガル公式サイト制作"
+     }
+    },
+    {
+     "@type": "Offer",
+     "name": "日英月額サポート",
+     "description": "季節メニューの日英同時更新、営業時間・価格変更、写真差し替え、表示確認",
+     "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "4980",
+      "priceCurrency": "JPY",
+      "unitCode": "MON"
+     },
+     "itemOffered": {
+      "@type": "Service",
+      "name": "英語・日英サイトの更新保守"
+     }
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://machiyaweb.com/english/#webpage",
+   "url": "https://machiyaweb.com/english/",
+   "name": "飲食店・カフェ・バーの英語サイト制作｜Machiya Web",
+   "description": "訪日外国人のお客様に選ばれる、飲食店・カフェ・バー特化の英語サイト・日英バイリンガル制作サービス。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://machiyaweb.com/#website"
+   },
+   "about": {
+    "@id": "https://machiyaweb.com/#business"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Machiya Web トップ",
+     "item": "https://machiyaweb.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "英語サイト制作",
+     "item": "https://machiyaweb.com/english/"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://machiyaweb.com/english/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "英語がまったく話せなくても依頼できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "はい、もちろんです。ヒアリングから構成案の確認、公開まで、やり取りはすべて日本語で完結します。普段使っている日本語メニューの写真やSNS・食べログのURLを共有いただければ、英語の文章構成もこちらでご提案します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "機械翻訳や翻訳アプリで英語にするのと何が違いますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "直訳では「お通し」「おまかせ」「旬の肴」などの文化や、料理の美味しさ・食べ方が正しく伝わらず、誤解や機会損失につながります。Machiya Webでは海外ゲストの目線で納得感のある英語表現と、入店前の不安を解消するガイド構成まで設計します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "すでに日本語の公式サイトがあります。英語ページだけ追加できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "はい、「英語専用ページ制作（69,800円〜）」で対応可能です。既存サイトの雰囲気に合わせつつ、海外のお客様向けの英語LPを制作し、既存サイトやGoogleマップから自然につながる導線を整えます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "お通し（席料）や決済方法、アレルギーなどのトラブルを減らせますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "はい。英語サイト内に「First-Time Visitor Guide（初めての方ガイド）」を設け、お通し・チャージの仕組み、支払い方法、ワンドリンク制、アレルギーやヴィーガン対応可否、キャンセル規定などを事前に明記することで、店頭での行き違いや説明の負担を大きく減らせます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "TableCheckや食べログ、Instagramなど既存の予約導線と連携できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "はい。TableCheck・AutoReserve・Googleで予約・公式Instagram・メール予約など、現在お使いの予約方法や今後導入したい導線に合わせて予約ボタンを設置します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "店内で使える英語QRメニューも作れますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "はい。オプション（+11,000円〜）で、テーブルのQRコードからすぐ開けるスマホ向け英語メニュー表示と、そのまま印刷できるQRコードデータをご用意します。指差し注文にも便利です。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+
+<script>document.documentElement.classList.add('js');</script>
+
+<style>
+/* =====================================================================
+   0. デザイントークン（Machiya Editorial：和紙×深緑×金）
+===================================================================== */
+:root{
+  --paper:#F7F5F0;
+  --paper-2:#EFEBE2;
+  --white:#FFFFFF;
+  --ink:#171A17;
+  --ink-2:#4A524C;
+  --ink-3:#6E746F;
+  --green:#315A4D;
+  --forest:#22403A;
+  --pale:#DDE7E1;
+  --gold:#B3915F;
+  --gold-ink:#86693D;
+  --gold-lite:#D2B98B;
+  --line:#D9D5CC;
+  --line-dark:rgba(255,255,255,.16);
+
+  --serif:"Zen Old Mincho","Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;
+  --sans:"Klee One","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  --latin:"Cormorant Garamond","Times New Roman",serif;
+
+  --wrap:1200px;
+  --gut:clamp(20px,5vw,56px);
+  --header:76px;
+  --sec:clamp(96px,12vw,164px);
+
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+}
+
+/* =====================================================================
+   1. ベース
+===================================================================== */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--header) + 12px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.95;letter-spacing:.04em;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body.is-locked{position:fixed;left:0;right:0;overflow:hidden}
+h1,h2,h3,h4,p,ul,ol,dl,dd,figure,fieldset{margin:0;padding:0}
+ul,ol{list-style:none}
+fieldset{border:0;min-width:0}
+img{display:block;max-width:100%;height:auto}
+svg{display:block}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer;padding:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+::selection{background:var(--pale);color:var(--ink)}
+.sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.skip{position:fixed;left:12px;top:-80px;z-index:200;background:var(--white);padding:10px 18px;border:1px solid var(--line)}
+.skip:focus{top:12px}
+.wrap{width:100%;max-width:calc(var(--wrap) + var(--gut)*2);margin:0 auto;padding:0 var(--gut)}
+.nowrap{white-space:nowrap}
+
+.h2{font-family:var(--serif);font-weight:500;font-size:clamp(28px,3.5vw,46px);line-height:1.55;letter-spacing:.05em;text-wrap:balance}
+.lead{color:var(--ink-2);max-width:36em;margin-top:26px;line-height:2.05}
+
+.sec{padding:var(--sec) 0;position:relative}
+.sec__grid{display:grid;grid-template-columns:72px minmax(0,1fr);gap:0 clamp(24px,4vw,56px)}
+.sec__label{white-space:nowrap;writing-mode:vertical-rl;font-family:var(--serif);font-size:14px;letter-spacing:.42em;color:var(--gold-ink);display:flex;align-items:center;gap:18px;position:sticky;top:calc(var(--header) + 40px);align-self:start;height:max-content}
+.sec__label::after{content:"";width:1px;height:56px;background:var(--gold)}
+.sec__head{margin-bottom:clamp(48px,6vw,84px)}
+.eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:20px;font-family:var(--latin);font-style:italic;font-size:clamp(16px,1.4vw,19px);letter-spacing:.05em;color:var(--gold-ink)}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+
+/* =====================================================================
+   2. ボタン・リンク
+===================================================================== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:56px;padding:0 30px;border:1px solid var(--green);border-radius:2px;font:600 15px/1.3 var(--sans);letter-spacing:.08em;white-space:nowrap;transition:background-color .3s ease,color .3s ease,border-color .3s ease}
+.btn .ico{width:18px;height:18px;flex:none}
+.btn--solid{background:var(--green);color:var(--white)}
+.btn--solid:hover{background:var(--forest);border-color:var(--forest)}
+.btn--line{background:transparent;color:var(--green)}
+.btn--line:hover{background:var(--pale)}
+.btn--paper{background:var(--paper);color:var(--green);border-color:var(--paper)}
+.btn--paper:hover{background:var(--white);border-color:var(--white)}
+.btn--block{width:100%}
+.btn--sm{min-height:44px;padding:0 20px;font-size:14px}
+
+.tlink{display:inline-flex;align-items:center;gap:8px;color:var(--green);font-weight:600;border-bottom:1px solid currentColor;padding-bottom:2px;transition:opacity .3s ease}
+.tlink:hover{opacity:.65}
+.tlink svg{width:14px;height:14px}
+
+/* =====================================================================
+   3. ヘッダー
+===================================================================== */
+.header{position:fixed;top:0;left:0;right:0;z-index:80;height:var(--header);transition:background-color .45s var(--ease),border-color .45s var(--ease);border-bottom:1px solid transparent}
+.header.is-solid{background:rgba(247,245,240,.88);-webkit-backdrop-filter:saturate(1.3) blur(14px);backdrop-filter:saturate(1.3) blur(14px);border-bottom-color:var(--line)}
+.header__in{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand-wrap{display:flex;align-items:center;gap:14px;min-width:0}
+.logo{display:inline-flex;align-items:center;min-height:44px}
+.logo img{display:block;height:34px;width:auto}
+.brand-tag{display:inline-flex;align-items:center;padding:3px 10px;border:1px solid var(--gold);border-radius:2px;font-family:var(--latin);font-style:italic;font-size:13.5px;letter-spacing:.08em;color:var(--gold-ink);line-height:1.3;white-space:nowrap}
+
+.nav{display:flex;align-items:center;gap:clamp(16px,2vw,30px)}
+.nav__list{display:flex;gap:clamp(14px,1.8vw,26px)}
+.nav__list a{position:relative;display:inline-flex;align-items:center;min-height:44px;font-size:13.5px;font-weight:600;letter-spacing:.07em;color:var(--ink)}
+.nav__list a::after{content:"";position:absolute;left:0;right:0;bottom:9px;height:1px;background:var(--green);opacity:0;transition:opacity .3s ease}
+.nav__list a:hover::after,.nav__list a[aria-current]::after{opacity:1}
+.nav__list a[aria-current]{color:var(--green)}
+.nav__top{color:var(--ink-3)!important;font-weight:400!important}
+
+.burger{display:none;position:relative;z-index:80;width:48px;height:48px;margin-right:-10px;align-items:center;justify-content:center}
+.burger span{position:absolute;width:24px;height:1px;background:var(--ink);transition:transform .5s var(--ease-out),opacity .3s}
+.burger span:nth-child(1){transform:translateY(-4px)}
+.burger span:nth-child(2){transform:translateY(4px)}
+.burger[aria-expanded="true"] span:nth-child(1){transform:rotate(30deg)}
+.burger[aria-expanded="true"] span:nth-child(2){transform:rotate(-30deg)}
+
+.menu{position:fixed;inset:0;z-index:70;background:var(--paper);display:flex;flex-direction:column;padding:calc(var(--header) + 16px) var(--gut) calc(28px + env(safe-area-inset-bottom));overflow-y:auto;visibility:hidden;opacity:0;transition:opacity .25s ease,visibility 0s .25s}
+.menu.is-open{visibility:visible;opacity:1;transition:opacity .25s ease}
+.menu__list{border-top:1px solid var(--line)}
+.menu__list li{border-bottom:1px solid var(--line)}
+.menu__list a{display:flex;justify-content:space-between;align-items:center;padding:16px 2px;font-family:var(--serif);font-size:19px;letter-spacing:.08em}
+.menu__list svg{width:16px;height:16px;color:var(--gold-ink)}
+.menu__foot{margin-top:auto;padding-top:28px;display:grid;gap:12px}
+.menu__foot p{font-size:13px;color:var(--ink-2);line-height:1.8}
+
+/* =====================================================================
+   4. ファーストビュー（Machiya Editorial × 暖簾 × 日英切替デモステージ）
+===================================================================== */
+.hero{position:relative;background:var(--white);padding:calc(var(--header) + clamp(36px,5.5vw,82px)) 0 clamp(64px,8vw,108px);overflow:hidden}
+.hero__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:clamp(32px,5vw,76px);align-items:center}
+.hero__en{display:flex;align-items:center;gap:14px;margin-bottom:26px;font-family:var(--latin);font-style:italic;font-size:clamp(17px,1.45vw,20px);letter-spacing:.05em;color:var(--gold-ink)}
+.hero__en::before{content:"";width:40px;height:1px;background:var(--gold)}
+.hero__title{font-family:var(--serif);font-weight:500;font-size:clamp(28px,3.15vw,44px);line-height:1.48;letter-spacing:.05em}
+.hero__lead{margin-top:26px;max-width:31em;color:var(--ink-2);font-size:clamp(15px,1.08vw,16.5px);line-height:2.05}
+.hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero__meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;margin-top:32px;padding-top:22px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-2)}
+.hero__meta b{font-family:var(--latin);font-weight:500;font-size:28px;color:var(--green);letter-spacing:0;font-variant-numeric:lining-nums tabular-nums;line-height:1}
+.hero__meta b small{font-family:var(--sans);font-size:12.5px;margin-left:3px;color:var(--ink-2)}
+.hero__meta .dot{width:3px;height:3px;border-radius:50%;background:var(--gold);align-self:center}
+.hero__pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.hero__pills span{font-size:12px;padding:4px 11px;background:var(--paper);border:1px solid var(--line);color:var(--ink-2);border-radius:2px}
+.hero__monitor{margin-top:16px;font-size:13.5px}
+
+.js .hero [data-hero]{opacity:0;transition:opacity .75s ease;transition-delay:var(--d,0s)}
+.is-loaded .hero [data-hero]{opacity:1}
+
+/* ステージ：暖簾 ＋ インタラクティブ日英切替モックアップ */
+.stage-wrap{justify-self:end;width:100%;max-width:650px}
+.stage{position:relative;width:100%;aspect-ratio:1/.9}
+.stage__floor{position:absolute;inset:14% 0 5% 9%;background:var(--paper)}
+.stage__rod{position:absolute;z-index:6;top:0;left:3%;right:-1%;height:7px;border-radius:4px;background:linear-gradient(#5b4633,#3a2c20);box-shadow:0 2px 3px rgba(23,26,23,.18)}
+.stage__rod::before,.stage__rod::after{content:"";position:absolute;top:-2px;width:11px;height:11px;border-radius:50%;background:#2f241a}
+.stage__rod::before{left:-4px}.stage__rod::after{right:-4px}
+
+.noren{position:absolute;z-index:5;top:4px;left:6%;right:2%;bottom:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.6%;pointer-events:none}
+.noren__p{align-self:start;height:30%;transform-origin:50% 0;background-color:var(--green);background-image:linear-gradient(rgba(0,0,0,.16),rgba(0,0,0,.16)),repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 4px);background-size:100% 12px,100% 100%;background-repeat:no-repeat,repeat;box-shadow:inset 0 -5px 0 rgba(0,0,0,.1),0 10px 18px -12px rgba(23,26,23,.35)}
+.noren__mon{position:absolute;z-index:6;left:50%;top:15%;width:clamp(50px,5.8vw,70px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:var(--paper);color:var(--green);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px var(--green),0 0 0 4px rgba(247,245,240,.5)}
+.noren__mon svg{width:62%;height:62%;display:block}
+.noren__word{white-space:nowrap;position:absolute;z-index:6;top:4.5%;writing-mode:vertical-rl;font-family:var(--serif);font-size:clamp(10px,.95vw,12.5px);letter-spacing:.4em;color:rgba(247,245,240,.84)}
+.noren__word--l{left:calc(6% + 13.5%)}
+.noren__word--r{right:calc(2% + 13.5%)}
+
+.mb{position:relative;background:var(--white);border:1px solid #D2D4CC;border-radius:6px;overflow:hidden;box-shadow:0 40px 70px -40px rgba(23,40,32,.45),0 2px 6px rgba(23,26,23,.04)}
+.mb__bar{height:28px;display:flex;align-items:center;gap:6px;padding:0 12px;background:#F4F3EF;border-bottom:1px solid #E4E2DB}
+.mb__bar i{width:7px;height:7px;border-radius:50%;background:#D3D0C8}
+.mb__bar span{margin:0 auto;font:500 10px/1 var(--latin);letter-spacing:.14em;color:#6f7570}
+.mb__view{position:relative;aspect-ratio:16/10;overflow:hidden;background:#12100E}
+.stage .mb{position:absolute;z-index:2;left:0;top:19%;width:83%}
+
+/* ヒーロー内ライブ日英切替プレビュー（空 茶寮 SORA TEA HOUSE） */
+.hero-demo{position:absolute;inset:0;padding-top:10%;background:#FFFFFF;color:#111111;display:flex;flex-direction:column;overflow:hidden;font-family:var(--serif)}
+.hero-demo__top{display:flex;justify-content:space-between;align-items:center;padding:2.2% 5.5% 2%;font-size:clamp(5.8px,.6vw,7.8px);letter-spacing:.14em;color:#6B6B6B}
+.hero-demo__top b{font-family:var(--serif);font-weight:400;font-size:clamp(8px,.9vw,11px);letter-spacing:.24em;color:#111111}
+.hero-demo__nav{display:flex;align-items:center;gap:10px}
+.hero-demo__lang{color:#111111;border-bottom:1px solid #111111;padding-bottom:1px}
+.hero-demo__stage{padding:1.5% 5.5% 0;display:grid;grid-template-columns:1fr auto;gap:3%;align-items:end;flex:1;min-height:0}
+.hero-demo__img{width:100%;height:100%;overflow:hidden;background:#F4F4F2}
+.hero-demo__img img{width:100%;height:100%;object-fit:cover;object-position:58% 50%}
+.hero-demo__vert{writing-mode:vertical-rl;font-family:var(--serif);font-size:clamp(5px,.52vw,6.8px);letter-spacing:.36em;color:#6B6B6B;white-space:nowrap}
+.hero-demo__foot{padding:3.2% 30% 4.2% 5.5%;display:flex;flex-direction:column;gap:3px}
+.hero-demo__foot b{font-family:var(--latin);font-weight:400;font-size:clamp(10.5px,1.25vw,15.5px);line-height:1.35;color:#111111;letter-spacing:.04em}
+.stage[data-demo-lang="ja"] .hero-demo__foot b{font-family:var(--serif);font-size:clamp(9.5px,1.1vw,13.5px);letter-spacing:.08em}
+.hero-demo__foot span{font-size:clamp(5.5px,.58vw,7.4px);color:#6B6B6B;letter-spacing:.1em}
+.stage[data-demo-lang="en"] .d-ja{display:none!important}
+.stage[data-demo-lang="ja"] .d-en{display:none!important}
+
+/* スマホモックアップ */
+.mp{position:absolute;z-index:3;right:0;bottom:4%;width:28%;background:#151917;border-radius:24px;padding:6px;box-shadow:0 30px 50px -24px rgba(18,21,19,.62)}
+.mp__screen{position:relative;border-radius:19px;overflow:hidden;background:#F8F5EE;aspect-ratio:9/18.5;display:flex;flex-direction:column}
+.mp__top{display:flex;justify-content:space-between;align-items:center;padding:12% 9% 6%}
+.mp__img{position:relative;height:38%;overflow:hidden}
+.mp__img img{width:100%;height:100%;object-fit:cover}
+.mp__body{padding:8% 9%;display:flex;flex-direction:column;gap:5px;flex:1}
+.mp__body p{font-size:clamp(6.8px,.72vw,9px);line-height:1.5;font-weight:500}
+.mp__row{display:flex;justify-content:space-between;gap:8px;padding:4px 0;border-top:1px solid rgba(245,239,230,.14);font-size:clamp(5.8px,.58vw,7.5px);line-height:1.4}
+.mp__btn{margin-top:auto;text-align:center;font-size:clamp(6px,.6vw,8px);letter-spacing:.12em;padding:6px 0;border-radius:2px;font-weight:700}
+
+.stage__ctrl{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 16px;margin-top:20px;padding-left:9%;font-size:12.5px;color:var(--ink-2)}
+.demo-sw{display:inline-flex;align-items:center;gap:4px;padding:3px;border:1px solid var(--line);border-radius:999px;background:var(--white)}
+.demo-sw button{padding:5px 12px;border-radius:999px;font-size:11.5px;font-weight:600;letter-spacing:.06em;color:var(--ink-2);transition:background .2s,color .2s}
+.demo-sw button.is-on{background:var(--green);color:var(--white)}
+
+/* 3つの質問から探す */
+.guide{background:var(--paper);border-bottom:1px solid var(--line)}
+.guide__list{display:grid;grid-template-columns:repeat(3,1fr)}
+.guide__list a{position:relative;display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 16px;padding:28px clamp(16px,2.5vw,36px);border-left:1px solid var(--line)}
+.guide__list li:first-child a{border-left:0;padding-left:0}
+.guide__q{grid-column:1;font-size:12.5px;color:var(--ink-3);letter-spacing:.08em}
+.guide__a{grid-column:1;font-family:var(--serif);font-size:17px;letter-spacing:.06em;color:var(--ink)}
+.guide__arw{grid-column:2;grid-row:1/3;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--green);transition:border-color .3s ease}
+.guide__arw svg{width:14px;height:14px}
+.guide__list a:hover .guide__arw{border-color:var(--green)}
+
+/* =====================================================================
+   5. インバウンドの課題（悩み → Machiya Webの解決）
+===================================================================== */
+.issues{border-top:1px solid var(--ink)}
+.issues__head{display:grid;grid-template-columns:48px minmax(0,1fr) 72px minmax(0,1fr);gap:0 20px;padding:14px 0;border-bottom:1px solid var(--line);font-size:12.5px;letter-spacing:.14em;color:var(--ink-3)}
+.issues__head span:nth-child(1){grid-column:2}
+.issues__head span:nth-child(2){grid-column:4;color:var(--green)}
+.issue{position:relative;display:grid;grid-template-columns:48px minmax(0,1fr) 72px minmax(0,1fr);gap:0 20px;align-items:center;padding:28px 0;border-bottom:1px solid var(--line)}
+.issue__n{font-family:var(--latin);font-size:22px;color:var(--gold-ink);font-variant-numeric:lining-nums}
+.issue__q{font-family:var(--serif);font-size:clamp(16.5px,1.35vw,19px);letter-spacing:.04em;line-height:1.7}
+.issue__line{height:1px;background:var(--gold);position:relative}
+.issue__line::after{content:"";position:absolute;right:-1px;top:-3px;width:7px;height:7px;border-top:1px solid var(--gold);border-right:1px solid var(--gold);transform:rotate(45deg)}
+.issue__a{font-size:15px;color:var(--ink-2);line-height:1.9}
+
+/* =====================================================================
+   6. 選ばれる理由（森の緑：翻訳ではなく、おもてなし設計）
+===================================================================== */
+.about{background:var(--forest);color:var(--white)}
+.about .sec__label{color:var(--gold-lite)}
+.about .sec__label::after{background:var(--gold-lite)}
+.about .lead,.about__body p{color:rgba(255,255,255,.8)}
+.about__top{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(36px,6vw,88px);align-items:end}
+.about__body p+p{margin-top:20px}
+.lockup{display:flex;flex-wrap:wrap;align-items:flex-end;gap:clamp(14px,2.2vw,28px);margin-top:46px;font-family:var(--latin);line-height:.9}
+.lockup__w{display:flex;flex-direction:column;gap:12px}
+.lockup__w b{font-weight:400;font-size:clamp(40px,5.6vw,84px);letter-spacing:-.02em}
+.lockup__w:last-child b{font-style:italic;color:var(--gold-lite)}
+.lockup__w span{font-family:var(--serif);font-size:13px;letter-spacing:.34em;color:rgba(255,255,255,.72);line-height:1}
+.lockup__plus{font-size:clamp(26px,2.8vw,38px);color:rgba(255,255,255,.4);padding-bottom:clamp(24px,3.2vw,44px);font-weight:300}
+
+/* 機械翻訳 vs Machiya Web おもてなし英語 比較カード */
+.compare{margin-top:clamp(56px,7vw,88px);display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cmp{padding:clamp(24px,3vw,36px);border:1px solid var(--line-dark);background:rgba(255,255,255,.04)}
+.cmp--good{border-color:rgba(210,185,139,.55);background:rgba(210,185,139,.08)}
+.cmp__tag{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;letter-spacing:.14em;padding:3px 10px;border:1px solid var(--line-dark);color:rgba(255,255,255,.7);margin-bottom:16px}
+.cmp--good .cmp__tag{border-color:var(--gold-lite);color:var(--gold-lite)}
+.cmp h3{font-family:var(--serif);font-weight:500;font-size:19px;letter-spacing:.06em;margin-bottom:16px}
+.cmp__list{display:grid;gap:12px}
+.cmp__list li{padding:12px 14px;background:rgba(0,0,0,.18);border-left:2px solid rgba(255,255,255,.22);font-size:13.5px;line-height:1.75;color:rgba(255,255,255,.76)}
+.cmp--good .cmp__list li{border-left-color:var(--gold-lite);color:#F7F5F0}
+.cmp__list strong{display:block;font-family:var(--latin);font-size:16px;font-weight:500;letter-spacing:.02em;color:var(--white);margin-bottom:3px}
+.cmp--good .cmp__list strong{color:var(--gold-lite)}
+
+.values{margin-top:clamp(64px,8vw,104px);padding-top:clamp(44px,5.5vw,64px);border-top:1px solid var(--line-dark)}
+.values__title{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.3vw,29px);letter-spacing:.06em;line-height:1.6}
+.values__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(24px,3vw,40px);margin-top:44px}
+.value{padding-top:26px;border-top:1px solid var(--line-dark)}
+.value svg{width:40px;height:40px;color:var(--gold-lite);margin-bottom:22px}
+.value h3{font-family:var(--serif);font-weight:500;font-size:18.5px;letter-spacing:.05em;line-height:1.6;margin-bottom:10px}
+.value p{font-size:14.5px;color:rgba(255,255,255,.76);line-height:1.9}
+
+/* =====================================================================
+   7. サービス範囲
+===================================================================== */
+.services{background:var(--white)}
+.svc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--ink)}
+.svc__g{padding:32px clamp(18px,2vw,28px) 36px;border-right:1px solid var(--line)}
+.svc__g:first-child{padding-left:0}
+.svc__g:last-child{border-right:0;padding-right:0}
+.svc__k{font-family:var(--serif);font-size:21px;letter-spacing:.1em;color:var(--green)}
+.svc__d{font-size:13px;color:var(--ink-3);margin:6px 0 22px;line-height:1.8}
+.svc__g li{display:grid;grid-template-columns:20px 1fr;gap:12px;padding:15px 0;border-top:1px solid var(--line)}
+.svc__g li svg{width:20px;height:20px;color:var(--green);margin-top:3px}
+.svc__g h3{font-size:15px;font-weight:600;line-height:1.65;letter-spacing:.04em}
+.svc__g li p{font-size:12.5px;color:var(--ink-2);line-height:1.8;margin-top:3px}
+.svc-note{margin-top:30px;font-size:13px;color:var(--ink-2)}
+
+/* =====================================================================
+   8. 英語・日英切替 制作サンプル（3業態タブ）
+===================================================================== */
+.works__top{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+.works__top .lead{margin-top:18px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;padding:5px;border:1px solid var(--line);border-radius:3px;background:var(--white)}
+.tabs[hidden]{display:none}
+.tab{display:flex;flex-direction:column;align-items:flex-start;min-width:142px;padding:10px 16px;border-radius:2px;text-align:left;transition:background-color .25s ease,color .25s ease}
+.tab b{font-family:var(--serif);font-weight:500;font-size:15.5px;letter-spacing:.08em;line-height:1.5}
+.tab small{font-size:11.5px;color:var(--ink-3);letter-spacing:.05em;line-height:1.5}
+.tab[aria-selected="true"]{background:var(--green);color:var(--white)}
+.tab[aria-selected="true"] small{color:rgba(255,255,255,.78)}
+.tab:not([aria-selected="true"]):hover{background:var(--paper)}
+
+.works__panels{margin-top:clamp(38px,5vw,60px)}
+.work{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(32px,5vw,76px);align-items:center}
+html:not(.js) .work+.work,.works__panels:not(.is-tabbed) .work+.work{margin-top:96px;padding-top:96px;border-top:1px solid var(--line)}
+.work[hidden]{display:none}
+.work.is-entering{animation:fadeIn .4s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+.work__visual{position:relative;padding:clamp(28px,4vw,54px) clamp(24px,4vw,54px) clamp(44px,5vw,68px);background:var(--paper-2)}
+.work__visual .mb{max-width:680px;margin:0 auto}
+.work__visual .mb__view{aspect-ratio:16/11;background:var(--white)}
+.work__visual .mp{width:22%;right:4%;bottom:5%}
+.work__hint{position:absolute;left:clamp(24px,4vw,54px);bottom:14px;font-size:11.5px;color:var(--ink-3);letter-spacing:.06em;display:flex;align-items:center;gap:8px}
+.work__hint svg{width:13px;height:13px}
+@media (hover:none){.work__hint{display:none}}
+
+.pv{position:absolute;left:0;right:0;top:0;transition:transform 6s cubic-bezier(.45,0,.35,1)}
+.work__visual:hover .pv,.work__visual:focus-within .pv{transform:translateY(calc(var(--shift,0px) * -1))}
+
+/* プレビュー① KUROHA（モダン墨色・表組みカウンター設計） */
+.pv--kr{background:#0F0E0D;color:#EFECE6;font-family:var(--sans)}
+.kr-top{display:flex;justify-content:space-between;align-items:center;padding:3.2% 6%;border-bottom:1px solid rgba(239,236,230,.12);font-size:clamp(6px,.64vw,8px);letter-spacing:.14em;color:#9E978E}
+.kr-top b{font-family:var(--latin);font-size:clamp(10px,1.15vw,14px);letter-spacing:.26em;color:#EFECE6;font-weight:400}
+.kr-hero{position:relative;aspect-ratio:16/9.6;overflow:hidden}
+.kr-hero img{width:100%;height:100%;object-fit:cover;object-position:62% 50%;opacity:.78}
+.kr-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,14,13,.15) 0%,rgba(15,14,13,.92) 100%)}
+.kr-hero__copy{position:absolute;z-index:1;left:6%;right:34%;bottom:10%;display:flex;flex-direction:column;gap:4px}
+.kr-hero__copy b{font-family:var(--sans);font-weight:400;font-size:clamp(13px,1.65vw,21px);line-height:1.25;color:#EFECE6}
+.kr-hero__copy small{font-size:clamp(5.5px,.56vw,7.2px);letter-spacing:.12em;color:#9E978E;line-height:1.5}
+.kr-sec{padding:6.5% 6%;border-top:1px solid rgba(239,236,230,.12)}
+.kr-sec .mh{font-size:clamp(6px,.62vw,7.8px);letter-spacing:.2em;text-transform:uppercase;color:#C49A64;margin-bottom:4%}
+.kr-notes div{display:grid;grid-template-columns:34% 1fr;gap:8px;padding:3% 0;border-top:1px solid rgba(239,236,230,.1);font-size:clamp(6.2px,.64vw,8.2px);color:#9E978E;line-height:1.5}
+.kr-notes b{color:#EFECE6;font-weight:400}
+.kr-list div{display:flex;justify-content:space-between;padding:2.6% 0;border-bottom:1px solid rgba(239,236,230,.1);font-size:clamp(6.8px,.72vw,9px)}
+.kr-list span:last-child{font-family:var(--latin);color:#C49A64}
+
+/* プレビュー② SORA TEA HOUSE（櫻井・HIGASHIYA系 純白×墨×縦書き） */
+.pv--sr{background:#FFFFFF;color:#111111;font-family:var(--serif)}
+.sr-top{display:flex;justify-content:space-between;align-items:center;padding:3.8% 6%;font-size:clamp(6px,.62vw,8px);color:#6B6B6B;letter-spacing:.14em}
+.sr-top b{font-family:var(--serif);font-size:clamp(8.5px,.92vw,11.5px);letter-spacing:.26em;color:#111111;font-weight:400}
+.sr-hero{padding:1% 6% 5%}
+.sr-hero__stage{display:grid;grid-template-columns:1fr auto;gap:3%;align-items:end}
+.sr-hero__stage img{width:100%;aspect-ratio:16/9.4;object-fit:cover}
+.sr-hero__vert{writing-mode:vertical-rl;font-size:clamp(5.2px,.52vw,6.8px);letter-spacing:.38em;color:#6B6B6B;white-space:nowrap}
+.sr-hero__cap{display:flex;justify-content:space-between;align-items:baseline;margin-top:3.5%;font-size:clamp(6.5px,.7vw,9px);color:#111}
+.sr-hero__cap small{font-size:clamp(5.2px,.52vw,6.8px);color:#777;letter-spacing:.1em}
+.sr-sec{padding:6% 6%;border-top:1px solid #E6E6E6}
+.sr-sec .mh{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:2.5%;border-bottom:1px solid #111;margin-bottom:3%;font-size:clamp(6.2px,.64vw,8px);letter-spacing:.2em;text-transform:uppercase;color:#111}
+.sr-sec .mh small{color:#777;letter-spacing:.08em;text-transform:none}
+.sr-list div{display:flex;justify-content:space-between;padding:2.8% 0;border-bottom:1px solid #E6E6E6;font-size:clamp(6.8px,.72vw,9px)}
+.sr-list span:last-child{font-family:var(--latin);color:#111}
+.sr-course{margin-top:5%;padding:5% 4%;border-top:1px solid #E6E6E6;border-bottom:1px solid #E6E6E6;text-align:center}
+.sr-course small{display:block;font-size:clamp(5.2px,.52vw,6.8px);letter-spacing:.2em;color:#777;text-transform:uppercase}
+.sr-course b{display:block;font-family:var(--latin);font-weight:400;font-size:clamp(10px,1.1vw,14px);margin:3px 0}
+.sr-course span{display:inline-block;margin-top:4px;padding:3px 12px;border:1px solid #111;font-size:clamp(5.5px,.55vw,7px);letter-spacing:.18em;text-transform:uppercase}
+
+/* プレビュー③ SUSHI AOKI（Florilege系 純白×墨・極限ミニマル） */
+.pv--ak{background:#FFFFFF;color:#101010;font-family:var(--serif)}
+.ak-top{display:flex;justify-content:space-between;align-items:center;padding:3.8% 6%;font-size:clamp(5.8px,.6vw,7.5px);color:#636363}
+.ak-top b{font-family:var(--latin);letter-spacing:.34em;font-size:clamp(8.5px,.95vw,12px);color:#101010;font-weight:400}
+.ak-top u{text-decoration:none;background:#0E0E0E;color:#FFF;padding:3px 9px;border-radius:99px;font-size:.92em;letter-spacing:.08em}
+.ak-hero{position:relative;margin:0 6%;aspect-ratio:16/9.4;background:#0E0E0E;overflow:hidden}
+.ak-hero img{width:100%;height:100%;object-fit:cover;object-position:62% 50%}
+.ak-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.06) 0%,rgba(10,10,10,.62) 100%)}
+.ak-hero__copy{position:absolute;z-index:1;left:5%;right:34%;bottom:9%;display:flex;flex-direction:column;gap:3px;color:#FFF}
+.ak-hero__copy b{font-family:var(--latin);font-weight:400;font-size:clamp(12px,1.5vw,19px);letter-spacing:.18em}
+.ak-hero__copy small{font-size:clamp(5.2px,.52vw,6.8px);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+.ak-sec{padding:6.5% 8% 5%}
+.ak-sec .mh{display:flex;justify-content:space-between;padding-bottom:2.5%;border-bottom:1px solid #E4E4E4;margin-bottom:2%;font-family:var(--latin);font-size:clamp(8.5px,.92vw,11.5px);letter-spacing:.24em;text-transform:uppercase;color:#101010}
+.ak-sec .mh small{font-family:var(--serif);color:#949494;letter-spacing:.22em}
+.ak-rows div{display:flex;justify-content:space-between;align-items:baseline;padding:3.2% 0;border-bottom:1px solid #E4E4E4;font-size:clamp(6.8px,.72vw,9px)}
+.ak-rows span:last-child{font-family:var(--latin);font-size:1.1em}
+.ak-pol{padding:3% 8% 6%;font-size:clamp(6px,.62vw,7.8px);color:#636363;line-height:1.6}
+.ak-pol div{display:grid;grid-template-columns:34% 1fr;gap:8px;padding:2.6% 0;border-bottom:1px solid #E4E4E4}
+.ak-pol b{color:#101010;font-weight:400}
+
+.work__info .work__cat{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.12em;color:var(--gold-ink)}
+.work__info .work__cat::before{content:"";width:24px;height:1px;background:var(--gold)}
+.work__info h3{font-family:var(--serif);font-weight:500;font-size:clamp(24px,2.3vw,31px);letter-spacing:.06em;line-height:1.5;margin:14px 0 18px}
+.work__info>p{font-size:15px;color:var(--ink-2);line-height:2}
+.work__dl{margin-top:26px;border-top:1px solid var(--line)}
+.work__dl div{display:grid;grid-template-columns:72px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13.5px;line-height:1.8}
+.work__dl dt{color:var(--ink-3);letter-spacing:.12em}
+.work__info .btn{margin-top:30px}
+.work__note{margin-top:16px;font-size:12px;line-height:1.85;color:var(--ink-3)}
+
+/* =====================================================================
+   9. 料金プラン ＋ 英語サイト特化シミュレーター
+===================================================================== */
+[data-monitor-block][hidden]{display:none!important}
+.pricing__intro{display:flex;gap:20px;align-items:flex-start;margin-top:-36px;margin-bottom:48px;padding:22px 26px;background:var(--paper);border-left:2px solid var(--green);max-width:780px}
+.pricing__intro b{display:block;font-weight:600;font-size:15.5px;margin-bottom:4px}
+.pricing__intro p{font-size:14px;color:var(--ink-2);line-height:1.9}
+
+.monitor{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:clamp(28px,4vw,60px);align-items:start;margin-bottom:26px;padding:clamp(28px,4vw,48px);background:var(--paper);border:1px solid var(--gold)}
+.monitor__tag{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.14em;color:var(--gold-ink)}
+.monitor__tag::before{content:"";width:24px;height:1px;background:var(--gold)}
+.monitor h3{font-family:var(--serif);font-weight:500;font-size:clamp(21px,2.2vw,27px);letter-spacing:.05em;line-height:1.6;margin-top:12px}
+.monitor__prices{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.monitor__pbox{background:var(--white);border:1px solid var(--line);padding:14px 16px}
+.monitor__pbox small{display:block;font-size:12px;color:var(--ink-2)}
+.monitor__pbox b{display:inline-block;font-family:var(--latin);font-size:clamp(34px,3.6vw,44px);font-weight:500;color:var(--green);line-height:1.05;margin-top:4px;font-variant-numeric:lining-nums tabular-nums}
+.monitor__pbox span{font-size:12.5px;color:var(--ink-2);margin-left:3px}
+.monitor__text{margin-top:16px;font-size:14px;color:var(--ink-2);line-height:1.9}
+.monitor .btn{margin-top:22px}
+.monitor__cond h4{font-size:14px;font-weight:600;letter-spacing:.08em;margin:0 0 8px}
+.monitor__cond li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:13px 0;border-top:1px solid var(--line);font-size:14px;line-height:1.8}
+.monitor__cond li:last-child{border-bottom:1px solid var(--line)}
+.monitor__cond li>span{font-family:var(--latin);font-size:18px;line-height:1.5;color:var(--gold-ink)}
+.monitor__cond small{display:block;font-size:12.5px;color:var(--ink-3);line-height:1.75;margin-top:2px}
+.monitor__note{margin-top:14px;font-size:12.5px;color:var(--ink-3);line-height:1.85}
+
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+.plan{position:relative;display:flex;flex-direction:column;padding:clamp(28px,3.2vw,42px);background:var(--paper);border:1px solid var(--line)}
+.plan--main{border-color:var(--green);box-shadow:0 36px 64px -48px rgba(49,90,77,.55)}
+.plan--main::before{content:"";position:absolute;left:-1px;right:-1px;top:-1px;height:4px;background:var(--green)}
+.plan__badge{position:absolute;top:20px;right:20px;font-size:11px;letter-spacing:.14em;color:var(--green);border:1px solid var(--green);padding:2px 10px;line-height:1.6}
+.plan__en{font-family:var(--latin);font-style:italic;font-size:18px;letter-spacing:.05em;color:var(--gold-ink)}
+.plan h3{font-family:var(--serif);font-weight:500;font-size:21px;letter-spacing:.06em;margin-top:6px}
+.plan__for{font-size:13px;color:var(--ink-2);margin-top:6px;line-height:1.75}
+.plan__price{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 6px;margin:24px 0 4px;color:var(--green)}
+.plan__price b{font-family:var(--latin);font-weight:500;font-size:clamp(42px,4vw,54px);line-height:1;letter-spacing:-.01em;font-variant-numeric:lining-nums tabular-nums}
+.plan__price span{font-size:13px;color:var(--ink-2)}
+.plan__cap{font-size:12px;color:var(--ink-3);padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:18px}
+.plan ul{margin-bottom:28px}
+.plan li{display:flex;gap:10px;align-items:flex-start;padding:6px 0;font-size:14px;line-height:1.75}
+.plan li svg{width:15px;height:15px;color:var(--green);margin-top:6px;flex:none}
+.plan .btn{margin-top:auto}
+
+/* 英語サイト特化シミュレーター */
+.sim{margin-top:24px;background:var(--paper);border:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1.32fr) minmax(0,.68fr)}
+.sim__main{padding:clamp(28px,3.5vw,44px)}
+.sim__main h3{font-family:var(--serif);font-weight:500;font-size:21px;letter-spacing:.06em}
+.sim__main>p{font-size:13.5px;color:var(--ink-2);margin-top:6px}
+.sim__plan-sw{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:22px}
+.sim__plan-btn{padding:14px 16px;border:1px solid var(--line);background:var(--white);text-align:left;border-radius:2px;transition:all .2s}
+.sim__plan-btn b{display:block;font-family:var(--serif);font-size:15.5px;color:var(--ink);font-weight:500}
+.sim__plan-btn small{display:block;font-size:12px;color:var(--ink-3);margin-top:2px}
+.sim__plan-btn.is-on{border-color:var(--green);background:var(--pale)}
+.sim__plan-btn.is-on b{color:var(--forest)}
+
+.sim__rows{margin-top:22px;border-top:1px solid var(--line)}
+.sim__row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.sim__row b{display:block;font-weight:600;font-size:14.5px}
+.sim__row small{display:block;font-size:12px;color:var(--ink-3);line-height:1.7}
+.stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:2px;background:var(--white)}
+.stepper button{width:42px;height:42px;display:flex;align-items:center;justify-content:center;color:var(--green);transition:background .3s}
+.stepper button:hover:not(:disabled){background:var(--pale)}
+.stepper button:disabled{color:#C3C6C0;cursor:not-allowed}
+.stepper button svg{width:14px;height:14px}
+.stepper output{min-width:38px;text-align:center;font-family:var(--latin);font-size:22px;font-variant-numeric:lining-nums tabular-nums;line-height:1}
+.switch{position:relative;display:inline-flex;align-items:center;cursor:pointer}
+.switch input{position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer}
+.switch span{width:52px;height:30px;border-radius:15px;background:#D6D3CB;position:relative;transition:background .35s var(--ease)}
+.switch span::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:var(--white);box-shadow:0 1px 3px rgba(0,0,0,.2);transition:transform .45s var(--ease-out)}
+.switch input:checked+span{background:var(--green)}
+.switch input:checked+span::after{transform:translateX(22px)}
+.switch input:focus-visible+span{outline:2px solid var(--gold);outline-offset:3px}
+
+.sim__out{background:var(--green);color:var(--white);padding:clamp(28px,3.5vw,44px);display:flex;flex-direction:column}
+.sim__out>p{font-size:13px;letter-spacing:.1em;color:rgba(255,255,255,.78)}
+.sim__plan-label{margin-top:8px;font-size:12.5px;color:var(--gold-lite);font-weight:600}
+.sim__total{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin:10px 0 4px}
+.sim__total b{font-family:var(--latin);font-weight:500;font-size:clamp(44px,4.4vw,56px);line-height:1;font-variant-numeric:lining-nums tabular-nums}
+.sim__total span{font-size:13px;color:rgba(255,255,255,.82)}
+.sim__monthly{margin-top:16px;padding-top:16px;border-top:1px solid var(--line-dark);font-size:14px;display:flex;justify-content:space-between;gap:12px}
+.sim__monthly b{font-family:var(--latin);font-size:22px;font-weight:500;font-variant-numeric:lining-nums}
+.sim__out .btn{margin-top:26px}
+.sim__note{margin-top:16px;font-size:11.5px;line-height:1.8;color:rgba(255,255,255,.72)}
+
+.rev{margin-top:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rev summary{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:64px;padding:12px 0;cursor:pointer;list-style:none;font-weight:500;font-size:15px}
+.rev summary::-webkit-details-marker{display:none}
+.rev summary small{display:block;font-weight:400;font-size:12.5px;color:var(--ink-3)}
+.rev__list{padding-bottom:22px}
+.rev__list li{display:grid;grid-template-columns:minmax(180px,.85fr) minmax(0,1.35fr) auto;gap:20px;align-items:center;padding:14px 0;border-top:1px solid var(--line);font-size:14px}
+.rev__list span{font-size:12.5px;color:var(--ink-3)}
+.rev__list strong{font-family:var(--latin);font-size:19px;font-weight:500;color:var(--green);white-space:nowrap;font-variant-numeric:lining-nums}
+.rev__list strong small{font-family:var(--sans);font-size:12px;color:var(--ink-2);margin-left:2px}
+.price-note{margin-top:24px;font-size:13px;color:var(--ink-2);line-height:1.95;max-width:58em}
+.price-cross{margin-top:16px;font-size:13.5px}
+
+.pm{position:relative;width:32px;height:32px;flex:none;border:1px solid var(--line);border-radius:50%;transition:border-color .3s ease}
+.pm::before,.pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1px;background:var(--green);transform:translate(-50%,-50%)}
+.pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:opacity .3s ease}
+details[open]>summary .pm{border-color:var(--green)}
+details[open]>summary .pm::after{opacity:0}
+
+/* =====================================================================
+   10. 制作の流れ（日本語だけで完結）
+===================================================================== */
+.process{background:var(--paper)}
+.flow{position:relative}
+.flow__list{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:16px}
+.flow__track{position:absolute;top:26px;left:calc(100% / 14);right:calc(100% / 14);height:1px;background:var(--line)}
+.step{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center}
+.step__n{position:relative;z-index:1;width:53px;height:53px;border-radius:50%;background:var(--paper);border:1px solid var(--green);display:flex;align-items:center;justify-content:center;font-family:var(--latin);font-size:22px;color:var(--green)}
+.step h3{margin-top:20px;font-family:var(--serif);font-weight:500;font-size:14.5px;letter-spacing:.04em;line-height:1.6}
+.step p{margin-top:8px;font-size:12.5px;color:var(--ink-2);line-height:1.8}
+.prep{margin-top:clamp(52px,6vw,76px);display:grid;grid-template-columns:auto 1fr;gap:20px 28px;align-items:start;padding:28px 32px;background:var(--white);border-left:2px solid var(--gold)}
+.prep svg{width:34px;height:34px;color:var(--gold-ink)}
+.prep h3{font-family:var(--serif);font-weight:500;font-size:17.5px;letter-spacing:.05em}
+.prep p{font-size:14px;color:var(--ink-2);margin-top:6px;line-height:1.95}
+
+/* =====================================================================
+   11. よくある質問
+===================================================================== */
+.faq__grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(40px,6vw,96px);align-items:start}
+.faq__side{position:sticky;top:calc(var(--header) + 48px)}
+.faq__side .lead{font-size:14.5px}
+.faq__side .tlink{margin-top:24px}
+.faq{border-top:1px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:12px;min-height:76px;padding:18px 0;cursor:pointer;list-style:none;font-family:var(--serif);font-size:clamp(16px,1.28vw,18px);letter-spacing:.04em;line-height:1.7;transition:color .35s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--green)}
+.faq__q{font-family:var(--latin);font-size:24px;color:var(--gold-ink);line-height:1}
+.faq__a{overflow:hidden}
+.faq__a p{padding:0 48px 28px 46px;color:var(--ink-2);font-size:15px;line-height:2.05}
+
+/* =====================================================================
+   12. お問い合わせ
+===================================================================== */
+.contact{background:var(--green);color:var(--white);padding:var(--sec) 0 calc(var(--sec) * .8)}
+.contact .sec__label{color:var(--gold-lite)}
+.contact .sec__label::after{background:var(--gold-lite)}
+.contact__grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(40px,6vw,88px);align-items:start}
+.contact .h2{font-size:clamp(26px,3vw,40px)}
+.contact__lead{margin-top:24px;color:rgba(255,255,255,.82);max-width:28em}
+.contact__ways{margin-top:38px;border-top:1px solid var(--line-dark)}
+.contact__ways li{border-bottom:1px solid var(--line-dark)}
+.contact__ways a{display:grid;grid-template-columns:22px 1fr auto;gap:14px;align-items:center;padding:18px 0;transition:opacity .3s ease}
+.contact__ways a:hover{opacity:.75}
+.contact__ways svg{width:20px;height:20px;color:var(--gold-lite)}
+.contact__ways small{display:block;font-size:11.5px;letter-spacing:.12em;color:rgba(255,255,255,.68);line-height:1.5}
+.contact__ways span{font-size:15px;letter-spacing:.04em;line-height:1.5}
+.contact__ways .arw{width:14px;height:14px;color:rgba(255,255,255,.6)}
+
+.form-card{background:var(--white);color:var(--ink);padding:clamp(28px,4vw,52px);position:relative}
+.form-card__head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.form-card__head b{font-family:var(--serif);font-weight:500;font-size:19px;letter-spacing:.08em}
+.form-card__head span{font-size:12px;color:var(--ink-3)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px 18px}
+.f{min-width:0}
+.f--full{grid-column:1/-1}
+.f label,.f legend{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;margin-bottom:9px;letter-spacing:.04em}
+.req{font-size:10.5px;font-weight:600;padding:1px 7px;background:var(--green);color:var(--white);border-radius:2px;letter-spacing:.08em;line-height:1.7}
+.opt{font-size:11px;font-weight:400;color:var(--ink-3)}
+.f input[type=text],.f input[type=email],.f input[type=tel],.f textarea{width:100%;min-height:52px;padding:12px 14px;border:1px solid var(--line);border-radius:2px;background:var(--paper);font-size:16px;line-height:1.6;-webkit-appearance:none;appearance:none;transition:border-color .3s,background .3s,box-shadow .3s}
+.f textarea{min-height:160px;resize:vertical}
+.f input::placeholder,.f textarea::placeholder{color:#8A908B;font-size:14px}
+.f input:focus,.f textarea:focus{outline:none;border-color:var(--green);background:var(--white);box-shadow:0 0 0 3px rgba(49,90,77,.14)}
+.f [aria-invalid="true"]{border-color:#A9302A;background:#FFF8F6}
+.f__err{display:none;margin-top:6px;font-size:12.5px;color:#A9302A}
+.f.has-err .f__err{display:block}
+.f__help{margin-top:6px;font-size:12px;color:var(--ink-3);line-height:1.7}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.f .chip{position:relative;display:block;margin:0}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chip span{display:flex;align-items:center;gap:10px;min-height:52px;padding:10px 14px;border:1px solid var(--line);border-radius:2px;background:var(--paper);font-size:13.5px;line-height:1.5;cursor:pointer;transition:border-color .3s,background .3s,color .3s}
+.chip span::before{content:"";width:16px;height:16px;flex:none;border-radius:50%;border:1px solid #A9ADA7;background:var(--white);transition:border .3s}
+.chip input:checked+span{border-color:var(--green);background:var(--pale);color:var(--forest)}
+.chip input:checked+span::before{border:5px solid var(--green)}
+.chip input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+.f.has-err .chip span{border-color:#E0B4AE}
+.f .consent{display:flex;gap:12px;align-items:flex-start;margin:24px 0 20px;font-size:14px;font-weight:400;line-height:1.8;cursor:pointer}
+.f .consent.consent--tight{margin:0}
+.consent input{width:20px;height:20px;margin-top:3px;flex:none;accent-color:var(--green)}
+.consent a{color:var(--green);text-decoration:underline;text-underline-offset:3px}
+.consent small{display:block;font-size:12px;color:var(--ink-3);line-height:1.7;margin-top:2px}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.status{margin-top:14px;font-size:13.5px;line-height:1.8;min-height:1.8em}
+.status.is-err{color:#A9302A}
+.form-card .btn[disabled]{opacity:.6;cursor:progress}
+
+.done{text-align:center;padding:32px 8px;animation:fadeIn .5s ease}
+.done[hidden]{display:none}
+.done svg{width:64px;height:64px;margin:0 auto 20px;color:var(--green)}
+.done h3{font-family:var(--serif);font-weight:500;font-size:22px;letter-spacing:.06em}
+.done p{margin-top:12px;font-size:14.5px;color:var(--ink-2)}
+
+.privacy{margin-top:38px;border-top:1px solid var(--line-dark)}
+.privacy summary{display:flex;justify-content:space-between;align-items:center;min-height:56px;cursor:pointer;list-style:none;font-size:14px}
+.privacy summary::-webkit-details-marker{display:none}
+.privacy .pm{border-color:rgba(255,255,255,.35)}
+.privacy .pm::before,.privacy .pm::after{background:var(--white)}
+.privacy[open]>summary .pm{border-color:var(--white)}
+.privacy p{font-size:13px;color:rgba(255,255,255,.8);line-height:1.95;margin-bottom:14px}
+.privacy .privacy__meta{margin-top:22px;padding-top:14px;border-top:1px solid var(--line-dark);font-size:11.5px;line-height:1.9;color:rgba(255,255,255,.6)}
+
+/* =====================================================================
+   13. フッター・スマホ固定CTA
+===================================================================== */
+.footer{background:var(--paper);padding:clamp(64px,8vw,100px) 0 calc(32px + env(safe-area-inset-bottom))}
+.footer__top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:start}
+.footer .logo img{height:42px}
+.footer__tag{margin-top:14px;font-family:var(--serif);font-size:15px;letter-spacing:.08em}
+.footer__nav{display:grid;grid-template-columns:repeat(2,auto);gap:4px 52px}
+.footer__nav a{display:inline-flex;min-height:40px;align-items:center;font-size:14px;color:var(--ink-2);transition:color .3s}
+.footer__nav a:hover{color:var(--green)}
+.footer__bottom{margin-top:clamp(44px,6vw,72px);padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--ink-3)}
+.footer__bottom small{font-family:var(--latin);font-size:14px;letter-spacing:.06em;color:var(--ink-2)}
+
+.dock{display:none}
+html:not(.js) .burger{display:none!important}
+
+/* =====================================================================
+   14. レスポンシブ
+===================================================================== */
+@media (max-width:1180px){
+  .nav__list a{font-size:12.5px}
+  .values__grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:44px}
+  .svc{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .svc__g:nth-child(2){border-right:0;padding-right:0}
+  .svc__g:nth-child(3){padding-left:0}
+  .svc__g:nth-child(n+3){border-top:1px solid var(--line)}
+  .plans{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:1023px){
+  .sec__grid{grid-template-columns:minmax(0,1fr)}
+  .sec__label{writing-mode:horizontal-tb;position:static;flex-direction:row;margin-bottom:26px;letter-spacing:.3em;font-size:13px}
+  .sec__label::after{width:40px;height:1px;order:-1}
+  #works .sec__label{display:none}
+  .flow__list{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:40px}
+  .flow__track{display:none}
+  .work,.faq__grid,.contact__grid,.sim,.compare{grid-template-columns:minmax(0,1fr)}
+  .faq__side{position:static}
+}
+@media (max-width:960px){
+  .nav__list,.nav>.btn{display:none}
+  .burger{display:flex}
+  .hero__grid,.about__top,.monitor{grid-template-columns:minmax(0,1fr)}
+  .stage-wrap{justify-self:center;max-width:560px;margin-top:8px}
+}
+@media (max-width:640px){
+  :root{--header:64px}
+  body{font-size:15.5px;line-height:1.9}
+  .logo img{height:28px}
+  .brand-tag{font-size:11.5px;padding:2px 7px}
+  .hero{padding-top:calc(var(--header) + 30px);padding-bottom:54px}
+  .hero__title{font-size:clamp(28px,8.2vw,38px)}
+  .hero__en{margin-bottom:20px;font-size:15.5px}
+  .hero__actions{flex-direction:column;margin-top:26px}
+  .hero__actions .btn{width:100%}
+  .stage{aspect-ratio:1/.98}
+  .stage .mb{top:21%;width:86%}
+  .mp{width:31%;border-radius:18px;padding:4px}
+  .mp__screen{border-radius:15px}
+  .stage__ctrl{padding-left:0}
+  .guide__list{grid-template-columns:minmax(0,1fr)}
+  .guide__list a,.guide__list li:first-child a{border-left:0;border-top:1px solid var(--line);padding:20px 0}
+  .guide__list li:first-child a{border-top:0}
+  .issues__head{display:none}
+  .issue{grid-template-columns:34px minmax(0,1fr);gap:8px 12px;padding:22px 0;align-items:start}
+  .issue__n{font-size:19px;line-height:1.5}
+  .issue__line{display:none}
+  .issue__a{grid-column:2;font-size:14px;padding:12px 14px;background:var(--white);border-left:2px solid var(--gold);line-height:1.8}
+  .values__grid{grid-template-columns:minmax(0,1fr);gap:0}
+  .value{display:grid;grid-template-columns:42px 1fr;gap:0 16px;padding:24px 0}
+  .value svg{width:34px;height:34px;margin:0;grid-row:1/3}
+  .svc{grid-template-columns:minmax(0,1fr)}
+  .svc__g,.svc__g:first-child,.svc__g:nth-child(3){padding:26px 0;border-right:0}
+  .svc__g+.svc__g{border-top:1px solid var(--line)}
+  .works__top{display:block}
+  .tabs{margin-top:26px;width:100%;display:grid;grid-template-columns:1fr 1fr}
+  .tab{min-width:0;padding:10px 12px}
+  .tab:last-child:nth-child(odd){grid-column:1/-1}
+  .work__visual{padding:24px 16px 28px;margin:0 calc(var(--gut) * -1)}
+  .work__visual .mp{width:27%;right:3%}
+  .monitor__prices,.sim__plan-sw{grid-template-columns:1fr}
+  .monitor .btn{width:100%}
+  .plan__badge{position:static;align-self:flex-start;margin-bottom:14px}
+  .sim__row{grid-template-columns:minmax(0,1fr);gap:12px}
+  .sim__row>:last-child{justify-self:start}
+  .rev__list li{grid-template-columns:minmax(0,1fr) auto;gap:2px 16px}
+  .rev__list span{grid-column:1;grid-row:2}
+  .rev__list strong{grid-row:1/3;grid-column:2}
+  .flow__list{grid-template-columns:minmax(0,1fr);row-gap:0}
+  .flow__track{display:block;top:26px;bottom:26px;left:26px;right:auto;width:1px;height:auto}
+  .step{display:grid;grid-template-columns:53px 1fr;gap:2px 18px;text-align:left;align-items:center;padding:10px 0}
+  .step__n{grid-row:1/3}
+  .step h3,.step p{margin-top:0}
+  .step p{grid-column:2}
+  .prep{grid-template-columns:minmax(0,1fr);padding:22px 20px}
+  .faq summary{grid-template-columns:26px 1fr auto;font-size:15.5px;min-height:68px}
+  .faq__q{font-size:20px}
+  .faq__a p{padding:0 4px 24px 38px;font-size:14.5px}
+  .fgrid,.chips{grid-template-columns:minmax(0,1fr)}
+  .form-card{margin:0 calc(var(--gut) * -1);padding:28px var(--gut)}
+  .footer__top{grid-template-columns:minmax(0,1fr)}
+  .footer{padding-bottom:calc(104px + env(safe-area-inset-bottom))}
+  .dock{display:grid;grid-template-columns:52px 1fr 1fr;gap:8px;position:fixed;z-index:55;left:0;right:0;bottom:0;padding:10px var(--gut) calc(10px + env(safe-area-inset-bottom));background:rgba(247,245,240,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--line);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility 0s .3s}
+  .dock.is-shown{opacity:1;visibility:visible;transition:opacity .3s ease}
+  .dock .btn{min-height:52px;padding:0 12px;gap:6px;font-size:13.5px}
+  .dock .btn svg{width:16px;height:16px;flex:none}
+  .dock__tel{display:flex;align-items:center;justify-content:center;border:1px solid var(--green);border-radius:2px;color:var(--green)}
+  .dock__tel svg{width:20px;height:20px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  .js .hero [data-hero]{opacity:1}
+  .work__visual:hover .pv,.work__visual:focus-within .pv{transform:none}
+}
+@media print{.header,.dock,.menu{display:none}.js .hero [data-hero]{opacity:1}}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+
+<!-- =====================================================================
+     ヘッダー
+===================================================================== -->
+<header class="header" id="header">
+  <div class="wrap header__in">
+    <div class="brand-wrap">
+      <a class="logo" href="../index.html" aria-label="Machiya Web トップページへ"><img src="../images/logo.png" alt="Machiya Web" width="927" height="170"></a>
+      <span class="brand-tag">English Web</span>
+    </div>
+    <nav class="nav" aria-label="メインナビゲーション">
+      <ul class="nav__list">
+        <li><a href="#why">選ばれる理由</a></li>
+        <li><a href="#services">制作内容</a></li>
+        <li><a href="#works">制作事例</a></li>
+        <li><a href="#pricing">料金</a></li>
+        <li><a href="#process">制作の流れ</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a class="nav__top" href="../index.html">通常制作トップ</a></li>
+      </ul>
+      <a class="btn btn--solid btn--sm" href="#contact">無料相談</a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="メニューを開く"><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<!-- モバイルメニュー -->
+<div class="menu" id="menu" aria-hidden="true">
+  <nav aria-label="モバイルナビゲーション">
+    <ul class="menu__list">
+      <li><a href="#issues">インバウンドの課題<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+      <li><a href="#why">選ばれる理由<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+      <li><a href="#services">制作内容<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+      <li><a href="#works">英語サイト制作事例<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+      <li><a href="#pricing">料金・シミュレーション<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+      <li><a href="#process">制作の流れ<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+      <li><a href="#faq">よくある質問<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+      <li><a href="../index.html">通常ホームページ制作トップ<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+    </ul>
+  </nav>
+  <div class="menu__foot">
+    <a class="btn btn--solid btn--block" href="#contact">英語サイト制作を無料相談する</a>
+    <a class="btn btn--line btn--block" href="https://lin.ee/Sm1ctZC" target="_blank" rel="noopener">LINEで気軽に相談する</a>
+    <a class="btn btn--line btn--block" href="tel:07046805993">電話で相談する　070-4680-5993</a>
+    <p>英語の原稿がなくても、日本語のメニューやSNSからご相談いただけます。</p>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- =====================================================================
+     1. ファーストビュー
+===================================================================== -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="wrap hero__grid">
+    <div data-hero style="--d:.05s">
+      <p class="hero__en">English Website Design for Japanese Dining</p>
+      <!-- ★編集：メインコピー -->
+      <h1 class="hero__title" id="hero-title">日本の名店の魅力を、<br>伝わる英語で世界へ。</h1>
+      <p class="hero__lead">訪日外国人のお客様に「ここに行きたい」「安心して入れる」と選ばれる、飲食店・カフェ・バー特化の英語サイト制作。翻訳ツール任せではない“おもてなし設計”で、海外客の集客と店頭の安心感を同時につくります。</p>
+      <div class="hero__actions">
+        <a class="btn btn--solid" href="#contact">無料で相談する<svg class="ico ico--r" viewBox="0 0 18 18" fill="none" stroke="currentColor" aria-hidden="true"><path d="M2 9h13M11 5l4 4-4 4"/></svg></a>
+        <a class="btn btn--line" href="#works">英語制作サンプルを見る</a>
+      </div>
+      <!-- ★編集：ファーストビューの料金 -->
+      <p class="hero__meta">
+        <span>英語専用</span><b>69,800<small>円〜</small></b>
+        <span class="dot" aria-hidden="true"></span>
+        <span>日英切替</span><b>89,800<small>円〜（税込）</small></b>
+      </p>
+      <div class="hero__pills">
+        <span>英語が話せなくてもOK</span>
+        <span>買い切り対応</span>
+        <span>お通し・注文ガイド込み</span>
+        <span>アレルゲン表記対応</span>
+      </div>
+      <!-- ★編集：モニター募集の案内（終了時は JS の MONITOR.open を false に） -->
+      <p class="hero__monitor" data-monitor-block><a class="tlink" href="#monitor">モニター募集中｜先着3店舗は 英語専用 39,800円／日英切替 49,800円（税込）</a></p>
+    </div>
+
+    <div class="stage-wrap" data-hero style="--d:.22s">
+      <div class="stage" id="heroStage" data-demo-lang="en">
+        <div class="stage__floor" aria-hidden="true"></div>
+        <div class="mb" aria-hidden="true">
+          <div class="mb__bar"><i></i><i></i><i></i><span>SORA TEA HOUSE — KURAMAE, TOKYO (EN / JA)</span></div>
+          <div class="mb__view" style="background:#FFFFFF">
+            <div class="hero-demo">
+              <div class="hero-demo__top">
+                <b>空 茶寮 &nbsp; SORA TEA HOUSE</b>
+                <div class="hero-demo__nav">
+                  <span class="d-en">Tea　Menu　Visit</span>
+                  <span class="d-ja">茶について　お品書き　ご案内</span>
+                  <span class="hero-demo__lang"><span class="d-en">EN</span><span class="d-ja">JA</span></span>
+                </div>
+              </div>
+              <div class="hero-demo__stage">
+                <div class="hero-demo__img"><img src="../images/sora-hero.jpg" alt="" width="1264" height="848" fetchpriority="high"></div>
+                <span class="hero-demo__vert">蔵前・単一品種日本茶</span>
+              </div>
+              <div class="hero-demo__foot">
+                <b>
+                  <span class="d-en">Single-cultivar Japanese tea, stone-milled in Kuramae.</span>
+                  <span class="d-ja">蔵前の朝に点てる、単一品種の日本茶。</span>
+                </b>
+                <span>
+                  <span class="d-en">Kuramae, Tokyo — 10:00 to 18:00 · Vegan &amp; GF Menu</span>
+                  <span class="d-ja">東京・蔵前 — 10:00〜18:00（火曜定休）・日英お品書き</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mp" aria-hidden="true">
+          <div class="mp__screen" style="background:#FFFFFF;color:#111111">
+            <div class="mp__top">
+              <b style="font-family:var(--serif);letter-spacing:.2em;font-size:8px;font-weight:400">空 茶寮</b>
+              <span style="font-size:6px;color:#6B6B6B"><span class="d-en">EN / JA</span><span class="d-ja">JA / EN</span></span>
+            </div>
+            <div class="mp__img"><img src="../images/sora-hero.jpg" alt="" width="1264" height="848"></div>
+            <div class="mp__body">
+              <p style="font-family:var(--latin);color:#111111"><span class="d-en">Daytime Menu</span><span class="d-ja">お品書き</span></p>
+              <div class="mp__row" style="color:#6B6B6B;border-color:#E6E6E6"><span><span class="d-en">Usucha Matcha</span><span class="d-ja">宇治薄茶</span></span><span style="color:#111">¥780</span></div>
+              <div class="mp__row" style="color:#6B6B6B;border-color:#E6E6E6"><span><span class="d-en">Three-Tea</span><span class="d-ja">三種飲み比べ</span></span><span style="color:#111">¥2,400</span></div>
+              <div class="mp__btn" style="border:1px solid #111111;color:#111111;font-weight:400"><span class="d-en">RESERVATION</span><span class="d-ja">ご予約</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="noren" aria-hidden="true">
+          <span class="noren__p"></span>
+          <span class="noren__p"></span>
+          <span class="noren__p"></span>
+        </div>
+        <span class="noren__word noren__word--l" aria-hidden="true">街の名店</span>
+        <span class="noren__mon" aria-hidden="true"><svg viewBox="60 80 392 352" fill="currentColor"><path d="M92.16,106.91 L154.42,106.91 L256.00,179.00 L357.58,106.91 L419.84,106.91 L419.84,247.81 L357.58,247.81 L357.58,182.27 L265.24,247.81 L246.76,247.81 L154.42,182.27 L154.42,247.81 L92.16,247.81 Z M92.16,405.09 L154.42,405.09 L256.00,333.00 L357.58,405.09 L419.84,405.09 L419.84,264.19 L357.58,264.19 L357.58,329.73 L265.24,264.19 L246.76,264.19 L154.42,329.73 L154.42,264.19 L92.16,264.19 Z"/></svg></span>
+        <span class="noren__word noren__word--r" aria-hidden="true">世界へ</span>
+        <div class="stage__rod" aria-hidden="true"></div>
+      </div>
+
+      <div class="stage__ctrl">
+        <div class="demo-sw" role="group" aria-label="プレビューの言語切替デモ">
+          <button type="button" class="is-on" data-hero-lang="en" aria-pressed="true">English表示</button>
+          <button type="button" data-hero-lang="ja" aria-pressed="false">日本語表示</button>
+        </div>
+        <a class="tlink" href="../samples/sora/index.html" target="_blank" rel="noopener">空 茶寮 SORA 完成サイトを見る<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg><span class="sr-only">（新しいタブで開きます）</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3つの質問から探す -->
+<nav class="guide" aria-label="知りたいことから探す">
+  <ul class="wrap guide__list">
+    <li><a href="#works"><span class="guide__q">どんな英語サイトが作れる？</span><span class="guide__a">3業態のサンプルを見る</span><span class="guide__arw" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M7 2v10M3 8l4 4 4-4"/></svg></span></a></li>
+    <li><a href="#pricing"><span class="guide__q">英語対応はいくら？</span><span class="guide__a">料金を試算する</span><span class="guide__arw" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M7 2v10M3 8l4 4 4-4"/></svg></span></a></li>
+    <li><a href="#process"><span class="guide__q">英語が苦手でも大丈夫？</span><span class="guide__a">日本語だけの進行を見る</span><span class="guide__arw" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M7 2v10M3 8l4 4 4-4"/></svg></span></a></li>
+  </ul>
+</nav>
+
+<!-- =====================================================================
+     2. インバウンド対応の課題
+===================================================================== -->
+<section class="sec" id="issues" aria-labelledby="issues-title">
+  <div class="wrap sec__grid">
+    <p class="sec__label">お店の課題</p>
+    <div>
+      <div class="sec__head">
+        <p class="eyebrow">Inbound Challenges</p>
+        <h2 class="h2" id="issues-title">海外からのお客様、<br>入店前に迷わせて<br>いませんか？</h2>
+        <p class="lead">外国人旅行者は、GoogleマップやSNSでお店を見つけたあと「いくらくらいか」「英語で注文できるか」「ルールはあるか」を公式サイトで必ず確認します。</p>
+      </div>
+      <div class="issues">
+        <p class="issues__head" aria-hidden="true"><span>インバウンドでよくあるお悩み</span><span>Machiya Webの英語サイトで解決</span></p>
+        <ol>
+          <li class="issue"><span class="issue__n" aria-hidden="true">01</span><p class="issue__q">Googleマップの評価は高いのに英語公式サイトがない</p><span class="issue__line" aria-hidden="true"></span><p class="issue__a"><span class="sr-only">解決策：</span>Googleマップから直接つながる、信頼感ある英語公式サイトを整えます。</p></li>
+          <li class="issue"><span class="issue__n" aria-hidden="true">02</span><p class="issue__q">機械翻訳やPDFメニューでは料理の魅力が伝わらない</p><span class="issue__line" aria-hidden="true"></span><p class="issue__a"><span class="sr-only">解決策：</span>素材や調理法・おすすめの楽しみ方まで、自然な英語で丁寧に表現します。</p></li>
+          <li class="issue"><span class="issue__n" aria-hidden="true">03</span><p class="issue__q">お通し・席料・ワンドリンク制などで認識違いが起きる</p><span class="issue__line" aria-hidden="true"></span><p class="issue__a"><span class="sr-only">解決策：</span>「First-Time Visitor Guide」で事前に分かりやすく案内し、店頭トラブルを防ぎます。</p></li>
+          <li class="issue"><span class="issue__n" aria-hidden="true">04</span><p class="issue__q">ヴィーガン・アレルギー・決済方法の質問対応が大変</p><span class="issue__line" aria-hidden="true"></span><p class="issue__a"><span class="sr-only">解決策：</span>[VG] [GF] 等の国際タグや対応決済を明記し、接客の負担を軽減します。</p></li>
+          <li class="issue"><span class="issue__n" aria-hidden="true">05</span><p class="issue__q">予約ルールやキャンセル規定が英語で伝わっていない</p><span class="issue__line" aria-hidden="true"></span><p class="issue__a"><span class="sr-only">解決策：</span>高単価コースや予約制の店舗でも、方針やマナーを品よく明確に伝えられます。</p></li>
+          <li class="issue"><span class="issue__n" aria-hidden="true">06</span><p class="issue__q">英語が話せない・書けないので手をつけられない</p><span class="issue__line" aria-hidden="true"></span><p class="issue__a"><span class="sr-only">解決策：</span>英語の原稿は不要。日本語メニューや写真をお渡しいただくだけで完結します。</p></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     3. 選ばれる理由（翻訳ではなく、おもてなし設計）
+===================================================================== -->
+<section class="sec about" id="why" aria-labelledby="why-title">
+  <div class="wrap sec__grid">
+    <p class="sec__label">選ばれる理由</p>
+    <div>
+      <div class="about__top">
+        <div>
+          <h2 class="h2" id="why-title">「翻訳する」のではなく、<br>海外のお客様をもてなす<br>設計へ。</h2>
+          <div class="lockup" aria-hidden="true">
+            <div class="lockup__w"><b>Translate</b><span>訳すだけを超え</span></div>
+            <span class="lockup__plus">×</span>
+            <div class="lockup__w"><b>Hospitality</b><span>伝わるおもてなしへ</span></div>
+          </div>
+        </div>
+        <div class="about__body">
+          <p>日本語のサイトをそのまま自動翻訳にかけると、料理の繊細な美味しさが消えてしまったり、日本独自の「お通し」「おまかせ」「一斉スタート」といった文化がぶっきらぼうに誤解されてしまうことがあります。</p>
+          <p>Machiya Webは、飲食店の現場目線と海外ゲストの検索行動の両方を踏まえ、「このお店なら安心して予約できる」「おすすめコースを頼んでみたい」と思ってもらえる英語サイトを一つひとつ設計します。</p>
+        </div>
+      </div>
+
+      <!-- Before / After 比較 -->
+      <div class="compare">
+        <div class="cmp">
+          <span class="cmp__tag">Before｜機械翻訳・直訳の例</span>
+          <h3>誤解や不安を生みやすい表現</h3>
+          <ul class="cmp__list">
+            <li><strong>"Otoshi 550 yen / One drink order"</strong>「頼んでいないのに課金される」と不信感につながりやすい。</li>
+            <li><strong>"Assorted skewers / Today's fish"</strong>何が出てくるか分からず、注文やコース選択をためらってしまう。</li>
+            <li><strong>"No perfume / Cancel fee 100%"</strong>理由が書かれていないと、厳しい・歓迎されていない印象に。</li>
+          </ul>
+        </div>
+        <div class="cmp cmp--good">
+          <span class="cmp__tag">After｜Machiya Web のおもてなし英語設計</span>
+          <h3>納得して選ばれ、単価も上がる表現</h3>
+          <ul class="cmp__list">
+            <li><strong>"Seasonal Welcome Dish (Otoshi) ¥550"</strong>居酒屋の文化として温かく説明し、事前納得でトラブルゼロへ。</li>
+            <li><strong>"Chef's 7-Skewer Omakase — Grilled over Binchotan [GF option]"</strong>調理法・本数・アレルギー可否まで示し、おすすめコースへ自然に誘導。</li>
+            <li><strong>"Fragrance Courtesy — to preserve the aroma of hinoki &amp; seasonal fish"</strong>背景を品よく伝えることで、上質な日本体験への期待感が高まります。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="values">
+        <h3 class="values__title">Machiya Web の英語サイト制作、4つの柱。</h3>
+        <div class="values__grid">
+          <article class="value">
+            <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M8 10h28v20H18l-6 5v-5H8z"/><path d="M14 18h16M14 23h10"/></svg>
+            <h3>食の魅力が伝わる<br>自然な英語構成</h3>
+            <p>備長炭、出汁、石臼挽き、季節の食材。直訳では落ちる“美味しさの理由”を、海外の食通にも響く英語で丁寧に言語化します。</p>
+          </article>
+          <article class="value">
+            <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="22" cy="22" r="14"/><path d="M16 22l4 4 8-9"/></svg>
+            <h3>入店前の不安を消す<br>First-Time Guide</h3>
+            <p>お通し・席料、チップ不要、キャッシュレス決済、注文方法、駅出口からの道案内まで、よくある質問を先に解決します。</p>
+          </article>
+          <article class="value">
+            <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="9" y="7" width="26" height="30" rx="2"/><path d="M15 15h14M15 21h14M15 27h9"/></svg>
+            <h3>アレルゲン表記と<br>QRメニュー連携</h3>
+            <p>[VG] ヴィーガン・[GF] グルテンフリー・豚不使用などを分かりやすく表示。店頭の卓上QRメニューにもそのまま展開できます。</p>
+          </article>
+          <article class="value">
+            <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M10 30c4-8 20-8 24 0"/><circle cx="22" cy="15" r="5"/><path d="M6 15h6M32 15h6"/></svg>
+            <h3>日本語だけで完結する<br>安心の進行体制</h3>
+            <p>オーナー様が英語を用意する必要はありません。普段の日本語メニューや写真をもとに、日本語で相談しながら仕上げます。</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     4. 制作内容（英語サイト制作でできること）
+===================================================================== -->
+<section class="sec services" id="services" aria-labelledby="services-title">
+  <div class="wrap sec__grid">
+    <p class="sec__label">制作内容</p>
+    <div>
+      <div class="sec__head">
+        <p class="eyebrow">What We Build</p>
+        <h2 class="h2" id="services-title">海外客の検索から<br>来店・注文までを<br>一気通貫で設計。</h2>
+        <p class="lead">「ただ英語のページがある」だけでは終わりません。訪日客の実際の動きに沿って、必要な情報と導線をすべて整えます。</p>
+      </div>
+      <div class="svc">
+        <div class="svc__g">
+          <p class="svc__k">英語設計</p>
+          <p class="svc__d">魅力とルールを正しく伝える</p>
+          <ul>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 10.5l4 4 8-8.5"/></svg><div><h3>英語コピーライティング</h3><p>お店の物語・こだわりを自然な英語で再構成します。</p></div></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 10.5l4 4 8-8.5"/></svg><div><h3>日英ワンタップ切替</h3><p>日本人客と海外客の両方に1サイトで対応できます。</p></div></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 10.5l4 4 8-8.5"/></svg><div><h3>スマホファースト設計</h3><p>旅先のスマホ閲覧で迷わない軽快なレイアウト。</p></div></li>
+          </ul>
+        </div>
+        <div class="svc__g">
+          <p class="svc__k">安心ガイド</p>
+          <p class="svc__d">店頭での行き違いを防ぐ</p>
+          <ul>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 10.5l4 4 8-8.5"/></svg><div><h3>お通し・会計の明記</h3><p>席料・税込表記・チップ不要を事前に案内します。</p></div></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 10.5l4 4 8-8.5"/></svg><div><h3>来店マナー・予約規定</h3><p>香り配慮・時間厳守・キャンセル方針を品よく記載。</p></div></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 10.5l4 4 8-8.5"/></svg><div><h3>タクシー運転手カード</h3><p>画面を見せるだけでお店に着ける日本語住所枠。</p></div></li>
+          </ul>
+        </div>
+        <div class="svc__g">
+          <p class="svc__k">メニュー・予約</p>
+          <p class="svc__d">注文と予約のハードルを下げる</p>
+          <ul>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 10.5l4 4 8-8.5"/></svg><div><h3>英語メニュー＆食制限タグ</h3><p>VG・GF・ノンアルコール・苦手食材の絞り込み対応。</p></div></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 10.5l4 4 8-8.5"/></svg><div><h3>既存予約サイト連携</h3><p>TableCheckや食べログ、Instagram等へ自然に接続。</p></div></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 10.5l4 4 8-8.5"/></svg><div><h3>テーブルQRメニュー連携</h3><p>店内でスマホから見られる英語メニューにも拡張可能。</p></div></li>
+          </ul>
+        </div>
+        <div class="svc__g">
+          <p class="svc__k">公開・運用</p>
+          <p class="svc__d">見つかりやすく、育てやすく</p>
+          <ul>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 10.5l4 4 8-8.5"/></svg><div><h3>Googleマップ連携</h3><p>海外客が見るGoogleビジネスプロフィールへ接続。</p></div></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 10.5l4 4 8-8.5"/></svg><div><h3>英語SEO初期設定</h3><p>エリア名×業態の英語検索を意識した基本設定。</p></div></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 10.5l4 4 8-8.5"/></svg><div><h3>公開後の日英更新</h3><p>季節メニューや価格改定も日本語でご連絡いただくだけ。</p></div></li>
+          </ul>
+        </div>
+      </div>
+      <p class="svc-note">※掲載するメニュー品数や構成に合わせて、最適な設計をご提案します。写真撮影や多言語追加（中国語・韓国語など）も別途ご相談いただけます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     5. 英語・日英バイリンガル 制作サンプル（3業態）
+===================================================================== -->
+<section class="sec" id="works" aria-labelledby="works-title">
+  <div class="wrap sec__grid">
+    <p class="sec__label">制作事例</p>
+    <div>
+      <div class="works__top">
+        <div>
+          <p class="eyebrow">Bilingual Samples</p>
+          <h2 class="h2" id="works-title">業態と客層に合わせた<br>3つの英語サイト設計。</h2>
+          <p class="lead">日本茶カフェ、高級おまかせ寿司、焼き鳥バー。それぞれの業態で海外客が求める情報と雰囲気を、日英切替の完成サンプルでご覧いただけます。</p>
+        </div>
+        <div class="tabs" id="workTabs" hidden>
+          <button class="tab" type="button" id="tab-sr" aria-controls="work-sr"><b>SORA TEA</b><small>日本茶・抹茶カフェ</small></button>
+          <button class="tab" type="button" id="tab-ak" aria-controls="work-ak"><b>SUSHI AOKI</b><small>江戸前おまかせ寿司</small></button>
+          <button class="tab" type="button" id="tab-kr" aria-controls="work-kr"><b>KUROHA</b><small>焼き鳥・日本酒バー</small></button>
+        </div>
+      </div>
+
+      <div class="works__panels" id="workPanels">
+        <!-- サンプル1：SORA TEA HOUSE -->
+        <article class="work" id="work-sr" aria-labelledby="work-sr-title">
+          <div class="work__visual">
+            <div class="mb" aria-hidden="true">
+              <div class="mb__bar"><i></i><i></i><i></i><span>SORA TEA HOUSE — KURAMAE, TOKYO</span></div>
+              <div class="mb__view" style="background:#FFFFFF">
+                <div class="pv pv--sr">
+                  <div class="sr-top"><b>空 茶寮 &nbsp; SORA TEA HOUSE</b><span>Tea　Menu　Visit　EN / JA</span></div>
+                  <div class="sr-hero">
+                    <div class="sr-hero__stage">
+                      <img src="../images/sora-hero.jpg" alt="" width="1264" height="848" loading="lazy">
+                      <span class="sr-hero__vert">蔵前・単一品種日本茶</span>
+                    </div>
+                    <div class="sr-hero__cap"><span>Single-cultivar Japanese tea, stone-milled in Kuramae.</span><small>10:00 – 18:00</small></div>
+                  </div>
+                  <div class="sr-sec">
+                    <p class="mh"><span>Daytime Menu</span><small>All · Vegan · Gluten-Free</small></p>
+                    <div class="sr-list">
+                      <div><span>Usucha — Single-Cultivar Matcha</span><span>¥780</span></div>
+                      <div><span>Oat Milk Matcha Latte</span><span>¥820</span></div>
+                      <div><span>12-Hour Cold-Brew Sencha</span><span>¥720</span></div>
+                      <div><span>Seasonal Nerikiri Wagashi</span><span>¥580</span></div>
+                    </div>
+                    <div class="sr-course">
+                      <small>Counter Experience</small>
+                      <b>Kuramae Three-Tea Course — ¥2,400</b>
+                      <span>Reservation</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mp" aria-hidden="true">
+              <div class="mp__screen" style="background:#FFFFFF;color:#111111">
+                <div class="mp__top"><b style="font-family:var(--serif);letter-spacing:.2em;font-size:8px;font-weight:400">空 茶寮</b><span style="font-size:6px;color:#6B6B6B">EN / JA</span></div>
+                <div class="mp__img"><img src="../images/sora-hero.jpg" alt="" width="1264" height="848" loading="lazy"></div>
+                <div class="mp__body"><p style="color:#111;font-family:var(--latin)">Single-cultivar matcha</p><div class="mp__row" style="color:#6B6B6B;border-color:#E6E6E6"><span>Three-Tea</span><span style="color:#111">¥2,400</span></div><div class="mp__btn" style="border:1px solid #111;color:#111;font-weight:400">RESERVATION</div></div>
+              </div>
+            </div>
+            <p class="work__hint" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M7 2v10M3 8l4 4 4-4"/></svg>カーソルを合わせると、ページの下まで見られます</p>
+          </div>
+          <div class="work__info">
+            <p class="work__cat">昼・日本茶＆カフェ向け 日英バイリンガル</p>
+            <h3 id="work-sr-title">日本茶＆抹茶喫茶<br><span class="nowrap">空 茶寮 SORA</span></h3>
+            <p>実在の日本茶名店に倣い、純白の余白・縦書き・繊細な表組みメニューで静謐な佇まいを表現。ヴィーガン・グルテンフリー・ノンカフェインの静かな絞り込みから三種飲み比べ予約までを品よくまとめています。</p>
+            <dl class="work__dl">
+              <div><dt>業態</dt><dd>日本茶喫茶・抹茶スタンド・甘味処（蔵前想定）</dd></div>
+              <div><dt>英語設計</dt><dd>EN⇄JA切替 / 余白と表組みメニュー / 食制限フィルター / タクシーカード</dd></div>
+              <div><dt>狙い</dt><dd>本物の和の静けさの伝達・ヴィーガン客の安心感・体験予約獲得</dd></div>
+            </dl>
+            <a class="btn btn--solid" href="../samples/sora/index.html" target="_blank" rel="noopener">完成サイトを見る<svg class="ico ico--ext" viewBox="0 0 18 18" fill="none" stroke="currentColor" aria-hidden="true"><path d="M5 13l8-8M6 5h7v7"/></svg><span class="sr-only">（新しいタブで開きます）</span></a>
+            <p class="work__note">※Machiya Webが制作した架空店舗のコンセプトサイトです。写真はAI生成、価格等はデザイン用の設定です。</p>
+          </div>
+        </article>
+
+        <!-- サンプル2：SUSHI AOKI -->
+        <article class="work" id="work-ak" aria-labelledby="work-ak-title">
+          <div class="work__visual">
+            <div class="mb" aria-hidden="true">
+              <div class="mb__bar"><i></i><i></i><i></i><span>SUSHI AOKI — GINZA, TOKYO</span></div>
+              <div class="mb__view" style="background:#FFFFFF">
+                <div class="pv pv--ak">
+                  <div class="ak-top"><b>SUSHI AOKI</b><span>Counter　Menu　Policy　日本語　<u>Reservations →</u></span></div>
+                  <div class="ak-hero">
+                    <img src="../images/aoki-hero.jpg" alt="" width="1264" height="848" loading="lazy">
+                    <div class="ak-hero__copy"><b>SUSHI AOKI</b><small>Ginza 6-Chome · Eight Seats</small></div>
+                  </div>
+                  <div class="ak-sec">
+                    <p class="mh"><span>Menu</span><small>おまかせのみ</small></p>
+                    <div class="ak-rows">
+                      <div><span>Lunch Omakase (12:00 seating)</span><span>¥16,500</span></div>
+                      <div><span>Dinner Omakase (18:00 / 20:30)</span><span>¥28,000</span></div>
+                      <div><span>Sake &amp; Champagne Pairing</span><span>¥9,500</span></div>
+                    </div>
+                  </div>
+                  <div class="ak-pol">
+                    <div><b>Fragrance &amp; Attire</b><span>Please refrain from strong perfume or cologne.</span></div>
+                    <div><b>Cancellation Policy</b><span>Free up to 72h prior · 50% within 48h · 100% within 24h.</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mp" aria-hidden="true">
+              <div class="mp__screen" style="background:#FFFFFF;color:#101010">
+                <div class="mp__top"><b style="font-family:var(--latin);letter-spacing:.22em;font-size:7.5px;font-weight:400">SUSHI AOKI</b><span style="font-size:6px;color:#636363">日本語</span></div>
+                <div class="mp__img"><img src="../images/aoki-hero.jpg" alt="" width="1264" height="848" loading="lazy"></div>
+                <div class="mp__body"><p style="color:#101010;font-family:var(--latin)">Ginza Omakase</p><div class="mp__row" style="color:#636363;border-color:#E4E4E4"><span>Dinner</span><span style="color:#101010">¥28,000</span></div><div class="mp__btn" style="background:#0E0E0E;color:#FFF;border-radius:99px;font-weight:400">Reservations →</div></div>
+              </div>
+            </div>
+            <p class="work__hint" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M7 2v10M3 8l4 4 4-4"/></svg>カーソルを合わせると、ページの下まで見られます</p>
+          </div>
+          <div class="work__info">
+            <p class="work__cat">高単価・おまかせ和食向け 日英バイリンガル</p>
+            <h3 id="work-ak-title">江戸前おまかせ寿司<br>SUSHI AOKI<span class="nowrap">（鮨 青木）</span></h3>
+            <p>東京の星付きレストラン公式サイトを研究し、過度な装飾やカードを排した純白×墨の極限ミニマルで構成。明朗なコース料金表と、香り・アレルギー対応範囲・72時間キャンセル規定を誠実に伝える設計です。</p>
+            <dl class="work__dl">
+              <div><dt>業態</dt><dd>カウンター寿司・おまかせ懐石・割烹（銀座想定）</dd></div>
+              <div><dt>英語設計</dt><dd>English⇄日本語切替 / コース明朗表 / 誠実な予約規定ドキュメント / タクシーカード</dd></div>
+              <div><dt>狙い</dt><dd>無断キャンセル・ミスマッチ防止と高単価直接予約の増加</dd></div>
+            </dl>
+            <a class="btn btn--solid" href="../samples/aoki/index.html" target="_blank" rel="noopener">完成サイトを見る<svg class="ico ico--ext" viewBox="0 0 18 18" fill="none" stroke="currentColor" aria-hidden="true"><path d="M5 13l8-8M6 5h7v7"/></svg><span class="sr-only">（新しいタブで開きます）</span></a>
+            <p class="work__note">※Machiya Webが制作した架空店舗のコンセプトサイトです。写真はAI生成、価格等はデザイン用の設定です。</p>
+          </div>
+        </article>
+
+        <!-- サンプル3：KUROHA -->
+        <article class="work" id="work-kr" aria-labelledby="work-kr-title">
+          <div class="work__visual">
+            <div class="mb" aria-hidden="true">
+              <div class="mb__bar"><i></i><i></i><i></i><span>KUROHA — NAKAMEGURO YAKITORI &amp; SAKE</span></div>
+              <div class="mb__view" style="background:#0F0E0D">
+                <div class="pv pv--kr">
+                  <div class="kr-top"><b>KUROHA</b><span>Guide　Menu　Access　EN / JA</span></div>
+                  <div class="kr-hero">
+                    <img src="../images/kuroha.jpg" alt="" width="1264" height="848" loading="lazy">
+                    <div class="kr-hero__copy"><b>Binchotan Yakitori<br>&amp; Small-Batch Sake.</b><small>Nakameguro · 14 Seats · 17:30 – 23:30</small></div>
+                  </div>
+                  <div class="kr-sec">
+                    <p class="mh">01 / Visitor Notes</p>
+                    <div class="kr-notes">
+                      <div><b>Table Charge (Otoshi)</b><span>¥550 per guest — includes seasonal handmade starter.</span></div>
+                      <div><b>Salt &amp; Gluten-Free</b><span>Sea salt skewers contain no soy sauce or wheat [GF].</span></div>
+                    </div>
+                  </div>
+                  <div class="kr-sec" style="padding-top:4%">
+                    <p class="mh">02 / Menu &amp; Sake</p>
+                    <div class="kr-list">
+                      <div><span>Negima — Chicken Thigh &amp; Leek [GF]</span><span>¥380</span></div>
+                      <div><span>Tsukune — Minced Chicken &amp; Egg Yolk</span><span>¥440</span></div>
+                      <div><span>Chef's 7-Skewer Omakase</span><span>¥4,800</span></div>
+                      <div><span>3-Glass Craft Sake Flight</span><span>¥1,800</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mp" aria-hidden="true">
+              <div class="mp__screen" style="background:#0F0E0D;color:#EFECE6">
+                <div class="mp__top"><b style="font-family:var(--latin);letter-spacing:.22em;font-size:8.5px;font-weight:400">KUROHA</b><span style="font-size:6px;color:#9E978E">EN / JA</span></div>
+                <div class="mp__img"><img src="../images/kuroha.jpg" alt="" width="1264" height="848" loading="lazy"></div>
+                <div class="mp__body"><p style="color:#EFECE6">Binchotan Yakitori &amp; Sake</p><div class="mp__row" style="color:#9E978E"><span>Omakase</span><span style="color:#C49A64">¥4,800</span></div><div class="mp__btn" style="border:1px solid rgba(239,236,230,.45);color:#EFECE6;font-weight:400">RESERVE</div></div>
+              </div>
+            </div>
+            <p class="work__hint" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M7 2v10M3 8l4 4 4-4"/></svg>カーソルを合わせると、ページの下まで見られます</p>
+          </div>
+          <div class="work__info">
+            <p class="work__cat">夜・居酒屋＆バー向け 日英バイリンガル</p>
+            <h3 id="work-kr-title">炭火焼き鳥＆日本酒バー KUROHA</h3>
+            <p>装飾を削ぎ落とした東京のモダンカウンター店の佇まいに、海外客が迷いやすい「お通し（席料）・塩焼きグルテンフリー対応・決済方法」を端正なリストと表組みで整理した設計です。</p>
+            <dl class="work__dl">
+              <div><dt>業態</dt><dd>焼き鳥・居酒屋・クラフト日本酒バー（中目黒想定）</dd></div>
+              <div><dt>英語設計</dt><dd>EN⇄JA切替 / 罫線リストの来店案内 / GF表記メニュー表 / タクシーカード</dd></div>
+              <div><dt>狙い</dt><dd>入店ハードルの解消・コース注文率アップ・店頭説明の時短</dd></div>
+            </dl>
+            <a class="btn btn--solid" href="../samples/kuroha/index.html" target="_blank" rel="noopener">完成サイトを見る<svg class="ico ico--ext" viewBox="0 0 18 18" fill="none" stroke="currentColor" aria-hidden="true"><path d="M5 13l8-8M6 5h7v7"/></svg><span class="sr-only">（新しいタブで開きます）</span></a>
+            <p class="work__note">※Machiya Webが制作した架空店舗のコンセプトサイトです。写真はAI生成、価格等はデザイン用の設定です。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     6. 料金プラン ＋ 英語サイト特化シミュレーター
+     ★編集：金額を変更するときは、ファーストビュー・モニター・プラン・JSのPRICE・構造化データを合わせて更新
+===================================================================== -->
+<section class="sec" id="pricing" aria-labelledby="pricing-title" style="background:var(--white)">
+  <div class="wrap sec__grid">
+    <p class="sec__label">料金</p>
+    <div>
+      <div class="sec__head">
+        <p class="eyebrow">Pricing Plans</p>
+        <h2 class="h2" id="pricing-title">英語ページ追加から、<br>日英公式サイトまで。</h2>
+        <p class="lead">すでに日本語サイトがあるお店にも、これから公式サイトを立ち上げるお店にも、無理なく導入できる買い切り価格をご用意しました。</p>
+      </div>
+      <div class="pricing__intro">
+        <div><b>英語ライティング構成込みの明朗な買い切り価格。</b><p>一般的な制作会社のように「英語対応だけで数十万円」「高額な月額リース」にはしません。公開後の月額サポートも、必要な店舗さまだけの任意加入です。</p></div>
+      </div>
+
+      <!-- モニター募集（★編集：終了時は JS の MONITOR.open を false に） -->
+      <article class="monitor" id="monitor" data-monitor-block aria-labelledby="monitor-title">
+        <div>
+          <p class="monitor__tag">英語サイト制作モニター｜先着3店舗</p>
+          <h3 id="monitor-title">最初の3店舗さまを、<br>モニター特別価格で。</h3>
+          <div class="monitor__prices">
+            <div class="monitor__pbox"><small>英語専用ページ制作</small><b>39,800</b><span>円（税込）</span></div>
+            <div class="monitor__pbox"><small>日英バイリンガル制作</small><b>49,800</b><span>円（税込）</span></div>
+          </div>
+          <p class="monitor__text">英語サイト制作サービス開始にあたり、制作事例としてご紹介させていただける飲食店・カフェ・バーさまを募集しています。デザイン・英語構成の品質は通常制作と一切変わりません。</p>
+          <a class="btn btn--solid" href="#contact" data-interest="日英バイリンガルサイトを作りたい" data-monitor="1">モニターに応募する</a>
+        </div>
+        <div class="monitor__cond">
+          <h4>モニターの条件</h4>
+          <ol>
+            <li><span aria-hidden="true">1</span><p>完成したサイトを、Machiya Webの制作事例として掲載させていただけること<small>店名・サイト画面・URLを掲載します。</small></p></li>
+            <li><span aria-hidden="true">2</span><p>公開後、かんたんなアンケートにご協力いただけること<small>ご感想を掲載する場合は、事前に内容をご確認いただきます。</small></p></li>
+            <li><span aria-hidden="true">3</span><p>対象は基本制作内容です（オプション・月額サポートは通常料金）<small>テーブルQRメニュー・Googleマップ整備・追加ページ等は別途追加可能です。</small></p></li>
+          </ol>
+          <p class="monitor__note">※先着3店舗に達した時点で終了し、以降は通常料金（69,800円〜／89,800円〜）でのご案内となります。</p>
+        </div>
+      </article>
+
+      <div class="plans">
+        <article class="plan" aria-labelledby="plan-en">
+          <p class="plan__en">English Page</p>
+          <h3 id="plan-en">英語専用ページ制作</h3>
+          <p class="plan__for">すでに日本語サイトやSNSがあるお店に。</p>
+          <p class="plan__price"><b>69,800</b><span>円〜（税込）</span></p>
+          <p class="plan__cap">初回買い切り／英語ライティング構成込み</p>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>英語LPオリジナルデザイン</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>自然な英語ライティング構成</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>First-Time Visitor Guide（お通し・決済等）</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>英語メニュー・アレルゲン表記</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Googleマップ・予約導線連携</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>独自ドメイン／公開サポート</li>
+          </ul>
+          <a class="btn btn--line btn--block" href="#contact" data-interest="英語専用ページを作りたい">このプランで相談する</a>
+        </article>
+
+        <article class="plan plan--main" aria-labelledby="plan-bi">
+          <span class="plan__badge">おすすめ</span>
+          <p class="plan__en">Bilingual Website</p>
+          <h3 id="plan-bi">日英バイリンガル制作</h3>
+          <p class="plan__for">公式サイト立ち上げとインバウンド対策を一度に。</p>
+          <p class="plan__price"><b>89,800</b><span>円〜（税込）</span></p>
+          <p class="plan__cap">初回買い切り／日本語＋英語ワンタップ切替</p>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>EN ⇄ 日本語 ワンタップ切替設計</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>オリジナルデザイン＆スマホ最適化</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>日英メニュー・食制限表記・来店ガイド</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>タクシー運転手向け日本語住所カード</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>日英SEO初期設定・Googleマップ連携</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>独自ドメイン公開サポート</li>
+          </ul>
+          <a class="btn btn--solid btn--block" href="#contact" data-interest="日英バイリンガルサイトを作りたい">このプランで相談する</a>
+        </article>
+
+        <article class="plan" aria-labelledby="plan-care">
+          <p class="plan__en">Bilingual Care</p>
+          <h3 id="plan-care">日英月額サポート</h3>
+          <p class="plan__for">季節メニューの日英更新も任せたいお店に。</p>
+          <p class="plan__price"><b>4,980</b><span>円〜／月（税込）</span></p>
+          <p class="plan__cap">制作費とは別途／ご希望の場合のみ</p>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>季節メニュー・価格の日英同時更新</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>営業時間・定休日の変更反映</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>料理・店内写真の差し替え</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>表示チェック・更新のご相談</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>日本語でLINE／メール連絡するだけ</li>
+          </ul>
+          <a class="btn btn--line btn--block" href="#contact" data-interest="まずは費用や進め方を相談したい">保守について相談する</a>
+        </article>
+      </div>
+
+      <!-- 英語サイト特化シミュレーター -->
+      <div class="sim" id="estimate">
+        <div class="sim__main">
+          <h3>英語サイト かんたん料金シミュレーション</h3>
+          <p>ベースプランと必要なインバウンド対応オプションを選ぶと、目安費用が分かります。</p>
+
+          <div class="sim__plan-sw" role="radiogroup" aria-label="ベースプランの選択">
+            <button type="button" class="sim__plan-btn" data-sim-plan="en" aria-pressed="false">
+              <b>英語専用ページ制作</b>
+              <small id="simPlanEnSub">基本 69,800円〜（税込）</small>
+            </button>
+            <button type="button" class="sim__plan-btn is-on" data-sim-plan="bi" aria-pressed="true">
+              <b>日英バイリンガル制作</b>
+              <small id="simPlanBiSub">基本 89,800円〜（税込）</small>
+            </button>
+          </div>
+
+          <div class="sim__rows">
+            <div class="sim__row" data-monitor-block>
+              <div><b>モニター価格を適用</b><small>先着3店舗・条件あり／英語専用 39,800円・日英切替 49,800円に</small></div>
+              <label class="switch"><input type="checkbox" id="simMonitor" aria-label="モニター価格を適用する"><span></span></label>
+            </div>
+            <div class="sim__row">
+              <div><b>テーブルQRメニュー連携</b><small>店内でスマホから見やすい英語メニュー＋印刷用QRデータ／+11,000円〜</small></div>
+              <label class="switch"><input type="checkbox" id="simQr" aria-label="テーブルQRメニュー連携を付ける"><span></span></label>
+            </div>
+            <div class="sim__row">
+              <div><b>Googleマップ（GBP）英語整備サポート</b><small>店舗紹介文の英訳・属性整理・英語サイトURL接続／+11,000円〜</small></div>
+              <label class="switch"><input type="checkbox" id="simGbp" aria-label="Googleマップ英語整備サポートを付ける"><span></span></label>
+            </div>
+            <div class="sim__row">
+              <div><b>追加ページ</b><small>ドリンク詳細、コース詳細、姉妹店紹介など／1ページ +22,000円〜</small></div>
+              <div class="stepper" data-key="pages">
+                <button type="button" data-step="-1" aria-label="追加ページを減らす"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M2 7h10"/></svg></button>
+                <output aria-live="polite" aria-label="追加ページ数">0</output>
+                <button type="button" data-step="1" aria-label="追加ページを増やす"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M2 7h10M7 2v10"/></svg></button>
+              </div>
+            </div>
+            <div class="sim__row">
+              <div><b>日英月額サポート</b><small>季節メニューの日英更新・写真差し替え等／4,980円〜／月</small></div>
+              <label class="switch"><input type="checkbox" id="simCare" aria-label="日英月額サポートを付ける"><span></span></label>
+            </div>
+          </div>
+        </div>
+        <div class="sim__out">
+          <p>初期費用の目安</p>
+          <p class="sim__plan-label" id="simPlanLabel">日英バイリンガル制作</p>
+          <p class="sim__total"><b id="simTotal">89,800</b><span>円〜（税込）</span></p>
+          <p class="sim__monthly"><span>月額</span><span><b id="simMonthly">0</b> 円〜</span></p>
+          <a class="btn btn--paper btn--block" href="#contact" id="simSend">この内容で相談する</a>
+          <p class="sim__note">表示は目安です。大幅なメニュー品数・写真撮影・ドメインなど外部サービスの利用料は別途お見積もりとなります。</p>
+        </div>
+      </div>
+
+      <!-- 公開後の都度修正 -->
+      <details class="rev">
+        <summary><span>公開後の都度修正料金（日英対応）<small>月額サポートを付けない場合も、必要なときだけご依頼いただけます。</small></span><span class="pm" aria-hidden="true"></span></summary>
+        <ul class="rev__list">
+          <li><b>営業時間・店舗情報の修正</b><span>日英あわせてのテキスト変更</span><strong>3,300<small>円〜／回</small></strong></li>
+          <li><b>写真の差し替え</b><span>お送りいただいた写真への変更</span><strong>3,300<small>円〜／回</small></strong></li>
+          <li><b>メニュー・価格の日英更新</b><span>季節メニューの英訳反映・価格改定</span><strong>4,400<small>円〜／回</small></strong></li>
+          <li><b>セクションの追加</b><span>お知らせ・期間限定コース追加など</span><strong>13,200<small>円〜</small></strong></li>
+          <li><b>新規ページの追加</b><span>ドリンク詳細・予約案内ページなど</span><strong>22,000<small>円〜</small></strong></li>
+        </ul>
+      </details>
+      <p class="price-note">※表示料金はすべて税込の参考価格です。掲載するメニューのボリューム、追加言語（中国語・韓国語など）、写真撮影の有無によって異なります。正式な総額はヒアリング後に必ず事前提示します。</p>
+      <p class="price-cross"><a class="tlink" href="../index.html#pricing">日本語のみの公式サイト制作（59,800円〜）はこちら<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3"/></svg></a></p>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     7. 制作の流れ（日本語だけで完結）
+===================================================================== -->
+<section class="sec process" id="process" aria-labelledby="process-title">
+  <div class="wrap sec__grid">
+    <p class="sec__label">制作の流れ</p>
+    <div>
+      <div class="sec__head">
+        <p class="eyebrow">Simple Workflow</p>
+        <h2 class="h2" id="process-title">英語の原稿は不要。<br>日本語だけで公開まで。</h2>
+        <p class="lead">「英語でどう書けばいいか分からない」状態からで大丈夫です。普段のメニューやお店の想いを日本語で伺い、こちらで英語構成をご提案します。</p>
+      </div>
+      <div class="flow" id="flow">
+        <div class="flow__track" aria-hidden="true"></div>
+        <ol class="flow__list">
+          <li class="step"><span class="step__n" aria-hidden="true">1</span><h3>無料相談</h3><p>業態・海外客の課題やご希望を日本語で伺います。</p></li>
+          <li class="step"><span class="step__n" aria-hidden="true">2</span><h3>資料の共有</h3><p>日本語メニュー写真やSNS・食べログURLを共有。</p></li>
+          <li class="step"><span class="step__n" aria-hidden="true">3</span><h3>英語構成・デザイン案</h3><p>日本語訳を添えて英語表現と画面案をご提案。</p></li>
+          <li class="step"><span class="step__n" aria-hidden="true">4</span><h3>内容・料金の確定</h3><p>制作範囲と総額をご確認いただいてから着工。</p></li>
+          <li class="step"><span class="step__n" aria-hidden="true">5</span><h3>サイト制作</h3><p>スマホ表示・日英切替・予約導線を実装します。</p></li>
+          <li class="step"><span class="step__n" aria-hidden="true">6</span><h3>最終確認・修正</h3><p>メニュー名・価格・ルールの表現を確認します。</p></li>
+          <li class="step"><span class="step__n" aria-hidden="true">7</span><h3>公開＆マップ接続</h3><p>独自ドメイン公開とGoogleマップ掲載を支援。</p></li>
+        </ol>
+      </div>
+      <div class="prep">
+        <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M9 5h16v24H9z"/><path d="M13 3h8v4h-8zM13 14l2.5 2.5L21 11M13 22h8"/></svg>
+        <div><h3>ご準備いただくものは、スマホで撮ったメニュー写真だけでもOKです。</h3><p>英語の文章や専門知識は一切不要です。「お通しがある」「現金のみ」「予約時に伝えたいルールがある」といった現場の事情を日本語で教えていただければ、海外のお客様に角が立たず伝わる英語表現へ整えます。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     8. よくある質問
+===================================================================== -->
+<section class="sec" id="faq" aria-labelledby="faq-title" style="background:var(--white)">
+  <div class="wrap sec__grid">
+    <p class="sec__label">よくある質問</p>
+    <div class="faq__grid">
+      <div class="faq__side">
+        <p class="eyebrow">Q &amp; A</p>
+        <h2 class="h2" id="faq-title">英語サイト制作の<br>疑問に、お答えします。</h2>
+        <p class="lead">掲載のないご質問や、「うちの業態だとどう見せるのがいい？」といったご相談も、お気軽にお問い合わせください。</p>
+        <a class="tlink" href="#contact">無料で相談してみる<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3"/></svg></a>
+      </div>
+      <div class="faq" id="faqList">
+        <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>英語がまったく話せなくても依頼できますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>はい、もちろんです。ヒアリングから構成案の確認、公開まで、やり取りはすべて日本語で完結します。ご提案する英語テキストにも日本語の意図説明を添えますので、内容に納得いただいたうえで公開できます。</p></div></details>
+        <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>機械翻訳や翻訳アプリで英語にするのと何が違いますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>機械翻訳は単語の置き換えにとどまるため、「お通し」「おまかせ」「旬の肴」などの背景が伝わらず、誤解や冷たい印象を生みがちです。Machiya Webでは、料理の魅力が伝わる英語表現に加え、入店前の不安を解消するガイドやアレルゲン表示まで設計します。</p></div></details>
+        <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>すでに日本語の公式サイトがあります。英語ページだけ作れますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>はい、「英語専用ページ制作（69,800円〜）」で対応可能です。既存サイトのトーンに合わせながら海外客向けLPを制作し、既存サイトからのリンクやGoogleマップ上の導線まで整えます。</p></div></details>
+        <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>お通し（席料）や決済方法、キャンセル規定のトラブルを減らせますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>はい。英語サイト内に「First-Time Visitor Guide」や「Etiquette &amp; Policy」を設け、席料・ワンドリンク制・カード可否・アレルギー対応範囲・キャンセル規定を事前に明記することで、店頭での行き違いを大きく減らせます。</p></div></details>
+        <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>TableCheckや食べログ、Instagramなどの予約導線につなげられますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>はい。TableCheck・食べログ・Googleで予約・Instagram DM・メールフォームなど、現在ご利用中または導入予定の予約方法に合わせて最適な導線を設置します。</p></div></details>
+        <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>店内で使える英語のQRメニューも作れますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>はい。オプション（+11,000円〜）で、テーブルのQRコードからすぐ開けるスマホ向け英語メニューと、そのまま印刷してPOPに使えるQRコードデータをご用意します。指差し注文にも活用いただけます。</p></div></details>
+        <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>東京以外のエリアのお店でも依頼できますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>はい、全国対応しています。東京を拠点としていますが、京都・大阪・北海道・沖縄など観光エリアの店舗さまも、オンライン・LINE・お電話でスムーズに制作を進められます。</p></div></details>
+        <details><summary><span class="faq__q" aria-hidden="true">Q</span><span>公開後に季節メニューや価格が変わったらどうすればいいですか？</span><span class="pm" aria-hidden="true"></span></summary><div class="faq__a"><p>変更したい内容を日本語でLINEまたはメールにてお送りいただければ、英語表現も含めて更新します。頻繁に更新がある場合は「日英月額サポート（4,980円〜／月）」、年に数回であれば都度更新（3,300円〜）でお選びいただけます。</p></div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     9. お問い合わせ
+===================================================================== -->
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap sec__grid">
+    <p class="sec__label">お問い合わせ</p>
+    <div class="contact__grid">
+      <div>
+        <h2 class="h2" id="contact-title">海外のお客様にも、<br>お店のファンになって<br>もらいませんか？</h2>
+        <p class="contact__lead">「英語専用と日英切替のどちらが合う？」「まずは今のメニューでいくらくらい？」など、決まっていない段階からお気軽にご相談ください。</p>
+        <ul class="contact__ways">
+          <li>
+            <a href="https://lin.ee/Sm1ctZC" target="_blank" rel="noopener">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M10 3C5.8 3 2.5 5.7 2.5 9c0 2.1 1.4 4 3.6 5.1-.1.8-.5 2-.6 2.3-.1.3.1.4.3.2.2-.1 2.1-1.4 2.9-2 .4.1.9.1 1.3.1 4.2 0 7.5-2.7 7.5-6S14.2 3 10 3z"/></svg>
+              <div><small>LINE公式アカウント（おすすめ）</small><span>メニュー写真を送って気軽に相談する</span></div>
+              <svg class="arw" viewBox="0 0 14 14" fill="none" stroke="currentColor" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="tel:07046805993">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 2.5l3 .5 1 4-2 1.5a10 10 0 0 0 4.5 4.5L13 11l4 1 .5 3a2 2 0 0 1-2 2A13.5 13.5 0 0 1 3 4.5a2 2 0 0 1 2-2z"/></svg>
+              <div><small>お電話でのご相談</small><span>070-4680-5993</span></div>
+              <svg class="arw" viewBox="0 0 14 14" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:machiyaweb@gmail.com">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="2.5" y="4.5" width="15" height="11" rx="1"/><path d="M3 5.5l7 5.5 7-5.5"/></svg>
+              <div><small>メール</small><span>machiyaweb@gmail.com</span></div>
+              <svg class="arw" viewBox="0 0 14 14" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3"/></svg>
+            </a>
+          </li>
+        </ul>
+
+        <details class="privacy" id="privacy">
+          <summary><span>プライバシーポリシー</span><span class="pm" aria-hidden="true"></span></summary>
+          <p>Machiya Webは、お問い合わせフォームから取得した個人情報（店舗名、担当者名、メールアドレス、電話番号、住所、お問い合わせ内容等）を、ご相談への回答、お見積もりおよびご提案、制作に関するご連絡のために利用します。</p>
+          <p>取得した個人情報は、法令に基づく場合を除き、ご本人の同意なく第三者へ提供しません。なお、フォーム送信の仕組みとして外部のフォーム送信サービス（Formspree）を利用する場合があります。</p>
+          <p>ご本人からの開示・訂正・削除等のご請求は、machiyaweb@gmail.com までご連絡ください。</p>
+          <p class="privacy__meta">事業者名：Machiya Web ／ 連絡先：machiyaweb@gmail.com ／ 制定：2026年</p>
+        </details>
+      </div>
+
+      <div class="form-card">
+        <div class="form-card__head"><b>英語サイト制作 無料相談</b><span>日本語でご入力ください</span></div>
+        <form id="contactForm" action="https://formspree.io/f/xeaekeya" method="POST" novalidate>
+          <input type="hidden" name="page_source" value="english-lp">
+          <input type="hidden" name="_subject" value="【Machiya Web 英語サイト制作】無料相談">
+          <div class="hp" aria-hidden="true"><label>入力不要<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+
+          <div class="fgrid">
+            <div class="f"><label for="f-shop">店舗名<span class="req">必須</span></label><input type="text" id="f-shop" name="shop" autocomplete="organization" placeholder="例：炭火焼き鳥 〇〇" maxlength="120" required><p class="f__err" id="e-shop">店舗名を入力してください。</p></div>
+            <div class="f"><label for="f-name">担当者名<span class="req">必須</span></label><input type="text" id="f-name" name="name" autocomplete="name" placeholder="例：山田 太郎" maxlength="80" required><p class="f__err" id="e-name">担当者名を入力してください。</p></div>
+            <div class="f"><label for="f-email">メールアドレス<span class="req">必須</span></label><input type="email" id="f-email" name="email" autocomplete="email" inputmode="email" spellcheck="false" placeholder="例：name@example.com" maxlength="254" required><p class="f__err" id="e-email">メールアドレスの形式をご確認ください。</p></div>
+            <div class="f"><label for="f-tel">電話番号<span class="opt">任意</span></label><input type="tel" id="f-tel" name="phone" autocomplete="tel" maxlength="30" placeholder="例：03-1234-5678"></div>
+            <div class="f f--full"><label for="f-site">現在のWebサイト・食べログ・SNS<span class="opt">任意</span></label><input type="text" id="f-site" name="website" inputmode="url" placeholder="URL または @Instagramアカウント名" maxlength="500"></div>
+            <div class="f f--full"><label for="f-address">店舗のエリア・住所<span class="opt">任意</span></label><input type="text" id="f-address" name="address" autocomplete="off" placeholder="例：東京都台東区浅草 / 京都市東山区 など" maxlength="200"></div>
+
+            <fieldset class="f f--full" id="g-interest">
+              <legend>ご希望の内容<span class="req">必須</span></legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="interest" value="英語専用ページを作りたい"><span>英語専用ページを作りたい</span></label>
+                <label class="chip"><input type="radio" name="interest" value="日英バイリンガルサイトを作りたい"><span>日英バイリンガルサイトを作りたい</span></label>
+                <label class="chip"><input type="radio" name="interest" value="既存サイトを英語対応したい"><span>既存サイトを英語対応したい</span></label>
+                <label class="chip"><input type="radio" name="interest" value="まずは費用や進め方を相談したい"><span>まずは費用や進め方を相談したい</span></label>
+              </div>
+              <p class="f__err" id="e-interest">希望内容を1つ選んでください。</p>
+            </fieldset>
+
+            <div class="f f--full" data-monitor-block>
+              <label class="consent consent--tight"><input type="checkbox" id="f-monitor" name="monitor" value="英語サイトモニター希望"><span>英語サイトモニター価格（先着3店舗・39,800円／49,800円）での制作を希望する<small>条件：制作事例としての掲載と、公開後のアンケートへのご協力</small></span></label>
+            </div>
+
+            <div class="f f--full"><label for="f-msg">お問い合わせ内容<span class="req">必須</span></label><textarea id="f-msg" name="message" maxlength="5000" placeholder="例：外国人観光客が増えてきたため、お通しやおすすめコースが伝わる日英サイトを作りたいです。予算や進め方から相談したいです。" aria-describedby="h-msg" required></textarea><p class="f__help" id="h-msg">分かる範囲で大丈夫です。パスワードやカード情報は入力しないでください。</p><p class="f__err" id="e-msg">お問い合わせ内容を入力してください。</p></div>
+          </div>
+
+          <div class="f" id="g-consent">
+            <label class="consent"><input type="checkbox" id="f-consent" name="privacy" value="同意する" required><span><a href="#privacy">プライバシーポリシー</a>を確認し、同意します。</span></label>
+            <p class="f__err" id="e-consent" style="margin-top:-12px;margin-bottom:14px">プライバシーポリシーへの同意が必要です。</p>
+          </div>
+          <button class="btn btn--solid btn--block" type="submit" id="submitBtn">無料で相談する<svg class="ico ico--r" viewBox="0 0 18 18" fill="none" stroke="currentColor" aria-hidden="true"><path d="M2 9h13M11 5l4 4-4 4"/></svg></button>
+          <p class="status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="done" id="formDone" hidden tabindex="-1">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="32" cy="32" r="26"/><path d="M21 33l8 8 15-16"/></svg>
+          <h3>お問い合わせを受け付けました。</h3>
+          <p>ご連絡ありがとうございます。内容を確認のうえ、通常1〜2営業日以内に日本語にてお返事します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =====================================================================
+     フッター
+===================================================================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <a class="logo" href="../index.html" aria-label="Machiya Web トップへ"><img src="../images/logo.png" alt="Machiya Web" width="927" height="170"></a>
+        <p class="footer__tag">日本の名店の魅力を、伝わる英語で世界へ。</p>
+      </div>
+      <nav class="footer__nav" aria-label="フッターナビゲーション">
+        <a href="#why">選ばれる理由</a>
+        <a href="#works">英語サイト制作事例</a>
+        <a href="#pricing">料金・シミュレーション</a>
+        <a href="#faq">よくある質問</a>
+        <a href="#contact">お問い合わせ</a>
+        <a href="https://lin.ee/Sm1ctZC" target="_blank" rel="noopener">LINE公式</a>
+        <a href="../index.html">通常サイト制作トップ</a>
+        <a href="#privacy">プライバシーポリシー</a>
+      </nav>
+    </div>
+    <div class="footer__bottom"><small>© 2026 Machiya Web</small><span>飲食店・カフェ・バーの英語サイト・日英バイリンガル制作（東京）</span></div>
+  </div>
+</footer>
+
+<!-- スマホ下部固定CTA -->
+<div class="dock" id="dock">
+  <a class="dock__tel" href="tel:07046805993" aria-label="電話で相談する"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 2.5l3 .5 1 4-2 1.5a10 10 0 0 0 4.5 4.5L13 11l4 1 .5 3a2 2 0 0 1-2 2A13.5 13.5 0 0 1 3 4.5a2 2 0 0 1 2-2z"/></svg></a>
+  <a class="btn btn--line" href="https://lin.ee/Sm1ctZC" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M10 3C5.8 3 2.5 5.7 2.5 9c0 2.1 1.4 4 3.6 5.1-.1.8-.5 2-.6 2.3-.1.3.1.4.3.2.2-.1 2.1-1.4 2.9-2 .4.1.9.1 1.3.1 4.2 0 7.5-2.7 7.5-6S14.2 3 10 3z"/></svg>LINE相談</a>
+  <a class="btn btn--solid" href="#contact">無料相談</a>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ★編集：英語サイト制作シミュレーター単価（税込） */
+  var PRICE = {
+    en: 69800,
+    enMonitor: 39800,
+    bi: 89800,
+    biMonitor: 49800,
+    qr: 11000,
+    gbp: 11000,
+    page: 22000,
+    care: 4980,
+    maxPages: 5
+  };
+  /* ★編集：モニター募集を終えたら false に（関連表示がまとめて消えます） */
+  var MONITOR = { open: true };
+  var CONTACT_EMAIL = 'machiyaweb@gmail.com';
+
+  var root = document.documentElement;
+  var body = document.body;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  var yen = function (n) { return n.toLocaleString('ja-JP'); };
+
+  if (!MONITOR.open) $$('[data-monitor-block]').forEach(function (el) { el.hidden = true; });
+
+  /* 1. 読み込み時フェード */
+  function start() { requestAnimationFrame(function () { root.classList.add('is-loaded'); }); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+
+  /* 2. ヒーロー内ライブ日英切替デモ */
+  var heroStage = $('#heroStage');
+  $$('[data-hero-lang]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var lang = btn.getAttribute('data-hero-lang');
+      heroStage.setAttribute('data-demo-lang', lang);
+      $$('[data-hero-lang]').forEach(function (b) {
+        var on = b === btn;
+        b.classList.toggle('is-on', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+    });
+  });
+
+  /* 3. ヘッダー＆モバイル固定CTA */
+  var header = $('#header');
+  var dock = $('#dock');
+  var contact = $('#contact');
+  var ticking = false;
+  function onScroll() {
+    var y = window.pageYOffset;
+    var vh = window.innerHeight;
+    header.classList.toggle('is-solid', y > 16);
+    var cr = contact.getBoundingClientRect();
+    dock.classList.toggle('is-shown', y > vh * 0.6 && cr.top > vh * 0.85);
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  if ('IntersectionObserver' in window) {
+    var navLinks = $$('.nav__list a[href^="#"]');
+    var navIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        navLinks.forEach(function (a) {
+          if (a.getAttribute('href') === '#' + e.target.id) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    $$('main section[id]').forEach(function (s) { navIO.observe(s); });
+  }
+
+  /* 4. モバイルメニュー */
+  var burger = $('#burger');
+  var menu = $('#menu');
+  var savedY = 0;
+  var isOpen = false;
+  var outside = [$('#main'), $('.footer'), dock];
+
+  function setMenu(open, restore) {
+    if (open === isOpen) return;
+    isOpen = open;
+    menu.classList.toggle('is-open', open);
+    menu.setAttribute('aria-hidden', String(!open));
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    outside.forEach(function (el) { if (el) { if (open) el.setAttribute('inert', ''); else el.removeAttribute('inert'); } });
+    if (open) {
+      savedY = window.pageYOffset;
+      body.style.top = -savedY + 'px';
+      body.classList.add('is-locked');
+      header.classList.add('is-solid');
+      setTimeout(function () { var first = $('a', menu); if (first) first.focus(); }, 60);
+    } else {
+      body.classList.remove('is-locked');
+      body.style.top = '';
+      root.style.scrollBehavior = 'auto';
+      window.scrollTo(0, savedY);
+      root.style.scrollBehavior = '';
+      if (restore !== false) burger.focus();
+      onScroll();
+    }
+  }
+  burger.addEventListener('click', function () { setMenu(!isOpen); });
+  document.addEventListener('keydown', function (e) {
+    if (!isOpen) return;
+    if (e.key === 'Escape') { e.preventDefault(); setMenu(false); }
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 960 && isOpen) setMenu(false, false); });
+
+  /* 5. ページ内リンク */
+  function selectInterest(value) {
+    $$('input[name="interest"]').forEach(function (r) { r.checked = (r.value === value); });
+    clearErr('interest');
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!a) return;
+    var id = a.getAttribute('href').slice(1);
+    if (!id) return;
+    var target = document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+    if (a.dataset.interest) selectInterest(a.dataset.interest);
+    if (a.dataset.monitor && MONITOR.open) { var fm = $('#f-monitor'); if (fm) fm.checked = true; }
+    if (target.tagName === 'DETAILS') target.open = true;
+    var wasOpen = isOpen;
+    if (isOpen) setMenu(false, false);
+    var top = target.getBoundingClientRect().top + window.pageYOffset - header.offsetHeight - 12;
+    if (id === 'top') top = 0;
+    window.scrollTo({ top: top, behavior: (reduce || wasOpen) ? 'auto' : 'smooth' });
+    var focusEl = target.tagName === 'DETAILS' ? $('summary', target) : target;
+    if (focusEl.tagName !== 'SUMMARY' && !focusEl.hasAttribute('tabindex')) focusEl.setAttribute('tabindex', '-1');
+    focusEl.focus({ preventScroll: true });
+    try { history.replaceState(null, '', '#' + id); } catch (_) {}
+  });
+
+  /* 6. 制作事例タブ */
+  var tabWrap = $('#workTabs');
+  var panelsWrap = $('#workPanels');
+  var tabs = $$('.tab', tabWrap);
+  var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
+  tabWrap.hidden = false;
+  tabWrap.setAttribute('role', 'tablist');
+  tabWrap.setAttribute('aria-label', '英語サイト制作事例');
+  panelsWrap.classList.add('is-tabbed');
+
+  function measurePreview(scope) {
+    $$('.work__visual', scope).forEach(function (v) {
+      var view = $('.mb__view', v), pv = $('.pv', v);
+      if (view && pv) pv.style.setProperty('--shift', Math.max(0, pv.scrollHeight - view.clientHeight) + 'px');
+    });
+  }
+  $$('.work__visual img').forEach(function (img) {
+    img.addEventListener('load', function () { measurePreview(document); });
+  });
+  function selectTab(idx, focus) {
+    tabs.forEach(function (t, i) {
+      var on = i === idx;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      panels[i].hidden = !on;
+      if (on) {
+        panels[i].classList.remove('is-entering');
+        void panels[i].offsetWidth;
+        panels[i].classList.add('is-entering');
+        measurePreview(panels[i]);
+      }
+    });
+    if (focus) tabs[idx].focus();
+  }
+  tabs.forEach(function (t, i) {
+    t.setAttribute('role', 'tab');
+    panels[i].setAttribute('role', 'tabpanel');
+    panels[i].setAttribute('aria-labelledby', t.id);
+    panels[i].tabIndex = 0;
+    t.addEventListener('click', function () { selectTab(i); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        selectTab((i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length, true);
+      }
+    });
+  });
+  window.addEventListener('load', function () { measurePreview(document); });
+  window.addEventListener('resize', function () { measurePreview(document); });
+  selectTab(0);
+
+  /* 7. 英語サイト特化シミュレーター */
+  var state = { plan: 'bi', monitor: false, qr: false, gbp: false, pages: 0, care: false };
+  var totalEl = $('#simTotal'), monthlyEl = $('#simMonthly'), labelEl = $('#simPlanLabel');
+  var monEl = $('#simMonitor'), qrEl = $('#simQr'), gbpEl = $('#simGbp'), careEl = $('#simCare');
+  var enSub = $('#simPlanEnSub'), biSub = $('#simPlanBiSub');
+
+  function basePrice() {
+    var mon = state.monitor && MONITOR.open;
+    if (state.plan === 'en') return mon ? PRICE.enMonitor : PRICE.en;
+    return mon ? PRICE.biMonitor : PRICE.bi;
+  }
+  function calcTotal() {
+    return basePrice()
+      + (state.qr ? PRICE.qr : 0)
+      + (state.gbp ? PRICE.gbp : 0)
+      + state.pages * PRICE.page;
+  }
+  function updateSim() {
+    var mon = state.monitor && MONITOR.open;
+    enSub.textContent = mon ? 'モニター ' + yen(PRICE.enMonitor) + '円（税込）' : '基本 ' + yen(PRICE.en) + '円〜（税込）';
+    biSub.textContent = mon ? 'モニター ' + yen(PRICE.biMonitor) + '円（税込）' : '基本 ' + yen(PRICE.bi) + '円〜（税込）';
+    labelEl.textContent = (state.plan === 'en' ? '英語専用ページ制作' : '日英バイリンガル制作') + (mon ? '（モニター適用）' : '');
+    totalEl.textContent = yen(calcTotal());
+    monthlyEl.textContent = state.care ? yen(PRICE.care) : '0';
+
+    $$('[data-sim-plan]').forEach(function (b) {
+      var on = b.getAttribute('data-sim-plan') === state.plan;
+      b.classList.toggle('is-on', on);
+      b.setAttribute('aria-pressed', String(on));
+    });
+    $$('.stepper').forEach(function (s) {
+      var k = s.dataset.key;
+      $('output', s).textContent = state[k];
+      $('[data-step="-1"]', s).disabled = state[k] <= 0;
+      $('[data-step="1"]', s).disabled = state[k] >= PRICE.maxPages;
+    });
+  }
+  $$('[data-sim-plan]').forEach(function (b) {
+    b.addEventListener('click', function () { state.plan = b.getAttribute('data-sim-plan'); updateSim(); });
+  });
+  $$('.stepper').forEach(function (s) {
+    s.addEventListener('click', function (e) {
+      var btn = e.target.closest('button');
+      if (!btn || btn.disabled) return;
+      var k = s.dataset.key;
+      state[k] = Math.max(0, Math.min(PRICE.maxPages, state[k] + Number(btn.dataset.step)));
+      updateSim();
+    });
+  });
+  if (monEl) monEl.addEventListener('change', function () { state.monitor = monEl.checked; updateSim(); });
+  qrEl.addEventListener('change', function () { state.qr = qrEl.checked; updateSim(); });
+  gbpEl.addEventListener('change', function () { state.gbp = gbpEl.checked; updateSim(); });
+  careEl.addEventListener('change', function () { state.care = careEl.checked; updateSim(); });
+  updateSim();
+
+  $('#simSend').addEventListener('click', function () {
+    var mon = state.monitor && MONITOR.open;
+    var planName = state.plan === 'en' ? '英語専用ページ制作' : '日英バイリンガル制作';
+    var opts = [];
+    if (mon) opts.push('モニター価格');
+    if (state.qr) opts.push('テーブルQRメニュー連携');
+    if (state.gbp) opts.push('Googleマップ英語整備');
+    if (state.pages > 0) opts.push('追加ページ' + state.pages);
+    opts.push('日英月額サポート' + (state.care ? 'あり' : 'なし'));
+    var line = '【英語サイト料金シミュレーション】' + planName + '／' + opts.join('／') + '（初期費用の目安 ' + yen(calcTotal()) + '円〜）';
+    var fm = $('#f-monitor'); if (fm) fm.checked = !!mon;
+    var msg = $('#f-msg');
+    var rest = msg.value.replace(/^【英語サイト料金シミュレーション】.*\n?/, '');
+    msg.value = line + (rest ? '\n' + rest : '\n');
+    selectInterest(state.plan === 'en' ? '英語専用ページを作りたい' : '日英バイリンガルサイトを作りたい');
+    clearErr('msg');
+  });
+
+  /* 8. details開閉アニメーション */
+  $$('details').forEach(function (d) {
+    var summary = $('summary', d);
+    summary.addEventListener('click', function (e) {
+      if (reduce || !d.animate) return;
+      e.preventDefault();
+      if (d.dataset.busy) return;
+      d.dataset.busy = '1';
+      var startH = d.offsetHeight;
+      var opening = !d.open;
+      if (opening) d.open = true;
+      var endH = opening ? d.offsetHeight : summary.offsetHeight;
+      d.style.overflow = 'hidden';
+      var anim = d.animate({ height: [startH + 'px', endH + 'px'] }, { duration: 280, easing: 'ease-out' });
+      anim.onfinish = function () {
+        if (!opening) d.open = false;
+        d.style.overflow = '';
+        delete d.dataset.busy;
+      };
+    });
+  });
+
+  /* 9. お問い合わせフォーム */
+  var form = $('#contactForm');
+  var statusEl = $('#formStatus');
+  var submitBtn = $('#submitBtn');
+  var fields = {
+    shop:     { el: $('#f-shop'),  ok: function (el) { return el.value.trim() !== ''; } },
+    name:     { el: $('#f-name'),  ok: function (el) { return el.value.trim() !== ''; } },
+    email:    { el: $('#f-email'), ok: function (el) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()); } },
+    interest: { el: $('#g-interest'), ok: function () { return !!$('input[name="interest"]:checked'); } },
+    msg:      { el: $('#f-msg'),   ok: function (el) { return el.value.trim() !== ''; } },
+    consent:  { el: $('#f-consent'), ok: function (el) { return el.checked; } }
+  };
+  function wrapOf(key) { return key === 'interest' ? $('#g-interest') : key === 'consent' ? $('#g-consent') : fields[key].el.closest('.f'); }
+  function setErr(key, bad) {
+    var w = wrapOf(key), f = fields[key];
+    w.classList.toggle('has-err', bad);
+    var input = key === 'interest' ? $('input[name="interest"]') : f.el;
+    if (bad) { input.setAttribute('aria-invalid', 'true'); }
+    else { input.removeAttribute('aria-invalid'); }
+  }
+  function clearErr(key) { setErr(key, false); }
+  Object.keys(fields).forEach(function (key) {
+    var f = fields[key];
+    var ev = (key === 'interest' || key === 'consent') ? 'change' : 'input';
+    f.el.addEventListener(ev, function () { if (wrapOf(key).classList.contains('has-err') && f.ok(f.el)) clearErr(key); });
+  });
+  function setStatus(msg, isErr) { statusEl.textContent = msg; statusEl.classList.toggle('is-err', !!isErr); }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var firstBad = null;
+    Object.keys(fields).forEach(function (key) {
+      var bad = !fields[key].ok(fields[key].el);
+      setErr(key, bad);
+      if (bad && !firstBad) firstBad = key;
+    });
+    if (firstBad) {
+      setStatus('入力内容をご確認ください。赤く表示された項目があります。', true);
+      var focusTarget = firstBad === 'interest' ? $('input[name="interest"]') : fields[firstBad].el;
+      focusTarget.focus();
+      return;
+    }
+
+    var endpoint = form.getAttribute('action') || '';
+    var data = new FormData(form);
+    if (!/^https:\/\//.test(endpoint)) {
+      var bodyText = ['店舗名：' + data.get('shop'), '担当者名：' + data.get('name'), 'メール：' + data.get('email'), '希望内容：' + data.get('interest'), '', data.get('message')].join('\n');
+      window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent('【Machiya Web 英語サイト制作】無料相談') + '&body=' + encodeURIComponent(bodyText);
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.firstChild.textContent = '送信しています…';
+    setStatus('');
+    var ctrl = ('AbortController' in window) ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 20000);
+    fetch(endpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' }, signal: ctrl ? ctrl.signal : undefined })
+      .then(function (res) {
+        if (!res.ok) throw new Error('failed');
+        form.hidden = true;
+        var done = $('#formDone');
+        done.hidden = false;
+        done.focus();
+        form.reset();
+      })
+      .catch(function () {
+        setStatus('送信できませんでした。入力内容はそのまま残っています。時間をおいて再度お試しいただくか、' + CONTACT_EMAIL + ' へメールでご連絡ください。', true);
+      })
+      .then(function () {
+        clearTimeout(timer);
+        submitBtn.disabled = false;
+        submitBtn.firstChild.textContent = '無料で相談する';
+      });
+  });
+})();
+</script>
+</body>
+</html>
